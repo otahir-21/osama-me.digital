@@ -1,0 +1,191 @@
+export const servicesDetail = [
+  {
+    id: "website-development",
+    title: "Website Development",
+    tagline: "Custom websites built for speed, conversions, and growth.",
+    description:
+      "From landing pages to full-scale web applications, I build websites that look premium and perform. Every project is optimized for Core Web Vitals, mobile-first, and conversion-focused.",
+    forWho: [
+      "Small businesses needing an online presence",
+      "Startups launching their first website",
+      "E-commerce brands upgrading their store",
+      "Agencies needing white-label development",
+    ],
+    benefits: [
+      "Fast load times and excellent performance",
+      "Mobile-responsive, accessible design",
+      "SEO-friendly structure from day one",
+      "Clear conversion paths and CTAs",
+    ],
+    deliverables: [
+      "Fully responsive website",
+      "Content management setup",
+      "Analytics and tracking",
+      "Launch support and handover",
+    ],
+    process: ["Discovery & requirements", "Wireframes & design", "Development", "Testing & launch"],
+    priceFrom: "AED 5,000",
+  },
+  {
+    id: "seo",
+    title: "SEO Services",
+    tagline: "Strategic search optimization for sustainable organic growth.",
+    description:
+      "I help businesses rank higher on Google with white-hat SEO. Technical audits, keyword strategy, on-page optimization, and content—all focused on long-term organic visibility.",
+    forWho: [
+      "Businesses with low organic traffic",
+      "Local Dubai/UAE businesses targeting local searches",
+      "E-commerce sites needing category and product SEO",
+      "B2B companies targeting specific keywords",
+    ],
+    benefits: [
+      "Increased organic traffic over time",
+      "Better visibility for local searches",
+      "Sustainable, long-term results",
+      "Transparent reporting and insights",
+    ],
+    deliverables: [
+      "Technical SEO audit",
+      "Keyword research and strategy",
+      "On-page optimization",
+      "Monthly reporting",
+    ],
+    process: ["Audit & analysis", "Strategy development", "Implementation", "Ongoing optimization"],
+    priceFrom: "AED 3,000/month",
+  },
+  {
+    id: "google-ads",
+    title: "Google Ads Management",
+    tagline: "Data-driven PPC campaigns that maximize ROI.",
+    description:
+      "I manage Google Ads campaigns that convert. Search, Display, Shopping—I optimize for quality leads and sales, not just clicks. Transparent reporting and clear communication.",
+    forWho: [
+      "Businesses ready to invest in paid search",
+      "E-commerce brands with product feeds",
+      "Local services targeting high-intent keywords",
+      "B2B companies running lead gen campaigns",
+    ],
+    benefits: [
+      "Lower cost per lead or sale",
+      "Better ad relevance and quality scores",
+      "Structured testing and optimization",
+      "Clear ROI tracking",
+    ],
+    deliverables: [
+      "Campaign setup and structure",
+      "Keyword and audience strategy",
+      "Ad copy and landing page alignment",
+      "Monthly performance reports",
+    ],
+    process: ["Account audit", "Strategy & setup", "Launch", "Optimization"],
+    priceFrom: "AED 2,500/month",
+  },
+  {
+    id: "social-media",
+    title: "Social Media Marketing",
+    tagline: "Engaging content and paid social that builds brand and drives sales.",
+    description:
+      "Organic content strategy and paid social campaigns for Instagram, Facebook, LinkedIn, and TikTok. I create content that resonates and ads that convert.",
+    forWho: [
+      "Brands building social presence",
+      "E-commerce stores driving product awareness",
+      "B2B companies on LinkedIn",
+      "Local businesses engaging the community",
+    ],
+    benefits: [
+      "Consistent, on-brand content",
+      "Paid social campaigns that convert",
+      "Community engagement",
+      "Brand awareness growth",
+    ],
+    deliverables: [
+      "Content calendar",
+      "Creative assets",
+      "Paid campaign management",
+      "Performance reporting",
+    ],
+    process: ["Strategy & goals", "Content planning", "Creation & publishing", "Analysis"],
+    priceFrom: "AED 2,000/month",
+  },
+  {
+    id: "landing-pages",
+    title: "Landing Page Design",
+    tagline: "High-converting pages built for your campaigns.",
+    description:
+      "Single-purpose landing pages designed to convert. Perfect for ads, email campaigns, and lead magnets. Fast, focused, and built for your specific offer.",
+    forWho: [
+      "Businesses running Google or social ads",
+      "SaaS companies with sign-up campaigns",
+      "Event or webinar promotions",
+      "Lead magnet and gated content",
+    ],
+    benefits: [
+      "Higher conversion rates",
+      "Faster load times",
+      "Mobile-optimized",
+      "Easy to update",
+    ],
+    deliverables: [
+      "Custom landing page design",
+      "Mobile-responsive build",
+      "Form and tracking setup",
+      "A/B test-ready structure",
+    ],
+    process: ["Offer clarity", "Wireframe", "Design & build", "Launch & optimize"],
+    priceFrom: "AED 3,000",
+  },
+  {
+    id: "wordpress-shopify",
+    title: "WordPress & Shopify Development",
+    tagline: "Flexible CMS and e-commerce solutions tailored to your needs.",
+    description:
+      "WordPress for content-heavy sites and blogs. Shopify for e-commerce. I build, customize, and optimize both—with clean code and scalable architecture.",
+    forWho: [
+      "Blogs and content sites",
+      "E-commerce stores",
+      "Portfolio and brochure sites",
+      "Membership and course platforms",
+    ],
+    benefits: [
+      "Easy content management",
+      "Scalable and secure",
+      "Plugin and app integration",
+      "Ongoing support available",
+    ],
+    deliverables: [
+      "Theme development or customization",
+      "Plugin/app setup",
+      "Payment and shipping config",
+      "Training and documentation",
+    ],
+    process: ["Requirements", "Design", "Development", "Launch"],
+    priceFrom: "AED 4,000",
+  },
+  {
+    id: "monthly-growth",
+    title: "Monthly Growth Support",
+    tagline: "Ongoing optimization and support for sustained growth.",
+    description:
+      "Retainer-based support for websites and marketing. Updates, monitoring, content tweaks, and performance optimization. Ideal for businesses that want continuous improvement.",
+    forWho: [
+      "Businesses with existing websites",
+      "Clients who want ongoing SEO or ads support",
+      "E-commerce stores needing regular updates",
+      "Startups scaling their marketing",
+    ],
+    benefits: [
+      "Dedicated support and updates",
+      "Proactive optimization",
+      "No project-based delays",
+      "Predictable monthly cost",
+    ],
+    deliverables: [
+      "Monthly hours allocation",
+      "Priority support",
+      "Regular reporting",
+      "Strategy adjustments",
+    ],
+    process: ["Onboarding", "Monthly cadence", "Reporting", "Continuous improvement"],
+    priceFrom: "AED 2,000/month",
+  },
+];

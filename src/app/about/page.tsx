@@ -1,0 +1,204 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  Award,
+  Code2,
+  Target,
+  MapPin,
+  Briefcase,
+  Cpu,
+  Building2,
+  ArrowRight,
+} from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { siteConfig } from "@/data/site-config";
+
+const skills = [
+  "Web Development (Next.js, React, WordPress, Shopify)",
+  "SEO & Content Strategy",
+  "Google Ads & PPC",
+  "Social Media Marketing",
+  "Landing Page Optimization",
+  "Analytics & Conversion Tracking",
+];
+
+const tools = [
+  "Next.js, React, TypeScript",
+  "WordPress, Shopify",
+  "Google Ads, Meta Ads",
+  "Google Analytics, Search Console",
+  "Figma, VS Code",
+];
+
+const industries = [
+  "E-commerce & Retail",
+  "Real Estate",
+  "Restaurants & Hospitality",
+  "Professional Services",
+  "SaaS & Tech Startups",
+];
+
+const timeline = [
+  { year: "2021", title: "Started in Digital Marketing", desc: "Joined a Dubai-based agency, learned SEO, ads, and content." },
+  { year: "2022", title: "Expanded to Web Development", desc: "Added WordPress and custom development to my skillset." },
+  { year: "2023", title: "Full-Stack & Performance", desc: "Mastered React, Next.js, and conversion-focused builds." },
+  { year: "2024+", title: "Freelance Focus", desc: "Helping businesses grow with websites and marketing." },
+];
+
+export default function AboutPage() {
+  return (
+    <div className="min-h-screen bg-zinc-950 pt-24">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid gap-12 lg:grid-cols-2 lg:gap-16"
+        >
+          <div>
+            <p className="mb-4 text-sm font-medium uppercase tracking-wider text-amber-400">
+              About Me
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              {siteConfig.name}
+            </h1>
+            <p className="mt-4 text-xl text-amber-400">{siteConfig.role}</p>
+            <p className="mt-6 text-lg text-zinc-400">
+              I&apos;m a freelance web developer and digital marketing specialist based in Dubai.
+              With over 3 years of agency experience, I&apos;ve worked with small businesses,
+              startups, and e-commerce brands to build websites and run campaigns that drive
+              real results.
+            </p>
+            <p className="mt-4 text-zinc-400">
+              What sets me apart is the combination of development and marketing. I don&apos;t
+              just build websites—I build them with SEO, conversion, and performance in mind.
+              And when I run ads or SEO, I understand the technical side. No handoffs, no
+              miscommunication.
+            </p>
+            <Link
+              href="/contact"
+              className={buttonVariants({ size: "lg", className: "mt-8 inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+            >
+              Let&apos;s Work Together
+              <ArrowRight className="ml-2 size-4" />
+            </Link>
+          </div>
+          <div className="relative">
+            <div className="aspect-square max-w-md rounded-2xl border border-white/10 bg-zinc-900/50 flex items-center justify-center">
+              <span className="text-6xl font-bold text-zinc-600">OT</span>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="border-t border-white/10 bg-zinc-900 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Experience"
+            title="My Journey"
+            subtitle="From agency work to freelance—focused on results."
+          />
+          <div className="mt-16 space-y-8">
+            {timeline.map((item, i) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex gap-8"
+              >
+                <span className="text-2xl font-bold text-amber-400">{item.year}</span>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-1 text-zinc-400">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Skills & Tools"
+            title="What I Work With"
+            subtitle="A blend of development and marketing expertise."
+          />
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            <div>
+              <h3 className="flex items-center gap-2 font-semibold text-white">
+                <Code2 className="size-5 text-amber-400" />
+                Skills
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {skills.map((s) => (
+                  <li key={s} className="text-zinc-400">• {s}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="flex items-center gap-2 font-semibold text-white">
+                <Cpu className="size-5 text-amber-400" />
+                Tools & Stack
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {tools.map((t) => (
+                  <li key={t} className="text-zinc-400">• {t}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 bg-zinc-900 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Industries"
+            title="Who I Serve"
+            subtitle="Experience across multiple sectors."
+          />
+          <div className="mt-12 flex flex-wrap gap-4">
+            {industries.map((ind) => (
+              <span
+                key={ind}
+                className="rounded-full border border-white/10 bg-zinc-950/50 px-4 py-2 text-sm text-zinc-300"
+              >
+                {ind}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Mission"
+            title="Why I Do This"
+            subtitle="Clear value, honest work, real results."
+          />
+          <p className="mx-auto mt-8 max-w-2xl text-center text-lg text-zinc-400">
+            I believe small businesses and startups deserve the same quality of web and
+            marketing work as big brands. My mission is to deliver premium results without
+            the agency overhead—direct collaboration, transparent pricing, and a focus on
+            what actually moves the needle for your business.
+          </p>
+          <div className="mt-12 text-center">
+            <Link
+              href="/contact"
+              className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+            >
+              Book a Free Consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

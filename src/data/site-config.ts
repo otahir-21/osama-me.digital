@@ -1,0 +1,77 @@
+export const siteConfig = {
+  name: "Osama Tahir",
+  role: "Freelance Web Developer + Digital Marketing Specialist",
+  location: "Dubai, UAE",
+  tagline: "Results-Driven Web Development & Digital Marketing for Growing Businesses",
+  description:
+    "Professional freelance web developer and digital marketing specialist based in Dubai. 3+ years agency experience. Website development, SEO, Google Ads, social media marketing, and lead generation.",
+  url: "https://osama.me",
+  email: "hello@osama.me",
+  whatsapp: "+971501234567",
+  calendly: "https://calendly.com/osama-tahir",
+  social: {
+    linkedin: "https://linkedin.com/in/osama-tahir",
+    twitter: "https://twitter.com/osama_tahir",
+    instagram: "https://instagram.com/osama_tahir",
+  },
+  navLinks: [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+  ],
+  services: [
+    {
+      id: "website-development",
+      title: "Website Development",
+      shortDesc: "Custom, fast, and conversion-optimized websites built for your business goals.",
+      icon: "Globe",
+    },
+    {
+      id: "seo",
+      title: "SEO Services",
+      shortDesc: "Strategic search optimization to rank higher and attract qualified organic traffic.",
+      icon: "Search",
+    },
+    {
+      id: "google-ads",
+      title: "Google Ads",
+      shortDesc: "Data-driven PPC campaigns that maximize ROI and generate quality leads.",
+      icon: "TrendingUp",
+    },
+    {
+      id: "social-media",
+      title: "Social Media Marketing",
+      shortDesc: "Engaging content and paid social strategies that build brand and drive sales.",
+      icon: "Share2",
+    },
+    {
+      id: "landing-pages",
+      title: "Landing Pages",
+      shortDesc: "High-converting landing pages designed to turn visitors into customers.",
+      icon: "Layout",
+    },
+    {
+      id: "wordpress-shopify",
+      title: "WordPress & Shopify",
+      shortDesc: "Flexible CMS and e-commerce solutions tailored to your needs.",
+      icon: "ShoppingCart",
+    },
+  ],
+  stats: [
+    { value: 3, suffix: "+", label: "Years Experience" },
+    { value: 50, suffix: "+", label: "Projects Delivered" },
+    { value: 100, suffix: "%", label: "Client Satisfaction" },
+    { value: 24, suffix: "h", label: "Avg. Response Time" },
+  ],
+  processSteps: [
+    { step: 1, title: "Discovery", desc: "Understand your goals, audience, and competition." },
+    { step: 2, title: "Strategy", desc: "Create a data-backed plan tailored to your business." },
+    { step: 3, title: "Design & Build", desc: "Craft and develop your digital assets with precision." },
+    { step: 4, title: "Launch", desc: "Deploy, test, and optimize for a smooth go-live." },
+    { step: 5, title: "Optimization", desc: "Continuous improvement based on real performance data." },
+  ],
+} as const;
