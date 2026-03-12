@@ -25,7 +25,7 @@ export default function BlogPage() {
         />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, i) => (
             <motion.article
@@ -68,6 +68,42 @@ export default function BlogPage() {
               </Link>
             </motion.article>
           ))}
+        </div>
+
+        <div className="mt-16 grid gap-8 border-t border-white/10 pt-16 sm:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href="/services"
+            className="group rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/30"
+          >
+            <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+              Explore Services
+            </h3>
+            <p className="mt-2 text-sm text-zinc-400">
+              Web development, SEO, Google Ads, free software consultation.
+            </p>
+          </Link>
+          <Link
+            href="/portfolio"
+            className="group rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/30"
+          >
+            <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+              View Portfolio
+            </h3>
+            <p className="mt-2 text-sm text-zinc-400">
+              Case studies with measurable results.
+            </p>
+          </Link>
+          <Link
+            href="/contact"
+            className="group rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/30"
+          >
+            <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+              Book a Free Call
+            </h3>
+            <p className="mt-2 text-sm text-zinc-400">
+              Get a free 30-minute consultation.
+            </p>
+          </Link>
         </div>
       </section>
     </div>

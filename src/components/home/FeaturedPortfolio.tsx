@@ -66,13 +66,19 @@ export function FeaturedPortfolio() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-12 flex flex-wrap justify-center gap-4"
         >
           <Link
             href="/portfolio"
             className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
           >
             View Full Portfolio
+          </Link>
+          <Link
+            href="/services"
+            className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+          >
+            Explore Services
           </Link>
         </motion.div>
       </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blog";
+import { blogToServices, serviceNames } from "@/data/internal-links";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -90,12 +91,36 @@ export default async function BlogPostPage({ params }: Props) {
             based in Dubai. He helps small businesses and startups grow online with
             websites, SEO, and performance marketing.
           </p>
-          <Link
-            href="/contact"
-            className="mt-4 inline-flex items-center rounded-lg bg-amber-500 px-3 py-1.5 text-sm font-medium text-zinc-950 transition-colors hover:bg-amber-400"
-          >
-            Get in Touch
-          </Link>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-amber-500 px-3 py-1.5 text-sm font-medium text-zinc-950 transition-colors hover:bg-amber-400"
+            >
+              Get in Touch
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-amber-500/30 hover:text-amber-400"
+            >
+              View Portfolio
+            </Link>
+          </div>
+          {(blogToServices[post.slug] ?? []).length > 0 && (
+            <div className="mt-6 border-t border-white/10 pt-4">
+              <h4 className="text-sm font-medium text-white">Related Services</h4>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {(blogToServices[post.slug] ?? []).map((serviceId) => (
+                  <Link
+                    key={serviceId}
+                    href={`/services#${serviceId}`}
+                    className="text-sm text-amber-400 hover:underline"
+                  >
+                    {serviceNames[serviceId] ?? serviceId}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {relatedPosts.length > 0 && (

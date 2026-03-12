@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Web Development & Digital Marketing Insights - Dubai",
+  title: "Blog | Digital Marketing & Free Software - Dubai, Abu Dhabi, UAE",
   description:
-    "Articles on SEO, web development, Google Ads, and digital marketing for Dubai and UAE businesses.",
+    "Digital marketing specialist UAE blog. Free software tips, SEO, web development, Google Ads for Dubai, Abu Dhabi, Sharjah & all Emirates.",
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

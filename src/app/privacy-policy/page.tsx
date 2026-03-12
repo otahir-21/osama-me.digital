@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-semibold text-white">1. Introduction</h2>
             <p>
-              Osama Tahir (&quot;I&quot;, &quot;me&quot;, &quot;my&quot;) operates osama.me. This page
+              Osama Tahir (&quot;I&quot;, &quot;me&quot;, &quot;my&quot;) operates osama-me.digital. This page
               informs you of my policies regarding the collection, use, and disclosure of
               personal data when you use my website and services.
             </p>
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Depending on your location, you may have the right to access, correct, or
               delete your personal data. To exercise these rights, contact me at
-              hello@osama.me.
+              info@osama-me.digital.
             </p>
           </section>
 
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-semibold text-white">8. Contact</h2>
             <p>
-              For questions about this Privacy Policy, contact me at hello@osama.me or
+              For questions about this Privacy Policy, contact me at info@osama-me.digital or
               through the contact form on this website.
             </p>
           </section>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio & Case Studies | Web Development & Marketing - Dubai",
+  title: "Portfolio | Digital Marketing & Web Development - Dubai, Abu Dhabi, UAE",
   description:
-    "Case studies and portfolio projects. Website development, SEO, Google Ads, and landing pages for Dubai and global clients.",
+    "Case studies from digital marketing specialist in UAE. Website development, SEO, Google Ads, landing pages for Dubai, Abu Dhabi & all Emirates.",
 };
 
 export default function PortfolioLayout({ children }: { children: React.ReactNode }) {

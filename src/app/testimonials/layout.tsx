@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Testimonials | Client Reviews - Freelance Web Developer Dubai",
+  title: "Testimonials | Digital Marketing Specialist UAE - Client Reviews",
   description:
-    "Client testimonials and reviews. See what businesses say about working with Osama Tahir for web development and digital marketing.",
+    "Client testimonials for digital marketing specialist in UAE. Reviews from Dubai, Abu Dhabi, Sharjah businesses. Web development & marketing results.",
 };
 
 export default function TestimonialsLayout({ children }: { children: React.ReactNode }) {

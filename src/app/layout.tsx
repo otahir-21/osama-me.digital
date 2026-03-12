@@ -3,6 +3,9 @@ import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
+import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
 import { siteConfig } from "@/data/site-config";
 import {
   getPersonSchema,
@@ -26,39 +29,70 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.role} - Dubai, UAE`,
+    default: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
   keywords: [
-    "Freelance Web Developer Dubai",
-    "Digital Marketing Freelancer Dubai",
-    "SEO Expert Dubai",
-    "WordPress Developer Dubai",
-    "Google Ads Freelancer Dubai",
-    "Website Developer UAE",
-    "Freelance Digital Marketing UAE",
+    "Digital marketing specialist UAE",
+    "Digital marketing specialist Dubai",
+    "Digital marketing specialist Abu Dhabi",
+    "Free software Dubai",
+    "Free software UAE",
+    "Digital marketing freelancer UAE",
+    "SEO expert Dubai",
+    "SEO expert Abu Dhabi",
+    "Web developer Dubai",
+    "Web developer Abu Dhabi",
+    "Google Ads specialist UAE",
+    "Social media marketing Dubai",
+    "Freelance digital marketing UAE",
+    "Marketing consultant Dubai",
+    "Marketing consultant Abu Dhabi",
+    "osama-me.digital",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
+  publisher: siteConfig.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_AE",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | ${siteConfig.role}`,
+    title: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
     description: siteConfig.description,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - ${siteConfig.role}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.role}`,
+    site: "@osama_tahir",
+    creator: "@osama_tahir",
+    title: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
     description: siteConfig.description,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
   manifest: "/manifest.json",
+  category: "technology",
 };
 
 export const viewport: Viewport = {
@@ -88,8 +122,11 @@ export default function RootLayout({
           />
         ))}
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
+        <StickyMobileCTA />
+        <WhatsAppButton />
+        <ExitIntentPopup />
       </body>
     </html>
   );

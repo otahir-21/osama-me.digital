@@ -12,17 +12,17 @@ const socialIcons = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-zinc-950">
+    <footer className="border-t border-white/10 bg-zinc-950 pb-24 md:pb-0">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-4">
+        <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="/" className="text-2xl font-bold text-white">
               {siteConfig.name}
             </Link>
             <p className="mt-4 max-w-md text-sm text-zinc-400">
-              Freelance web developer and digital marketing specialist in Dubai. I help small
-              businesses, startups, and e-commerce brands grow online with websites, SEO, and
-              performance marketing.
+              Digital marketing specialist in UAE. Serving Dubai, Abu Dhabi, Sharjah & all
+              Emirates. Free software consultation, web development, SEO, Google Ads. Helping
+              businesses grow online.
             </p>
             <div className="mt-6 flex gap-4">
               {Object.entries(socialIcons).map(([key, Icon]) => (
@@ -71,6 +71,15 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+          {siteConfig.serviceAreas && (
+            <div>
+              <h3 className="font-semibold text-white">UAE Service Areas</h3>
+              <p className="mt-4 text-sm text-zinc-400">
+                Dubai • Abu Dhabi • Sharjah • Ajman • RAK • Fujairah • UAQ
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-12 sm:flex-row sm:items-center sm:justify-between">

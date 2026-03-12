@@ -122,6 +122,26 @@ export default function ContactPage() {
           >
             View all FAQs →
           </Link>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/services"
+              className="text-sm text-zinc-400 transition-colors hover:text-amber-400"
+            >
+              Explore Services
+            </Link>
+            <Link
+              href="/portfolio"
+              className="text-sm text-zinc-400 transition-colors hover:text-amber-400"
+            >
+              View Portfolio
+            </Link>
+            <Link
+              href="/blog"
+              className="text-sm text-zinc-400 transition-colors hover:text-amber-400"
+            >
+              Read Blog
+            </Link>
+          </div>
         </div>
       </section>
     </div>

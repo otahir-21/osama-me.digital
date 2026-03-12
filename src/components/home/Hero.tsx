@@ -8,8 +8,8 @@ import { siteConfig } from "@/data/site-config";
 
 const trustItems = [
   "3+ Years Agency Experience",
-  "Dubai-Based",
-  "50+ Projects Delivered",
+  "Dubai, Abu Dhabi & UAE",
+  "Free Consultation",
 ];
 
 export function Hero() {
@@ -29,7 +29,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-4 text-sm font-medium uppercase tracking-wider text-amber-400"
             >
-              Freelance Web Developer & Digital Marketing — Dubai, UAE
+              Digital Marketing Specialist UAE — Dubai, Abu Dhabi & All Emirates
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Websites & Marketing That{" "}
+              Digital Marketing & Websites That{" "}
               <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
                 Drive Growth
               </span>
@@ -48,9 +48,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 max-w-xl text-lg text-zinc-400"
             >
-              I build fast, conversion-optimized websites and run data-driven digital marketing
-              campaigns for small businesses and startups. Based in Dubai, serving clients
-              globally.
+              Digital marketing specialist serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.
+              Free software consultation, web development, SEO & Google Ads. 3+ years agency
+              experience. Book a free call.
             </motion.p>
 
             <motion.div

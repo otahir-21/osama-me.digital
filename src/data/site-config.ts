@@ -4,11 +4,20 @@ export const siteConfig = {
   location: "Dubai, UAE",
   tagline: "Results-Driven Web Development & Digital Marketing for Growing Businesses",
   description:
-    "Professional freelance web developer and digital marketing specialist based in Dubai. 3+ years agency experience. Website development, SEO, Google Ads, social media marketing, and lead generation.",
-  url: "https://osama.me",
-  email: "hello@osama.me",
-  whatsapp: "+971501234567",
-  calendly: "https://calendly.com/osama-tahir",
+    "Digital marketing specialist in UAE. Free software consultation & web development for Dubai, Abu Dhabi, Sharjah & all Emirates. SEO, Google Ads, social media marketing. 3+ years agency experience.",
+  serviceAreas: [
+    "Dubai",
+    "Abu Dhabi",
+    "Sharjah",
+    "Ajman",
+    "Ras Al Khaimah",
+    "Fujairah",
+    "Umm Al Quwain",
+  ],
+  url: "https://osama-me.digital",
+  email: "info@osama-me.digital",
+  whatsapp: "+971507276823",
+  calendly: "https://calendly.com/dxbsoftwaredeveloper/30min",
   social: {
     linkedin: "https://linkedin.com/in/osama-tahir",
     twitter: "https://twitter.com/osama_tahir",
@@ -24,6 +33,12 @@ export const siteConfig = {
     { href: "/contact", label: "Contact" },
   ],
   services: [
+    {
+      id: "free-software-consultation",
+      title: "Free Software Consultation",
+      shortDesc: "Free 30-min call to discuss your software & marketing needs. No obligation.",
+      icon: "BarChart3",
+    },
     {
       id: "website-development",
       title: "Website Development",

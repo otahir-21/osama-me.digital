@@ -59,7 +59,34 @@ export function FinalCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-zinc-500"
+          className="mt-12 flex flex-wrap justify-center gap-6 text-sm"
+        >
+          <Link
+            href="/services"
+            className="text-zinc-500 transition-colors hover:text-white"
+          >
+            Services
+          </Link>
+          <Link
+            href="/portfolio"
+            className="text-zinc-500 transition-colors hover:text-white"
+          >
+            Portfolio
+          </Link>
+          <Link
+            href="/blog"
+            className="text-zinc-500 transition-colors hover:text-white"
+          >
+            Blog
+          </Link>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.35 }}
+          className="mt-6 flex flex-wrap justify-center gap-8 text-sm text-zinc-500"
         >
           <a
             href={`mailto:${siteConfig.email}`}

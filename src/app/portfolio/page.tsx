@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { portfolioData } from "@/data/portfolio";
+import { portfolioToServices, serviceNames } from "@/data/internal-links";
 
 export default function PortfolioPage() {
   return (
@@ -77,6 +78,20 @@ export default function PortfolioPage() {
                       ))}
                     </div>
                   </div>
+                  <div className="mt-6">
+                    <h3 className="font-semibold text-white">Related Services</h3>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {(portfolioToServices[project.category] ?? []).map((serviceId) => (
+                        <Link
+                          key={serviceId}
+                          href={`/services#${serviceId}`}
+                          className="rounded-lg border border-white/10 bg-zinc-950/50 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-amber-500/30 hover:text-amber-400"
+                        >
+                          {serviceNames[serviceId] ?? serviceId}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                   <Link
                     href="/contact"
                     className={buttonVariants({
@@ -95,7 +110,7 @@ export default function PortfolioPage() {
       </section>
 
       <section className="border-t border-white/10 bg-zinc-900 py-24">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white">Have a Project in Mind?</h2>
           <p className="mt-4 text-zinc-400">
             Let&apos;s discuss how I can help you achieve similar results.
@@ -109,6 +124,37 @@ export default function PortfolioPage() {
           >
             Book a Free Consultation
           </Link>
+
+          <div className="mt-16 grid gap-8 border-t border-white/10 pt-16 sm:grid-cols-2">
+            <Link
+              href="/services"
+              className="group rounded-xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30"
+            >
+              <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+                Explore Services
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                Web development, SEO, Google Ads, and more.
+              </p>
+              <span className="mt-2 inline-flex items-center text-sm text-amber-400">
+                View all services <ArrowRight className="ml-1 size-4" />
+              </span>
+            </Link>
+            <Link
+              href="/blog"
+              className="group rounded-xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30"
+            >
+              <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+                Read the Blog
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                Digital marketing tips and insights for UAE businesses.
+              </p>
+              <span className="mt-2 inline-flex items-center text-sm text-amber-400">
+                Explore articles <ArrowRight className="ml-1 size-4" />
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

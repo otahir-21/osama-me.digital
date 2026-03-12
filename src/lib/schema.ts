@@ -18,27 +18,26 @@ export function getPersonSchema() {
 }
 
 export function getProfessionalServiceSchema() {
+  const serviceAreas = siteConfig.serviceAreas ?? ["Dubai", "Abu Dhabi", "Sharjah"];
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: `${siteConfig.name} - ${siteConfig.role}`,
+    name: `${siteConfig.name} - Digital Marketing Specialist UAE`,
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 25.2048,
-        longitude: 55.2708,
-      },
-      geoRadius: "50000",
-    },
+    areaServed: serviceAreas.map((area) => ({
+      "@type": "City",
+      name: area,
+      containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
+    })),
     priceRange: "$$",
+    serviceType: ["Digital Marketing", "Web Development", "SEO", "Free Software Consultation"],
   };
 }
 
 export function getLocalBusinessSchema() {
+  const serviceAreas = siteConfig.serviceAreas ?? ["Dubai", "Abu Dhabi"];
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -52,8 +51,13 @@ export function getLocalBusinessSchema() {
       addressRegion: "Dubai",
       addressCountry: "AE",
     },
-    areaServed: "Dubai, UAE",
+    areaServed: serviceAreas.map((area) => ({
+      "@type": "City",
+      name: area,
+      containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
+    })),
     priceRange: "$$",
+    serviceType: ["Digital Marketing", "Web Development", "SEO"],
   };
 }
 

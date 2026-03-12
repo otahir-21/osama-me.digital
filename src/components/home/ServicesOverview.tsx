@@ -9,6 +9,7 @@ import {
   Share2,
   Layout,
   ShoppingCart,
+  BarChart3,
   ArrowRight,
 } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -22,6 +23,7 @@ const iconMap = {
   Share2,
   Layout,
   ShoppingCart,
+  BarChart3,
 } as const;
 
 export function ServicesOverview() {
@@ -68,13 +70,19 @@ export function ServicesOverview() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-12 flex flex-wrap justify-center gap-4"
         >
           <Link
             href="/services"
             className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
           >
             View All Services
+          </Link>
+          <Link
+            href="/portfolio"
+            className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+          >
+            See Portfolio
           </Link>
         </motion.div>
       </div>

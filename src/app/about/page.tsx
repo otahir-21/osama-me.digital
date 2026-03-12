@@ -189,14 +189,30 @@ export default function AboutPage() {
             the agency overhead—direct collaboration, transparent pricing, and a focus on
             what actually moves the needle for your business.
           </p>
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
               className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
             >
               Book a Free Consultation
             </Link>
+            <Link
+              href="/services"
+              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+            >
+              View Services
+            </Link>
+            <Link
+              href="/portfolio"
+              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+            >
+              View Portfolio
+            </Link>
           </div>
+          <p className="mt-8 text-center text-sm text-zinc-500">
+            <Link href="/blog" className="text-amber-400 hover:underline">Read the blog</Link>
+            {" "}for insights on digital marketing and web development.
+          </p>
         </div>
       </section>
     </div>

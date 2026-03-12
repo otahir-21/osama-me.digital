@@ -1,5 +1,31 @@
 export const servicesDetail = [
   {
+    id: "free-software-consultation",
+    title: "Free Software Consultation",
+    tagline: "Free 30-minute call to discuss your software & marketing needs.",
+    description:
+      "Not sure where to start? Book a free consultation. I'll help you understand your options—free software tools, website needs, or digital marketing strategy. No obligation. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+    forWho: [
+      "Businesses exploring digital tools for the first time",
+      "Startups needing guidance on free software options",
+      "UAE businesses wanting to know what's possible",
+      "Anyone with questions about web or marketing",
+    ],
+    benefits: [
+      "Completely free—no obligation",
+      "Understand your options clearly",
+      "Get recommendations tailored to your budget",
+      "Decide if we're a good fit",
+    ],
+    deliverables: [
+      "30-minute video call",
+      "Recommendations for your situation",
+      "Next steps if you want to proceed",
+    ],
+    process: ["Book a slot", "Share your goals", "Get honest advice"],
+    priceFrom: "Free",
+  },
+  {
     id: "website-development",
     title: "Website Development",
     tagline: "Custom websites built for speed, conversions, and growth.",

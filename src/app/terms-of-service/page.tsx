@@ -89,7 +89,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-xl font-semibold text-white">9. Contact</h2>
             <p>
-              For questions about these Terms of Service, contact me at hello@osama.me
+              For questions about these Terms of Service, contact me at info@osama-me.digital
               or through the contact form on this website.
             </p>
           </section>

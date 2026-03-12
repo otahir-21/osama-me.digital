@@ -18,6 +18,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { servicesDetail } from "@/data/services-detail";
 
 const iconMap = {
+  "free-software-consultation": BarChart3,
   "website-development": Globe,
   seo: Search,
   "google-ads": TrendingUp,
@@ -133,7 +134,7 @@ export default function ServicesPage() {
       </div>
 
       <section className="border-t border-white/10 bg-zinc-900 py-24">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white">Ready to Get Started?</h2>
           <p className="mt-4 text-zinc-400">
             Book a free 30-minute consultation. We&apos;ll discuss your goals and how I can help.
@@ -147,6 +148,37 @@ export default function ServicesPage() {
           >
             Book a Free Consultation
           </Link>
+
+          <div className="mt-16 grid gap-8 border-t border-white/10 pt-16 sm:grid-cols-2">
+            <Link
+              href="/portfolio"
+              className="group rounded-xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30"
+            >
+              <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+                View Portfolio
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                See case studies and results from past projects.
+              </p>
+              <span className="mt-2 inline-flex items-center text-sm text-amber-400">
+                Explore case studies <ArrowRight className="ml-1 size-4" />
+              </span>
+            </Link>
+            <Link
+              href="/blog"
+              className="group rounded-xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30"
+            >
+              <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+                Read the Blog
+              </h3>
+              <p className="mt-2 text-sm text-zinc-400">
+                Insights on digital marketing, SEO, and free software.
+              </p>
+              <span className="mt-2 inline-flex items-center text-sm text-amber-400">
+                Explore articles <ArrowRight className="ml-1 size-4" />
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
