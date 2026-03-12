@@ -1,13 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Github, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
-
-const socialIcons = {
-  linkedin: Linkedin,
-  github: Github,
-} as const;
 
 export function Footer() {
   return (
@@ -23,20 +18,6 @@ export function Footer() {
               Emirates. Free software consultation, web development, SEO, Google Ads. Helping
               businesses grow online.
             </p>
-            <div className="mt-6 flex gap-4">
-              {Object.entries(socialIcons).map(([key, Icon]) => (
-                <a
-                  key={key}
-                  href={siteConfig.social[key as keyof typeof socialIcons]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg p-2 text-zinc-400 transition-colors hover:bg-white/5 hover:text-amber-400"
-                  aria-label={key}
-                >
-                  <Icon size={20} />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
