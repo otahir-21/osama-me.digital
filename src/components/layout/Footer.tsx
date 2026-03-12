@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Twitter, Instagram, Mail, MapPin } from "lucide-react";
+import { Linkedin, Github, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
 const socialIcons = {
   linkedin: Linkedin,
-  twitter: Twitter,
-  instagram: Instagram,
+  github: Github,
 } as const;
 
 export function Footer() {

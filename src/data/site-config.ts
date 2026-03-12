@@ -19,9 +19,8 @@ export const siteConfig = {
   whatsapp: "+971507276823",
   calendly: "https://calendly.com/dxbsoftwaredeveloper/30min",
   social: {
-    linkedin: "https://linkedin.com/in/osama-tahir",
-    twitter: "https://twitter.com/osama_tahir",
-    instagram: "https://instagram.com/osama_tahir",
+    linkedin: "https://www.linkedin.com/in/otahir21",
+    github: "https://github.com/otahir-21",
   },
   navLinks: [
     { href: "/", label: "Home" },

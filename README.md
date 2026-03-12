@@ -98,9 +98,20 @@ Deploy to **Vercel** (recommended), Netlify, or any Node.js hosting:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/otahir-21/osama-me.digital)
 
-## Contact API
+## Contact Form (SMTP)
 
-The contact form posts to `/api/contact`. For production, integrate with an email service (Resend, SendGrid, etc.) in `src/app/api/contact/route.ts`.
+The contact form sends emails via Hostinger SMTP to info@osama-me.digital.
+
+1. Copy `.env.example` to `.env.local`
+2. Set `SMTP_PASS` to your Hostinger email account password
+3. Get credentials from Hostinger hPanel > Email > Connect Apps & Devices
+
+```env
+SMTP_HOST=smtp.hostinger.com
+SMTP_PORT=587
+SMTP_USER=info@osama-me.digital
+SMTP_PASS=your-password
+```
 
 ## License
 
