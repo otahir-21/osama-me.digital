@@ -4,6 +4,15 @@ import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
+const footerServices = [
+  { label: "Web Development Dubai", href: "/services/web-development-dubai" },
+  { label: "Mobile App Development", href: "/services/mobile-app-development-dubai" },
+  { label: "SEO Services Dubai", href: "/services/seo-services-dubai" },
+  { label: "Google Ads Management", href: "/services/google-ads-management-dubai" },
+  { label: "Shopify Development", href: "/services/shopify-development-dubai" },
+  { label: "WordPress Development", href: "/services/wordpress-development-dubai" },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-zinc-950 pb-24 md:pb-0">
@@ -14,9 +23,8 @@ export function Footer() {
               {siteConfig.name}
             </Link>
             <p className="mt-4 max-w-md text-sm text-zinc-400">
-              Digital marketing specialist in UAE. Serving Dubai, Abu Dhabi, Sharjah & all
-              Emirates. Free software consultation, web development, SEO, Google Ads. Helping
-              businesses grow online.
+              Freelance web developer and digital marketing specialist in Dubai, UAE. Custom
+              websites, mobile apps, SEO, and Google Ads for businesses across all Emirates.
             </p>
           </div>
 
@@ -39,13 +47,13 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white">Services</h3>
             <ul className="mt-4 space-y-2">
-              {siteConfig.services.slice(0, 5).map((s) => (
-                <li key={s.id}>
+              {footerServices.map((s) => (
+                <li key={s.href}>
                   <Link
-                    href={`/services#${s.id}`}
+                    href={s.href}
                     className="text-sm text-zinc-400 transition-colors hover:text-white"
                   >
-                    {s.title}
+                    {s.label}
                   </Link>
                 </li>
               ))}

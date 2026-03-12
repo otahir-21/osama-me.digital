@@ -22,7 +22,7 @@ export function getProfessionalServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: `${siteConfig.name} - Digital Marketing Specialist UAE`,
+    name: `${siteConfig.name} - Web Developer & Digital Marketing Specialist UAE`,
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
@@ -32,7 +32,16 @@ export function getProfessionalServiceSchema() {
       containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
     })),
     priceRange: "$$",
-    serviceType: ["Digital Marketing", "Web Development", "SEO", "Free Software Consultation"],
+    serviceType: [
+      "Web Development",
+      "Mobile App Development",
+      "SEO Services",
+      "Google Ads Management",
+      "Social Media Marketing",
+      "Shopify Development",
+      "WordPress Development",
+      "Landing Page Design",
+    ],
   };
 }
 
@@ -57,7 +66,7 @@ export function getLocalBusinessSchema() {
       containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
     })),
     priceRange: "$$",
-    serviceType: ["Digital Marketing", "Web Development", "SEO"],
+    serviceType: ["Web Development", "Mobile App Development", "SEO", "Google Ads"],
   };
 }
 
@@ -71,6 +80,68 @@ export function getFAQSchema() {
       acceptedAnswer: {
         "@type": "Answer",
         text: item.answer,
+      },
+    })),
+  };
+}
+
+export function getServiceSchema({
+  h1,
+  description,
+  priceFrom,
+  slug,
+}: {
+  h1: string;
+  description: string;
+  priceFrom: string;
+  slug: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: h1,
+    description,
+    provider: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Dubai",
+        containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
+      },
+      {
+        "@type": "City",
+        name: "Abu Dhabi",
+        containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
+      },
+      {
+        "@type": "City",
+        name: "Sharjah",
+        containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
+      },
+    ],
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "AED",
+      description: `Starting from ${priceFrom}`,
+    },
+    url: `${siteConfig.url}/services/${slug}`,
+  };
+}
+
+export function getServiceFAQSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
       },
     })),
   };

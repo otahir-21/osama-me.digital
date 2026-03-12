@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | Digital Marketing & Web Development - Dubai, Abu Dhabi, UAE",
+  title: "Services | Web Development, SEO & Digital Marketing Dubai UAE",
   description:
-    "Digital marketing specialist UAE. Free software consultation, web development, SEO, Google Ads, social media marketing. Serving Dubai, Abu Dhabi & all Emirates.",
+    "Web development, mobile app development, SEO, Google Ads, Shopify, WordPress, and social media marketing for businesses in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+  alternates: {
+    canonical: "https://osama-me.digital/services",
+  },
 };
 
 export default function ServicesLayout({ children }: { children: React.ReactNode }) {

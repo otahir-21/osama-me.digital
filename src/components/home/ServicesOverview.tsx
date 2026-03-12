@@ -6,13 +6,15 @@ import {
   Globe,
   Search,
   TrendingUp,
+  Smartphone,
+  ShoppingCart,
+  Code2,
   Share2,
   Layout,
-  ShoppingCart,
-  BarChart3,
+  Shield,
   ArrowRight,
 } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site-config";
 
@@ -20,10 +22,12 @@ const iconMap = {
   Globe,
   Search,
   TrendingUp,
+  Smartphone,
+  ShoppingCart,
+  Code2,
   Share2,
   Layout,
-  ShoppingCart,
-  BarChart3,
+  Shield,
 } as const;
 
 export function ServicesOverview() {
@@ -33,7 +37,7 @@ export function ServicesOverview() {
         <SectionHeading
           eyebrow="Services"
           title="What I Offer"
-          subtitle="Full-stack digital solutions—from websites to performance marketing. Everything you need to grow online."
+          subtitle="Web development, mobile apps, SEO, Google Ads, and more — everything a UAE business needs to grow online."
         />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -55,8 +59,13 @@ export function ServicesOverview() {
                 <h3 className="mt-4 text-lg font-semibold text-white">{service.title}</h3>
                 <p className="mt-2 text-sm text-zinc-400">{service.shortDesc}</p>
                 <Link
-                  href={`/services#${service.id}`}
-                  className={buttonVariants({ variant: "ghost", size: "sm", className: "mt-4 -ml-2 flex items-center gap-1 text-amber-400 hover:bg-amber-500/10 hover:text-amber-400" })}
+                  href={`/services/${service.slug}`}
+                  className={buttonVariants({
+                    variant: "ghost",
+                    size: "sm",
+                    className:
+                      "-ml-2 mt-4 flex items-center gap-1 text-amber-400 hover:bg-amber-500/10 hover:text-amber-400",
+                  })}
                 >
                   Learn more
                   <ArrowRight size={14} />
@@ -74,13 +83,20 @@ export function ServicesOverview() {
         >
           <Link
             href="/services"
-            className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+            className={buttonVariants({
+              size: "lg",
+              className: "bg-amber-500 text-zinc-950 hover:bg-amber-400",
+            })}
           >
             View All Services
           </Link>
           <Link
             href="/portfolio"
-            className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "border-zinc-600 text-white hover:bg-white/5",
+            })}
           >
             See Portfolio
           </Link>

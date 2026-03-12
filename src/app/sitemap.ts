@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site-config";
 import { blogPosts } from "@/data/blog";
+import { servicesDetail } from "@/data/services-detail";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -19,7 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: (path === "" ? "weekly" : "monthly") as "weekly" | "monthly",
-    priority: path === "" ? 1 : 0.8,
+    priority: path === "" ? 1 : path === "/services" ? 0.9 : 0.8,
+  }));
+
+  const servicePages: MetadataRoute.Sitemap = servicesDetail.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
   }));
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -29,5 +37,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  return [...staticPages, ...servicePages, ...blogPages];
 }
