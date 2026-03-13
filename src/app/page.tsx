@@ -16,13 +16,15 @@ import {
   getLocalBusinessSchema,
 } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  description:
-    "Freelance web developer and digital marketing specialist in Dubai. I build fast, SEO-ready websites and grow them with SEO and Google Ads — one person, full accountability. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
-  alternates: {
-    canonical: "https://osama-me.digital",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    description:
+      "Freelance web developer and digital marketing specialist in Dubai. I build fast, SEO-ready websites and grow them with SEO and Google Ads — one person, full accountability. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+    alternates: {
+      canonical: "https://osama-me.digital",
+    },
+  };
+}
 
 export default function HomePage() {
   const faqSchema = getFAQSchema();

@@ -102,9 +102,7 @@ export function getServiceSchema({
     name: h1,
     description,
     provider: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
+      "@id": siteConfig.url,
     },
     areaServed: [
       {
