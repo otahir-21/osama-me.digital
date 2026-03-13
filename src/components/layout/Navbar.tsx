@@ -26,14 +26,14 @@ export function Navbar() {
       className={cn(
         "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-zinc-950/90 backdrop-blur-xl"
+          ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-zinc-200"
           : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-white transition-colors hover:text-amber-400"
+          className="text-xl font-bold tracking-tight text-zinc-900 transition-colors hover:text-amber-600"
         >
           {siteConfig.name.split(" ")[0]}
         </Link>
@@ -43,7 +43,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
             >
               {link.label}
             </Link>
@@ -59,7 +59,7 @@ export function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="md:hidden rounded-lg p-2 text-white hover:bg-white/10"
+          className="md:hidden rounded-lg p-2 text-zinc-900 hover:bg-zinc-100"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,14 +73,14 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-white/10 bg-zinc-950 md:hidden"
+            className="overflow-hidden border-t border-zinc-200 bg-white md:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-4">
               {siteConfig.navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-4 py-3 text-white hover:bg-white/5"
+                  className="rounded-lg px-4 py-3 text-zinc-900 hover:bg-zinc-100"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

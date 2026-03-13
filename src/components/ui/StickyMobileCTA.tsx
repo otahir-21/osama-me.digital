@@ -14,7 +14,7 @@ export function StickyMobileCTA() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-3 border-t border-white/10 bg-zinc-950/95 px-4 py-3 backdrop-blur-md md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-3 border-t border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur-md md:hidden shadow-[0_-4px_12px_rgba(15,23,42,0.08)]">
       <Link
         href="/contact"
         className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-amber-500 py-3 font-semibold text-zinc-950 transition-colors hover:bg-amber-400"

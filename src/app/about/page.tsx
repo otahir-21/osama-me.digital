@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -54,7 +55,7 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 pt-24">
+    <div className="min-h-screen bg-zinc-50 pt-24">
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,23 +67,23 @@ export default function AboutPage() {
             <p className="mb-4 text-sm font-medium uppercase tracking-wider text-amber-400">
               About Me
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
               {siteConfig.name}
             </h1>
             <p className="mt-4 text-xl text-amber-400">{siteConfig.role}</p>
-            <p className="mt-6 text-lg text-zinc-400">
+            <p className="mt-6 text-lg text-zinc-600">
               I&apos;m a freelance web developer, mobile app developer, and digital marketing
               specialist based in Dubai. With over 3 years of agency experience, I&apos;ve worked
               with small businesses, startups, and e-commerce brands to build websites, mobile apps,
               and campaigns that drive real results—from the first brief to App Store submission.
             </p>
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-zinc-600">
               What sets me apart is the combination of development and marketing. I don&apos;t
               just build websites—I build them with SEO, conversion, and performance in mind.
               And when I run ads or SEO, I understand the technical side. No handoffs, no
               miscommunication.
             </p>
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-zinc-600">
               For mobile apps, I also guide clients through Apple App Store requirements end to end:
               metadata, screenshots, privacy policy, review test accounts, age ratings, pricing,
               country availability, and release strategy—so your app is not only built well, but
@@ -96,15 +97,21 @@ export default function AboutPage() {
               <ArrowRight className="ml-2 size-4" />
             </Link>
           </div>
-          <div className="relative">
-            <div className="aspect-square max-w-md rounded-2xl border border-white/10 bg-zinc-900/50 flex items-center justify-center">
-              <span className="text-6xl font-bold text-zinc-600">OT</span>
+          <div className="relative flex items-center justify-center">
+            <div className="relative aspect-square max-w-md overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+              <Image
+                src="/profile-photo.png"
+                alt={`${siteConfig.name} portrait`}
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </motion.div>
       </section>
 
-      <section className="border-t border-white/10 bg-zinc-900 py-24">
+      <section className="border-t border-zinc-200 bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Experience"
@@ -123,8 +130,8 @@ export default function AboutPage() {
               >
                 <span className="text-2xl font-bold text-amber-400">{item.year}</span>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-zinc-400">{item.desc}</p>
+                  <h3 className="text-lg font-semibold text-zinc-900">{item.title}</h3>
+                  <p className="mt-1 text-zinc-600">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -132,7 +139,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-24">
+      <section className="border-t border-zinc-200 bg-zinc-50 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Skills & Tools"
@@ -141,24 +148,24 @@ export default function AboutPage() {
           />
           <div className="mt-16 grid gap-8 md:grid-cols-2">
             <div>
-              <h3 className="flex items-center gap-2 font-semibold text-white">
+              <h3 className="flex items-center gap-2 font-semibold text-zinc-900">
                 <Code2 className="size-5 text-amber-400" />
                 Skills
               </h3>
               <ul className="mt-4 space-y-2">
                 {skills.map((s) => (
-                  <li key={s} className="text-zinc-400">• {s}</li>
+                  <li key={s} className="text-zinc-600">• {s}</li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="flex items-center gap-2 font-semibold text-white">
+              <h3 className="flex items-center gap-2 font-semibold text-zinc-900">
                 <Cpu className="size-5 text-amber-400" />
                 Tools & Stack
               </h3>
               <ul className="mt-4 space-y-2">
                 {tools.map((t) => (
-                  <li key={t} className="text-zinc-400">• {t}</li>
+                  <li key={t} className="text-zinc-600">• {t}</li>
                 ))}
               </ul>
             </div>
@@ -166,7 +173,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-zinc-900 py-24">
+      <section className="border-t border-zinc-200 bg-zinc-50 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Industries"
@@ -177,7 +184,7 @@ export default function AboutPage() {
             {industries.map((ind) => (
               <span
                 key={ind}
-                className="rounded-full border border-white/10 bg-zinc-950/50 px-4 py-2 text-sm text-zinc-300"
+                className="rounded-full border border-zinc-200 bg-zinc-100 px-4 py-2 text-sm text-zinc-700"
               >
                 {ind}
               </span>
@@ -186,14 +193,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-24">
+      <section className="border-t border-zinc-200 bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Mission"
             title="Why I Do This"
             subtitle="Clear value, honest work, real results."
           />
-          <p className="mx-auto mt-8 max-w-2xl text-center text-lg text-zinc-400">
+          <p className="mx-auto mt-8 max-w-2xl text-center text-lg text-zinc-600">
             I believe small businesses and startups deserve the same quality of web and
             marketing work as big brands. My mission is to deliver premium results without
             the agency overhead—direct collaboration, transparent pricing, and a focus on
@@ -208,13 +215,13 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/services"
-              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100" })}
             >
               View Services
             </Link>
             <Link
               href="/portfolio"
-              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100" })}
             >
               View Portfolio
             </Link>

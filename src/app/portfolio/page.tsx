@@ -10,7 +10,7 @@ import { portfolioToServices, serviceNames } from "@/data/internal-links";
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 pt-24">
+    <div className="min-h-screen bg-zinc-50 pt-24">
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Portfolio"
@@ -29,36 +29,36 @@ export default function PortfolioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="scroll-mt-24 rounded-2xl border border-white/10 bg-zinc-900/50 p-8 lg:p-12"
+              className="scroll-mt-24 rounded-2xl border border-zinc-200 bg-white p-8 lg:p-12 shadow-sm"
             >
               <div className="grid gap-12 lg:grid-cols-2">
                 <div>
-                  <span className="text-sm font-medium uppercase tracking-wider text-amber-400">
+                  <span className="text-sm font-medium uppercase tracking-wider text-amber-500">
                     {project.category}
                   </span>
-                  <h2 className="mt-2 text-3xl font-bold text-white">{project.title}</h2>
-                  <p className="mt-2 text-zinc-400">{project.client}</p>
+                  <h2 className="mt-2 text-3xl font-bold text-zinc-900">{project.title}</h2>
+                  <p className="mt-2 text-zinc-600">{project.client}</p>
 
                   <div className="mt-8 space-y-6">
                     <div>
-                      <h3 className="font-semibold text-white">The Challenge</h3>
-                      <p className="mt-1 text-zinc-400">{project.challenge}</p>
+                      <h3 className="font-semibold text-zinc-900">The Challenge</h3>
+                      <p className="mt-1 text-zinc-600">{project.challenge}</p>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white">The Solution</h3>
-                      <p className="mt-1 text-zinc-400">{project.solution}</p>
+                      <h3 className="font-semibold text-zinc-900">The Solution</h3>
+                      <p className="mt-1 text-zinc-600">{project.solution}</p>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <div className="aspect-video rounded-xl bg-zinc-800 flex items-center justify-center">
-                    <span className="text-5xl font-bold text-zinc-600">
+                  <div className="aspect-video rounded-xl bg-zinc-100 flex items-center justify-center">
+                    <span className="text-5xl font-bold text-zinc-400">
                       {project.title.charAt(0)}
                     </span>
                   </div>
                   <div className="mt-8">
-                    <h3 className="font-semibold text-white">Results</h3>
+                    <h3 className="font-semibold text-zinc-900">Results</h3>
                     <ul className="mt-2 space-y-1">
                       {project.results.map((r) => (
                         <li key={r} className="text-amber-400">• {r}</li>
@@ -66,12 +66,12 @@ export default function PortfolioPage() {
                     </ul>
                   </div>
                   <div className="mt-6">
-                    <h3 className="font-semibold text-white">Tech Stack</h3>
+                    <h3 className="font-semibold text-zinc-900">Tech Stack</h3>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-lg border border-white/10 bg-zinc-950/50 px-3 py-1 text-sm text-zinc-400"
+                          className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm text-zinc-700"
                         >
                           {tech}
                         </span>
@@ -79,13 +79,13 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <h3 className="font-semibold text-white">Related Services</h3>
+                    <h3 className="font-semibold text-zinc-900">Related Services</h3>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {(portfolioToServices[project.category] ?? []).map((serviceId) => (
                         <Link
                           key={serviceId}
                           href={`/services#${serviceId}`}
-                          className="rounded-lg border border-white/10 bg-zinc-950/50 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-amber-500/30 hover:text-amber-400"
+                          className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-700 transition-colors hover:border-amber-500/30 hover:text-amber-600"
                         >
                           {serviceNames[serviceId] ?? serviceId}
                         </Link>
@@ -109,10 +109,10 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-zinc-900 py-24">
+      <section className="border-t border-zinc-200 bg-white py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white">Have a Project in Mind?</h2>
-          <p className="mt-4 text-zinc-400">
+          <h2 className="text-3xl font-bold text-zinc-900">Have a Project in Mind?</h2>
+          <p className="mt-4 text-zinc-600">
             Let&apos;s discuss how I can help you achieve similar results—whether you need a
             high-converting website, ongoing marketing, or a mobile app taken all the way to
             Apple App Store submission and approval.
@@ -127,15 +127,15 @@ export default function PortfolioPage() {
             Book a Free Consultation
           </Link>
 
-          <div className="mt-16 grid gap-8 border-t border-white/10 pt-16 sm:grid-cols-2">
+          <div className="mt-16 grid gap-8 border-t border-zinc-200 pt-16 sm:grid-cols-2">
             <Link
               href="/services"
-              className="group rounded-xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30"
+              className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
             >
-              <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+              <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
                 Explore Services
               </h3>
-              <p className="mt-2 text-sm text-zinc-400">
+              <p className="mt-2 text-sm text-zinc-600">
                 Web development, SEO, Google Ads, and more.
               </p>
               <span className="mt-2 inline-flex items-center text-sm text-amber-400">
@@ -144,9 +144,9 @@ export default function PortfolioPage() {
             </Link>
             <Link
               href="/blog"
-              className="group rounded-xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30"
+              className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
             >
-              <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+              <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
                 Read the Blog
               </h3>
               <p className="mt-2 text-sm text-zinc-400">

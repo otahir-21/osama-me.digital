@@ -48,7 +48,7 @@ export function AnimatedStats() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="bg-zinc-950 py-16">
+    <section ref={ref} className="bg-zinc-50 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
@@ -58,10 +58,10 @@ export function AnimatedStats() {
         >
           {siteConfig.stats.map((stat, i) => (
             <div key={stat.label} className="text-center">
-              <p className="text-3xl font-bold text-amber-400 sm:text-4xl">
+              <p className="text-3xl font-bold text-amber-600 sm:text-4xl">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} inView={inView} />
               </p>
-              <p className="mt-1 text-sm text-zinc-400">{stat.label}</p>
+              <p className="mt-1 text-sm text-zinc-600">{stat.label}</p>
             </div>
           ))}
         </motion.div>

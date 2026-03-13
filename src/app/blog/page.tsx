@@ -16,7 +16,7 @@ function formatDate(dateStr: string) {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 pt-24">
+    <div className="min-h-screen bg-zinc-50 pt-24">
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Blog"
@@ -37,10 +37,10 @@ export default function BlogPage() {
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/50 transition-colors hover:border-amber-500/20"
+                className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors hover:border-amber-500/20 shadow-sm"
               >
-                <div className="aspect-video bg-zinc-800 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-zinc-600 group-hover:text-amber-500/50 transition-colors">
+                <div className="aspect-video bg-zinc-100 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-zinc-400 group-hover:text-amber-500/60 transition-colors">
                     {post.title.charAt(0)}
                   </span>
                 </div>
@@ -48,13 +48,13 @@ export default function BlogPage() {
                   <span className="text-xs font-medium uppercase tracking-wider text-amber-400">
                     {post.category}
                   </span>
-                  <h2 className="mt-2 text-xl font-semibold text-white group-hover:text-amber-400 transition-colors">
+                  <h2 className="mt-2 text-xl font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
                     {post.title}
                   </h2>
-                  <p className="mt-2 line-clamp-2 text-sm text-zinc-400">
+                  <p className="mt-2 line-clamp-2 text-sm text-zinc-600">
                     {post.excerpt}
                   </p>
-                  <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
+                <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
                     <span className="flex items-center gap-1">
                       <Calendar size={12} />
                       {formatDate(post.date)}
@@ -70,34 +70,34 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-8 border-t border-white/10 pt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 border-t border-zinc-200 pt-16 sm:grid-cols-2 lg:grid-cols-3">
           <Link
             href="/services"
-            className="group rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/30"
+            className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
           >
-            <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+            <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
               Explore Services
             </h3>
-            <p className="mt-2 text-sm text-zinc-400">
+            <p className="mt-2 text-sm text-zinc-600">
               Web development, SEO, Google Ads, free software consultation.
             </p>
           </Link>
           <Link
             href="/portfolio"
-            className="group rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/30"
+            className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
           >
-            <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+            <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
               View Portfolio
             </h3>
-            <p className="mt-2 text-sm text-zinc-400">
+            <p className="mt-2 text-sm text-zinc-600">
               Case studies with measurable results.
             </p>
           </Link>
           <Link
             href="/contact"
-            className="group rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/30"
+            className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
           >
-            <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors">
+            <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
               Book a Free Call
             </h3>
             <p className="mt-2 text-sm text-zinc-400">

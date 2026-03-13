@@ -15,27 +15,27 @@ const footerServices = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-zinc-950 pb-24 md:pb-0">
+    <footer className="border-t border-zinc-200 bg-zinc-50 pb-24 md:pb-0">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl font-bold text-zinc-900">
               {siteConfig.name}
             </Link>
-            <p className="mt-4 max-w-md text-sm text-zinc-400">
+            <p className="mt-4 max-w-md text-sm text-zinc-600">
               Freelance web developer and digital marketing specialist in Dubai, UAE. Custom
               websites, mobile apps, SEO, and Google Ads for businesses across all Emirates.
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-white">Quick Links</h3>
+            <h3 className="font-semibold text-zinc-900">Quick Links</h3>
             <ul className="mt-4 space-y-2">
               {siteConfig.navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-400 transition-colors hover:text-white"
+                    className="text-sm text-zinc-600 transition-colors hover:text-zinc-900"
                   >
                     {link.label}
                   </Link>
@@ -45,13 +45,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white">Services</h3>
+            <h3 className="font-semibold text-zinc-900">Services</h3>
             <ul className="mt-4 space-y-2">
               {footerServices.map((s) => (
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-sm text-zinc-400 transition-colors hover:text-white"
+                    className="text-sm text-zinc-600 transition-colors hover:text-zinc-900"
                   >
                     {s.label}
                   </Link>
@@ -62,33 +62,33 @@ export function Footer() {
 
           {siteConfig.serviceAreas && (
             <div>
-              <h3 className="font-semibold text-white">UAE Service Areas</h3>
-              <p className="mt-4 text-sm text-zinc-400">
+              <h3 className="font-semibold text-zinc-900">UAE Service Areas</h3>
+              <p className="mt-4 text-sm text-zinc-600">
                 Dubai • Abu Dhabi • Sharjah • Ajman • RAK • Fujairah • UAQ
               </p>
             </div>
           )}
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-zinc-200 pt-12 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+              className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900"
             >
               <Mail size={16} />
               {siteConfig.email}
             </a>
-            <span className="flex items-center gap-2 text-sm text-zinc-400">
+            <span className="flex items-center gap-2 text-sm text-zinc-600">
               <MapPin size={16} />
               {siteConfig.location}
             </span>
           </div>
           <div className="flex gap-6 text-sm text-zinc-500">
-            <Link href="/privacy-policy" className="hover:text-zinc-400">
+            <Link href="/privacy-policy" className="hover:text-zinc-700">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-zinc-400">
+            <Link href="/terms-of-service" className="hover:text-zinc-700">
               Terms of Service
             </Link>
           </div>

@@ -9,7 +9,7 @@ import { testimonialsData } from "@/data/testimonials";
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-zinc-900 py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Testimonials"
@@ -25,7 +25,7 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="rounded-2xl border border-white/10 bg-zinc-950/50 p-6"
+              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
             >
               <Quote className="h-8 w-8 text-amber-500/30" />
               <div className="mt-4 flex gap-1">
@@ -33,9 +33,9 @@ export function TestimonialsSection() {
                   <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="mt-4 text-sm text-zinc-300">&ldquo;{t.quote}&rdquo;</p>
+              <p className="mt-4 text-sm text-zinc-700">&ldquo;{t.quote}&rdquo;</p>
               <div className="mt-4">
-                <p className="font-medium text-white">{t.author}</p>
+                <p className="font-medium text-zinc-900">{t.author}</p>
                 <p className="text-xs text-zinc-500">
                   {t.role}, {t.company}
                 </p>
@@ -52,7 +52,11 @@ export function TestimonialsSection() {
         >
           <Link
             href="/testimonials"
-            className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100",
+            })}
           >
             Read More Testimonials
           </Link>

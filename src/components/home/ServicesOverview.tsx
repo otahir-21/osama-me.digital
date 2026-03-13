@@ -32,7 +32,7 @@ const iconMap = {
 
 export function ServicesOverview() {
   return (
-    <section className="bg-zinc-900 py-24">
+    <section className="bg-zinc-50 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Services"
@@ -51,20 +51,20 @@ export function ServicesOverview() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ y: -4 }}
-                className="group rounded-2xl border border-white/10 bg-zinc-950/50 p-6 transition-colors hover:border-amber-500/30 hover:bg-zinc-900/50"
+                className="group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-colors hover:border-amber-500/30 hover:bg-zinc-50"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 transition-colors group-hover:bg-amber-500/20">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600 transition-colors group-hover:bg-amber-100">
                   <Icon size={24} />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-white">{service.title}</h3>
-                <p className="mt-2 text-sm text-zinc-400">{service.shortDesc}</p>
+                <h3 className="mt-4 text-lg font-semibold text-zinc-900">{service.title}</h3>
+                <p className="mt-2 text-sm text-zinc-600">{service.shortDesc}</p>
                 <Link
                   href={`/services/${service.slug}`}
                   className={buttonVariants({
                     variant: "ghost",
                     size: "sm",
                     className:
-                      "-ml-2 mt-4 flex items-center gap-1 text-amber-400 hover:bg-amber-500/10 hover:text-amber-400",
+                      "-ml-2 mt-4 flex items-center gap-1 text-amber-600 hover:bg-amber-100 hover:text-amber-600",
                   })}
                 >
                   Learn more
@@ -95,7 +95,7 @@ export function ServicesOverview() {
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "border-zinc-600 text-white hover:bg-white/5",
+              className: "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100",
             })}
           >
             See Portfolio

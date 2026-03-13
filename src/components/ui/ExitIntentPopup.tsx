@@ -83,23 +83,23 @@ export function ExitIntentPopup() {
             aria-modal="true"
             aria-labelledby="exit-popup-title"
           >
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 p-6 shadow-2xl sm:p-8">
+            <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl sm:p-8">
               <button
                 onClick={close}
-                className="absolute right-4 top-4 rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="absolute right-4 top-4 rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
                 aria-label="Close"
               >
                 <X size={20} />
               </button>
 
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-500/20">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-500/10">
                 <Calendar className="size-7 text-amber-400" />
               </div>
-              <h2 id="exit-popup-title" className="mt-4 text-2xl font-bold text-white">
+              <h2 id="exit-popup-title" className="mt-4 text-2xl font-bold text-zinc-900">
                 Wait! Before you go...
               </h2>
-              <p className="mt-2 text-zinc-400">
-                Book a <strong className="text-amber-400">free 30-minute consultation</strong> to
+              <p className="mt-2 text-zinc-600">
+                Book a <strong className="text-amber-500">free 30-minute consultation</strong> to
                 discuss your website or digital marketing needs. No obligation—just a clear
                 conversation.
               </p>

@@ -115,7 +115,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               className={buttonVariants({
                 variant: "outline",
                 size: "lg",
-                className: "border-zinc-600 text-white hover:bg-white/5",
+                className: "border-zinc-300 text-zinc-800 hover:bg-zinc-100",
               })}
             >
               WhatsApp Us
@@ -309,7 +309,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               className={buttonVariants({
                 variant: "outline",
                 size: "lg",
-                className: "border-zinc-600 text-white hover:bg-white/5",
+                className: "border-zinc-300 text-zinc-800 hover:bg-zinc-100",
               })}
             >
               View Case Studies

@@ -23,11 +23,11 @@ export function SectionHeading({ eyebrow, title, subtitle, centered = true }: Se
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-zinc-400">{subtitle}</p>
+        <p className="mt-4 text-lg text-zinc-600">{subtitle}</p>
       )}
     </motion.div>
   );

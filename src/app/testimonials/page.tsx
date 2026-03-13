@@ -9,7 +9,7 @@ import { testimonialsData } from "@/data/testimonials";
 
 export default function TestimonialsPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 pt-24">
+    <div className="min-h-screen bg-zinc-50 pt-24">
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Testimonials"
@@ -27,7 +27,7 @@ export default function TestimonialsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="rounded-2xl border border-white/10 bg-zinc-900/50 p-8"
+              className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm"
             >
               <Quote className="h-10 w-10 text-amber-500/30" />
               <div className="mt-4 flex gap-1">
@@ -35,11 +35,11 @@ export default function TestimonialsPage() {
                   <Star key={j} className="h-5 w-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <blockquote className="mt-4 text-lg text-zinc-300">
+              <blockquote className="mt-4 text-lg text-zinc-700">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <div className="mt-6">
-                <p className="font-semibold text-white">{t.author}</p>
+                <p className="font-semibold text-zinc-900">{t.author}</p>
                 <p className="text-sm text-zinc-500">
                   {t.role}, {t.company}
                 </p>
@@ -48,18 +48,18 @@ export default function TestimonialsPage() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl border border-dashed border-white/20 bg-zinc-900/30 p-12 text-center">
-          <h3 className="text-xl font-semibold text-white">Video Testimonials</h3>
-          <p className="mt-2 text-zinc-400">
+        <div className="mt-16 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-12 text-center">
+          <h3 className="text-xl font-semibold text-zinc-900">Video Testimonials</h3>
+          <p className="mt-2 text-zinc-600">
             Video testimonials coming soon. Contact me if you&apos;d like to share your experience.
           </p>
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-zinc-900 py-24">
+      <section className="border-t border-zinc-200 bg-white py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white">Ready to Be Next?</h2>
-          <p className="mt-4 text-zinc-400">
+          <h2 className="text-3xl font-bold text-zinc-900">Ready to Be Next?</h2>
+          <p className="mt-4 text-zinc-600">
             Join the list of satisfied clients. Let&apos;s discuss your project.
           </p>
           <Link

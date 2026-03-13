@@ -11,7 +11,7 @@ const featured = portfolioData.filter((p) => p.featured);
 
 export function FeaturedPortfolio() {
   return (
-    <section className="bg-zinc-900 py-24">
+    <section className="bg-zinc-50 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Portfolio"
@@ -28,21 +28,21 @@ export function FeaturedPortfolio() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/50 transition-colors hover:border-amber-500/20"
+              className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors hover:border-amber-500/20 shadow-sm"
             >
-              <div className="relative aspect-video bg-zinc-800">
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
-                  <span className="text-4xl font-bold text-zinc-600/50">
+              <div className="relative aspect-video bg-zinc-100">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200">
+                  <span className="text-4xl font-bold text-zinc-400/70">
                     {project.title.charAt(0)}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <span className="text-xs font-medium uppercase tracking-wider text-amber-400">
+                <span className="text-xs font-medium uppercase tracking-wider text-amber-500">
                   {project.category}
                 </span>
-                <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
-                <p className="mt-2 line-clamp-2 text-sm text-zinc-400">{project.challenge}</p>
+                <h3 className="mt-2 text-lg font-semibold text-zinc-900">{project.title}</h3>
+                <p className="mt-2 line-clamp-2 text-sm text-zinc-600">{project.challenge}</p>
                 <ul className="mt-4 space-y-1">
                   {project.results.slice(0, 2).map((r) => (
                     <li key={r} className="text-sm text-amber-400/90">
@@ -70,7 +70,11 @@ export function FeaturedPortfolio() {
         >
           <Link
             href="/portfolio"
-            className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100",
+            })}
           >
             View Full Portfolio
           </Link>

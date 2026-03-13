@@ -11,7 +11,7 @@ export function BlogTeaser() {
   const featured = blogPosts.slice(0, 3);
 
   return (
-    <section className="bg-zinc-950 py-24">
+    <section className="bg-zinc-50 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Blog"
@@ -30,15 +30,15 @@ export function BlogTeaser() {
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-colors hover:border-amber-500/20"
+                className="group block rounded-xl border border-zinc-200 bg-white p-6 transition-colors hover:border-amber-500/20 shadow-sm"
               >
-                <span className="text-xs font-medium uppercase tracking-wider text-amber-400">
+                <span className="text-xs font-medium uppercase tracking-wider text-amber-500">
                   {post.category}
                 </span>
-                <h3 className="mt-2 font-semibold text-white group-hover:text-amber-400 transition-colors">
+                <h3 className="mt-2 font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
                   {post.title}
                 </h3>
-                <p className="mt-2 line-clamp-2 text-sm text-zinc-400">{post.excerpt}</p>
+                <p className="mt-2 line-clamp-2 text-sm text-zinc-600">{post.excerpt}</p>
                 <span className="mt-3 inline-flex items-center text-sm text-amber-400">
                   Read more <ArrowRight className="ml-1 size-4" />
                 </span>
@@ -55,7 +55,11 @@ export function BlogTeaser() {
         >
           <Link
             href="/blog"
-            className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-600 text-white hover:bg-white/5" })}
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100",
+            })}
           >
             View All Articles
           </Link>
