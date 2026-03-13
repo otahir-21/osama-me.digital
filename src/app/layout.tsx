@@ -8,11 +8,6 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
 import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
 import { siteConfig } from "@/data/site-config";
-import {
-  getPersonSchema,
-  getProfessionalServiceSchema,
-  getLocalBusinessSchema,
-} from "@/lib/schema";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -104,12 +99,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const schemaScripts = [
-    getPersonSchema(),
-    getProfessionalServiceSchema(),
-    getLocalBusinessSchema(),
-  ];
-
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-white font-sans text-zinc-900 antialiased`}>
@@ -125,13 +114,6 @@ export default function RootLayout({
             gtag('config', 'G-N9M49GTXJW');
           `}
         </Script>
-        {schemaScripts.map((schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
-        ))}
         <Navbar />
         <main className="pb-20 md:pb-0">{children}</main>
         <Footer />

@@ -16,6 +16,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site-config";
+import { getPersonSchema, getLocalBusinessSchema } from "@/lib/schema";
 
 const skills = [
   "Web Development (Next.js, React, WordPress, Shopify)",
@@ -71,8 +72,18 @@ const timeline = [
 ];
 
 export default function AboutPage() {
+  const personSchema = getPersonSchema();
+  const localBusinessSchema = getLocalBusinessSchema();
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

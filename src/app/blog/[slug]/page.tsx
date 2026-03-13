@@ -36,6 +36,9 @@ export default async function BlogPostPage({ params }: Props) {
 
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
+  const wordCount = post.content ? post.content.split(/\s+/).length : 0;
+  const readMins = Math.ceil(wordCount / 200);
+
   const postUrl = `https://osama-me.digital/blog/${post.slug}`;
   const author = {
     "@type": "Person",
@@ -77,6 +80,13 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
             {post.title}
           </h1>
+          <p className="mt-3 text-sm text-zinc-500">
+            By{" "}
+            <Link href="/about" className="hover:text-zinc-900 transition-colors">
+              Osama Tahir
+            </Link>
+            {" · "}{formatDate(post.date)}{" · "}{readMins} min read
+          </p>
           <div className="mt-4 flex items-center gap-6 text-sm text-zinc-500">
             <span className="flex items-center gap-1">
               <Calendar size={16} />

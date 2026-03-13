@@ -9,9 +9,16 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { BlogTeaser } from "@/components/home/BlogTeaser";
 import { FAQSection } from "@/components/home/FAQSection";
 import { FinalCTA } from "@/components/home/FinalCTA";
-import { getFAQSchema } from "@/lib/schema";
+import {
+  getFAQSchema,
+  getPersonSchema,
+  getProfessionalServiceSchema,
+  getLocalBusinessSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
+  description:
+    "Freelance web developer and digital marketing specialist in Dubai. I build fast, SEO-ready websites and grow them with SEO and Google Ads — one person, full accountability. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
   alternates: {
     canonical: "https://osama-me.digital",
   },
@@ -19,11 +26,26 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const faqSchema = getFAQSchema();
+  const personSchema = getPersonSchema();
+  const professionalServiceSchema = getProfessionalServiceSchema();
+  const localBusinessSchema = getLocalBusinessSchema();
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Hero />
       <AnimatedStats />
