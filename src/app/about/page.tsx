@@ -18,6 +18,7 @@ import { siteConfig } from "@/data/site-config";
 
 const skills = [
   "Web Development (Next.js, React, WordPress, Shopify)",
+  "Mobile App Development (React Native)",
   "SEO & Content Strategy",
   "Google Ads & PPC",
   "Social Media Marketing",
@@ -27,6 +28,7 @@ const skills = [
 
 const tools = [
   "Next.js, React, TypeScript",
+  "React Native (iOS & Android)",
   "WordPress, Shopify",
   "Google Ads, Meta Ads",
   "Google Analytics, Search Console",
@@ -67,10 +69,10 @@ export default function AboutPage() {
             </h1>
             <p className="mt-4 text-xl text-amber-400">{siteConfig.role}</p>
             <p className="mt-6 text-lg text-zinc-400">
-              I&apos;m a freelance web developer and digital marketing specialist based in Dubai.
-              With over 3 years of agency experience, I&apos;ve worked with small businesses,
-              startups, and e-commerce brands to build websites and run campaigns that drive
-              real results.
+              I&apos;m a freelance web developer, mobile app developer, and digital marketing
+              specialist based in Dubai. With over 3 years of agency experience, I&apos;ve worked
+              with small businesses, startups, and e-commerce brands to build websites, apps,
+              and campaigns that drive real results.
             </p>
             <p className="mt-4 text-zinc-400">
               What sets me apart is the combination of development and marketing. I don&apos;t

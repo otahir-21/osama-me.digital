@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site-config";
 const trustItems = [
   "3+ Years Agency Experience",
   "Dubai, Abu Dhabi & UAE",
-  "Free Consultation",
+  "Web, Mobile & Marketing",
 ];
 
 export function Hero() {
@@ -48,9 +48,8 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 max-w-xl text-lg text-zinc-400"
             >
-              Digital marketing specialist serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.
-              Free software consultation, web development, SEO & Google Ads. 3+ years agency
-              experience. Book a free call.
+              Web development, mobile apps, SEO & Google Ads for businesses in Dubai, Abu Dhabi,
+              Sharjah & all UAE Emirates. 3+ years agency experience. Book a free consultation.
             </motion.p>
 
             <motion.div

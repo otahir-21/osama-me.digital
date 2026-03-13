@@ -70,18 +70,15 @@ export default async function BlogPostPage({ params }: Props) {
           <span className="text-6xl font-bold text-zinc-600">{post.title.charAt(0)}</span>
         </div>
 
-        <div className="prose prose-invert mt-12 max-w-none">
-          <p className="text-lg text-zinc-400">{post.excerpt}</p>
-          <p className="mt-4 text-zinc-400">
-            This is a placeholder for the full article content. In production, you would
-            use a CMS like Sanity, Contentful, or Markdown files to store and render the
-            full blog post content.
-          </p>
-          <p className="mt-4 text-zinc-400">
-            The blog template includes: semantic article structure, table of contents
-            placeholder, author block, related posts, FAQ schema section, and CTA block.
-            All optimized for SEO.
-          </p>
+        <div className="prose prose-invert mt-12 max-w-none prose-headings:text-white prose-p:text-zinc-400 prose-li:text-zinc-400 prose-strong:text-white prose-a:text-amber-400 prose-a:no-underline hover:prose-a:underline prose-h2:text-2xl prose-h3:text-xl prose-h2:mt-10 prose-h3:mt-8">
+          {post.content ? (
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          ) : (
+            <>
+              <p className="text-lg text-zinc-400">{post.excerpt}</p>
+              <p className="mt-4 text-zinc-400">Full article coming soon.</p>
+            </>
+          )}
         </div>
 
         <div className="mt-16 rounded-xl border border-white/10 bg-zinc-900/50 p-6">
@@ -112,7 +109,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {(blogToServices[post.slug] ?? []).map((serviceId) => (
                   <Link
                     key={serviceId}
-                    href={`/services#${serviceId}`}
+                    href={`/services/${serviceId}`}
                     className="text-sm text-amber-400 hover:underline"
                   >
                     {serviceNames[serviceId] ?? serviceId}

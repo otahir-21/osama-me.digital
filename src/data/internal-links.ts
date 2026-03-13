@@ -11,6 +11,10 @@ export const portfolioToServices: Record<string, string[]> = {
 };
 
 export const blogToServices: Record<string, string[]> = {
+  "website-cost-dubai-2026": ["web-development-dubai", "website-maintenance-uae"],
+  "seo-pricing-dubai": ["seo-services-dubai"],
+  "google-ads-cost-dubai": ["google-ads-management-dubai", "landing-page-design-uae"],
+  "wordpress-vs-shopify-uae": ["wordpress-development-dubai", "shopify-development-dubai", "web-development-dubai"],
   "digital-marketing-specialist-uae": [
     "seo-services-dubai",
     "google-ads-management-dubai",
