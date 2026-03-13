@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "Osama Tahir",
-  role: "Freelance Web Developer + Digital Marketing Specialist",
+  role: "Senior Full-Stack & Mobile Developer + Digital Marketing Specialist",
   location: "Dubai, UAE",
-  tagline: "Results-Driven Web Development & Digital Marketing for Growing Businesses",
+  tagline: "Flutter, React Native & Next.js Development + Digital Marketing for UAE Businesses",
   description:
-    "Freelance web developer and digital marketing specialist in Dubai, UAE. Custom websites, mobile apps, SEO, Google Ads, and social media marketing for businesses across Dubai, Abu Dhabi, Sharjah & all Emirates.",
+    "Senior full-stack and mobile developer in Dubai, UAE. Flutter & React Native apps, custom Next.js websites, SEO, Google Ads, and social media marketing for businesses across Dubai, Abu Dhabi, Sharjah & all Emirates.",
   serviceAreas: [
     "Dubai",
     "Abu Dhabi",
@@ -97,10 +97,10 @@ export const siteConfig = {
     },
   ],
   stats: [
-    { value: 3, suffix: "+", label: "Years Experience" },
-    { value: 50, suffix: "+", label: "Projects Delivered" },
-    { value: 100, suffix: "%", label: "Client Satisfaction" },
-    { value: 24, suffix: "h", label: "Avg. Response Time" },
+    { value: 5, suffix: "+", label: "Years Experience" },
+    { value: 20, suffix: "+", label: "Apps Delivered" },
+    { value: 500, suffix: "K+", label: "App Downloads" },
+    { value: 1.2, suffix: "M+", label: "USD Payments Processed" },
   ],
   processSteps: [
     { step: 1, title: "Discovery", desc: "Understand your goals, audience, and competition." },

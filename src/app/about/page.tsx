@@ -19,8 +19,8 @@ import { siteConfig } from "@/data/site-config";
 
 const skills = [
   "Web Development (Next.js, React, WordPress, Shopify)",
-  "Mobile App Development (React Native)",
-  "iOS & Android App Store Submission",
+  "Mobile App Development (Flutter & React Native)",
+  "iOS & Android App Store / Play Store Submission",
   "SEO & Content Strategy",
   "Google Ads & PPC",
   "Social Media Marketing",
@@ -30,11 +30,12 @@ const skills = [
 
 const tools = [
   "Next.js, React, TypeScript",
+  "Flutter (iOS & Android)",
   "React Native (iOS & Android)",
   "WordPress, Shopify",
   "Google Ads, Meta Ads",
   "Google Analytics, Search Console",
-  "App Store Connect, TestFlight",
+  "App Store Connect, TestFlight, Firebase",
   "Figma, VS Code",
 ];
 
@@ -48,24 +49,24 @@ const industries = [
 
 const timeline = [
   {
-    year: "2024+",
-    title: "Freelance Web, Mobile & Marketing Specialist",
-    desc: "Working directly with clients across the UAE and GCC—building conversion-focused websites, React Native apps, and full digital marketing funnels (SEO, Google Ads, tracking, and reporting).",
+    year: "2025–Present",
+    title: "Senior Full-Stack Developer · Metatech, Dubai",
+    desc: "Leading Flutter and React Native mobile development at a Dubai-based tech agency. Delivered 20+ production apps with 500K+ total downloads across iOS & Android, and integrated $1.2M+ in payment processing through Stripe and in-app purchases.",
   },
   {
-    year: "2023",
-    title: "Full-Stack & Performance",
-    desc: "Shifted from just WordPress to modern stacks like React and Next.js, focusing on performance, Core Web Vitals, and analytics-driven optimization.",
+    year: "2023–2025",
+    title: "Freelance Developer & Digital Marketing Specialist",
+    desc: "Worked directly with clients across the UAE and GCC—building conversion-focused websites with Next.js, Flutter & React Native mobile apps, and full digital marketing funnels including SEO, Google Ads, and analytics.",
   },
   {
     year: "2022",
-    title: "Web & App Development",
-    desc: "Expanded beyond marketing into custom development—WordPress, Shopify, and React Native mobile apps for startups and service businesses.",
+    title: "Web Development & E-commerce",
+    desc: "Expanded into custom development—WordPress, Shopify, and WooCommerce stores for UAE businesses. Integrated UAE payment gateways and built product filtering, inventory management, and checkout flows.",
   },
   {
-    year: "2021",
+    year: "2020",
     title: "Started in Digital Marketing",
-    desc: "Joined a Dubai-based agency and learned the fundamentals of SEO, Google Ads, content strategy, and reporting for local businesses.",
+    desc: "Began with SEO, Google Ads, and social media marketing at a Dubai-based agency. Managed campaigns across multiple industries and built the foundation in analytics, reporting, and conversion tracking.",
   },
 ];
 
@@ -88,10 +89,11 @@ export default function AboutPage() {
             </h1>
             <p className="mt-4 text-xl text-amber-400">{siteConfig.role}</p>
             <p className="mt-6 text-lg text-zinc-600">
-              I&apos;m a freelance web developer, mobile app developer, and digital marketing
-              specialist based in Dubai. With over 3 years of agency experience, I&apos;ve worked
-              with small businesses, startups, and e-commerce brands to build websites, mobile apps,
-              and campaigns that drive real results—from the first brief to App Store submission.
+              I&apos;m a Senior Full-Stack &amp; Mobile Developer and digital marketing specialist
+              based in Dubai, with 5+ years of agency and freelance experience. I&apos;ve shipped
+              20+ production mobile apps in Flutter and React Native with 500K+ combined downloads,
+              built custom web platforms in Next.js, and run performance marketing campaigns for
+              businesses across the UAE and GCC.
             </p>
             <p className="mt-4 text-zinc-600">
               What sets me apart is the combination of development and marketing. I don&apos;t

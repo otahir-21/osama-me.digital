@@ -28,7 +28,8 @@ function AnimatedCounter({
       const elapsed = (now - startTime) / 1000;
       const progress = Math.min(elapsed / duration, 1);
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(easeOut * end));
+      const raw = easeOut * end;
+      setCount(Number.isInteger(end) ? Math.floor(raw) : Math.round(raw * 10) / 10);
       if (progress < 1) requestAnimationFrame(update);
     };
 

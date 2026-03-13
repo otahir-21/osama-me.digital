@@ -128,8 +128,8 @@ export default async function BlogPostPage({ params }: Props) {
             </Link>
           </div>
           {(blogToServices[post.slug] ?? []).length > 0 && (
-            <div className="mt-6 border-t border-white/10 pt-4">
-              <h4 className="text-sm font-medium text-white">Related Services</h4>
+            <div className="mt-6 border-t border-zinc-200 pt-4">
+              <h4 className="text-sm font-medium text-zinc-900">Related Services</h4>
               <div className="mt-2 flex flex-wrap gap-2">
                 {(blogToServices[post.slug] ?? []).map((serviceId) => (
                   <Link
