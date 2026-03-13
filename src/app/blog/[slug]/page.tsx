@@ -81,6 +81,31 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </div>
 
+        {"faqs" in post && Array.isArray((post as any).faqs) && (post as any).faqs.length > 0 && (
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-white">Frequently Asked Questions</h2>
+            <div className="mt-6 space-y-3">
+              {((post as any).faqs as { question: string; answer: string }[]).map((faq, i) => (
+                <details
+                  key={i}
+                  className="group rounded-xl border border-white/10 bg-zinc-900/50 px-5"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-5 text-sm font-medium text-white [&::-webkit-details-marker]:hidden">
+                    {faq.question}
+                    <svg
+                      className="ml-4 size-4 shrink-0 text-zinc-400 transition-transform group-open:rotate-180"
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m6 9 6 6 6-6" />
+                    </svg>
+                  </summary>
+                  <p className="pb-5 text-sm text-zinc-400">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="mt-16 rounded-xl border border-white/10 bg-zinc-900/50 p-6">
           <h3 className="font-semibold text-white">About the Author</h3>
           <p className="mt-2 text-zinc-400">
