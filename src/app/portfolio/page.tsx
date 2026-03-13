@@ -15,7 +15,7 @@ export default function PortfolioPage() {
         <SectionHeading
           eyebrow="Portfolio"
           title="Case Studies"
-          subtitle="Selected projects with measurable results—conversion lifts, traffic growth, and technical excellence."
+          subtitle="Selected web, mobile, and marketing projects with measurable results—from conversion lifts and traffic growth to smooth app launch and submission."
         />
       </section>
 
@@ -113,7 +113,9 @@ export default function PortfolioPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white">Have a Project in Mind?</h2>
           <p className="mt-4 text-zinc-400">
-            Let&apos;s discuss how I can help you achieve similar results.
+            Let&apos;s discuss how I can help you achieve similar results—whether you need a
+            high-converting website, ongoing marketing, or a mobile app taken all the way to
+            Apple App Store submission and approval.
           </p>
           <Link
             href="/contact"

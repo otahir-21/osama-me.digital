@@ -19,6 +19,7 @@ import { siteConfig } from "@/data/site-config";
 const skills = [
   "Web Development (Next.js, React, WordPress, Shopify)",
   "Mobile App Development (React Native)",
+  "iOS & Android App Store Submission",
   "SEO & Content Strategy",
   "Google Ads & PPC",
   "Social Media Marketing",
@@ -32,6 +33,7 @@ const tools = [
   "WordPress, Shopify",
   "Google Ads, Meta Ads",
   "Google Analytics, Search Console",
+  "App Store Connect, TestFlight",
   "Figma, VS Code",
 ];
 
@@ -71,14 +73,20 @@ export default function AboutPage() {
             <p className="mt-6 text-lg text-zinc-400">
               I&apos;m a freelance web developer, mobile app developer, and digital marketing
               specialist based in Dubai. With over 3 years of agency experience, I&apos;ve worked
-              with small businesses, startups, and e-commerce brands to build websites, apps,
-              and campaigns that drive real results.
+              with small businesses, startups, and e-commerce brands to build websites, mobile apps,
+              and campaigns that drive real results—from the first brief to App Store submission.
             </p>
             <p className="mt-4 text-zinc-400">
               What sets me apart is the combination of development and marketing. I don&apos;t
               just build websites—I build them with SEO, conversion, and performance in mind.
               And when I run ads or SEO, I understand the technical side. No handoffs, no
               miscommunication.
+            </p>
+            <p className="mt-4 text-zinc-400">
+              For mobile apps, I also guide clients through Apple App Store requirements end to end:
+              metadata, screenshots, privacy policy, review test accounts, age ratings, pricing,
+              country availability, and release strategy—so your app is not only built well, but
+              approved and ready to launch.
             </p>
             <Link
               href="/contact"
