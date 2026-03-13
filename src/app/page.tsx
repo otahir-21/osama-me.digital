@@ -33,6 +33,7 @@ export default function HomePage() {
   const localBusinessSchema = getLocalBusinessSchema();
   return (
     <>
+      <link rel="canonical" href="https://osama-me.digital" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
