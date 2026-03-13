@@ -12,7 +12,6 @@ import {
   getPersonSchema,
   getProfessionalServiceSchema,
   getLocalBusinessSchema,
-  getFAQSchema,
 } from "@/lib/schema";
 
 const dmSans = DM_Sans({
@@ -109,7 +108,6 @@ export default function RootLayout({
     getPersonSchema(),
     getProfessionalServiceSchema(),
     getLocalBusinessSchema(),
-    getFAQSchema(),
   ];
 
   return (

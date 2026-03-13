@@ -8,10 +8,16 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { BlogTeaser } from "@/components/home/BlogTeaser";
 import { FAQSection } from "@/components/home/FAQSection";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { getFAQSchema } from "@/lib/schema";
 
 export default function HomePage() {
+  const faqSchema = getFAQSchema();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Hero />
       <AnimatedStats />
       <ServicesOverview />
