@@ -36,8 +36,31 @@ export default async function BlogPostPage({ params }: Props) {
 
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
+  const postUrl = `https://osama-me.digital/blog/${post.slug}`;
+  const author = {
+    "@type": "Person",
+    name: "Osama Tahir",
+    url: "https://osama-me.digital/about",
+  };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    url: postUrl,
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    author,
+    publisher: author,
+  };
+
   return (
     <article className="min-h-screen bg-zinc-50 pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
         <Link
           href="/blog"

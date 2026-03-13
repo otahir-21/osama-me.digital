@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { AnimatedStats } from "@/components/home/AnimatedStats";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
@@ -9,6 +10,12 @@ import { BlogTeaser } from "@/components/home/BlogTeaser";
 import { FAQSection } from "@/components/home/FAQSection";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { getFAQSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://osama-me.digital",
+  },
+};
 
 export default function HomePage() {
   const faqSchema = getFAQSchema();
