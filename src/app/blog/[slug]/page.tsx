@@ -83,23 +83,16 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
             {post.title}
           </h1>
-          <p className="mt-3 text-sm text-zinc-500">
+          <p className="mt-3 flex items-center gap-2 text-sm text-zinc-500">
             By{" "}
             <Link href="/about" className="hover:text-zinc-900 transition-colors">
               Osama Tahir
             </Link>
-            {" · "}{formatDate(post.date)}{" · "}{readMins} min read
+            {" · "}
+            <span className="flex items-center gap-1"><Calendar size={14} />{formatDate(post.date)}</span>
+            {" · "}
+            <span className="flex items-center gap-1"><Clock size={14} />{readMins} min read</span>
           </p>
-          <div className="mt-4 flex items-center gap-6 text-sm text-zinc-500">
-            <span className="flex items-center gap-1">
-              <Calendar size={16} />
-              {formatDate(post.date)}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock size={16} />
-              {post.readTime} read
-            </span>
-          </div>
         </header>
 
         <div className="mt-12 aspect-video rounded-xl bg-zinc-100 flex items-center justify-center">

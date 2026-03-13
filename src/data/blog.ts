@@ -14,32 +14,32 @@ export const blogPosts = [
 <h2>Website Pricing in Dubai: At a Glance</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Website Type</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Freelancer (AED)</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Agency (AED)</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Simple landing page</td>
-      <td style="padding:0.75rem;color:#a1a1aa">2,500 – 4,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">5,000 – 10,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Simple landing page</td>
+      <td style="padding:0.75rem;color:#3f3f46">2,500 – 4,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">5,000 – 10,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Business website (5–10 pages)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">5,000 – 10,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">12,000 – 25,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Business website (5–10 pages)</td>
+      <td style="padding:0.75rem;color:#3f3f46">5,000 – 10,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">12,000 – 25,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">E-commerce (Shopify / WooCommerce)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">8,000 – 18,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">20,000 – 50,000+</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">E-commerce (Shopify / WooCommerce)</td>
+      <td style="padding:0.75rem;color:#3f3f46">8,000 – 18,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">20,000 – 50,000+</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Custom web application</td>
-      <td style="padding:0.75rem;color:#a1a1aa">15,000 – 40,000+</td>
-      <td style="padding:0.75rem;color:#a1a1aa">50,000+</td>
+      <td style="padding:0.75rem;color:#3f3f46">Custom web application</td>
+      <td style="padding:0.75rem;color:#3f3f46">15,000 – 40,000+</td>
+      <td style="padding:0.75rem;color:#3f3f46">50,000+</td>
     </tr>
   </tbody>
 </table>
@@ -134,32 +134,32 @@ export const blogPosts = [
 <h2>SEO Pricing Tiers in Dubai (2026)</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Tier</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Monthly Cost (AED)</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">What You Get</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+    <tr style="border-bottom:1px solid #e4e4e7">
       <td style="padding:0.75rem;color:#ef4444">Cheap / Red-flag</td>
-      <td style="padding:0.75rem;color:#a1a1aa">500 – 1,500</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Automated reports, low-quality backlinks, keyword stuffing</td>
+      <td style="padding:0.75rem;color:#3f3f46">500 – 1,500</td>
+      <td style="padding:0.75rem;color:#3f3f46">Automated reports, low-quality backlinks, keyword stuffing</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+    <tr style="border-bottom:1px solid #e4e4e7">
       <td style="padding:0.75rem;color:#f59e0b">Entry-level</td>
-      <td style="padding:0.75rem;color:#a1a1aa">2,000 – 3,500</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Basic on-page SEO, keyword tracking, monthly report</td>
+      <td style="padding:0.75rem;color:#3f3f46">2,000 – 3,500</td>
+      <td style="padding:0.75rem;color:#3f3f46">Basic on-page SEO, keyword tracking, monthly report</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+    <tr style="border-bottom:1px solid #e4e4e7">
       <td style="padding:0.75rem;color:#22c55e">Mid-range (recommended)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">3,000 – 6,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Full technical SEO, local SEO, content strategy, link building</td>
+      <td style="padding:0.75rem;color:#3f3f46">3,000 – 6,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">Full technical SEO, local SEO, content strategy, link building</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Enterprise / Competitive</td>
-      <td style="padding:0.75rem;color:#a1a1aa">6,000 – 15,000+</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Multi-location, e-commerce SEO, large content programmes</td>
+      <td style="padding:0.75rem;color:#3f3f46">Enterprise / Competitive</td>
+      <td style="padding:0.75rem;color:#3f3f46">6,000 – 15,000+</td>
+      <td style="padding:0.75rem;color:#3f3f46">Multi-location, e-commerce SEO, large content programmes</td>
     </tr>
   </tbody>
 </table>
@@ -261,47 +261,47 @@ export const blogPosts = [
 <h2>Average Google Ads CPC by Industry in Dubai (2026)</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Industry</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Avg. CPC (AED)</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Recommended Monthly Budget</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Real Estate</td>
-      <td style="padding:0.75rem;color:#a1a1aa">15 – 40</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 8,000 – 20,000+</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Real Estate</td>
+      <td style="padding:0.75rem;color:#3f3f46">15 – 40</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 8,000 – 20,000+</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Legal &amp; Finance</td>
-      <td style="padding:0.75rem;color:#a1a1aa">20 – 60</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 10,000 – 25,000+</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Legal &amp; Finance</td>
+      <td style="padding:0.75rem;color:#3f3f46">20 – 60</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 10,000 – 25,000+</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Healthcare &amp; Clinics</td>
-      <td style="padding:0.75rem;color:#a1a1aa">8 – 20</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 5,000 – 12,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Healthcare &amp; Clinics</td>
+      <td style="padding:0.75rem;color:#3f3f46">8 – 20</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 5,000 – 12,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Restaurants &amp; F&amp;B</td>
-      <td style="padding:0.75rem;color:#a1a1aa">2 – 6</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 2,000 – 5,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Restaurants &amp; F&amp;B</td>
+      <td style="padding:0.75rem;color:#3f3f46">2 – 6</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 2,000 – 5,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">E-commerce / Retail</td>
-      <td style="padding:0.75rem;color:#a1a1aa">3 – 10</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 3,000 – 10,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">E-commerce / Retail</td>
+      <td style="padding:0.75rem;color:#3f3f46">3 – 10</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 3,000 – 10,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Home Services</td>
-      <td style="padding:0.75rem;color:#a1a1aa">4 – 12</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 3,000 – 8,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Home Services</td>
+      <td style="padding:0.75rem;color:#3f3f46">4 – 12</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 3,000 – 8,000</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Digital Services / B2B</td>
-      <td style="padding:0.75rem;color:#a1a1aa">6 – 18</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 4,000 – 10,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">Digital Services / B2B</td>
+      <td style="padding:0.75rem;color:#3f3f46">6 – 18</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 4,000 – 10,000</td>
     </tr>
   </tbody>
 </table>
@@ -383,47 +383,47 @@ export const blogPosts = [
 <h2>Quick Comparison</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Factor</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">WordPress</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Shopify</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Best for</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Service sites, blogs, content-heavy</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Online stores, product catalogues</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Best for</td>
+      <td style="padding:0.75rem;color:#3f3f46">Service sites, blogs, content-heavy</td>
+      <td style="padding:0.75rem;color:#3f3f46">Online stores, product catalogues</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Monthly platform cost</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 30–100 (hosting only)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">AED 110–450 (plan fees)</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Monthly platform cost</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 30–100 (hosting only)</td>
+      <td style="padding:0.75rem;color:#3f3f46">AED 110–450 (plan fees)</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Transaction fees</td>
-      <td style="padding:0.75rem;color:#a1a1aa">None (except payment gateway)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">0.5–2% extra (Shopify Payments not in UAE)</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Transaction fees</td>
+      <td style="padding:0.75rem;color:#3f3f46">None (except payment gateway)</td>
+      <td style="padding:0.75rem;color:#3f3f46">0.5–2% extra (Shopify Payments not in UAE)</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">UAE payment gateways</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Telr, PayTabs, PayFort, Stripe</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Telr, PayTabs (via third-party apps)</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">UAE payment gateways</td>
+      <td style="padding:0.75rem;color:#3f3f46">Telr, PayTabs, PayFort, Stripe</td>
+      <td style="padding:0.75rem;color:#3f3f46">Telr, PayTabs (via third-party apps)</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Arabic / RTL support</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Excellent (many native Arabic themes)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Limited (requires custom development)</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Arabic / RTL support</td>
+      <td style="padding:0.75rem;color:#3f3f46">Excellent (many native Arabic themes)</td>
+      <td style="padding:0.75rem;color:#3f3f46">Limited (requires custom development)</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">SEO control</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Full control</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Good but limited URL structure</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">SEO control</td>
+      <td style="padding:0.75rem;color:#3f3f46">Full control</td>
+      <td style="padding:0.75rem;color:#3f3f46">Good but limited URL structure</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Ease of use</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Moderate learning curve</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Very easy</td>
+      <td style="padding:0.75rem;color:#3f3f46">Ease of use</td>
+      <td style="padding:0.75rem;color:#3f3f46">Moderate learning curve</td>
+      <td style="padding:0.75rem;color:#3f3f46">Very easy</td>
     </tr>
   </tbody>
 </table>
@@ -466,32 +466,32 @@ export const blogPosts = [
 <h2>Total Cost of Ownership: Year One</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Cost Item</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">WordPress (AED/yr)</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Shopify Basic (AED/yr)</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Platform / Hosting</td>
-      <td style="padding:0.75rem;color:#a1a1aa">400 – 1,200</td>
-      <td style="padding:0.75rem;color:#a1a1aa">1,300 – 1,600</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Platform / Hosting</td>
+      <td style="padding:0.75rem;color:#3f3f46">400 – 1,200</td>
+      <td style="padding:0.75rem;color:#3f3f46">1,300 – 1,600</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Plugins / Apps</td>
-      <td style="padding:0.75rem;color:#a1a1aa">0 – 1,500</td>
-      <td style="padding:0.75rem;color:#a1a1aa">1,200 – 4,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Plugins / Apps</td>
+      <td style="padding:0.75rem;color:#3f3f46">0 – 1,500</td>
+      <td style="padding:0.75rem;color:#3f3f46">1,200 – 4,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Transaction fees</td>
-      <td style="padding:0.75rem;color:#a1a1aa">0</td>
-      <td style="padding:0.75rem;color:#a1a1aa">1% of GMV</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Transaction fees</td>
+      <td style="padding:0.75rem;color:#3f3f46">0</td>
+      <td style="padding:0.75rem;color:#3f3f46">1% of GMV</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Maintenance</td>
-      <td style="padding:0.75rem;color:#a1a1aa">6,000 – 18,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Included (platform managed)</td>
+      <td style="padding:0.75rem;color:#3f3f46">Maintenance</td>
+      <td style="padding:0.75rem;color:#3f3f46">6,000 – 18,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">Included (platform managed)</td>
     </tr>
   </tbody>
 </table>
@@ -571,7 +571,7 @@ export const blogPosts = [
 <p>Cost isn't the only factor, but it's a significant one. Here's what the same scope of work typically costs across different provider types in the UAE:</p>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Service</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Freelancer (AED/mo)</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Small Agency (AED/mo)</th>
@@ -579,29 +579,29 @@ export const blogPosts = [
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">SEO (local, single location)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">3,000 – 5,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">5,000 – 8,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">8,000 – 15,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">SEO (local, single location)</td>
+      <td style="padding:0.75rem;color:#3f3f46">3,000 – 5,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">5,000 – 8,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">8,000 – 15,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Google Ads management</td>
-      <td style="padding:0.75rem;color:#a1a1aa">1,500 – 3,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">2,500 – 5,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">5,000 – 12,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Google Ads management</td>
+      <td style="padding:0.75rem;color:#3f3f46">1,500 – 3,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">2,500 – 5,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">5,000 – 12,000</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Social media management</td>
-      <td style="padding:0.75rem;color:#a1a1aa">2,000 – 4,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">4,000 – 8,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">8,000 – 18,000</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Social media management</td>
+      <td style="padding:0.75rem;color:#3f3f46">2,000 – 4,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">4,000 – 8,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">8,000 – 18,000</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Full digital marketing (SEO + Ads + Social)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">8,000 – 15,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">15,000 – 25,000</td>
-      <td style="padding:0.75rem;color:#a1a1aa">25,000 – 50,000+</td>
+      <td style="padding:0.75rem;color:#3f3f46">Full digital marketing (SEO + Ads + Social)</td>
+      <td style="padding:0.75rem;color:#3f3f46">8,000 – 15,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">15,000 – 25,000</td>
+      <td style="padding:0.75rem;color:#3f3f46">25,000 – 50,000+</td>
     </tr>
   </tbody>
 </table>
@@ -968,42 +968,42 @@ export const blogPosts = [
 <h2>Google Ads vs SEO: Side-by-Side Comparison</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Factor</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Google Ads</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">SEO</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Cost model</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Pay per click (AED 3–60/click in UAE)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Monthly retainer (AED 3,000–6,000/month)</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Cost model</td>
+      <td style="padding:0.75rem;color:#3f3f46">Pay per click (AED 3–60/click in UAE)</td>
+      <td style="padding:0.75rem;color:#3f3f46">Monthly retainer (AED 3,000–6,000/month)</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Time to results</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Days to weeks</td>
-      <td style="padding:0.75rem;color:#a1a1aa">3–9 months</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Time to results</td>
+      <td style="padding:0.75rem;color:#3f3f46">Days to weeks</td>
+      <td style="padding:0.75rem;color:#3f3f46">3–9 months</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Search intent served</td>
-      <td style="padding:0.75rem;color:#a1a1aa">High commercial intent (ready to buy now)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Broad — informational to commercial</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Search intent served</td>
+      <td style="padding:0.75rem;color:#3f3f46">High commercial intent (ready to buy now)</td>
+      <td style="padding:0.75rem;color:#3f3f46">Broad — informational to commercial</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Longevity</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Stops when budget stops</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Compounds over time</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Longevity</td>
+      <td style="padding:0.75rem;color:#3f3f46">Stops when budget stops</td>
+      <td style="padding:0.75rem;color:#3f3f46">Compounds over time</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Best for</td>
-      <td style="padding:0.75rem;color:#a1a1aa">New businesses, product launches, competitive terms</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Long-term authority, lower cost-per-lead over time</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Best for</td>
+      <td style="padding:0.75rem;color:#3f3f46">New businesses, product launches, competitive terms</td>
+      <td style="padding:0.75rem;color:#3f3f46">Long-term authority, lower cost-per-lead over time</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Trust signal</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Lower — users know it's paid</td>
-      <td style="padding:0.75rem;color:#a1a1aa">Higher — perceived as earned</td>
+      <td style="padding:0.75rem;color:#3f3f46">Trust signal</td>
+      <td style="padding:0.75rem;color:#3f3f46">Lower — users know it's paid</td>
+      <td style="padding:0.75rem;color:#3f3f46">Higher — perceived as earned</td>
     </tr>
   </tbody>
 </table>
@@ -1045,27 +1045,27 @@ export const blogPosts = [
 <h2>Budget Allocation Guide for UAE Businesses</h2>
 <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
   <thead>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+    <tr style="border-bottom:2px solid #e4e4e7">
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Scenario</th>
       <th style="text-align:left;padding:0.75rem;color:#f59e0b">Recommended Allocation</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">New business, need leads fast</td>
-      <td style="padding:0.75rem;color:#a1a1aa">80% Google Ads, 20% SEO</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">New business, need leads fast</td>
+      <td style="padding:0.75rem;color:#3f3f46">80% Google Ads, 20% SEO</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Established business, growing organically</td>
-      <td style="padding:0.75rem;color:#a1a1aa">40% Google Ads, 60% SEO</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Established business, growing organically</td>
+      <td style="padding:0.75rem;color:#3f3f46">40% Google Ads, 60% SEO</td>
     </tr>
-    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
-      <td style="padding:0.75rem;color:#a1a1aa">Strong organic rankings, scaling</td>
-      <td style="padding:0.75rem;color:#a1a1aa">20% Google Ads, 80% SEO</td>
+    <tr style="border-bottom:1px solid #e4e4e7">
+      <td style="padding:0.75rem;color:#3f3f46">Strong organic rankings, scaling</td>
+      <td style="padding:0.75rem;color:#3f3f46">20% Google Ads, 80% SEO</td>
     </tr>
     <tr>
-      <td style="padding:0.75rem;color:#a1a1aa">Very limited budget (under AED 3,000/month)</td>
-      <td style="padding:0.75rem;color:#a1a1aa">100% SEO (Google Ads minimum is higher)</td>
+      <td style="padding:0.75rem;color:#3f3f46">Very limited budget (under AED 3,000/month)</td>
+      <td style="padding:0.75rem;color:#3f3f46">100% SEO (Google Ads minimum is higher)</td>
     </tr>
   </tbody>
 </table>
