@@ -266,7 +266,8 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                     <Link
                       key={related.slug}
                       href={`/services/${related.slug}`}
-                      className="group rounded-xl border border-zinc-200 bg-white p-6 transition-colors hover:border-amber-500/30 shadow-sm"
+                      aria-label={`Learn more about ${related.hubTitle}`}
+                      className="group rounded-xl border border-zinc-200 bg-white p-6 transition-colors hover:border-amber-500/30 shadow-sm min-h-[44px]"
                     >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400 transition-colors group-hover:bg-amber-500/20">
                       <RelatedIcon size={20} />
@@ -275,8 +276,9 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                       {related.hubTitle}
                     </h3>
                     <p className="mt-2 text-sm text-zinc-600">{related.tagline}</p>
-                    <span className="mt-3 inline-flex items-center text-sm text-amber-400">
-                      Learn more <ArrowRight className="ml-1 size-3" />
+                    <span className="mt-3 inline-flex min-h-[44px] items-center text-sm text-amber-400">
+                      Learn more about {related.hubTitle}
+                      <ArrowRight className="ml-1 size-3" />
                     </span>
                   </Link>
                 );

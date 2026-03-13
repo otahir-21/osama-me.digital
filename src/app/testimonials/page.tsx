@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
         </div>
 
         <div className="mt-16 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-12 text-center">
-          <h3 className="text-xl font-semibold text-zinc-900">Video Testimonials</h3>
+          <h2 className="text-xl font-semibold text-zinc-900">Video Testimonials</h2>
           <p className="mt-2 text-zinc-600">
             Video testimonials coming soon. Contact me if you&apos;d like to share your experience.
           </p>

@@ -101,9 +101,9 @@ export function Hero() {
               <div className="flex h-full flex-col justify-between rounded-xl bg-zinc-50 p-6">
                 <div>
                   <p className="text-sm text-amber-600">Featured Project</p>
-                  <h3 className="mt-2 text-xl font-semibold text-zinc-900">
+                  <h2 className="mt-2 text-xl font-semibold text-zinc-900">
                     Luxury Fashion E-Commerce
-                  </h3>
+                  </h2>
                   <p className="mt-2 text-sm text-zinc-600">
                     45% conversion increase • 60% faster load
                   </p>

@@ -60,14 +60,15 @@ export function ServicesOverview() {
                 <p className="mt-2 text-sm text-zinc-600">{service.shortDesc}</p>
                 <Link
                   href={`/services/${service.slug}`}
+                  aria-label={`Learn more about ${service.title}`}
                   className={buttonVariants({
                     variant: "ghost",
                     size: "sm",
                     className:
-                      "-ml-2 mt-4 flex items-center gap-1 text-amber-600 hover:bg-amber-100 hover:text-amber-600",
+                      "-ml-2 mt-4 flex min-h-[44px] min-w-[44px] items-center gap-1 text-amber-600 hover:bg-amber-100 hover:text-amber-600",
                   })}
                 >
-                  Learn more
+                  Learn more about {service.title}
                   <ArrowRight size={14} />
                 </Link>
               </motion.div>

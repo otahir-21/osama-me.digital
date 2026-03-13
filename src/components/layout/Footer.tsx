@@ -30,12 +30,12 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold text-zinc-900">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-1">
               {siteConfig.navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-600 transition-colors hover:text-zinc-900"
+                    className="inline-flex min-h-[44px] items-center text-sm text-zinc-600 transition-colors hover:text-zinc-900"
                   >
                     {link.label}
                   </Link>
@@ -46,12 +46,12 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold text-zinc-900">Services</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-1">
               {footerServices.map((s) => (
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-sm text-zinc-600 transition-colors hover:text-zinc-900"
+                    className="inline-flex min-h-[44px] items-center text-sm text-zinc-600 transition-colors hover:text-zinc-900"
                   >
                     {s.label}
                   </Link>

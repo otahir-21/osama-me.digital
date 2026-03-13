@@ -31,6 +31,7 @@ export function BlogTeaser() {
               <Link
                 href={`/blog/${post.slug}`}
                 className="group block rounded-xl border border-zinc-200 bg-white p-6 transition-colors hover:border-amber-500/20 shadow-sm"
+                aria-label={`Read more: ${post.title}`}
               >
                 <span className="text-xs font-medium uppercase tracking-wider text-amber-500">
                   {post.category}
@@ -39,8 +40,9 @@ export function BlogTeaser() {
                   {post.title}
                 </h3>
                 <p className="mt-2 line-clamp-2 text-sm text-zinc-600">{post.excerpt}</p>
-                <span className="mt-3 inline-flex items-center text-sm text-amber-400">
-                  Read more <ArrowRight className="ml-1 size-4" />
+                <span className="mt-3 inline-flex min-h-[44px] items-center text-sm text-amber-400">
+                  <span className="line-clamp-1">Read article: {post.title}</span>
+                  <ArrowRight className="ml-1 size-4 shrink-0" />
                 </span>
               </Link>
             </motion.article>
