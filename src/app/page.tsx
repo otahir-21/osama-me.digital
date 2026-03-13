@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Freelance web developer and digital marketing specialist in Dubai. I build fast, SEO-ready websites and grow them with SEO and Google Ads — one person, full accountability. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
     alternates: {
-      canonical: "https://osama-me.digital",
+      canonical: "/",
     },
   };
 }
