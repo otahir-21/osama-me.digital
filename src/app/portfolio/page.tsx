@@ -1,27 +1,68 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { portfolioData } from "@/data/portfolio";
-import { portfolioToServices, serviceNames } from "@/data/internal-links";
+import { serviceNames } from "@/data/internal-links";
+
+type Filter = "all" | "mobile" | "web";
 
 export default function PortfolioPage() {
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const filteredProjects = useMemo(
+    () =>
+      filter === "all"
+        ? portfolioData
+        : portfolioData.filter((project: any) => project.kind === filter),
+    [filter]
+  );
+
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Portfolio"
           title="Case Studies"
-          subtitle="Selected web, mobile, and marketing projects with measurable results—from conversion lifts and traffic growth to smooth app launch and submission."
+          subtitle="Selected mobile apps and web platforms with measurable results—from high-scale apps to backend systems."
         />
+        <div className="mt-8 flex flex-wrap gap-3">
+          {[
+            { id: "all", label: "All projects", value: "all" as Filter },
+            {
+              id: "mobile",
+              label: "Mobile applications",
+              value: "mobile" as Filter,
+            },
+            {
+              id: "web",
+              label: "Web & backend",
+              value: "web" as Filter,
+            },
+          ].map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => setFilter(item.value)}
+              className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${
+                filter === item.value
+                  ? "border-amber-500 bg-amber-500/10 text-amber-600"
+                  : "border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-100"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
         <div className="space-y-24">
-          {portfolioData.map((project, i) => (
+          {filteredProjects.map((project, i) => (
             <motion.article
               key={project.id}
               id={project.id}
@@ -52,15 +93,18 @@ export default function PortfolioPage() {
                 </div>
 
                 <div>
-                  <div className="aspect-video rounded-xl bg-zinc-100 flex items-center justify-center">
-                    <span className="text-5xl font-bold text-zinc-400">
-                      {project.title.charAt(0)}
-                    </span>
+                  <div className="aspect-video overflow-hidden rounded-xl bg-zinc-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={project.image ?? "/og-image.png"}
+                      alt={project.title}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="mt-8">
                     <h3 className="font-semibold text-zinc-900">Results</h3>
                     <ul className="mt-2 space-y-1">
-                      {project.results.map((r) => (
+                  {project.results.map((r) => (
                         <li key={r} className="text-amber-400">• {r}</li>
                       ))}
                     </ul>
@@ -81,27 +125,42 @@ export default function PortfolioPage() {
                   <div className="mt-6">
                     <h3 className="font-semibold text-zinc-900">Related Services</h3>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {(portfolioToServices[project.category] ?? []).map((serviceId) => (
-                        <Link
-                          key={serviceId}
-                          href={`/services#${serviceId}`}
-                          className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-700 transition-colors hover:border-amber-500/30 hover:text-amber-600"
-                        >
-                          {serviceNames[serviceId] ?? serviceId}
-                        </Link>
-                      ))}
+                      {Array.isArray((project as any).services) &&
+                        ((project as any).services as string[]).map((serviceId) => (
+                          <Link
+                            key={serviceId}
+                            href={`/services#${serviceId}`}
+                            className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-700 transition-colors hover:border-amber-500/30 hover:text-amber-600"
+                          >
+                            {serviceNames[serviceId] ?? serviceId}
+                          </Link>
+                        ))}
                     </div>
                   </div>
-                  <Link
-                    href="/contact"
-                    className={buttonVariants({
-                      size: "lg",
-                      className: "mt-8 inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400",
-                    })}
-                  >
-                    Discuss Your Project
-                    <ArrowRight className="ml-2 size-4" />
-                  </Link>
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      className={buttonVariants({
+                        size: "lg",
+                        className:
+                          "inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400",
+                      })}
+                    >
+                      View full case study
+                      <ArrowRight className="ml-2 size-4" />
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className={buttonVariants({
+                        variant: "outline",
+                        size: "lg",
+                        className:
+                          "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100",
+                      })}
+                    >
+                      Discuss a similar project
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.article>

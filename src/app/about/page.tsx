@@ -47,10 +47,26 @@ const industries = [
 ];
 
 const timeline = [
-  { year: "2021", title: "Started in Digital Marketing", desc: "Joined a Dubai-based agency, learned SEO, ads, and content." },
-  { year: "2022", title: "Expanded to Web Development", desc: "Added WordPress and custom development to my skillset." },
-  { year: "2023", title: "Full-Stack & Performance", desc: "Mastered React, Next.js, and conversion-focused builds." },
-  { year: "2024+", title: "Freelance Focus", desc: "Helping businesses grow with websites and marketing." },
+  {
+    year: "2024+",
+    title: "Freelance Web, Mobile & Marketing Specialist",
+    desc: "Working directly with clients across the UAE and GCC—building conversion-focused websites, React Native apps, and full digital marketing funnels (SEO, Google Ads, tracking, and reporting).",
+  },
+  {
+    year: "2023",
+    title: "Full-Stack & Performance",
+    desc: "Shifted from just WordPress to modern stacks like React and Next.js, focusing on performance, Core Web Vitals, and analytics-driven optimization.",
+  },
+  {
+    year: "2022",
+    title: "Web & App Development",
+    desc: "Expanded beyond marketing into custom development—WordPress, Shopify, and React Native mobile apps for startups and service businesses.",
+  },
+  {
+    year: "2021",
+    title: "Started in Digital Marketing",
+    desc: "Joined a Dubai-based agency and learned the fundamentals of SEO, Google Ads, content strategy, and reporting for local businesses.",
+  },
 ];
 
 export default function AboutPage() {
@@ -98,15 +114,14 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="relative flex items-center justify-center">
-            <div className="relative aspect-square max-w-md overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-              <Image
-                src="/profile-photo.png"
-                alt={`${siteConfig.name} portrait`}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            <Image
+              src="/profile-photo.png"
+              alt={`${siteConfig.name} portrait`}
+              width={420}
+              height={520}
+              className="h-auto w-full max-w-sm rounded-2xl border border-zinc-200 bg-white object-cover object-top shadow-sm"
+              priority
+            />
           </div>
         </motion.div>
       </section>
@@ -126,13 +141,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex gap-8"
+                className="space-y-2"
               >
-                <span className="text-2xl font-bold text-amber-400">{item.year}</span>
-                <div>
+                <div className="flex flex-wrap items-baseline gap-3">
+                  <span className="text-2xl font-bold text-amber-400">{item.year}</span>
                   <h3 className="text-lg font-semibold text-zinc-900">{item.title}</h3>
-                  <p className="mt-1 text-zinc-600">{item.desc}</p>
                 </div>
+                <p className="text-zinc-600">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -180,7 +195,7 @@ export default function AboutPage() {
             title="Who I Serve"
             subtitle="Experience across multiple sectors."
           />
-          <div className="mt-12 flex flex-wrap gap-4">
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
             {industries.map((ind) => (
               <span
                 key={ind}

@@ -51,8 +51,12 @@ export function FeaturedPortfolio() {
                   ))}
                 </ul>
                 <Link
-                  href={`/portfolio#${project.id}`}
-                  className={buttonVariants({ variant: "ghost", size: "sm", className: "mt-4 -ml-2 flex items-center gap-1 text-amber-400 hover:bg-amber-500/10" })}
+                  href={`/portfolio/${project.id}`}
+                  className={buttonVariants({
+                    size: "sm",
+                    className:
+                      "mt-4 -ml-2 flex items-center gap-1 !bg-amber-500 !text-zinc-950 hover:!bg-amber-400",
+                  })}
                 >
                   View case study
                   <ArrowRight size={14} />
