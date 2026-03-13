@@ -17,9 +17,16 @@ import {
 } from "@/lib/schema";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const description =
+    "Freelance web developer and digital marketing specialist in Dubai. I build fast, SEO-ready websites and grow them with SEO and Google Ads — one person, full accountability. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.";
   return {
-    description:
-      "Freelance web developer and digital marketing specialist in Dubai. I build fast, SEO-ready websites and grow them with SEO and Google Ads — one person, full accountability. Serving Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+    description,
+    openGraph: {
+      description,
+    },
+    twitter: {
+      description,
+    },
     alternates: {
       canonical: "/",
     },

@@ -27,19 +27,17 @@ export default function SEOServicesDubaiPage() {
     { name: service.hubTitle, url: `/services/${service.slug}` },
   ]);
 
+  // Single JSON-LD graph: Service + FAQPage + BreadcrumbList only (no Person/LocalBusiness)
+  const graphSchema = {
+    "@context": "https://schema.org",
+    "@graph": [serviceSchema, faqSchema, breadcrumbSchema],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }}
       />
       <ServicePageTemplate service={service} />
     </>
