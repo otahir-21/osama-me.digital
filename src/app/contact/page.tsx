@@ -8,6 +8,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site-config";
 import { faqData } from "@/data/faq";
+import { getLocalBusinessSchema } from "@/lib/schema";
 import {
   Accordion,
   AccordionItem,
@@ -16,8 +17,13 @@ import {
 } from "@/components/ui/accordion";
 
 export default function ContactPage() {
+  const localBusinessSchema = getLocalBusinessSchema();
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Contact"

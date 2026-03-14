@@ -2,16 +2,27 @@ import { siteConfig } from "@/data/site-config";
 import { faqData } from "@/data/faq";
 
 export function getPersonSchema() {
+  const sameAs = [
+    siteConfig.social.linkedin,
+    siteConfig.social.github,
+  ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteConfig.name,
-    jobTitle: siteConfig.role,
     url: siteConfig.url,
+    image: `${siteConfig.url}/og-image.png`,
+    sameAs,
+    jobTitle: siteConfig.role,
+    worksFor: {
+      "@type": "Organization",
+      name: "Osama Tahir Digital",
+    },
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Dubai",
+      addressRegion: "UAE",
       addressCountry: "AE",
     },
   };
@@ -47,17 +58,23 @@ export function getProfessionalServiceSchema() {
 
 export function getLocalBusinessSchema() {
   const serviceAreas = siteConfig.serviceAreas ?? ["Dubai", "Abu Dhabi"];
+  const sameAs = [
+    siteConfig.social.linkedin,
+    siteConfig.social.github,
+  ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: siteConfig.name,
+    name: "Osama Tahir Digital Marketing",
+    image: `${siteConfig.url}/og-image.png`,
     description: siteConfig.description,
     url: siteConfig.url,
+    telephone: siteConfig.telephone,
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Dubai",
-      addressRegion: "Dubai",
+      addressRegion: "UAE",
       addressCountry: "AE",
     },
     areaServed: serviceAreas.map((area) => ({
@@ -65,8 +82,28 @@ export function getLocalBusinessSchema() {
       name: area,
       containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
     })),
-    priceRange: "$$",
-    serviceType: ["Web Development", "Mobile App Development", "SEO", "Google Ads"],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    priceRange: "AED 3000+",
+    hasMap: "https://www.google.com/maps/place/Dubai",
+    sameAs,
+    serviceType: [
+      "Web Development",
+      "Mobile App Development",
+      "SEO Services",
+      "Google Ads Management",
+      "Social Media Marketing",
+      "Shopify Development",
+      "WordPress Development",
+      "Landing Page Design",
+      "Website Maintenance",
+    ],
   };
 }
 
@@ -85,42 +122,46 @@ export function getFAQSchema() {
   };
 }
 
-export function getServiceSchema({
-  h1,
-  description,
-  priceFrom,
-  slug,
-}: {
+export function getServiceSchema(service: {
   h1: string;
+  hubTitle?: string;
   description: string;
   priceFrom: string;
   slug: string;
+  deliverables?: string[];
 }) {
-  return {
+  const { h1, description, priceFrom, slug, hubTitle, deliverables } = service;
+  const serviceType = hubTitle ?? h1;
+  const hasOfferCatalog =
+    deliverables && deliverables.length > 0
+      ? {
+          "@type": "OfferCatalog" as const,
+          name: serviceType,
+          itemListElement: deliverables.slice(0, 8).map((name) => ({
+            "@type": "Offer" as const,
+            itemOffered: {
+              "@type": "Service" as const,
+              name,
+            },
+          })),
+        }
+      : undefined;
+
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
+    serviceType,
     name: h1,
     description,
     provider: {
-      "@id": siteConfig.url,
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Dubai",
-        containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
-      },
-      {
-        "@type": "City",
-        name: "Abu Dhabi",
-        containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
-      },
-      {
-        "@type": "City",
-        name: "Sharjah",
-        containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
-      },
-    ],
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Dubai, UAE",
+    },
     offers: {
       "@type": "Offer",
       priceCurrency: "AED",
@@ -128,6 +169,9 @@ export function getServiceSchema({
     },
     url: `${siteConfig.url}/services/${slug}`,
   };
+  if (hasOfferCatalog) schema.hasOfferCatalog = hasOfferCatalog;
+
+  return schema;
 }
 
 export function getServiceFAQSchema(faqs: { question: string; answer: string }[]) {

@@ -16,6 +16,7 @@ export const siteConfig = {
   ],
   url: "https://osama-me.digital",
   email: "info@osama-me.digital",
+  telephone: "+971507276823",
   whatsapp: "+971507276823",
   calendly: "https://calendly.com/dxbsoftwaredeveloper/30min",
   social: {
