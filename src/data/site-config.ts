@@ -96,6 +96,13 @@ export const siteConfig = {
       shortDesc: "Monthly maintenance to keep your website fast, secure, and up to date.",
       icon: "Shield",
     },
+    {
+      id: "aws-management",
+      slug: "aws-management-uae",
+      title: "AWS Management & Cloud Hosting",
+      shortDesc: "AWS hosting, server management, and application maintenance for UAE businesses.",
+      icon: "Cloud",
+    },
   ],
   stats: [
     { value: 5, suffix: "+", label: "Years Experience" },

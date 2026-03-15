@@ -103,6 +103,7 @@ export function getLocalBusinessSchema() {
       "WordPress Development",
       "Landing Page Design",
       "Website Maintenance",
+      "AWS Management & Cloud Hosting",
     ],
   };
 }

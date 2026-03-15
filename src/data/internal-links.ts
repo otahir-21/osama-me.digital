@@ -36,6 +36,7 @@ export const serviceNames: Record<string, string> = {
   "shopify-development-dubai": "Shopify Development Dubai",
   "wordpress-development-dubai": "WordPress Development Dubai",
   "website-maintenance-uae": "Website Maintenance & Support UAE",
+  "aws-management-uae": "AWS Management & Cloud Hosting UAE",
 };
 
 export const serviceUrls: Record<string, string> = Object.fromEntries(

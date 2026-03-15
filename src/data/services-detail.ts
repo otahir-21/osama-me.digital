@@ -765,4 +765,85 @@ export const servicesDetail: ServiceDetailItem[] = [
       "Website maintenance and support for businesses in Dubai, Abu Dhabi, Sharjah, and across all UAE Emirates. Remote support with priority response for all retainer clients.",
     icon: "Shield",
   },
+  {
+    id: "aws-management",
+    slug: "aws-management-uae",
+    title: "AWS Management & Cloud Hosting UAE",
+    hubTitle: "AWS Management & Cloud Hosting",
+    tagline: "AWS hosting, server management, and application maintenance — so your site and apps stay fast and secure.",
+    description:
+      "I host and maintain websites and applications on Amazon Web Services (AWS) for UAE businesses. From EC2 and RDS to S3, CloudFront, and Lambda — I handle setup, security, backups, monitoring, and ongoing maintenance so you can focus on your business. Whether you're moving from shared hosting to AWS, scaling an existing stack, or need someone to keep your production environment healthy, I deliver hands-on AWS management with clear documentation and predictable retainers.",
+    seoTitle: "AWS Management Dubai | Cloud Hosting & Server Maintenance UAE",
+    metaDescription:
+      "AWS management and cloud hosting in Dubai from AED 2,500/month. EC2, RDS, S3, CloudFront, server and application maintenance for UAE businesses. Serving all Emirates.",
+    h1: "AWS Management & Cloud Hosting UAE",
+    priceFrom: "AED 2,500 / month",
+    forWho: [
+      "UAE businesses running or planning to run websites or apps on AWS",
+      "Companies moving from shared hosting to scalable cloud infrastructure",
+      "Startups and SMBs that need reliable hosting without a full-time DevOps team",
+      "Teams that want one person accountable for hosting, uptime, and application maintenance",
+    ],
+    benefits: [
+      "Single point of contact for hosting, deployments, and server issues",
+      "Proactive monitoring, backups, and security hardening",
+      "Faster, more reliable sites and apps with proper AWS configuration",
+      "Transparent monthly reporting and no surprise costs",
+    ],
+    deliverables: [
+      "AWS account and resource setup (EC2, RDS, S3, CloudFront, etc.)",
+      "Server and application deployment and configuration",
+      "Uptime monitoring, backup strategy, and disaster recovery",
+      "Security updates, SSL/TLS, and access management",
+      "Monthly maintenance window: updates, patches, and optimisation",
+      "Documentation and handover so you understand your infrastructure",
+    ],
+    process: [
+      "Discovery & current setup review",
+      "Architecture and hosting plan",
+      "Setup, migration, or deployment",
+      "Monitoring and backup configuration",
+      "Ongoing monthly maintenance",
+    ],
+    faqs: [
+      {
+        question: "What is included in AWS management?",
+        answer:
+          "AWS management typically includes server and application hosting on EC2 or similar, database management (e.g. RDS), storage and CDN (S3, CloudFront), security and access control, uptime monitoring, backups, and a monthly maintenance window for updates and optimisation. Scope is tailored to your stack.",
+      },
+      {
+        question: "How much does AWS hosting and management cost in UAE?",
+        answer:
+          "Monthly retainers start at AED 2,500/month for a typical website or small application. Costs depend on the number of servers, databases, and applications, plus the level of monitoring and support. A fixed monthly fee is agreed after reviewing your requirements.",
+      },
+      {
+        question: "Do you migrate existing sites to AWS?",
+        answer:
+          "Yes. I migrate websites and applications from shared hosting, VPS, or other clouds to AWS. Migration includes planning, data and DNS cutover, and post-migration verification so nothing is lost.",
+      },
+      {
+        question: "Do you manage WordPress or custom apps on AWS?",
+        answer:
+          "Yes. I host and maintain WordPress, Next.js, Node.js, and other custom applications on AWS. This includes deployment, environment configuration, and ongoing updates and troubleshooting.",
+      },
+      {
+        question: "What if something goes down?",
+        answer:
+          "Critical outages are treated as priority. Response time for production-down issues is typically within 2–4 hours during business hours. Uptime monitoring is included so we detect and react to issues quickly.",
+      },
+      {
+        question: "Can I cancel the AWS management retainer?",
+        answer:
+          "Yes. Retainers are month-to-month with 30 days' notice. You keep full access to your AWS account and resources; I provide documentation so another provider or your team can take over if needed.",
+      },
+    ],
+    relatedSlugs: [
+      "web-development-dubai",
+      "website-maintenance-uae",
+      "mobile-app-development-dubai",
+    ],
+    citiesNote:
+      "AWS management and cloud hosting for businesses in Dubai, Abu Dhabi, Sharjah, and across all UAE Emirates. Remote setup and support with regular check-ins and clear reporting.",
+    icon: "Cloud",
+  },
 ];

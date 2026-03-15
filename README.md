@@ -98,6 +98,14 @@ Deploy to **Vercel** (recommended), Netlify, or any Node.js hosting:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/otahir-21/osama-me.digital)
 
+### Domain must point to the Next.js app
+
+**Important:** The live domain (e.g. `osama-me.digital`) must point to where this Next.js app is deployed (e.g. Vercel), **not** to a WordPress or LiteSpeed server.
+
+- If the domain points to WordPress/LiteSpeed (e.g. you see `?LSCWP_CTRL=...` in the URL), the server will not have the app’s `_next/static` files, so the page will stay blank and show 404s for JS/CSS.
+- In Vercel: add the domain in **Project → Settings → Domains** and set your DNS (A/CNAME) to Vercel’s values. Remove any A/CNAME that points to the old WordPress/LiteSpeed host.
+- After changing DNS, wait for propagation and redeploy with “Clear build cache” so the latest build is served.
+
 ## Contact Form (SMTP)
 
 The contact form sends emails via Hostinger SMTP to info@osama-me.digital.

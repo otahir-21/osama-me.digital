@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
+  Cloud,
   Globe,
   Search,
   TrendingUp,
@@ -19,6 +20,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { servicesDetail } from "@/data/services-detail";
 
 const iconMap = {
+  Cloud,
   Globe,
   Search,
   TrendingUp,

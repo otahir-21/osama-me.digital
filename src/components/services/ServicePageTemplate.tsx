@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Check,
   MapPin,
+  Cloud,
   Globe,
   Search,
   TrendingUp,
@@ -27,6 +28,7 @@ import { siteConfig } from "@/data/site-config";
 import { servicesDetail, type ServiceDetailItem } from "@/data/services-detail";
 
 const iconMap = {
+  Cloud,
   Globe,
   Search,
   TrendingUp,
