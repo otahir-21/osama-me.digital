@@ -1,0 +1,89 @@
+name: SEO Agent — Daily Auto-Fix
+
+on:
+  # Run every day at 3:00 AM UTC (7:00 AM Dubai time)
+  schedule:
+    - cron: "0 3 * * *"
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Why are you running this manually?"
+        required: false
+        default: "Manual SEO check"
+
+permissions:
+  contents: write  # Needed to push commits with fixes
+
+jobs:
+  seo-agent:
+    name: Run SEO Agent & Commit Fixes
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: seo-agent/package.json
+
+      - name: Install SEO Agent dependencies
+        working-directory: seo-agent
+        run: npm install
+
+      - name: Install project dependencies (for TypeScript checking)
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config user.name "SEO Agent Bot"
+          git config user.email "seo-agent@osama-me.digital"
+
+      - name: Run SEO Agent
+        working-directory: seo-agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: |
+          echo "🤖 Starting SEO Agent..."
+          npm start 2>&1 | tee ../seo-agent-run.log
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          git status --short
+
+      - name: Commit and push SEO fixes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git add -A
+          CHANGED_FILES=$(git diff --cached --name-only | head -20 | tr '\n' ', ')
+          git commit -m "🤖 SEO Agent: auto-fix $(date +'%Y-%m-%d')
+
+          Files updated: ${CHANGED_FILES}
+
+          Automated fixes applied by SEO Agent running on schedule.
+          See seo-agent-run.log for details."
+          git push origin main
+
+      - name: No changes needed
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "✅ No SEO issues found — site is clean!"
+
+      - name: Upload run log as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-agent-log-${{ github.run_number }}
+          path: seo-agent-run.log
+          retention-days: 30
