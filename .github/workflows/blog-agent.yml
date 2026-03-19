@@ -48,6 +48,16 @@ jobs:
           git config user.name "Blog Agent Bot"
           git config user.email "blog-agent@osama-me.digital"
 
+      - name: Check API key is set
+        run: |
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "❌ ERROR: ANTHROPIC_API_KEY secret is not set!"
+            echo "Go to: Settings → Secrets → Actions → New secret"
+            echo "Name: ANTHROPIC_API_KEY"
+            exit 1
+          fi
+          echo "✅ ANTHROPIC_API_KEY is configured"
+
       - name: Generate today's blog post
         working-directory: seo-agent
         env:
@@ -55,6 +65,7 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
           BLOG_TOPIC_OVERRIDE: ${{ github.event.inputs.topic }}
         run: |
+          set -o pipefail
           echo "📝 Blog Agent starting..."
           npm run blog 2>&1 | tee ../blog-agent-run.log
 
