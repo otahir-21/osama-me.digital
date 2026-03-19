@@ -25,7 +25,7 @@ const wordVariants = {
     transition: {
       duration: 0.6,
       delay: 0.3 + i * 0.07,
-      ease: [0.21, 0.47, 0.32, 0.98],
+      ease: EASE,
     },
   }),
 };
@@ -35,10 +35,12 @@ const containerVariants = {
   visible: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } },
 };
 
+const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] },
+  transition: { duration: 0.7, delay, ease: EASE },
 });
 
 export function Hero() {

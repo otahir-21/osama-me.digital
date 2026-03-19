@@ -51,7 +51,7 @@ export function ServicesOverview() {
                 initial={{ opacity: 0, y: 32, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.07, ease: [0.21, 0.47, 0.32, 0.98] }}
+                transition={{ duration: 0.6, delay: i * 0.07, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-colors hover:border-amber-500/30 hover:shadow-md hover:shadow-amber-500/5"
               >
