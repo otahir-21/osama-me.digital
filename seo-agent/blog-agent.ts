@@ -19,63 +19,148 @@ const SITE_URL = "https://osama-me.digital";
 
 const client = new Anthropic();
 
-// ─── Topic Bank ──────────────────────────────────────────────────────────────
-// Topics targeted at Dubai/UAE SMBs — cycle through them.
-// The agent will pick whichever isn't already covered.
-const TOPIC_BANK = [
-  // Web Development
-  "How to choose a web developer in Dubai",
-  "Why your Dubai business needs a mobile-first website in 2026",
-  "WordPress vs custom code: what Dubai businesses should choose",
-  "How much does website maintenance cost in Dubai",
-  "Website speed optimization for UAE businesses",
-  "E-commerce website cost in Dubai: complete breakdown",
-  "How long does it take to build a website in Dubai",
-  "Landing page best practices for Dubai businesses",
-  "Why Dubai businesses are switching from Wix to Next.js",
-  "Top 5 web development mistakes UAE startups make",
+// ─── Content Strategy: 5 Pillars ─────────────────────────────────────────────
+//
+// Pillar 1 — "How Much Does X Cost?" (Monday)   → highest buyer intent
+// Pillar 2 — "How to Rank / Get Found" (Tuesday) → SEO authority
+// Pillar 3 — "X vs Y" Comparisons (Wednesday)    → decision-stage traffic
+// Pillar 4 — Industry-Specific Guides (Thursday) → niche / low competition
+// Pillar 5 — How-To Guides (Friday)              → organic + AI citations
+// Pillar 6 — Seasonal / Trending (Saturday)      → timely local content
+// Pillar 7 — Case Study / Story (Sunday)         → trust + conversion
 
-  // SEO
-  "Local SEO guide for Dubai businesses 2026",
-  "How to rank on Google in Dubai: complete guide",
-  "Google Business Profile optimization for UAE",
-  "How long does SEO take to work in Dubai",
-  "Arabic vs English SEO for UAE businesses",
-  "SEO for Dubai real estate agents",
-  "SEO for Dubai restaurants: complete guide",
-  "Voice search optimization for Dubai businesses",
-  "How to do keyword research for UAE market",
-  "Why your Dubai website is not on Google first page",
+const PILLARS: Record<number, string[]> = {
+  // Pillar 1 — Cost & Pricing (Monday = day 1)
+  1: [
+    "How much does app development cost in Dubai 2026",
+    "Social media management cost in Dubai: what you should pay",
+    "Website maintenance cost in Dubai: monthly and annual pricing",
+    "Shopify store development cost in UAE: full breakdown",
+    "Landing page design cost in Dubai",
+    "SEO audit cost in Dubai: what agencies charge",
+    "Logo and branding cost in Dubai: agency vs freelancer",
+    "Google Ads management fees in Dubai: what agencies charge",
+    "How much does a mobile app cost in UAE 2026",
+    "Email marketing cost in Dubai: tools and management fees",
+    "How much does social media advertising cost in UAE",
+    "WordPress website cost in Dubai: development and ongoing fees",
+    "Video production cost in Dubai for marketing",
+    "Copywriting cost in Dubai: website and blog content pricing",
+  ],
 
-  // Digital Marketing
-  "Google Ads vs Meta Ads for Dubai businesses",
-  "Social media marketing for Dubai SMEs: what works",
-  "Email marketing for UAE businesses in 2026",
-  "How to get more leads from your Dubai website",
-  "WhatsApp Business marketing for Dubai companies",
-  "Content marketing strategy for Dubai startups",
-  "Influencer marketing in Dubai: ROI guide",
-  "TikTok marketing for Dubai businesses",
-  "LinkedIn marketing for B2B companies in UAE",
-  "How to build a personal brand in Dubai",
+  // Pillar 2 — SEO & Ranking (Tuesday = day 2)
+  2: [
+    "Why your Dubai website is not showing on Google first page",
+    "How to rank on Google Maps in Dubai: complete guide",
+    "Local SEO for Dubai restaurants: step-by-step guide",
+    "Local SEO for Dubai real estate agents: 2026 guide",
+    "Google Business Profile optimisation for UAE businesses",
+    "Arabic SEO vs English SEO: what UAE businesses should know",
+    "How long does SEO take to work in Dubai",
+    "How to do keyword research for the UAE market",
+    "Core Web Vitals for Dubai websites: why speed matters",
+    "Backlink building strategy for UAE businesses",
+    "SEO for Dubai clinics and medical practices",
+    "Technical SEO checklist for UAE business websites",
+    "How to write SEO content that ranks in Dubai",
+    "Voice search optimisation for UAE businesses 2026",
+    "Schema markup guide for Dubai business websites",
+    "How to optimise Google Business Profile in UAE",
+  ],
 
-  // Business & Strategy
-  "Digital marketing budget guide for Dubai SMEs",
-  "How to measure ROI from your website in Dubai",
-  "CRO: how to turn Dubai website visitors into customers",
-  "Google Analytics 4 setup guide for Dubai businesses",
-  "How to get 5-star Google reviews for your Dubai business",
-  "Ramadan marketing strategy for UAE businesses",
-  "EXPO 2025 digital marketing opportunities for Dubai",
-  "E-commerce in UAE: how to start selling online",
-  "Shopify vs WooCommerce for Dubai businesses",
-  "Amazon UAE vs your own website: which is better",
+  // Pillar 3 — Comparisons (Wednesday = day 3)
+  3: [
+    "Wix vs WordPress for Dubai businesses: honest comparison",
+    "Freelancer vs agency for web development in Dubai",
+    "Google Ads vs Meta Ads for Dubai businesses: which wins",
+    "Shopify vs WooCommerce for UAE e-commerce businesses",
+    "Next.js vs WordPress: which is better for Dubai businesses",
+    "WhatsApp Business vs email marketing for UAE",
+    "SEO vs Google Ads for Dubai businesses: when to use each",
+    "Shared hosting vs cloud hosting for UAE businesses",
+    "Squarespace vs WordPress for Dubai small businesses",
+    "LinkedIn vs Instagram for Dubai B2B marketing",
+    "TikTok vs Instagram for Dubai businesses in 2026",
+    "Hiring in-house vs outsourcing digital marketing in Dubai",
+    "Shopify vs custom website for UAE e-commerce",
+    "Google Analytics vs Hotjar: what UAE businesses need",
+    "Amazon UAE vs your own website: pros and cons",
+  ],
 
-  // AWS / Cloud
-  "AWS services for Dubai businesses: what you need to know",
-  "Cloud hosting vs shared hosting for UAE businesses",
-  "Why Dubai businesses are moving to cloud infrastructure",
-];
+  // Pillar 4 — Industry-Specific (Thursday = day 4)
+  4: [
+    "Digital marketing for Dubai restaurants: complete guide",
+    "SEO and website strategy for Dubai real estate agents",
+    "Digital marketing for Dubai clinics and doctors",
+    "Website and marketing guide for Dubai hotels and tourism",
+    "E-commerce strategy for UAE fashion brands",
+    "Digital marketing for Dubai gyms and fitness studios",
+    "SEO for Dubai law firms: how to get clients online",
+    "Digital marketing for Dubai schools and education centres",
+    "Website strategy for Dubai construction and contracting companies",
+    "Digital marketing for UAE logistics and freight companies",
+    "SEO for Dubai car dealerships: getting found online",
+    "Digital marketing for Dubai beauty salons and spas",
+    "Website strategy for Dubai accounting and finance firms",
+    "Marketing strategy for UAE food delivery and cloud kitchens",
+    "Digital marketing for Dubai retail businesses",
+    "Online marketing for Dubai luxury brands",
+  ],
+
+  // Pillar 5 — How-To Guides (Friday = day 5)
+  5: [
+    "How to get more leads from your Dubai website",
+    "How to set up Google Analytics 4 for UAE businesses",
+    "How to get more Google reviews for your Dubai business",
+    "How to build a personal brand in Dubai",
+    "How to run Google Ads in Dubai: beginner guide",
+    "How to choose a web developer in Dubai: checklist",
+    "How to write a website brief for your Dubai project",
+    "How to measure digital marketing ROI in UAE",
+    "How to set a digital marketing budget in Dubai",
+    "How to start an e-commerce business in UAE",
+    "How to create a content marketing strategy for Dubai",
+    "How to use WhatsApp Business for marketing in UAE",
+    "How to optimise your website for mobile in Dubai",
+    "How to track competitors online in UAE market",
+    "How to create a lead generation funnel for Dubai businesses",
+    "How to improve website conversion rate for UAE businesses",
+  ],
+
+  // Pillar 6 — Seasonal & Trending (Saturday = day 6)
+  6: [
+    "Ramadan marketing strategy for UAE businesses 2026",
+    "Eid marketing campaigns: best practices for Dubai brands",
+    "GITEX 2026: how Dubai tech businesses can prepare",
+    "Dubai Shopping Festival: digital marketing guide for retailers",
+    "UAE National Day marketing ideas for businesses",
+    "Back to school marketing for UAE education businesses",
+    "Summer slowdown strategy for Dubai businesses",
+    "New year digital marketing plan for UAE businesses 2027",
+    "AI trends in digital marketing for UAE businesses 2026",
+    "What UAE businesses should do after a Google algorithm update",
+    "Dubai Expo legacy: business opportunities in 2026",
+    "How Dubai businesses should respond to TikTok trends",
+    "ADIPEC 2026: digital marketing for UAE energy sector",
+    "Dubai real estate boom: digital marketing opportunities",
+  ],
+
+  // Pillar 7 — Case Study / Story (Sunday = day 0)
+  7: [
+    "How a Dubai restaurant increased online bookings by 300 percent",
+    "Case study: taking a UAE e-commerce store from zero to AED 100k monthly",
+    "How a Dubai real estate agency doubled leads with SEO",
+    "Case study: Google Ads for a Dubai clinic — results after 3 months",
+    "How a Dubai startup got on page one of Google in 90 days",
+    "Case study: rebuilding a slow WordPress site in Next.js for a UAE client",
+    "How Osama Tahir helped a Dubai retailer reduce cost-per-lead by 60 percent",
+    "Case study: social media marketing for a Dubai luxury brand",
+    "From no website to 500 monthly leads: a Dubai SME story",
+    "Case study: AWS migration for a UAE SaaS company",
+    "How a Dubai hotel increased direct bookings through SEO",
+    "Case study: complete digital transformation for a UAE logistics company",
+  ],
+};
 
 // ─── Read existing posts ──────────────────────────────────────────────────────
 function getExistingPosts(): { slug: string; title: string }[] {
@@ -89,26 +174,40 @@ function getExistingPosts(): { slug: string; title: string }[] {
   return slugs.map((slug, i) => ({ slug, title: titles[i] ?? "" }));
 }
 
-// ─── Pick today's topic ───────────────────────────────────────────────────────
+// ─── Pick today's topic using weekly pillar rotation ─────────────────────────
 function pickTopic(existingPosts: { title: string }[]): string {
   const existingTitles = existingPosts.map((p) => p.title.toLowerCase());
 
-  // Find a topic not yet covered
-  for (const topic of TOPIC_BANK) {
-    const alreadyCovered = existingTitles.some(
-      (t) =>
-        t.includes(topic.toLowerCase().split(" ").slice(0, 4).join(" ")) ||
-        topic.toLowerCase().includes(t.split(" ").slice(0, 4).join(" "))
-    );
+  // Get today's day of week (0=Sun, 1=Mon … 6=Sat) → map to pillar
+  // Sun=7, Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6
+  const dow = new Date().getDay(); // 0–6
+  const pillarKey = dow === 0 ? 7 : dow; // remap Sunday to 7
+  const todaysPillar = PILLARS[pillarKey] ?? PILLARS[1];
+
+  // Find first topic in today's pillar not yet covered
+  for (const topic of todaysPillar) {
+    const alreadyCovered = existingTitles.some((t) => {
+      const topicWords = topic.toLowerCase().split(" ").slice(0, 5).join(" ");
+      return t.includes(topicWords) || topicWords.includes(t.split(" ").slice(0, 4).join(" "));
+    });
     if (!alreadyCovered) return topic;
   }
 
-  // If all covered, pick by day of year to cycle
+  // Today's pillar exhausted — search all other pillars
+  const allTopics = Object.values(PILLARS).flat();
+  for (const topic of allTopics) {
+    const alreadyCovered = existingTitles.some((t) => {
+      const topicWords = topic.toLowerCase().split(" ").slice(0, 5).join(" ");
+      return t.includes(topicWords);
+    });
+    if (!alreadyCovered) return topic;
+  }
+
+  // All topics covered — cycle by day of year
   const dayOfYear = Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) /
-      86400000
+    (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
   );
-  return TOPIC_BANK[dayOfYear % TOPIC_BANK.length];
+  return allTopics[dayOfYear % allTopics.length];
 }
 
 // ─── Generate blog post ───────────────────────────────────────────────────────
