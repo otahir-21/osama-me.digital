@@ -1,20 +1,24 @@
-# Osama Tahir — Digital Marketing Specialist & Full-Stack Developer, Dubai UAE
+# Osama Tahir — Web Developer & Digital Marketing Specialist, Dubai UAE
 
-> Osama Tahir is a freelance full-stack web developer and digital marketing specialist based in Dubai, UAE. He helps small businesses and startups across the UAE grow online through custom websites, SEO, Google Ads, mobile apps, and performance marketing.
+> Osama Tahir is a senior full-stack web developer, mobile app developer, and digital marketing specialist based in Dubai, UAE. He helps small businesses and startups across the UAE grow online through custom websites, mobile apps (Flutter & React Native), SEO, Google Ads, and performance marketing. 5+ years experience, 20+ production apps delivered, 500K+ app downloads.
 
 ## Services
 
-- [Web Development Dubai](https://osama-me.digital/services/web-development-dubai): Custom website design and development for businesses in Dubai and the UAE.
-- [SEO Services Dubai](https://osama-me.digital/services/seo-services-dubai): Local and technical SEO to rank on Google in Dubai, Abu Dhabi, and across the UAE.
-- [Google Ads Management Dubai](https://osama-me.digital/services/google-ads-management-dubai): PPC campaign setup, management, and optimisation for UAE businesses.
-- [Mobile App Development UAE](https://osama-me.digital/services/mobile-app-development-uae): iOS and Android app development for startups and businesses in the UAE.
-- [Shopify Development Dubai](https://osama-me.digital/services/shopify-development-dubai): Shopify store setup, customisation, and e-commerce solutions.
-- [WordPress Development Dubai](https://osama-me.digital/services/wordpress-development-dubai): WordPress website design, development, and maintenance.
-- [Social Media Marketing UAE](https://osama-me.digital/services/social-media-marketing-uae): Social media strategy, content, and paid campaigns across platforms.
-- [Landing Page Design Dubai](https://osama-me.digital/services/landing-page-design-dubai): High-converting landing pages for lead generation and paid traffic.
+- [Web Development Dubai](https://osama-me.digital/services/web-development-dubai): Custom website design and development for businesses in Dubai and the UAE. Starting from AED 5,000.
+- [Mobile App Development Dubai](https://osama-me.digital/services/mobile-app-development-dubai): iOS and Android app development using Flutter & React Native for UAE businesses. Starting from AED 15,000.
+- [SEO Services Dubai](https://osama-me.digital/services/seo-services-dubai): Local and technical SEO to rank on Google in Dubai, Abu Dhabi, and across the UAE. From AED 3,000/month.
+- [Google Ads Management Dubai](https://osama-me.digital/services/google-ads-management-dubai): PPC campaign setup, management, and optimisation for UAE businesses. From AED 2,500/month.
+- [Social Media Marketing UAE](https://osama-me.digital/services/social-media-marketing-uae): Social media strategy, content, and paid campaigns across platforms. From AED 2,000/month.
+- [Shopify Development Dubai](https://osama-me.digital/services/shopify-development-dubai): Shopify store setup, customisation, and e-commerce solutions. Starting from AED 4,000.
+- [WordPress Development Dubai](https://osama-me.digital/services/wordpress-development-dubai): WordPress website design, development, and maintenance. Starting from AED 3,500.
+- [Landing Page Design UAE](https://osama-me.digital/services/landing-page-design-uae): High-converting landing pages for lead generation and paid traffic. Starting from AED 3,000.
+- [Website Maintenance UAE](https://osama-me.digital/services/website-maintenance-uae): Monthly maintenance to keep your website fast, secure, and up to date. From AED 2,000/month.
+- [AWS Management & Cloud Hosting UAE](https://osama-me.digital/services/aws-management-uae): AWS hosting, server management, and application maintenance. From AED 2,500/month.
 
 ## Blog
 
+- [SEO & Website Strategy for Dubai Real Estate Agents 2026](https://osama-me.digital/blog/seo-website-strategy-dubai-real-estate-agents-2026)
+- [Digital Marketing for Dubai Restaurants: Complete Guide 2026](https://osama-me.digital/blog/digital-marketing-dubai-restaurants-guide-2026)
 - [How Much Does a Website Cost in Dubai? (2026 Guide)](https://osama-me.digital/blog/website-cost-dubai-2026)
 - [SEO Pricing in Dubai: How Much Should You Pay? (2026)](https://osama-me.digital/blog/seo-pricing-dubai)
 - [Google Ads Cost in Dubai: What Businesses Actually Pay (2026)](https://osama-me.digital/blog/google-ads-cost-dubai)
@@ -27,6 +31,12 @@
 
 ## Contact
 
+- Website: https://osama-me.digital
 - Email: info@osama-me.digital
+- Phone: +971 50 727 6823
+- WhatsApp: https://wa.me/971507276823
+- Calendly: https://calendly.com/dxbsoftwaredeveloper/30min
 - Contact form: https://osama-me.digital/contact
 - About: https://osama-me.digital/about
+- LinkedIn: https://www.linkedin.com/in/otahir21
+- Location: Dubai, UAE — serving all Emirates

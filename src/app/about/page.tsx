@@ -96,7 +96,7 @@ export default function AboutPage() {
               About Me
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
-              {siteConfig.name}
+              {siteConfig.name} — Web Developer &amp; Digital Marketing Specialist Dubai
             </h1>
             <p className="mt-4 text-xl text-amber-400">{siteConfig.role}</p>
             <p className="mt-6 text-lg text-zinc-600">

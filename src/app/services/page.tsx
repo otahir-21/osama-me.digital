@@ -35,6 +35,7 @@ const iconMap = {
 export default function ServicesHubPage() {
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <h1 className="sr-only">Web Development, SEO & Digital Marketing Services in Dubai</h1>
       {/* Header */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading

@@ -10,6 +10,7 @@ import { testimonialsData } from "@/data/testimonials";
 export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <h1 className="sr-only">Client Testimonials — Web Developer & Marketing Specialist Dubai</h1>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Testimonials"

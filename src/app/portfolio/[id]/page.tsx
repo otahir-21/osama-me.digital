@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
@@ -22,6 +23,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${project.title} | Case Study`,
     description: project.challenge,
+    openGraph: {
+      title: `${project.title} | Case Study`,
+      description: project.challenge,
+      url: `https://osama-me.digital/portfolio/${id}`,
+      images: [{ url: project.image ?? "/og-image.png", width: 1200, height: 630, alt: project.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Case Study`,
+      description: project.challenge,
+    },
+    alternates: {
+      canonical: `https://osama-me.digital/portfolio/${id}`,
+    },
   };
 }
 
@@ -80,12 +95,14 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
       <section className="mx-auto max-w-5xl px-4 pb-24 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
-          <div className="aspect-video w-full overflow-hidden bg-zinc-100">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="aspect-video w-full overflow-hidden bg-zinc-100 relative">
+            <Image
               src={imageSrc}
-              alt={project.title}
-              className="h-full w-full object-cover"
+              alt={`${project.title} — ${project.category} project by Osama Tahir, Dubai web developer`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1024px"
+              priority
             />
           </div>
 

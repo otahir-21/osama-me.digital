@@ -9,8 +9,12 @@ const footerServices = [
   { label: "Mobile App Development", href: "/services/mobile-app-development-dubai" },
   { label: "SEO Services Dubai", href: "/services/seo-services-dubai" },
   { label: "Google Ads Management", href: "/services/google-ads-management-dubai" },
+  { label: "Social Media Marketing", href: "/services/social-media-marketing-uae" },
   { label: "Shopify Development", href: "/services/shopify-development-dubai" },
   { label: "WordPress Development", href: "/services/wordpress-development-dubai" },
+  { label: "Landing Page Design", href: "/services/landing-page-design-uae" },
+  { label: "Website Maintenance", href: "/services/website-maintenance-uae" },
+  { label: "AWS Cloud Hosting", href: "/services/aws-management-uae" },
 ];
 
 export function Footer() {

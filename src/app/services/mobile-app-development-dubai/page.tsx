@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     title: service.seoTitle,
     description: service.metaDescription,
     url: `https://osama-me.digital/services/${service.slug}`,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: service.seoTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: service.seoTitle,
+    description: service.metaDescription,
   },
   alternates: {
     canonical: `https://osama-me.digital/services/${service.slug}`,

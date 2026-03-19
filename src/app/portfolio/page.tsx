@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
@@ -24,6 +25,7 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <h1 className="sr-only">Portfolio & Case Studies — Web & App Development Dubai</h1>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Portfolio"
@@ -93,12 +95,13 @@ export default function PortfolioPage() {
                 </div>
 
                 <div>
-                  <div className="aspect-video overflow-hidden rounded-xl bg-zinc-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                  <div className="aspect-video overflow-hidden rounded-xl bg-zinc-100 relative">
+                    <Image
                       src={project.image ?? "/og-image.png"}
-                      alt={project.title}
-                      className="h-full w-full object-cover"
+                      alt={`${project.title} — ${project.category} case study by Osama Tahir, Dubai`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                   <div className="mt-8">

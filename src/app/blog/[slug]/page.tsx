@@ -12,11 +12,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
+  const url = `https://osama-me.digital/blog/${slug}`;
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Osama Tahir"],
+      images: [{ url: post.image ?? "/og-image.png", width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image ?? "/og-image.png"],
+    },
     alternates: {
-      canonical: `https://osama-me.digital/blog/${slug}`,
+      canonical: url,
     },
   };
 }
@@ -57,9 +73,18 @@ export default async function BlogPostPage({ params }: Props) {
     url: postUrl,
     datePublished: post.date,
     dateModified: post.date,
+    image: post.image ? `https://osama-me.digital${post.image}` : "https://osama-me.digital/og-image.png",
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     author,
-    publisher: author,
+    publisher: {
+      "@type": "Organization",
+      name: "Osama Tahir",
+      url: "https://osama-me.digital",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://osama-me.digital/og-image.png",
+      },
+    },
   };
 
   return (

@@ -20,6 +20,7 @@ export default function ContactPage() {
   const localBusinessSchema = getLocalBusinessSchema();
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <h1 className="sr-only">Contact Osama Tahir — Web Developer & Digital Marketing Specialist Dubai</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

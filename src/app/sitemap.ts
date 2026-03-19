@@ -5,29 +5,23 @@ import { servicesDetail } from "@/data/services-detail";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
+  const now = new Date("2026-03-19");
 
-  const staticPageDates: Record<string, string> = {
-    "": "2026-03-13",
-    "/about": "2026-03-13",
-    "/services": "2026-03-13",
-    "/portfolio": "2026-03-13",
-    "/blog": "2026-03-13",
-    "/contact": "2026-03-13",
-    "/testimonials": "2026-03-13",
-    "/privacy-policy": "2026-03-12",
-    "/terms-of-service": "2026-03-12",
-  };
-
-  const staticPages: MetadataRoute.Sitemap = Object.keys(staticPageDates).map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(staticPageDates[path]),
-    changeFrequency: (path === "" ? "weekly" : "monthly") as "weekly" | "monthly",
-    priority: path === "" ? 1 : path === "/services" ? 0.9 : 0.8,
-  }));
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/portfolio`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/testimonials`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/privacy-policy`, lastModified: new Date("2026-03-12"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/terms-of-service`, lastModified: new Date("2026-03-12"), changeFrequency: "yearly", priority: 0.3 },
+  ];
 
   const servicePages: MetadataRoute.Sitemap = servicesDetail.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date("2026-03-12"),
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.9,
   }));
@@ -36,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.8,
   }));
 
   return [...staticPages, ...servicePages, ...blogPages];
