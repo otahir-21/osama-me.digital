@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, Clock } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -39,10 +40,20 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors hover:border-amber-500/20 shadow-sm"
               >
-                <div className="aspect-video bg-zinc-100 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-zinc-400 group-hover:text-amber-500/60 transition-colors">
-                    {post.title.charAt(0)}
-                  </span>
+                <div className="aspect-video bg-zinc-100 relative overflow-hidden flex items-center justify-center">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <span className="text-4xl font-bold text-zinc-400 group-hover:text-amber-500/60 transition-colors">
+                      {post.title.charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <div className="p-6">
                   <span className="text-xs font-medium uppercase tracking-wider text-amber-400">
