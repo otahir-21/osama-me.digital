@@ -152,6 +152,23 @@ html.lenis {
   pointer-events: none;
 }
 
+/* ── Hero blob animations (CSS — only opacity + scale = GPU composited) ── */
+@keyframes blob-pulse-1 {
+  0%, 100% { opacity: 0.15; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 0.25; transform: translateX(-50%) scale(1.15); }
+}
+@keyframes blob-pulse-2 {
+  0%, 100% { opacity: 0.12; transform: scale(1) translateX(0); }
+  50%       { opacity: 0.20; transform: scale(1.2) translateX(30px); }
+}
+@keyframes blob-pulse-3 {
+  0%, 100% { opacity: 0.10; transform: scale(1) translateY(0); }
+  50%       { opacity: 0.18; transform: scale(1.1) translateY(-20px); }
+}
+.blob-1 { animation: blob-pulse-1 8s ease-in-out infinite; }
+.blob-2 { animation: blob-pulse-2 10s ease-in-out infinite 1s; }
+.blob-3 { animation: blob-pulse-3 12s ease-in-out infinite 2s; }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

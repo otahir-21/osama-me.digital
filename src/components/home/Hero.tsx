@@ -15,15 +15,14 @@ const trustItems = [
 const headlineWords = ["Digital", "Marketing", "&", "Websites", "That"];
 const highlightWords = ["Drive", "Growth"];
 
-// Staggered word animation
+// Staggered word animation — opacity + transform only (GPU composited)
 const wordVariants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 28 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.6,
+      duration: 0.55,
       delay: 0.3 + i * 0.07,
       ease: EASE,
     },
@@ -47,22 +46,10 @@ export function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-white pt-24">
 
-      {/* ── Animated gradient blobs ── */}
-      <motion.div
-        className="pointer-events-none absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-amber-300/20 blur-[120px]"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.25, 0.15] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="pointer-events-none absolute right-[-10%] top-1/3 h-[500px] w-[500px] rounded-full bg-amber-400/15 blur-[100px]"
-        animate={{ scale: [1, 1.2, 1], x: [0, 30, 0], opacity: [0.12, 0.2, 0.12] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-      <motion.div
-        className="pointer-events-none absolute bottom-10 left-[-5%] h-[400px] w-[400px] rounded-full bg-amber-200/20 blur-[90px]"
-        animate={{ scale: [1, 1.1, 1], y: [0, -20, 0], opacity: [0.1, 0.18, 0.1] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
+      {/* ── Animated gradient blobs (CSS — GPU composited) ── */}
+      <div className="blob-1 pointer-events-none absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-amber-300/20 blur-[120px]" />
+      <div className="blob-2 pointer-events-none absolute right-[-10%] top-1/3 h-[500px] w-[500px] rounded-full bg-amber-400/15 blur-[100px]" />
+      <div className="blob-3 pointer-events-none absolute bottom-10 left-[-5%] h-[400px] w-[400px] rounded-full bg-amber-200/20 blur-[90px]" />
 
       {/* ── Subtle grid overlay ── */}
       <div
