@@ -116,7 +116,7 @@ const PILLARS: Record<number, string[]> = {
     "How to get more leads from your Dubai website",
     "How to set up Google Analytics 4 for UAE businesses",
     "How to get more Google reviews for your Dubai business",
-    "How to build a personal brand in Dubai",
+    "How to build a personal brand in Dubai as a freelancer",
     "How to run Google Ads in Dubai: beginner guide",
     "How to choose a web developer in Dubai: checklist",
     "How to write a website brief for your Dubai project",
@@ -129,6 +129,10 @@ const PILLARS: Record<number, string[]> = {
     "How to track competitors online in UAE market",
     "How to create a lead generation funnel for Dubai businesses",
     "How to improve website conversion rate for UAE businesses",
+    "How to hire a freelance web developer in Dubai: complete guide",
+    "How to brief a digital marketing specialist in Dubai",
+    "How to audit your own website SEO in Dubai",
+    "How to set up Google Business Profile for UAE businesses",
   ],
 
   // Pillar 6 — Seasonal & Trending (Saturday = day 6)
