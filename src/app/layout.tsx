@@ -4,6 +4,7 @@ import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
 import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
@@ -116,9 +117,11 @@ export default function RootLayout({
             gtag('config', 'G-N9M49GTXJW');
           `}
         </Script>
-        <Navbar />
-        <main className="pb-20 md:pb-0">{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          <main className="pb-20 md:pb-0">{children}</main>
+          <Footer />
+        </SmoothScroll>
         <StickyMobileCTA />
         <WhatsAppButton />
         <ExitIntentPopup />

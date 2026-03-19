@@ -48,12 +48,12 @@ export function ServicesOverview() {
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                whileHover={{ y: -4 }}
-                className="group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-colors hover:border-amber-500/30 hover:bg-zinc-50"
+                initial={{ opacity: 0, y: 32, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.07, ease: [0.21, 0.47, 0.32, 0.98] }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-colors hover:border-amber-500/30 hover:shadow-md hover:shadow-amber-500/5"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600 transition-colors group-hover:bg-amber-100">
                   <Icon size={24} />
