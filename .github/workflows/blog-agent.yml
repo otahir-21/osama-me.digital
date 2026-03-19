@@ -65,18 +65,28 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
           BLOG_TOPIC_OVERRIDE: ${{ github.event.inputs.topic }}
         run: |
-          set -o pipefail
           echo "📝 Blog Agent starting..."
-          npm run blog 2>&1 | tee ../blog-agent-run.log
+          echo "📁 Working dir: $(pwd)"
+          echo "📁 Project root: $GITHUB_WORKSPACE"
+          echo "📁 Blog file: $GITHUB_WORKSPACE/src/data/blog.ts"
+          node --version
+          npx tsx blog-agent.ts 2>&1 | tee ../blog-agent-run.log
+          EXIT_CODE=${PIPESTATUS[0]}
+          echo "--- FULL LOG ---"
+          cat ../blog-agent-run.log
+          echo "--- END LOG ---"
+          exit $EXIT_CODE
 
-      - name: Verify TypeScript compiles
+      - name: Show blog.ts diff
+        if: always()
         run: |
-          npx tsc --noEmit 2>&1 | head -30 || echo "⚠️ TypeScript warnings (non-fatal)"
+          echo "--- git diff src/data/blog.ts ---"
+          git diff src/data/blog.ts | head -80 || echo "(no diff)"
 
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet src/data/blog.ts && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Extract post title from log
         id: post_info
@@ -100,7 +110,11 @@ jobs:
 
       - name: No post generated
         if: steps.changes.outputs.changed == 'false'
-        run: echo "⚠️ No changes detected — blog.ts was not modified"
+        run: |
+          echo "⚠️ No changes detected — blog.ts was not modified"
+          echo "--- Last 30 lines of log ---"
+          tail -30 blog-agent-run.log || echo "(no log file)"
+          exit 1
 
       - name: Upload run log
         if: always()
