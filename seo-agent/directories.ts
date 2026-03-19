@@ -12,9 +12,9 @@ export const BUSINESS_PROFILE = {
     "Web Developer & Digital Marketing Specialist based in Dubai, UAE. Custom websites, SEO, Google Ads, and social media marketing for UAE businesses.",
   website: "https://osama-me.digital",
   email: "hello@osama-me.digital",
-  phone: "+971-XX-XXX-XXXX", // UPDATE THIS with real phone number
+  phone: "+971507276823", // UPDATE THIS with real phone number
   address: {
-    street: "",           // UPDATE: your Dubai street/area
+    street: "Dubai Development Authority (DDA) / TECOM",           // UPDATE: your Dubai street/area
     city: "Dubai",
     state: "Dubai",
     country: "United Arab Emirates",
@@ -38,10 +38,10 @@ export const BUSINESS_PROFILE = {
     "web development UAE",
   ],
   socialLinks: {
-    linkedin: "https://linkedin.com/in/osama-tahir",  // UPDATE
-    instagram: "",  // UPDATE
-    twitter: "",    // UPDATE
-    facebook: "",   // UPDATE
+    linkedin: "www.linkedin.com/in/otahir21",  // UPDATE
+    instagram: "https://www.instagram.com/otahir212/",  // UPDATE
+    twitter: "https://x.com/otahir212?s=11",    // UPDATE
+    facebook: "https://www.facebook.com/share/1BF46PTFmM/?mibextid=wwXIfr",   // UPDATE
   },
   foundedYear: "2020",
   employees: "1-10",
