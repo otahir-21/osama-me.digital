@@ -9,8 +9,11 @@
  */
 
 import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import fs from "fs";
 import path from "path";
+import https from "https";
+import http from "http";
 
 const PROJECT_ROOT =
   process.env.GITHUB_WORKSPACE ?? process.cwd().replace("/seo-agent", "");
@@ -18,6 +21,7 @@ const BLOG_FILE = path.join(PROJECT_ROOT, "src/data/blog.ts");
 const SITE_URL = "https://osama-me.digital";
 
 const client = new Anthropic();
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // ─── Content Strategy: 5 Pillars ─────────────────────────────────────────────
 //
@@ -375,6 +379,75 @@ function updateSitemap(slug: string): void {
   console.log("📍 Sitemap uses dynamic blogPosts — no manual update needed");
 }
 
+// ─── Generate & save blog image with DALL-E 3 ────────────────────────────────
+function downloadImage(url: string, destPath: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const file = fs.createWriteStream(destPath);
+    const protocol = url.startsWith("https") ? https : http;
+    protocol.get(url, (res) => {
+      res.pipe(file);
+      file.on("finish", () => { file.close(); resolve(); });
+    }).on("error", (err) => {
+      fs.unlink(destPath, () => {});
+      reject(err);
+    });
+  });
+}
+
+async function generateBlogImage(post: BlogPost): Promise<string> {
+  if (!process.env.OPENAI_API_KEY) {
+    console.log("⚠️  OPENAI_API_KEY not set — skipping image generation");
+    return post.image;
+  }
+
+  // Build a DALL-E 3 prompt that matches the site's dark professional aesthetic
+  const categoryStyle: Record<string, string> = {
+    "Web Development": "modern code editor, dark background, glowing UI elements, web design",
+    "SEO": "Google search results, analytics charts, data visualization, growth metrics",
+    "Digital Marketing": "social media icons, digital campaign, data-driven marketing",
+    "Google Ads": "Google Ads dashboard, PPC campaign, pay-per-click advertising",
+    "Social Media": "social media platforms, content creation, engagement metrics",
+    "Business Strategy": "business meeting Dubai skyline, strategy planning, professional",
+    "Cloud & AWS": "cloud infrastructure, server racks, AWS architecture diagram",
+    "Tools": "software tools, productivity apps, digital workspace",
+    "Marketing": "marketing funnel, leads, conversion, analytics",
+  };
+
+  const styleHint = categoryStyle[post.category] ?? "digital marketing, professional business";
+
+  const imagePrompt = `Professional blog header image for an article titled "${post.title}".
+Style: Dark luxury aesthetic, deep charcoal/black background, amber/gold accent colors (#f59e0b),
+minimalist and modern, high-end Dubai business feel.
+Visual concept: ${styleHint}.
+No text overlays. Cinematic lighting. Shot as a wide banner (16:9 ratio).
+High quality, photorealistic or clean digital illustration style.`;
+
+  console.log(`\n🎨 Generating image with DALL-E 3...`);
+  console.log(`   Prompt: ${imagePrompt.slice(0, 100)}...`);
+
+  const response = await openai.images.generate({
+    model: "dall-e-3",
+    prompt: imagePrompt,
+    n: 1,
+    size: "1792x1024",
+    quality: "standard",
+    style: "vivid",
+  });
+
+  const imageUrl = response.data[0]?.url;
+  if (!imageUrl) throw new Error("DALL-E 3 returned no image URL");
+
+  // Derive filename from post.image field (e.g. /images/blog/website-cost-dubai.jpg)
+  const imagePath = path.join(PROJECT_ROOT, "public", post.image);
+  const imageDir = path.dirname(imagePath);
+  if (!fs.existsSync(imageDir)) fs.mkdirSync(imageDir, { recursive: true });
+
+  await downloadImage(imageUrl, imagePath);
+  console.log(`✅ Image saved: public${post.image}`);
+
+  return post.image;
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   console.log("🚀 Blog Agent starting...");
@@ -405,15 +478,19 @@ async function main() {
     console.log(`⚠️  Slug conflict — updated to: ${post.slug}`);
   }
 
-  // 5. Append to blog.ts
+  // 5. Generate image with DALL-E 3
+  await generateBlogImage(post);
+
+  // 6. Append to blog.ts
   appendToBlogFile(post);
 
-  // 6. Update sitemap if needed
+  // 7. Update sitemap if needed
   updateSitemap(post.slug);
 
   console.log("\n" + "═".repeat(60));
   console.log("✅ BLOG AGENT COMPLETE");
   console.log(`📌 New post: ${SITE_URL}/blog/${post.slug}`);
+  console.log(`🖼️  Image: public${post.image}`);
   console.log("═".repeat(60));
 }
 
