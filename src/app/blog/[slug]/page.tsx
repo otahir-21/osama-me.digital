@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blog";
@@ -95,8 +96,19 @@ export default async function BlogPostPage({ params }: Props) {
           </p>
         </header>
 
-        <div className="mt-12 aspect-video rounded-xl bg-zinc-100 flex items-center justify-center">
-          <span className="text-6xl font-bold text-zinc-400">{post.title.charAt(0)}</span>
+        <div className="mt-12 aspect-video rounded-xl bg-zinc-100 relative overflow-hidden flex items-center justify-center">
+          {post.image ? (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          ) : (
+            <span className="text-6xl font-bold text-zinc-400">{post.title.charAt(0)}</span>
+          )}
         </div>
 
         <div className="prose mt-12 max-w-none prose-headings:text-zinc-900 prose-p:text-zinc-700 prose-li:text-zinc-700 prose-strong:text-zinc-900 prose-a:text-amber-600 prose-a:no-underline hover:prose-a:underline prose-h2:text-2xl prose-h3:text-xl prose-h2:mt-10 prose-h3:mt-8">
