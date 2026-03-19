@@ -1,0 +1,80 @@
+name: Directory Agent — Submit to UAE Directories
+
+on:
+  # Run once manually to submit — then monthly to check status
+  workflow_dispatch:
+
+  # Re-check listings every month
+  schedule:
+    - cron: "0 6 1 * *"  # 1st of every month at 6AM UTC
+
+permissions:
+  contents: write
+
+jobs:
+  directory-agent:
+    name: Submit to UAE/Dubai Directories
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: seo-agent/package.json
+
+      - name: Install dependencies
+        working-directory: seo-agent
+        run: npm install
+
+      - name: Configure Git
+        run: |
+          git config user.name "Directory Agent Bot"
+          git config user.email "directory-agent@osama-me.digital"
+
+      - name: Run Directory Agent
+        working-directory: seo-agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: |
+          echo "📋 Directory Agent starting..."
+          npx tsx directory-agent.ts 2>&1 | tee ../directory-agent-run.log
+          echo "--- LOG ---"
+          cat ../directory-agent-run.log
+
+      - name: Commit results
+        run: |
+          git add seo-agent/directory-submissions/
+          git diff --cached --quiet && echo "No changes" || \
+          git commit -m "📋 Directory Agent: updated submission status $(date +'%Y-%m-%d')"
+          git pull --rebase origin main && git push origin main || echo "Nothing to push"
+
+      - name: Upload guide as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: directory-submission-guide
+          path: seo-agent/directory-submissions/submission-guide.html
+          retention-days: 90
+
+      - name: Summary
+        run: |
+          echo "## 📋 Directory Submission Guide Generated" >> $GITHUB_STEP_SUMMARY
+          echo "Download the **submission-guide.html** artifact above." >> $GITHUB_STEP_SUMMARY
+          echo "Open it in your browser to complete manual submissions." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Priority order:**" >> $GITHUB_STEP_SUMMARY
+          echo "1. Google Business Profile" >> $GITHUB_STEP_SUMMARY
+          echo "2. Bing Places (import from GBP)" >> $GITHUB_STEP_SUMMARY
+          echo "3. Clutch.co + GoodFirms" >> $GITHUB_STEP_SUMMARY
+          echo "4. HiDubai + JustDial UAE" >> $GITHUB_STEP_SUMMARY
+          echo "5. Apple Business Connect" >> $GITHUB_STEP_SUMMARY
