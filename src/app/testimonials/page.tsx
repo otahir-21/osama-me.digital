@@ -10,6 +10,45 @@ import { testimonialsData } from "@/data/testimonials";
 export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-zinc-50 pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Osama Tahir Digital Marketing",
+            image: "https://osama-me.digital/og-image.png",
+            url: "https://osama-me.digital",
+            telephone: "+971507276823",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5.0",
+              ratingCount: "4",
+              reviewCount: "4",
+              bestRating: "5",
+              worstRating: "5",
+            },
+            review: testimonialsData.map((t) => ({
+              "@type": "Review",
+              author: {
+                "@type": "Person",
+                name: t.author,
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: t.rating.toString(),
+                bestRating: "5",
+                worstRating: "1",
+              },
+              reviewBody: t.quote,
+              publisher: {
+                "@type": "Organization",
+                name: t.company,
+              },
+            })),
+          }),
+        }}
+      />
       <h1 className="sr-only">Client Testimonials — Web Developer & Marketing Specialist Dubai</h1>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading

@@ -52,6 +52,11 @@ export default function ContactPage() {
                 href={siteConfig.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                    window.gtag("event", "calendly_click", { event_category: "contact" });
+                  }
+                }}
                 className="flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 transition-colors hover:border-amber-500/30"
                 whileHover={{ x: 4 }}
               >
@@ -67,6 +72,11 @@ export default function ContactPage() {
                 href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                    window.gtag("event", "whatsapp_click", { event_category: "contact" });
+                  }
+                }}
                 className="flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 transition-colors hover:border-emerald-500/30"
                 whileHover={{ x: 4 }}
               >

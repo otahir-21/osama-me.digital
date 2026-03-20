@@ -110,9 +110,10 @@ export function Hero() {
               {...fadeUp(0.7)}
               className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-500"
             >
-              Web development, mobile apps, SEO & Google Ads for businesses in
-              Dubai, Abu Dhabi, Sharjah & all UAE Emirates. 3+ years agency
-              experience. Book a free consultation.
+              Freelance web developer and digital marketing specialist in Dubai,
+              UAE. I build fast, SEO-ready websites and grow them with SEO &
+              Google Ads — serving Dubai, Abu Dhabi, Sharjah & all Emirates.
+              Book a free consultation.
             </motion.p>
 
             {/* CTAs */}

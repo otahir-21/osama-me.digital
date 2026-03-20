@@ -17,6 +17,11 @@ export function StickyMobileCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-3 border-t border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur-md md:hidden shadow-[0_-4px_12px_rgba(15,23,42,0.08)]">
       <Link
         href="/contact"
+        onClick={() => {
+          if (typeof window !== "undefined" && typeof window.gtag === "function") {
+            window.gtag("event", "cta_click", { event_label: "Book a Call" });
+          }
+        }}
         className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-amber-500 py-3 font-semibold text-zinc-950 transition-colors hover:bg-amber-400"
       >
         <Phone size={18} />
@@ -27,6 +32,11 @@ export function StickyMobileCTA() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
+        onClick={() => {
+          if (typeof window !== "undefined" && typeof window.gtag === "function") {
+            window.gtag("event", "whatsapp_click", { event_category: "contact" });
+          }
+        }}
         className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#25D366] text-white transition-transform active:scale-95"
       >
         <WhatsAppIcon />

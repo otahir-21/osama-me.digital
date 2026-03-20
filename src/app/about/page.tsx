@@ -129,7 +129,7 @@ export default function AboutPage() {
           <div className="relative flex items-center justify-center">
             <Image
               src="/profile-photo.png"
-              alt={`${siteConfig.name} portrait`}
+              alt={`${siteConfig.name} — Freelance Web Developer and Digital Marketing Specialist in Dubai, UAE`}
               width={420}
               height={520}
               className="h-auto w-full max-w-sm rounded-2xl border border-zinc-200 bg-white object-cover object-top shadow-sm"

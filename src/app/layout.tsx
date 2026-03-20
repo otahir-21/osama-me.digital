@@ -27,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
+    default: `${siteConfig.name} | Web Developer & Digital Marketing Specialist Dubai, UAE`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -46,8 +46,12 @@ export const metadata: Metadata = {
     "Google Ads specialist UAE",
     "Social media marketing Dubai",
     "Freelance digital marketing UAE",
+    "Freelance web developer Dubai",
+    "Website design Dubai",
     "Marketing consultant Dubai",
     "Marketing consultant Abu Dhabi",
+    "Web developer Sharjah",
+    "SEO services Abu Dhabi",
     "osama-me.digital",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
@@ -63,7 +67,7 @@ export const metadata: Metadata = {
     locale: "en_AE",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
+    title: `${siteConfig.name} | Web Developer & Digital Marketing Specialist Dubai, UAE`,
     description: siteConfig.description,
     images: [
       {
@@ -78,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@osama_tahir",
     creator: "@osama_tahir",
-    title: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
+    title: `${siteConfig.name} | Web Developer & Digital Marketing Specialist Dubai, UAE`,
     description: siteConfig.description,
   },
   robots: {
@@ -90,6 +94,14 @@ export const metadata: Metadata = {
     },
   },
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
   category: "technology",
 };
 

@@ -5,6 +5,9 @@ export function getPersonSchema() {
   const sameAs = [
     siteConfig.social.linkedin,
     siteConfig.social.github,
+    "https://www.instagram.com/otahir212/",
+    "https://x.com/otahir212",
+    "https://www.facebook.com/share/1BF46PTFmM/",
   ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",
@@ -18,6 +21,7 @@ export function getPersonSchema() {
       "@type": "Organization",
       name: "Osama Tahir Digital",
     },
+    telephone: siteConfig.telephone,
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
@@ -30,13 +34,22 @@ export function getPersonSchema() {
 
 export function getProfessionalServiceSchema() {
   const serviceAreas = siteConfig.serviceAreas ?? ["Dubai", "Abu Dhabi", "Sharjah"];
+  const sameAs = [
+    siteConfig.social.linkedin,
+    siteConfig.social.github,
+    "https://www.instagram.com/otahir212/",
+    "https://x.com/otahir212",
+    "https://www.facebook.com/share/1BF46PTFmM/",
+  ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: `${siteConfig.name} - Web Developer & Digital Marketing Specialist UAE`,
     description: siteConfig.description,
     url: siteConfig.url,
+    telephone: siteConfig.telephone,
     email: siteConfig.email,
+    sameAs,
     areaServed: serviceAreas.map((area) => ({
       "@type": "City",
       name: area,
@@ -61,6 +74,9 @@ export function getLocalBusinessSchema() {
   const sameAs = [
     siteConfig.social.linkedin,
     siteConfig.social.github,
+    "https://www.instagram.com/otahir212/",
+    "https://x.com/otahir212",
+    "https://www.facebook.com/share/1BF46PTFmM/",
   ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",
