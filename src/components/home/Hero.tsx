@@ -123,6 +123,11 @@ export function Hero() {
             >
               <Link
                 href="/contact"
+                onClick={() => {
+                  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                    window.gtag("event", "cta_click", { event_label: "Book a Free Consultation" });
+                  }
+                }}
                 className={buttonVariants({
                   size: "lg",
                   className:

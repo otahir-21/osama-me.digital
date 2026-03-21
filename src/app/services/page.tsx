@@ -111,6 +111,11 @@ export default function ServicesHubPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
+              onClick={() => {
+                if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                  window.gtag("event", "cta_click", { event_label: "Book Free Consultation" });
+                }
+              }}
               className={buttonVariants({
                 size: "lg",
                 className: "bg-amber-500 text-zinc-950 hover:bg-amber-400",

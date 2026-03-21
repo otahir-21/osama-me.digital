@@ -120,6 +120,11 @@ export default function AboutPage() {
             </p>
             <Link
               href="/contact"
+              onClick={() => {
+                if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                  window.gtag("event", "cta_click", { event_label: "Let's Work Together" });
+                }
+              }}
               className={buttonVariants({ size: "lg", className: "mt-8 inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
             >
               Let&apos;s Work Together
@@ -237,6 +242,11 @@ export default function AboutPage() {
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
+              onClick={() => {
+                if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                  window.gtag("event", "cta_click", { event_label: "Book a Free Consultation" });
+                }
+              }}
               className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
             >
               Book a Free Consultation

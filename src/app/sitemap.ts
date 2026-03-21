@@ -5,7 +5,7 @@ import { servicesDetail } from "@/data/services-detail";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
-  const now = new Date("2026-03-20");
+  const now = new Date("2026-03-21");
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },

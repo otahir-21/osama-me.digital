@@ -104,6 +104,11 @@ export default function TestimonialsPage() {
           </p>
           <Link
             href="/contact"
+            onClick={() => {
+              if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                window.gtag("event", "cta_click", { event_label: "Book a Free Consultation" });
+              }
+            }}
             className={buttonVariants({
               size: "lg",
               className: "mt-8 inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400",
