@@ -24,6 +24,9 @@ export function ContactForm() {
       });
       if (res.ok) {
         setStatus("success");
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", { event_category: "contact" });
+        }
         form.reset();
       } else {
         setStatus("error");

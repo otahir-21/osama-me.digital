@@ -108,6 +108,11 @@ export function ExitIntentPopup() {
                   href={siteConfig.calendly}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                      window.gtag("event", "calendly_click", { event_category: "contact" });
+                    }
+                  }}
                   className="flex items-center justify-center gap-2 rounded-lg bg-amber-500 py-3 font-semibold text-zinc-950 transition-colors hover:bg-amber-400"
                 >
                   <Calendar size={18} />
