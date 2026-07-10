@@ -1,8 +1,29 @@
-export const portfolioData = [
+export interface PortfolioProject {
+  id: string;
+  title: string;
+  category: string;
+  company: string;
+  role: string;
+  client: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  techStack: string[];
+  image: string;
+  featured: boolean;
+  kind: "mobile" | "web";
+  appStore?: string;
+  playStore?: string;
+  liveUrl?: string;
+}
+
+export const portfolioData: PortfolioProject[] = [
   {
     id: "vyooo-creator-platform",
     title: "VyooO – Creator Social Platform",
     category: "Mobile App (Flutter)",
+    company: "prism-digital",
+    role: "Solo Developer",
     client: "Creator economy startup",
     challenge:
       "Build a modern creator platform where influencers can stream live, share exclusive content, and monetize their audience with subscriptions.",
@@ -17,12 +38,16 @@ export const portfolioData = [
     image: "/images/portfolio/vyooo.jpg",
     featured: true,
     kind: "mobile",
-    services: ["mobile-app-development-dubai", "web-development-dubai"],
+    appStore: "https://apps.apple.com/ae/app/vyooo/id6757733269",
+    playStore: "https://play.google.com/store/apps/details?id=com.vyooo",
+    liveUrl: "https://www.vyooo.com/",
   },
   {
     id: "dvago-medical-directory",
     title: "Dvago – Medical Drug Directory",
     category: "Mobile App (Flutter)",
+    company: "prism-digital",
+    role: "Solo Developer",
     client: "Healthcare / pharmaceutical brand",
     challenge:
       "Doctors and pharmacists needed a fast, reliable mobile reference for drug information that works even with limited connectivity.",
@@ -37,32 +62,13 @@ export const portfolioData = [
     image: "/images/portfolio/dvago.jpg",
     featured: true,
     kind: "mobile",
-    services: ["mobile-app-development-dubai"],
-  },
-  {
-    id: "pak-id-nadra",
-    title: "PAK ID – NADRA Pakistan",
-    category: "GovTech Mobile",
-    client: "NADRA Pakistan",
-    challenge:
-      "Support Pakistan’s official digital identity app used by millions, with strict security, biometric requirements, and high performance expectations.",
-    solution:
-      "Contributed to the mobile app with biometric authentication flows, ICAO-compliant photo capture, and performance/stability improvements for large-scale usage.",
-    results: [
-      "1M+ downloads with a 4.8 Google Play rating",
-      "More reliable identity verification for citizens via mobile",
-      "Improved app stability under heavy real-world usage",
-    ],
-    techStack: ["Flutter", "Biometric auth", "Camera & image processing", "Secure APIs"],
-    image: "/images/portfolio/pak-id.jpg",
-    featured: true,
-    kind: "mobile",
-    services: ["mobile-app-development-dubai"],
   },
   {
     id: "royal-spirit-ecommerce",
     title: "Royal Spirit – E‑commerce Platform",
     category: "Mobile Commerce",
+    company: "prism-digital",
+    role: "Solo Developer",
     client: "Retail & lifestyle brand",
     challenge:
       "Launch a modern mobile shopping experience with secure payments, order history, and notifications across iOS and Android.",
@@ -77,32 +83,34 @@ export const portfolioData = [
     image: "/images/portfolio/royal-spirit.jpg",
     featured: false,
     kind: "mobile",
-    services: ["mobile-app-development-dubai", "shopify-development-dubai", "web-development-dubai"],
   },
   {
-    id: "anton-oilfield-management",
-    title: "Anton Oilfield Management Platform",
-    category: "Web & Backend (Laravel)",
-    client: "Anton Oilfield Management",
+    id: "pak-id-nadra",
+    title: "PAK ID – NADRA Pakistan",
+    category: "GovTech Mobile",
+    company: "freelancer",
+    role: "Solo Developer",
+    client: "NADRA Pakistan",
     challenge:
-      "Coordinate field operations and workforce in real time across multiple locations with better visibility for managers.",
+      "Support Pakistan’s official digital identity app used by millions, with strict security, biometric requirements, and high performance expectations.",
     solution:
-      "Built Laravel REST APIs for task tracking and job scheduling, implemented JWT-based authentication, and added real-time data sync to operational dashboards.",
+      "Contributed to the mobile app with biometric authentication flows, ICAO-compliant photo capture, and performance/stability improvements for large-scale usage.",
     results: [
-      "Centralized visibility into field operations and active jobs",
-      "More reliable scheduling and task assignment across teams",
-      "Foundation for future integrations and reporting",
+      "1M+ downloads with a 4.8 Google Play rating",
+      "More reliable identity verification for citizens via mobile",
+      "Improved app stability under heavy real-world usage",
     ],
-    techStack: ["Laravel", "MySQL", "REST APIs", "JWT auth"],
-    image: "/images/portfolio/anton-oilfield.jpg",
-    featured: false,
-    kind: "web",
-    services: ["web-development-dubai"],
+    techStack: ["Flutter", "Biometric auth", "Camera & image processing", "Secure APIs"],
+    image: "/images/portfolio/pak-id.jpg",
+    featured: true,
+    kind: "mobile",
   },
   {
     id: "new-edge-realty",
     title: "New Edge Realty – Property Platform",
     category: "Web & Backend (Laravel)",
+    company: "freelancer",
+    role: "Solo Developer",
     client: "New Edge Realty",
     challenge:
       "Build a real estate site that can handle property listings, inquiries, and future scale without constant developer intervention.",
@@ -117,6 +125,26 @@ export const portfolioData = [
     image: "/images/portfolio/new-edge-realty.jpg",
     featured: false,
     kind: "web",
-    services: ["web-development-dubai"],
+  },
+  {
+    id: "anton-oilfield-management",
+    title: "Anton Oilfield Management Platform",
+    category: "Web & Backend (Laravel)",
+    company: "metatech",
+    role: "Solo Developer",
+    client: "Anton Oilfield Management",
+    challenge:
+      "Coordinate field operations and workforce in real time across multiple locations with better visibility for managers.",
+    solution:
+      "Built Laravel REST APIs for task tracking and job scheduling, implemented JWT-based authentication, and added real-time data sync to operational dashboards.",
+    results: [
+      "Centralized visibility into field operations and active jobs",
+      "More reliable scheduling and task assignment across teams",
+      "Foundation for future integrations and reporting",
+    ],
+    techStack: ["Laravel", "MySQL", "REST APIs", "JWT auth"],
+    image: "/images/portfolio/anton-oilfield.jpg",
+    featured: false,
+    kind: "web",
   },
 ];

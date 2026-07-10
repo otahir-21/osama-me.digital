@@ -1,42 +1,32 @@
 export const faqData = [
   {
-    question: "Do you offer free software consultation in Dubai and UAE?",
+    question: "Are you open to full-time roles or contract work?",
     answer:
-      "Yes. I offer a free 30-minute consultation to discuss your software needs, digital marketing strategy, or website requirements. Whether you're in Dubai, Abu Dhabi, Sharjah, or any other Emirates, we can connect remotely. Book a free call to get started.",
+      "Both. I'm open to senior full-time positions and contract engagements in the UAE and remotely. Whether you need a mobile developer, backend engineer, or someone who can own delivery end-to-end, let's talk.",
   },
   {
-    question: "Where does your digital marketing specialist service cover in UAE?",
+    question: "What kind of projects do you specialize in?",
     answer:
-      "I serve clients across all seven Emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain. Based in Dubai, I work remotely with businesses throughout the UAE and internationally.",
+      "Cross-platform mobile apps (Flutter, React Native), Laravel/Node.js APIs, payment integrations (Stripe, Apple Pay), and cloud-backed systems for fintech and enterprise clients. I've shipped 20+ production apps with 500K+ combined downloads.",
   },
   {
-    question: "How much does a website cost?",
+    question: "Can you work remotely or on-site in Dubai?",
     answer:
-      "Website projects typically start from AED 3,000 for a simple landing page to AED 15,000+ for full custom sites. E-commerce and complex projects are quoted individually. I provide transparent pricing after understanding your requirements.",
+      "Yes. I'm based in Dubai and comfortable with hybrid, on-site, or fully remote collaboration across UAE and GCC time zones.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "What's your typical tech stack?",
     answer:
-      "Landing pages: 1–2 weeks. Full websites: 3–6 weeks. SEO and marketing campaigns: ongoing with monthly retainers. Timeline depends on scope, content readiness, and revisions. I'll give you a clear timeline in our discovery call.",
+      "Flutter and React Native for mobile, Laravel and Node.js for backends, MySQL and Redis for data, AWS and Firebase for cloud, plus Stripe for payments. I also integrate LLM APIs (OpenAI, Gemini) where it adds product value.",
   },
   {
-    question: "Do you work with businesses in Abu Dhabi and other Emirates?",
+    question: "Do you handle App Store and Play Store submissions?",
     answer:
-      "Yes. I work with businesses across Dubai, Abu Dhabi, Sharjah, and all UAE Emirates. Remote collaboration via video calls and shared tools keeps projects smooth. I understand the UAE market and serve clients locally and internationally.",
+      "Yes. I've taken multiple apps through Apple App Store and Google Play review — metadata, screenshots, privacy policies, test accounts, and release strategy included.",
   },
   {
-    question: "What's included in SEO services?",
+    question: "How do I get in touch?",
     answer:
-      "Technical SEO audit, keyword research, on-page optimization, content strategy, link building support, and monthly reporting. I focus on sustainable, white-hat SEO that builds long-term organic visibility.",
-  },
-  {
-    question: "Do you offer ongoing support after launch?",
-    answer:
-      "Yes. I offer monthly growth support packages including updates, monitoring, content tweaks, and performance optimization. Many clients prefer retainers for continuous improvement and peace of mind.",
-  },
-  {
-    question: "How do I get started?",
-    answer:
-      "Book a free 30-minute consultation. We'll discuss your goals, challenges, and how I can help. No pressure—just a clear conversation to see if we're a good fit. Use the Book a Consultation button or contact form.",
+      "Email me at dxbsoftwaredeveloper@gmail.com, send a WhatsApp message, or use the contact form on this site. I typically respond within 24 hours.",
   },
 ];

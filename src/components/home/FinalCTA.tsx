@@ -17,7 +17,7 @@ export function FinalCTA() {
           viewport={{ once: true }}
           className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl"
         >
-          Ready to Grow Your Business Online?
+          Let&apos;s Build Something Great
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -26,8 +26,8 @@ export function FinalCTA() {
           transition={{ delay: 0.1 }}
           className="mt-4 text-lg text-zinc-600"
         >
-          Let&apos;s discuss your project. Book a free 30-minute consultation—no commitment, just
-          a clear conversation about your goals.
+          {siteConfig.availability}. Whether it&apos;s a full-time role or a contract project,
+          I&apos;d love to hear from you.
         </motion.p>
 
         <motion.div
@@ -41,7 +41,7 @@ export function FinalCTA() {
             href="/contact"
             className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
           >
-            Book a Free Consultation
+            Get in Touch
           </Link>
           <a
             href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`}
@@ -56,33 +56,6 @@ export function FinalCTA() {
             <MessageCircle size={20} />
             WhatsApp
           </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-12 flex flex-wrap justify-center gap-6 text-sm"
-        >
-          <Link
-            href="/services"
-            className="text-zinc-600 transition-colors hover:text-zinc-900"
-          >
-            Services
-          </Link>
-          <Link
-            href="/portfolio"
-            className="text-zinc-600 transition-colors hover:text-zinc-900"
-          >
-            Portfolio
-          </Link>
-          <Link
-            href="/blog"
-            className="text-zinc-600 transition-colors hover:text-zinc-900"
-          >
-            Blog
-          </Link>
         </motion.div>
 
         <motion.div

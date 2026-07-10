@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { MobileHeader } from "@/components/layout/MobileHeader";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
-import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
 import { siteConfig } from "@/data/site-config";
 
 const dmSans = DM_Sans({
@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
@@ -27,27 +27,20 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
+    default: `${siteConfig.name} | ${siteConfig.role} — Dubai, UAE`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    "Digital marketing specialist UAE",
-    "Digital marketing specialist Dubai",
-    "Digital marketing specialist Abu Dhabi",
-    "Free software Dubai",
-    "Free software UAE",
-    "Digital marketing freelancer UAE",
-    "SEO expert Dubai",
-    "SEO expert Abu Dhabi",
-    "Web developer Dubai",
-    "Web developer Abu Dhabi",
-    "Google Ads specialist UAE",
-    "Social media marketing Dubai",
-    "Freelance digital marketing UAE",
-    "Marketing consultant Dubai",
-    "Marketing consultant Abu Dhabi",
+    "Full-stack developer Dubai",
+    "Flutter developer UAE",
+    "React Native developer Dubai",
+    "Laravel developer UAE",
+    "Mobile app developer Dubai",
+    "Backend API developer UAE",
+    "Senior software engineer Dubai",
+    "Fintech developer UAE",
     "osama-me.digital",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
@@ -63,7 +56,7 @@ export const metadata: Metadata = {
     locale: "en_AE",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
+    title: `${siteConfig.name} | ${siteConfig.role} — Dubai, UAE`,
     description: siteConfig.description,
     images: [
       {
@@ -78,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@osama_tahir",
     creator: "@osama_tahir",
-    title: `${siteConfig.name} | Digital Marketing Specialist UAE - Dubai, Abu Dhabi`,
+    title: `${siteConfig.name} | ${siteConfig.role} — Dubai, UAE`,
     description: siteConfig.description,
   },
   robots: {
@@ -94,7 +87,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#09090b",
 };
 
 export default function RootLayout({
@@ -104,7 +97,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-white font-sans text-zinc-900 antialiased`}>
+      <body className={`${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-zinc-950 font-sans text-zinc-100 antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-N9M49GTXJW"
           strategy="lazyOnload"
@@ -118,13 +111,15 @@ export default function RootLayout({
           `}
         </Script>
         <SmoothScroll>
-          <Navbar />
-          <main className="pb-20 md:pb-0">{children}</main>
-          <Footer />
+          <Sidebar />
+          <div className="lg:pl-72">
+            <MobileHeader />
+            <main className="min-h-screen pb-24 md:pb-0">{children}</main>
+            <Footer />
+          </div>
         </SmoothScroll>
         <StickyMobileCTA />
         <WhatsAppButton />
-        <ExitIntentPopup />
       </body>
     </html>
   );

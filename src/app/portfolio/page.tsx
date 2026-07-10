@@ -1,14 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ArrowUpRight, Building2 } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
-import { serviceNames } from "@/data/internal-links";
+import { siteConfig } from "@/data/site-config";
+import { PageShell } from "@/components/layout/PageShell";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TiltCard } from "@/components/ui/TiltCard";
 
 type Filter = "all" | "mobile" | "web";
 
@@ -19,208 +19,123 @@ export default function PortfolioPage() {
     () =>
       filter === "all"
         ? portfolioData
-        : portfolioData.filter((project: any) => project.kind === filter),
+        : portfolioData.filter((project) => project.kind === filter),
     [filter]
   );
 
+  const projectsByCompany = useMemo(() => {
+    const grouped = new Map<string, typeof portfolioData>();
+    for (const company of siteConfig.companies) {
+      const projects = filteredProjects.filter((p) => p.company === company.id);
+      if (projects.length > 0) grouped.set(company.id, projects);
+    }
+    return grouped;
+  }, [filteredProjects]);
+
   return (
-    <div className="min-h-screen bg-zinc-50 pt-24">
-      <h1 className="sr-only">Portfolio & Case Studies — Web & App Development Dubai</h1>
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div>
+      <PageShell wide className="border-b border-zinc-800/80">
         <SectionHeading
-          eyebrow="Portfolio"
-          title="Case Studies"
-          subtitle="Selected mobile apps and web platforms with measurable results—from high-scale apps to backend systems."
+          eyebrow="Work"
+          title="All projects"
+          subtitle="Mobile apps and backend systems grouped by company."
         />
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap gap-2">
           {[
-            { id: "all", label: "All projects", value: "all" as Filter },
-            {
-              id: "mobile",
-              label: "Mobile applications",
-              value: "mobile" as Filter,
-            },
-            {
-              id: "web",
-              label: "Web & backend",
-              value: "web" as Filter,
-            },
+            { id: "all", label: "All", value: "all" as Filter },
+            { id: "mobile", label: "Mobile", value: "mobile" as Filter },
+            { id: "web", label: "Web & API", value: "web" as Filter },
           ].map((item) => (
             <button
               key={item.id}
               type="button"
               onClick={() => setFilter(item.value)}
-              className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 filter === item.value
-                  ? "border-amber-500 bg-amber-500/10 text-amber-600"
-                  : "border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-100"
+                  ? "bg-emerald-500/10 text-emerald-400"
+                  : "text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300"
               }`}
             >
               {item.label}
             </button>
           ))}
         </div>
-      </section>
+      </PageShell>
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="space-y-24">
-          {filteredProjects.map((project, i) => (
-            <motion.article
-              key={project.id}
-              id={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="scroll-mt-24 rounded-2xl border border-zinc-200 bg-white p-8 lg:p-12 shadow-sm"
-            >
-              <div className="grid gap-12 lg:grid-cols-2">
-                <div>
-                  <span className="text-sm font-medium uppercase tracking-wider text-amber-500">
-                    {project.category}
-                  </span>
-                  <h2 className="mt-2 text-3xl font-bold text-zinc-900">{project.title}</h2>
-                  <p className="mt-2 text-zinc-600">{project.client}</p>
+      <PageShell wide className="space-y-16 py-12">
+        {siteConfig.companies.map((company) => {
+          const projects = projectsByCompany.get(company.id);
+          if (!projects?.length) return null;
 
-                  <div className="mt-8 space-y-6">
-                    <div>
-                      <h3 className="font-semibold text-zinc-900">The Challenge</h3>
-                      <p className="mt-1 text-zinc-600">{project.challenge}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-zinc-900">The Solution</h3>
-                      <p className="mt-1 text-zinc-600">{project.solution}</p>
-                    </div>
-                  </div>
+          return (
+            <section key={company.id}>
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900 border border-zinc-800">
+                  <Building2 className="h-4 w-4 text-emerald-400" />
                 </div>
-
                 <div>
-                  <div className="aspect-video overflow-hidden rounded-xl bg-zinc-100 relative">
-                    <Image
-                      src={project.image ?? "/og-image.png"}
-                      alt={`${project.title} — ${project.category} case study by Osama Tahir, Dubai`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="mt-8">
-                    <h3 className="font-semibold text-zinc-900">Results</h3>
-                    <ul className="mt-2 space-y-1">
-                  {project.results.map((r) => (
-                        <li key={r} className="text-amber-400">• {r}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-6">
-                    <h3 className="font-semibold text-zinc-900">Tech Stack</h3>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {project.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm text-zinc-700"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <h3 className="font-semibold text-zinc-900">Related Services</h3>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {Array.isArray((project as any).services) &&
-                        ((project as any).services as string[]).map((serviceId) => (
-                          <Link
-                            key={serviceId}
-                            href={`/services#${serviceId}`}
-                            className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-700 transition-colors hover:border-amber-500/30 hover:text-amber-600"
-                          >
-                            {serviceNames[serviceId] ?? serviceId}
-                          </Link>
-                        ))}
-                    </div>
-                  </div>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <Link
-                      href={`/portfolio/${project.id}`}
-                      className={buttonVariants({
-                        size: "lg",
-                        className:
-                          "inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400",
-                      })}
-                    >
-                      View full case study
-                      <ArrowRight className="ml-2 size-4" />
-                    </Link>
-                    <Link
-                      href="/contact"
-                      className={buttonVariants({
-                        variant: "outline",
-                        size: "lg",
-                        className:
-                          "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100",
-                      })}
-                    >
-                      Discuss a similar project
-                    </Link>
-                  </div>
+                  <h2 className="font-semibold text-zinc-100">{company.name}</h2>
+                  <p className="text-xs text-zinc-500">
+                    {company.role} · {company.period}
+                  </p>
                 </div>
               </div>
-            </motion.article>
-          ))}
-        </div>
-      </section>
 
-      <section className="border-t border-zinc-200 bg-white py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-zinc-900">Have a Project in Mind?</h2>
-          <p className="mt-4 text-zinc-600">
-            Let&apos;s discuss how I can help you achieve similar results—whether you need a
-            high-converting website, ongoing marketing, or a mobile app taken all the way to
-            Apple App Store submission and approval.
-          </p>
-          <Link
-            href="/contact"
-            className={buttonVariants({
-              size: "lg",
-              className: "mt-8 inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400",
-            })}
-          >
-            Book a Free Consultation
-          </Link>
-
-          <div className="mt-16 grid gap-8 border-t border-zinc-200 pt-16 sm:grid-cols-2">
-            <Link
-              href="/services"
-              className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
-            >
-              <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
-                Explore Services
-              </h3>
-              <p className="mt-2 text-sm text-zinc-600">
-                Web development, SEO, Google Ads, and more.
-              </p>
-              <span className="mt-2 inline-flex items-center text-sm text-amber-400">
-                View all services <ArrowRight className="ml-1 size-4" />
-              </span>
-            </Link>
-            <Link
-              href="/blog"
-              className="group rounded-xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-amber-500/30"
-            >
-              <h3 className="font-semibold text-zinc-900 group-hover:text-amber-500 transition-colors">
-                Read the Blog
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">
-                Digital marketing tips and insights for UAE businesses.
-              </p>
-              <span className="mt-2 inline-flex items-center text-sm text-amber-400">
-                Explore articles <ArrowRight className="ml-1 size-4" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {projects.map((project) => (
+                  <TiltCard
+                    key={project.id}
+                    className="group h-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 transition-colors hover:border-zinc-700"
+                  >
+                  <Link
+                    href={`/portfolio/${project.id}`}
+                    className="flex h-full flex-col"
+                  >
+                    <div className="relative aspect-[16/9] bg-zinc-800">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                        sizes="(max-width: 768px) 100vw, 400px"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="font-mono text-xs text-zinc-500">{project.category}</p>
+                          {(project.appStore || project.playStore) && (
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
+                              <span className="h-1 w-1 rounded-full bg-emerald-400" />
+                              Live
+                            </span>
+                          )}
+                        </div>
+                        <ArrowUpRight className="size-4 text-zinc-600 group-hover:text-emerald-400 shrink-0" />
+                      </div>
+                      <h3 className="mt-2 font-semibold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-zinc-500 line-clamp-2">{project.results[0]}</p>
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {project.techStack.slice(0, 4).map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded bg-zinc-800 px-2 py-0.5 font-mono text-[10px] text-zinc-500"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                  </TiltCard>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </PageShell>
     </div>
   );
 }

@@ -16,7 +16,7 @@ export function FAQSection() {
         <SectionHeading
           eyebrow="FAQ"
           title="Common Questions"
-          subtitle="Quick answers to what clients usually ask."
+          subtitle="Quick answers about working with me."
         />
 
         <Accordion className="mt-12">

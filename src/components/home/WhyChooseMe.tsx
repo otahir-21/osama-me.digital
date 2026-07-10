@@ -1,29 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Code2, Target, MapPin } from "lucide-react";
+import { Award, Code2, Shield, Zap } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const benefits = [
   {
     icon: Award,
-    title: "3+ Years Agency Experience",
-    desc: "Trained in fast-paced agency environments. I deliver on time, communicate clearly, and understand client expectations.",
+    title: "6+ Years in Production",
+    desc: "Shipped 20+ apps across fintech, healthcare, govtech, and enterprise — from architecture to App Store launch.",
   },
   {
     icon: Code2,
-    title: "Development + Marketing Hybrid",
-    desc: "Rare combination: I build websites and run campaigns. No handoffs, no miscommunication—one person who gets both sides.",
+    title: "Full-Stack Ownership",
+    desc: "Mobile frontends, Laravel/Node APIs, payment flows, and cloud deployment. One engineer who owns the full stack.",
   },
   {
-    icon: Target,
-    title: "Results-Focused Approach",
-    desc: "Every project is measured against business goals. I optimize for conversions, leads, and ROI—not just aesthetics.",
+    icon: Shield,
+    title: "Security-First Fintech",
+    desc: "Processed $1.2M+ in Stripe and Apple Pay transactions with zero security breaches across regulated environments.",
   },
   {
-    icon: MapPin,
-    title: "Dubai Market Knowledge",
-    desc: "I understand the UAE market, local SEO, and what resonates with Dubai businesses. Plus, I work with clients worldwide.",
+    icon: Zap,
+    title: "Performance at Scale",
+    desc: "APIs handling 10K+ daily requests at 99.9% uptime. 40% latency reductions through caching and query optimization.",
   },
 ];
 
@@ -32,9 +32,9 @@ export function WhyChooseMe() {
     <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Why Work With Me"
-          title="Built for Results"
-          subtitle="Experience, skills, and a focus on what actually moves the needle for your business."
+          eyebrow="Highlights"
+          title="What I Bring"
+          subtitle="Technical depth, delivery discipline, and a track record of shipping reliable software."
         />
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

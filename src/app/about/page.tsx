@@ -1,265 +1,148 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import {
-  Award,
-  Code2,
-  Target,
-  MapPin,
-  Briefcase,
-  Cpu,
-  Building2,
-  ArrowRight,
-} from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import Image from "next/image";
+import { ArrowRight, GraduationCap, Award } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
-import { getPersonSchema, getLocalBusinessSchema } from "@/lib/schema";
+import { getPersonSchema } from "@/lib/schema";
+import { PageShell } from "@/components/layout/PageShell";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const skills = [
-  "Web Development (Next.js, React, WordPress, Shopify)",
-  "Mobile App Development (Flutter & React Native)",
-  "iOS & Android App Store / Play Store Submission",
-  "SEO & Content Strategy",
-  "Google Ads & PPC",
-  "Social Media Marketing",
-  "Landing Page Optimization",
-  "Analytics & Conversion Tracking",
-];
-
-const tools = [
-  "Next.js, React, TypeScript",
-  "Flutter (iOS & Android)",
-  "React Native (iOS & Android)",
-  "WordPress, Shopify",
-  "Google Ads, Meta Ads",
-  "Google Analytics, Search Console",
-  "App Store Connect, TestFlight, Firebase",
-  "Figma, VS Code",
-];
-
-const industries = [
-  "E-commerce & Retail",
-  "Real Estate",
-  "Restaurants & Hospitality",
-  "Professional Services",
-  "SaaS & Tech Startups",
+  "Web platforms: Flutter Web, Laravel dashboards & CRMs",
+  "Laravel, Node.js, REST & GraphQL APIs, MySQL, Redis",
+  "Flutter, React Native, SwiftUI, Kotlin",
+  "Stripe, Apple Pay, PCI-aware payment flows",
+  "AWS, Firebase, CI/CD, containers",
+  "LLM APIs (OpenAI, Gemini), AI-assisted dev",
+  "Agile/Scrum (SMC), mentoring, architecture",
 ];
 
 const timeline = [
   {
-    year: "2025–Present",
-    title: "Senior Full-Stack Developer · Metatech, Dubai",
-    desc: "Leading Flutter and React Native mobile development at a Dubai-based tech agency. Delivered 20+ production apps with 500K+ total downloads across iOS & Android, and integrated $1.2M+ in payment processing through Stripe and in-app purchases.",
+    year: "2025 – Present",
+    title: "Senior Full-Stack Developer · Metatech",
+    desc: "Flutter Web CRM, Laravel APIs at 99.9% uptime, mentoring junior developers.",
   },
   {
-    year: "2023–2025",
-    title: "Freelance Developer & Digital Marketing Specialist",
-    desc: "Worked directly with clients across the UAE and GCC—building conversion-focused websites with Next.js, Flutter & React Native mobile apps, and full digital marketing funnels including SEO, Google Ads, and analytics.",
+    year: "2023 – 2025",
+    title: "Senior Mobile Developer · Prism Digital",
+    desc: "6+ Flutter/React Native apps, 200K+ downloads, $1.2M+ payment processing.",
   },
   {
-    year: "2022",
-    title: "Web Development & E-commerce",
-    desc: "Expanded into custom development—WordPress, Shopify, and WooCommerce stores for UAE businesses. Integrated UAE payment gateways and built product filtering, inventory management, and checkout flows.",
+    year: "2021 – 2023",
+    title: "Lead Flutter Developer · Freelancer.com",
+    desc: "12+ global client apps, 4.9/5 satisfaction, 100% on-time delivery.",
   },
   {
-    year: "2020",
-    title: "Started in Digital Marketing",
-    desc: "Began with SEO, Google Ads, and social media marketing at a Dubai-based agency. Managed campaigns across multiple industries and built the foundation in analytics, reporting, and conversion tracking.",
+    year: "2020 – 2021",
+    title: "Mobile Developer Intern · Soft Code Labs",
+    desc: "5+ Android/iOS apps, 50K+ downloads, Play Store & App Store launches.",
   },
 ];
 
 export default function AboutPage() {
   const personSchema = getPersonSchema();
-  const localBusinessSchema = getLocalBusinessSchema();
   return (
-    <div className="min-h-screen bg-zinc-50 pt-24">
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid gap-12 lg:grid-cols-2 lg:gap-16"
-        >
+
+      <PageShell className="border-b border-zinc-800/80">
+        <div className="grid gap-12 lg:grid-cols-[1fr_200px]">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-wider text-amber-400">
-              About Me
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
-              {siteConfig.name} — Web Developer &amp; Digital Marketing Specialist Dubai
-            </h1>
-            <p className="mt-4 text-xl text-amber-400">{siteConfig.role}</p>
-            <p className="mt-6 text-lg text-zinc-600">
-              I&apos;m a Senior Full-Stack &amp; Mobile Developer and digital marketing specialist
-              based in Dubai, with 5+ years of agency and freelance experience. I&apos;ve shipped
-              20+ production mobile apps in Flutter and React Native with 500K+ combined downloads,
-              built custom web platforms in Next.js, and run performance marketing campaigns for
-              businesses across the UAE and GCC.
-            </p>
-            <p className="mt-4 text-zinc-600">
-              What sets me apart is the combination of development and marketing. I don&apos;t
-              just build websites—I build them with SEO, conversion, and performance in mind.
-              And when I run ads or SEO, I understand the technical side. No handoffs, no
-              miscommunication.
-            </p>
-            <p className="mt-4 text-zinc-600">
-              For mobile apps, I also guide clients through Apple App Store requirements end to end:
-              metadata, screenshots, privacy policy, review test accounts, age ratings, pricing,
-              country availability, and release strategy—so your app is not only built well, but
-              approved and ready to launch.
-            </p>
-            <Link
-              href="/contact"
-              className={buttonVariants({ size: "lg", className: "mt-8 inline-flex bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
-            >
-              Let&apos;s Work Together
-              <ArrowRight className="ml-2 size-4" />
-            </Link>
-          </div>
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/profile-photo.png"
-              alt={`${siteConfig.name} portrait`}
-              width={420}
-              height={520}
-              className="h-auto w-full max-w-sm rounded-2xl border border-zinc-200 bg-white object-cover object-top shadow-sm"
-              priority
-            />
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="border-t border-zinc-200 bg-white py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Experience"
-            title="My Journey"
-            subtitle="From agency work to freelance—focused on results."
-          />
-          <div className="mt-16 space-y-8">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={item.year}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="space-y-2"
-              >
-                <div className="flex flex-wrap items-baseline gap-3">
-                  <span className="text-2xl font-bold text-amber-400">{item.year}</span>
-                  <h3 className="text-lg font-semibold text-zinc-900">{item.title}</h3>
-                </div>
-                <p className="text-zinc-600">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-zinc-200 bg-zinc-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Skills & Tools"
-            title="What I Work With"
-            subtitle="A blend of development and marketing expertise."
-          />
-          <div className="mt-16 grid gap-8 md:grid-cols-2">
-            <div>
-              <h3 className="flex items-center gap-2 font-semibold text-zinc-900">
-                <Code2 className="size-5 text-amber-400" />
-                Skills
-              </h3>
-              <ul className="mt-4 space-y-2">
-                {skills.map((s) => (
-                  <li key={s} className="text-zinc-600">• {s}</li>
-                ))}
-              </ul>
+            <p className="font-mono text-xs uppercase tracking-widest text-emerald-400/80">About</p>
+            <h1 className="mt-3 text-3xl font-bold text-zinc-50 sm:text-4xl">{siteConfig.name}</h1>
+            <p className="mt-2 text-lg text-zinc-400">{siteConfig.headline}</p>
+            <div className="mt-8 space-y-4 text-zinc-400 leading-relaxed">
+              <p>
+                I&apos;m a {siteConfig.role} based in {siteConfig.location} with 6 years of
+                experience building secure backend services and cross-platform mobile apps for
+                fintech and enterprise clients.
+              </p>
+              <p>
+                I&apos;ve shipped 20+ production applications with 500K+ combined downloads,
+                engineered APIs at 99.9% uptime, and processed $1.2M+ in secure payments with
+                zero breaches.
+              </p>
+              <p>
+                Scrum Master Certified — I mentor engineers, lead Agile delivery, and own systems
+                end-to-end from architecture to deployment.
+              </p>
             </div>
-            <div>
-              <h3 className="flex items-center gap-2 font-semibold text-zinc-900">
-                <Cpu className="size-5 text-amber-400" />
-                Tools & Stack
-              </h3>
-              <ul className="mt-4 space-y-2">
-                {tools.map((t) => (
-                  <li key={t} className="text-zinc-600">• {t}</li>
-                ))}
-              </ul>
+            <p className="mt-6 inline-flex items-center gap-2 text-sm text-emerald-400">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              {siteConfig.availability}
+            </p>
+          </div>
+
+          <div className="flex items-start justify-center lg:justify-end">
+            <div className="relative h-52 w-52 overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500/25 to-zinc-800 ring-1 ring-zinc-700/60">
+              <Image
+                src="/profile.png"
+                alt={siteConfig.name}
+                fill
+                className="object-cover object-top"
+                sizes="208px"
+                priority
+              />
             </div>
           </div>
         </div>
-      </section>
+      </PageShell>
 
-      <section className="border-t border-zinc-200 bg-zinc-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Industries"
-            title="Who I Serve"
-            subtitle="Experience across multiple sectors."
-          />
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            {industries.map((ind) => (
-              <span
-                key={ind}
-                className="rounded-full border border-zinc-200 bg-zinc-100 px-4 py-2 text-sm text-zinc-700"
-              >
-                {ind}
-              </span>
-            ))}
+      <PageShell className="border-b border-zinc-800/80 py-12">
+        <SectionHeading eyebrow="Experience" title="Where I've worked" />
+        <div className="mt-10 space-y-8">
+          {timeline.map((item) => (
+            <div key={item.year} className="grid gap-2 sm:grid-cols-[140px_1fr] sm:gap-8">
+              <p className="font-mono text-sm text-emerald-400/80">{item.year}</p>
+              <div>
+                <h3 className="font-semibold text-zinc-200">{item.title}</h3>
+                <p className="mt-1 text-sm text-zinc-500">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </PageShell>
+
+      <PageShell className="border-b border-zinc-800/80 py-12">
+        <SectionHeading eyebrow="Skills" title="Tech stack" />
+        <ul className="mt-8 space-y-3">
+          {skills.map((s) => (
+            <li key={s} className="flex items-start gap-3 text-sm text-zinc-400">
+              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
+              {s}
+            </li>
+          ))}
+        </ul>
+      </PageShell>
+
+      <PageShell className="py-12">
+        <SectionHeading eyebrow="Education" title="Background" />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5">
+            <GraduationCap className="size-5 text-emerald-400" />
+            <h3 className="mt-3 font-semibold text-zinc-200">B.E. Software Engineering</h3>
+            <p className="mt-1 text-sm text-zinc-500">Foundation University Islamabad · 2018–2022</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5">
+            <Award className="size-5 text-emerald-400" />
+            <h3 className="mt-3 font-semibold text-zinc-200">Certifications</h3>
+            <p className="mt-1 text-sm text-zinc-500">Scrum Master Certified (SMC), Android Dev, Containers</p>
           </div>
         </div>
-      </section>
 
-      <section className="border-t border-zinc-200 bg-white py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Mission"
-            title="Why I Do This"
-            subtitle="Clear value, honest work, real results."
-          />
-          <p className="mx-auto mt-8 max-w-2xl text-center text-lg text-zinc-600">
-            I believe small businesses and startups deserve the same quality of web and
-            marketing work as big brands. My mission is to deliver premium results without
-            the agency overhead—direct collaboration, transparent pricing, and a focus on
-            what actually moves the needle for your business.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
-            >
-              Book a Free Consultation
-            </Link>
-            <Link
-              href="/services"
-              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100" })}
-            >
-              View Services
-            </Link>
-            <Link
-              href="/portfolio"
-              className={buttonVariants({ variant: "outline", size: "lg", className: "border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100" })}
-            >
-              View Portfolio
-            </Link>
-          </div>
-          <p className="mt-8 text-center text-sm text-zinc-500">
-            <Link href="/blog" className="text-amber-400 hover:underline">Read the blog</Link>
-            {" "}for insights on digital marketing and web development.
-          </p>
-        </div>
-      </section>
+        <Link
+          href="/contact"
+          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300"
+        >
+          Get in touch
+          <ArrowRight size={16} />
+        </Link>
+      </PageShell>
     </div>
   );
 }

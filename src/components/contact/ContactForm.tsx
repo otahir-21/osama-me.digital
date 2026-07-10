@@ -42,7 +42,7 @@ export function ContactForm() {
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 block text-sm font-medium text-zinc-800">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium text-zinc-300">
             Name *
           </label>
           <Input
@@ -51,11 +51,11 @@ export function ContactForm() {
             type="text"
             required
             placeholder="Your name"
-            className="h-11 border-zinc-300 bg-white text-zinc-900 placeholder:text-zinc-400"
+            className="h-11 border-zinc-700 bg-zinc-900 text-zinc-100 placeholder:text-zinc-600"
           />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-800">
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-300">
             Email *
           </label>
           <Input
@@ -64,12 +64,12 @@ export function ContactForm() {
             type="email"
             required
             placeholder="you@company.com"
-            className="h-11 border-zinc-300 bg-white text-zinc-900 placeholder:text-zinc-400"
+            className="h-11 border-zinc-700 bg-zinc-900 text-zinc-100 placeholder:text-zinc-600"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-zinc-800">
+        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-zinc-300">
           Subject *
         </label>
         <Input
@@ -78,11 +78,11 @@ export function ContactForm() {
           type="text"
           required
           placeholder="Project inquiry"
-          className="h-11 border-zinc-300 bg-white text-zinc-900 placeholder:text-zinc-400"
+          className="h-11 border-zinc-700 bg-zinc-900 text-zinc-100 placeholder:text-zinc-600"
         />
       </div>
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-zinc-800">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-zinc-300">
           Message *
         </label>
         <Textarea
@@ -91,7 +91,7 @@ export function ContactForm() {
           required
           rows={5}
           placeholder="Tell me about your project, goals, and timeline..."
-          className="min-h-32 border-zinc-300 bg-white text-zinc-900 placeholder:text-zinc-400"
+          className="min-h-32 border-zinc-700 bg-zinc-900 text-zinc-100 placeholder:text-zinc-600"
         />
       </div>
       {status === "success" && (
@@ -107,7 +107,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-amber-500 text-zinc-950 hover:bg-amber-400 sm:w-auto"
+        className="w-full bg-emerald-500 text-zinc-950 hover:bg-emerald-400 sm:w-auto"
       >
         {status === "loading" ? (
           <>

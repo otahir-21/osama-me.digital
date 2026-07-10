@@ -1,106 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
-
-const footerServices = [
-  { label: "Web Development Dubai", href: "/services/web-development-dubai" },
-  { label: "Mobile App Development", href: "/services/mobile-app-development-dubai" },
-  { label: "SEO Services Dubai", href: "/services/seo-services-dubai" },
-  { label: "Google Ads Management", href: "/services/google-ads-management-dubai" },
-  { label: "Social Media Marketing", href: "/services/social-media-marketing-uae" },
-  { label: "Shopify Development", href: "/services/shopify-development-dubai" },
-  { label: "WordPress Development", href: "/services/wordpress-development-dubai" },
-  { label: "Landing Page Design", href: "/services/landing-page-design-uae" },
-  { label: "Website Maintenance", href: "/services/website-maintenance-uae" },
-  { label: "AWS Cloud Hosting", href: "/services/aws-management-uae" },
-];
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50 pb-24 md:pb-0">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <Link href="/" className="text-2xl font-bold text-zinc-900">
-              {siteConfig.name}
-            </Link>
-            <p className="mt-4 max-w-md text-sm text-zinc-600">
-              Freelance web developer and digital marketing specialist in Dubai, UAE. Custom
-              websites, mobile apps, SEO, and Google Ads for businesses across all Emirates.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-zinc-900">Quick Links</h3>
-            <ul className="mt-4 space-y-1">
-              {siteConfig.navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="inline-flex min-h-[44px] items-center text-sm text-zinc-600 transition-colors hover:text-zinc-900"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-zinc-900">Services</h3>
-            <ul className="mt-4 space-y-1">
-              {footerServices.map((s) => (
-                <li key={s.href}>
-                  <Link
-                    href={s.href}
-                    className="inline-flex min-h-[44px] items-center text-sm text-zinc-600 transition-colors hover:text-zinc-900"
-                  >
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {siteConfig.serviceAreas && (
-            <div>
-              <h3 className="font-semibold text-zinc-900">UAE Service Areas</h3>
-              <p className="mt-4 text-sm text-zinc-600">
-                Dubai • Abu Dhabi • Sharjah • Ajman • RAK • Fujairah • UAQ
-              </p>
-            </div>
-          )}
-        </div>
-
-        <div className="mt-12 flex flex-col gap-4 border-t border-zinc-200 pt-12 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900"
-            >
-              <Mail size={16} />
-              {siteConfig.email}
-            </a>
-            <span className="flex items-center gap-2 text-sm text-zinc-600">
-              <MapPin size={16} />
-              {siteConfig.location}
-            </span>
-          </div>
-          <div className="flex gap-6 text-sm text-zinc-500">
-            <Link href="/privacy-policy" className="hover:text-zinc-700">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="hover:text-zinc-700">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
-
-        <p className="mt-8 text-center text-sm text-zinc-500">
-          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+    <footer className="border-t border-zinc-800/80 px-6 py-8 lg:px-12">
+      <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-zinc-600">
+          © {new Date().getFullYear()} {siteConfig.name}
         </p>
+        <div className="flex flex-wrap items-center gap-4 text-sm text-zinc-600">
+          <span className="flex items-center gap-1.5">
+            <MapPin size={14} />
+            {siteConfig.location}
+          </span>
+          <Link href="/privacy-policy" className="hover:text-zinc-400">
+            Privacy
+          </Link>
+          <Link href="/terms-of-service" className="hover:text-zinc-400">
+            Terms
+          </Link>
+        </div>
       </div>
     </footer>
   );

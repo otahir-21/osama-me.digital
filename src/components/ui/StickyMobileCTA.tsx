@@ -14,20 +14,20 @@ export function StickyMobileCTA() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-3 border-t border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur-md md:hidden shadow-[0_-4px_12px_rgba(15,23,42,0.08)]">
+    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-3 border-t border-zinc-800 bg-zinc-950/95 px-4 py-3 backdrop-blur-md lg:hidden">
       <Link
         href="/contact"
-        className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-amber-500 py-3 font-semibold text-zinc-950 transition-colors hover:bg-amber-400"
+        className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-emerald-500 py-3 text-sm font-semibold text-zinc-950 hover:bg-emerald-400"
       >
         <Phone size={18} />
-        Book a Call
+        Contact
       </Link>
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#25D366] text-white transition-transform active:scale-95"
+        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#25D366] text-white"
       >
         <WhatsAppIcon />
       </a>

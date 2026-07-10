@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     const smtpHost = process.env.SMTP_HOST ?? "smtp.hostinger.com";
     const smtpPort = parseInt(process.env.SMTP_PORT ?? "587", 10);
-    const smtpUser = process.env.SMTP_USER ?? "info@osama-me.digital";
+    const smtpUser = process.env.SMTP_USER ?? "dxbsoftwaredeveloper@gmail.com";
     const smtpPass = process.env.SMTP_PASS;
 
     if (!smtpPass) {

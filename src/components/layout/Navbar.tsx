@@ -52,7 +52,7 @@ export function Navbar() {
             href="/contact"
             className={buttonVariants({ size: "sm", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
           >
-            Book a Call
+            Get in Touch
           </Link>
         </div>
 
@@ -91,7 +91,7 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={buttonVariants({ className: "mt-2 bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
               >
-                Book a Call
+                Get in Touch
               </Link>
             </div>
           </motion.div>
