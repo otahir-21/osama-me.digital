@@ -99,9 +99,9 @@ export function ExitIntentPopup() {
                 Wait! Before you go...
               </h2>
               <p className="mt-2 text-zinc-600">
-                Book a <strong className="text-amber-500">free 30-minute consultation</strong> to
-                discuss your website or digital marketing needs. No obligation—just a clear
-                conversation.
+                Let&apos;s talk about a <strong className="text-amber-500">full-time role</strong> or{" "}
+                <strong className="text-amber-500">contract project</strong>. No obligation — just a
+                clear conversation about what you&apos;re building.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <a

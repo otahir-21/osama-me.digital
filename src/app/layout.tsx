@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     "Backend API developer UAE",
     "Senior software engineer Dubai",
     "Fintech developer UAE",
+    "Full-stack developer Saudi Arabia",
+    "Mobile app developer GCC",
     "osama-me.digital",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
@@ -73,6 +75,7 @@ export const metadata: Metadata = {
     creator: "@osama_tahir",
     title: `${siteConfig.name} | ${siteConfig.role} — Dubai, UAE`,
     description: siteConfig.description,
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

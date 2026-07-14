@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for Osama Tahir freelance web development and digital marketing services.",
+  description: "Privacy policy for Osama Tahir — Senior Full-Stack Developer portfolio and contact services.",
 };
 
 export default function PrivacyPolicyPage() {

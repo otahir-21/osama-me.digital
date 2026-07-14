@@ -5,6 +5,7 @@ export function getPersonSchema() {
   const sameAs = [
     siteConfig.social.linkedin,
     siteConfig.social.github,
+    siteConfig.social.twitter,
   ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",

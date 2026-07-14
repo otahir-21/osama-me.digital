@@ -17,6 +17,7 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/otahir21",
     github: "https://github.com/otahir-21",
+    twitter: "https://x.com/otahir212",
   },
   navLinks: [
     { href: "/", label: "Home" },

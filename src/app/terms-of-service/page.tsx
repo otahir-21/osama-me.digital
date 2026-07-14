@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of service for Osama Tahir freelance web development and digital marketing services.",
+  description: "Terms of service for Osama Tahir — Senior Full-Stack Developer portfolio and professional services.",
 };
 
 export default function TermsOfServicePage() {
@@ -25,9 +25,10 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-xl font-semibold text-zinc-900">2. Services</h2>
             <p>
-              I provide freelance web development, SEO, digital marketing, and related
-              services. The scope, deliverables, timeline, and pricing for each project
-              will be agreed upon in a separate proposal or contract before work begins.
+              I provide full-stack web development, mobile app development, backend APIs,
+              and related technical services. The scope, deliverables, timeline, and pricing
+              for each engagement will be agreed upon in a separate proposal or contract
+              before work begins.
             </p>
           </section>
 

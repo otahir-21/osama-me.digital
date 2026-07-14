@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Osama Tahir | Web Developer & Digital Marketing Specialist Dubai",
+  title: "About Osama Tahir | Senior Full-Stack Developer Dubai",
   description:
-    "Meet Osama Tahir — senior full-stack developer and digital marketing specialist in Dubai, UAE. 5+ years experience, 20+ apps delivered, serving all Emirates.",
+    "Meet Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years experience, 20+ apps shipped, 500K+ downloads, and $1.2M+ in secure payment processing.",
   openGraph: {
-    title: "About Osama Tahir | Web Developer & Digital Marketing Specialist Dubai",
+    title: "About Osama Tahir | Senior Full-Stack Developer Dubai",
     description:
-      "Meet Osama Tahir — senior full-stack developer and digital marketing specialist in Dubai, UAE. 5+ years experience, 20+ apps delivered, serving all Emirates.",
+      "Meet Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years experience, 20+ apps shipped, 500K+ downloads, and $1.2M+ in secure payment processing.",
     url: "https://osama-me.digital/about",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Osama Tahir - Web Developer & Digital Marketing Specialist Dubai" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Osama Tahir - Senior Full-Stack Developer Dubai" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Osama Tahir | Web Developer & Digital Marketing Specialist Dubai",
-    description: "Meet Osama Tahir — senior full-stack developer and digital marketing specialist in Dubai, UAE. 5+ years experience, 20+ apps delivered.",
+    title: "About Osama Tahir | Senior Full-Stack Developer Dubai",
+    description:
+      "Meet Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years experience, 20+ apps shipped, 500K+ downloads.",
   },
   alternates: {
     canonical: "https://osama-me.digital/about",
