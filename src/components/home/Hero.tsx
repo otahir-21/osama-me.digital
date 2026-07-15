@@ -74,7 +74,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-all duration-200 hover:scale-[1.03] hover:border-zinc-600 hover:bg-zinc-900 active:scale-95"
             >
               <Download size={16} />
-              Resume
+              Download resume
             </a>
           </div>
 

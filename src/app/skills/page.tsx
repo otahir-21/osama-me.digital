@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const skillCategories = [
   {
     title: "Web Development",
-    skills: ["Flutter Web", "Laravel web apps", "Dashboards & CRMs", "Responsive UI", "REST APIs"],
+    skills: ["Flutter Web", "React", "Laravel web apps", "Dashboards & CRMs", "WordPress"],
   },
   {
     title: "Backend Engineering",
@@ -21,7 +21,7 @@ const skillCategories = [
   },
   {
     title: "Payments & Fintech",
-    skills: ["Stripe", "Apple Pay", "PCI-aware flows", "Google Analytics", "Secure APIs"],
+    skills: ["Stripe", "Apple Pay", "Network International", "PCI-aware flows", "Secure APIs"],
   },
   {
     title: "Cloud & DevOps",

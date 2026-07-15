@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,6 +8,7 @@ import { TiltCard } from "@/components/ui/TiltCard";
 import { portfolioData } from "@/data/portfolio";
 import { siteConfig } from "@/data/site-config";
 import { PageShell } from "@/components/layout/PageShell";
+import { ProjectCover } from "@/components/portfolio/ProjectCover";
 
 const featured = portfolioData.filter((p) => p.featured);
 
@@ -69,14 +69,8 @@ export function FeaturedPortfolio() {
                   </div>
                   <ArrowUpRight className="size-5 shrink-0 text-zinc-600 transition-colors group-hover:text-emerald-400" />
                 </div>
-                <div className="relative mt-8 aspect-[16/7] overflow-hidden rounded-xl bg-zinc-800">
-                  <Image
-                    src={hero.image}
-                    alt={hero.title}
-                    fill
-                    className="object-cover opacity-80 transition-opacity group-hover:opacity-100"
-                    sizes="(max-width: 768px) 100vw, 800px"
-                  />
+                <div className="relative mt-8 aspect-[16/7] overflow-hidden rounded-xl">
+                  <ProjectCover title={hero.title} size="lg" />
                 </div>
               </Link>
               </TiltCard>

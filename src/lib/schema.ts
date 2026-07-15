@@ -6,6 +6,7 @@ export function getPersonSchema() {
     siteConfig.social.linkedin,
     siteConfig.social.github,
     siteConfig.social.twitter,
+    siteConfig.social.upwork,
   ].filter(Boolean) as string[];
   return {
     "@context": "https://schema.org",
@@ -25,13 +26,19 @@ export function getPersonSchema() {
     },
     knowsAbout: [
       "Flutter",
+      "Flutter Web",
       "React Native",
       "Laravel",
       "Node.js",
       "REST APIs",
       "Stripe",
+      "Apple Pay",
       "AWS",
+      "Firebase",
+      "OpenAI",
+      "Gemini",
       "Mobile App Development",
+      "Payment Systems",
     ],
   };
 }

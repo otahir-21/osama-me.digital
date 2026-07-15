@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
+import { portfolioData, KIND_LABELS, getProjectKinds, getAllPlatforms } from "@/data/portfolio";
 import { siteConfig } from "@/data/site-config";
 import { PageShell } from "@/components/layout/PageShell";
+import { CaseStudyPresenter } from "@/components/portfolio/CaseStudyPresenter";
+import { ProjectCover } from "@/components/portfolio/ProjectCover";
 
 const AppleIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden>
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${project.title} | Case Study`,
       description: project.challenge,
       url: `https://osama-me.digital/portfolio/${id}`,
-      images: [{ url: project.image ?? "/og-image.png", width: 1200, height: 630, alt: project.title }],
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: project.title }],
     },
     alternates: { canonical: `https://osama-me.digital/portfolio/${id}` },
   };
@@ -54,7 +56,8 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
   const project = portfolioData.find((p) => p.id === id);
   if (!project) notFound();
 
-  const isMobile = project.kind === "mobile";
+  const companyName = getCompanyName(project.company);
+  const hasDeck = Boolean(project.pillars?.length);
 
   return (
     <div>
@@ -75,14 +78,27 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           <p className="mt-2 text-zinc-500">{project.client}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
-              {getCompanyName(project.company)}
+              {companyName}
             </span>
             <span className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
               {project.role}
             </span>
-            <span className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
-              {isMobile ? "Mobile" : "Web & API"}
-            </span>
+            {getProjectKinds(project).map((kind) => (
+              <span
+                key={kind}
+                className="rounded-md bg-emerald-500/10 px-2.5 py-1 text-xs text-emerald-400"
+              >
+                {KIND_LABELS[kind]}
+              </span>
+            ))}
+            {getAllPlatforms(project).map((platform) => (
+              <span
+                key={platform}
+                className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400"
+              >
+                {platform}
+              </span>
+            ))}
           </div>
 
           {(project.appStore || project.playStore || project.liveUrl) && (
@@ -126,15 +142,8 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           )}
         </div>
 
-        <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
-          <Image
-            src={project.image ?? "/og-image.png"}
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 900px"
-            priority
-          />
+        <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-zinc-800">
+          <ProjectCover title={project.title} size="lg" />
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-3">
@@ -173,6 +182,12 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
             </div>
           </aside>
         </div>
+
+        {hasDeck && (
+          <Suspense fallback={null}>
+            <CaseStudyPresenter project={project} companyName={companyName} />
+          </Suspense>
+        )}
 
         <Link
           href="/contact"

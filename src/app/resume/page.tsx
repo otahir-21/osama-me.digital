@@ -18,25 +18,27 @@ const experience = [
     location: "Dubai, UAE",
     period: "Jun 2025 – Present",
     points: [
+      "Leading end-to-end development of VyooO, a creator social platform (iOS + Android) with full-screen reels, stories, live streaming (Agora), real-time chat and voice/video calls (CallKit), and immersive 360°/VR video with gyro-based playback and live 360° panorama broadcasting.",
+      "Shipped AI-powered features in VyooO — AI hashtag generation and feed fact-check badges — alongside RevenueCat subscriptions, creator monetization and payout flows, and Cloudflare Stream video delivery.",
       "Architected a Flutter Web CRM with real-time analytics dashboards, cutting client reporting time by 60%.",
       "Designed and maintained Laravel REST APIs handling 10K+ daily requests at 99.9% uptime, powering Stripe and Google Analytics integrations.",
-      "Mentored 3 junior developers through code reviews and Agile training, lifting team productivity by 25%.",
-      "Reviewed and challenged system designs, driving modular architecture and caching decisions that improved API response times by 40%.",
+      "Built and shipped an in-app AI chatbot for the CRM using OpenAI and Gemini LLM APIs, bringing conversational AI assistance directly into the client-facing platform.",
+      "Mentored 3 junior developers and drove architecture reviews and caching decisions across client platforms.",
     ],
-    tech: "Flutter Web, Laravel, MySQL, Redis, BLoC, Stripe, Google APIs",
+    tech: "Flutter, Firebase, Agora, RevenueCat, Cloudflare Stream, Laravel, MySQL, Redis, OpenAI & Gemini APIs",
   },
   {
-    role: "Senior Mobile Developer (Flutter/React Native) | Laravel API Specialist",
+    role: "Senior Mobile Developer (Flutter / React Native) | Laravel API Specialist",
     company: "Prism Digital",
     location: "Dubai, UAE",
     period: "Jul 2023 – Jun 2025",
     points: [
-      "Led development of 6+ high-performance apps (Flutter/React Native) with 200K+ downloads and 4.7/5 average store ratings.",
+      "Led development of 6+ high-performance apps (Flutter/React Native) with 200K+ downloads and 4.7/5 average store ratings — including Dvago, ranked #13 in the App Store Medical category.",
+      "Integrated Stripe, Apple Pay, and Network International across fintech and e-commerce apps, processing $1.2M+ in transactions with zero security breaches — built to regulated, high-availability standards.",
       "Engineered Laravel REST APIs sustaining 5K+ requests/minute; reduced latency by 40% through Redis caching and query optimization.",
-      "Integrated Stripe and Apple Pay for 3 fintech applications, processing $1.2M+ in transactions with zero security breaches.",
-      "Mentored 2 junior developers and introduced Agile workflows, cutting project delivery time by 30%.",
+      "Mentored 2 junior developers and introduced Agile workflows that accelerated project delivery.",
     ],
-    tech: "Flutter, React Native, Laravel, Firebase, Stripe, GetX, MySQL",
+    tech: "Flutter, React Native, Laravel, Firebase, Stripe, Network International, GetX, MySQL",
   },
   {
     role: "Lead Flutter Developer | Cross-Platform Apps & API Integration",
@@ -44,9 +46,9 @@ const experience = [
     location: "Islamabad, Pakistan",
     period: "Dec 2021 – May 2023",
     points: [
+      "Contributed to PAK ID — NADRA Pakistan's official national identity app (1M+ downloads, 4.8 Google Play rating) — building biometric authentication flows, ICAO-compliant photo capture, and stability improvements for large-scale usage.",
       "Delivered 12+ Flutter applications for global clients with 100% on-time delivery and 4.9/5 client satisfaction.",
-      "Integrated REST APIs (Firebase/Node.js), improving app responsiveness by 35% through optimized data fetching.",
-      "Designed UI/UX for 8 apps, boosting user engagement by 45%; maintained <1% crash rate via rigorous testing.",
+      "Integrated REST APIs (Firebase/Node.js) and designed UI/UX for 8 apps; maintained <1% crash rate via rigorous testing (Jest, Mockito).",
     ],
     tech: "Flutter, Firebase, Node.js, GetX, Stripe, Google Maps API",
   },
@@ -57,26 +59,44 @@ const experience = [
     period: "Jun 2020 – Nov 2021",
     points: [
       "Developed 5+ Android/iOS apps with 50K+ downloads and 4.5/5 ratings.",
-      "Built Core PHP APIs, reducing data sync time by 30% through query optimization; deployed to Google Play and App Store with full store-guideline compliance.",
+      "Built Core PHP APIs, reducing data sync time through query optimization; deployed to Google Play and App Store with full store-guideline compliance.",
     ],
     tech: "Java, Swift, Core PHP, MySQL, Firebase",
   },
 ];
 
 const coreSkills = [
-  { label: "Backend Engineering", value: "Laravel (PHP), Node.js, REST & GraphQL APIs, microservice and event-driven design, MySQL, Redis" },
-  { label: "Cloud & DevOps", value: "AWS (EC2, S3, Lambda), Firebase, CI/CD pipelines, containers, performance tuning and caching" },
-  { label: "Payments & Integrations", value: "Stripe, Apple Pay, PCI-aware payment flows, Google Analytics, secure API integration for fintech" },
-  { label: "AI & Emerging Tech", value: "LLM API integration (OpenAI, Gemini), in-app chatbot features, AI-assisted development" },
-  { label: "Mobile & Frontend", value: "Flutter (iOS/Android/Web), React Native, SwiftUI, Kotlin, Java (Android), BLoC, GetX" },
-  { label: "Leadership & Delivery", value: "Agile/Scrum (SMC certified), code review, mentoring, stakeholder communication, architecture reviews" },
+  {
+    label: "Backend Engineering & APIs",
+    value: "Laravel (PHP), Node.js, REST & GraphQL APIs, Microservices & Event-driven, MySQL, Redis",
+  },
+  {
+    label: "Payments & Fintech",
+    value: "Stripe · Apple Pay, Network International, PCI-aware payment flows, Secure API integration",
+  },
+  {
+    label: "Mobile & Frontend",
+    value: "Flutter (iOS · Android · Web), React Native, SwiftUI · Kotlin · Java, BLoC · GetX",
+  },
+  {
+    label: "Cloud & DevOps",
+    value: "AWS (EC2 · S3 · Lambda), Firebase, CI/CD & Containers, Performance tuning & caching",
+  },
+  {
+    label: "AI & Emerging Tech",
+    value: "LLM APIs (OpenAI · Gemini), In-app chatbot features, AI-assisted Dev (Copilot · Claude · Cursor)",
+  },
+  {
+    label: "Leadership & Delivery",
+    value: "Agile / Scrum (SMC Certified), Code review & mentoring, Architecture reviews, Stakeholder communication",
+  },
 ];
 
 const achievements = [
-  "Processed $1.2M+ in secure payments (Stripe/Apple Pay) for UAE & KSA fintech apps — zero security breaches.",
-  "Reduced enterprise API response times by 40% and client reporting time by 60% through architecture and caching improvements.",
-  "Shipped 20+ production applications with 500K+ combined downloads and 4.8/5 average ratings.",
-  "Improved team productivity by 25% and delivery speed by 30% through mentoring and Agile leadership.",
+  "Processed $1.2M+ in secure payments (Stripe, Apple Pay, Network International) for UAE & GCC fintech apps — zero security breaches.",
+  "Engineered REST APIs handling 10K+ daily requests at 99.9% uptime; cut client reporting time by 60% with a Flutter Web CRM.",
+  "Shipped 20+ production applications with 500K+ combined downloads — including PAK ID (1M+ downloads, 4.8 rating) and Dvago (#13 Medical).",
+  "Mentored engineers across Metatech and Prism Digital while leading Agile delivery end-to-end (Scrum Master Certified).",
 ];
 
 export default function ResumePage() {
@@ -92,7 +112,7 @@ export default function ResumePage() {
               {siteConfig.name}
             </h1>
             <p className="mt-2 text-lg text-zinc-400">
-              {siteConfig.role} | Backend APIs & Payment Systems | Mobile (Flutter / React Native)
+              {siteConfig.role} | Backend APIs · Payment Systems · Mobile (Flutter / React Native)
             </p>
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-500">
               <span className="inline-flex items-center gap-1.5">
@@ -118,17 +138,35 @@ export default function ResumePage() {
               >
                 <Linkedin size={14} /> /in/otahir21
               </a>
+              <a
+                href={siteConfig.social.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-zinc-300"
+              >
+                Upwork
+              </a>
             </div>
           </div>
 
-          <a
-            href={siteConfig.resumeFile}
-            download="Osama-Tahir-Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
-          >
-            <Download size={16} />
-            Download PDF
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={siteConfig.resumeFile}
+              download="Osama-Tahir-Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
+            >
+              <Download size={16} />
+              Download resume
+            </a>
+            <a
+              href={siteConfig.resumeDocxFile}
+              download="Osama-Tahir-Resume.docx"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
+            >
+              <Download size={16} />
+              DOCX
+            </a>
+          </div>
         </div>
       </PageShell>
 
@@ -140,10 +178,12 @@ export default function ResumePage() {
           Senior Full-Stack Developer with 6 years of experience building secure,
           high-availability backend services and cross-platform applications for fintech and
           enterprise clients across the UAE and GCC. Delivered 20+ production applications with
-          500K+ combined downloads; engineered REST APIs handling 10K+ daily requests at 99.9%
-          uptime; integrated $1.2M+ in secure payment processing (Stripe, Apple Pay) with zero
-          security breaches. Scrum Master Certified with hands-on experience mentoring engineers,
-          leading Agile delivery, and owning systems end-to-end.
+          500K+ combined downloads — including PAK ID, Pakistan&apos;s official national identity
+          app (1M+ downloads, 4.8 rating). Engineered REST APIs handling 10K+ daily requests at
+          99.9% uptime; integrated $1.2M+ in secure payments (Stripe, Apple Pay, Network
+          International) with zero security breaches. Scrum Master Certified; mentors engineers
+          and leads Agile delivery end-to-end. Actively builds with AI, integrating LLM APIs
+          (OpenAI, Gemini) into production applications.
         </p>
       </PageShell>
 
@@ -222,7 +262,7 @@ export default function ResumePage() {
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
-              Introduction to Android Mobile Application Development
+              Introduction to Android Mobile App Development
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
@@ -238,7 +278,15 @@ export default function ResumePage() {
             className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
           >
             <Download size={16} />
-            Download PDF
+            Download resume
+          </a>
+          <a
+            href={siteConfig.resumeDocxFile}
+            download="Osama-Tahir-Resume.docx"
+            className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
+          >
+            <Download size={16} />
+            DOCX
           </a>
           <Link
             href="/contact"

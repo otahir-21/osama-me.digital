@@ -7,7 +7,6 @@ import { MobileHeader } from "@/components/layout/MobileHeader";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
 import { siteConfig } from "@/data/site-config";
 
 const dmSans = DM_Sans({
@@ -87,6 +86,14 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   category: "technology",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export const viewport: Viewport = {
@@ -117,11 +124,10 @@ export default function RootLayout({
           <Sidebar />
           <div className="lg:pl-72">
             <MobileHeader />
-            <main className="min-h-screen pb-24 md:pb-0">{children}</main>
+            <main className="min-h-screen">{children}</main>
             <Footer />
           </div>
         </SmoothScroll>
-        <StickyMobileCTA />
         <WhatsAppButton />
       </body>
     </html>

@@ -14,10 +14,12 @@ export const siteConfig = {
   whatsapp: "+971507276823",
   calendly: "https://calendly.com/dxbsoftwaredeveloper/30min",
   resumeFile: "/Osama-Tahir-Resume.pdf",
+  resumeDocxFile: "/Osama-Tahir-Resume.docx",
   social: {
     linkedin: "https://www.linkedin.com/in/otahir21",
     github: "https://github.com/otahir-21",
     twitter: "https://x.com/otahir212",
+    upwork: "https://www.upwork.com/freelancers/osamaappdev",
   },
   navLinks: [
     { href: "/", label: "Home" },
@@ -95,14 +97,14 @@ export const siteConfig = {
     {
       id: "metatech",
       name: "Metatech",
-      role: "Senior Full-Stack Developer",
+      role: "Senior Full-Stack Developer (Flutter Web & Mobile)",
       period: "Jun 2025 – Present",
       location: "Dubai, UAE",
     },
     {
       id: "prism-digital",
       name: "Prism Digital",
-      role: "Senior Mobile Developer",
+      role: "Senior Mobile Developer · Laravel API Specialist",
       period: "Jul 2023 – Jun 2025",
       location: "Dubai, UAE",
     },
@@ -111,7 +113,7 @@ export const siteConfig = {
       name: "Freelancer.com",
       role: "Lead Flutter Developer",
       period: "Dec 2021 – May 2023",
-      location: "Remote",
+      location: "Islamabad, Pakistan",
     },
     {
       id: "soft-code-labs",

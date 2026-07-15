@@ -22,22 +22,22 @@ const timeline = [
   {
     year: "2025 – Present",
     title: "Senior Full-Stack Developer · Metatech",
-    desc: "Flutter Web CRM, Laravel APIs at 99.9% uptime, mentoring junior developers.",
+    desc: "VyooO creator platform (360°/VR, Agora live, AI), Flutter Web CRM (−60% reporting time), Laravel APIs at 99.9% uptime.",
   },
   {
     year: "2023 – 2025",
     title: "Senior Mobile Developer · Prism Digital",
-    desc: "6+ Flutter/React Native apps, 200K+ downloads, $1.2M+ payment processing.",
+    desc: "6+ Flutter/React Native apps, 200K+ downloads, $1.2M+ payments (Stripe, Apple Pay, Network International).",
   },
   {
     year: "2021 – 2023",
     title: "Lead Flutter Developer · Freelancer.com",
-    desc: "12+ global client apps, 4.9/5 satisfaction, 100% on-time delivery.",
+    desc: "PAK ID (NADRA) + 12 client apps, 4.9/5 satisfaction, biometrics & ICAO photo capture.",
   },
   {
     year: "2020 – 2021",
     title: "Mobile Developer Intern · Soft Code Labs",
-    desc: "5+ Android/iOS apps, 50K+ downloads, Play Store & App Store launches.",
+    desc: "5+ Android/iOS apps, 50K+ downloads, Core PHP APIs, Play Store & App Store launches.",
   },
 ];
 
