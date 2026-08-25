@@ -103,31 +103,31 @@ const achievements = [
 export default function ResumePage() {
   return (
     <div>
-      <PageShell className="border-b border-stone-200">
+      <PageShell className="border-b border-border">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-indigo-700">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">
               Resume
             </p>
-            <h1 className="mt-3 text-3xl font-bold text-stone-800 sm:text-4xl">
+            <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
               {siteConfig.name}
             </h1>
-            <p className="mt-2 text-lg text-stone-600">
+            <p className="mt-2 text-lg text-muted-foreground">
               {siteConfig.role} | Backend APIs · Payment Systems · Mobile (Flutter / React Native)
             </p>
-            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-stone-500">
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <MapPin size={14} /> {siteConfig.location}
               </span>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center gap-1.5 hover:text-stone-800"
+                className="inline-flex items-center gap-1.5 hover:text-foreground"
               >
                 <Mail size={14} /> {siteConfig.email}
               </a>
               <a
                 href={`tel:${siteConfig.telephone}`}
-                className="inline-flex items-center gap-1.5 hover:text-stone-800"
+                className="inline-flex items-center gap-1.5 hover:text-foreground"
               >
                 <Phone size={14} /> {siteConfig.telephone}
               </a>
@@ -135,7 +135,7 @@ export default function ResumePage() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-stone-800"
+                className="inline-flex items-center gap-1.5 hover:text-foreground"
               >
                 <Linkedin size={14} /> /in/otahir21
               </a>
@@ -143,7 +143,7 @@ export default function ResumePage() {
                 href={siteConfig.social.upwork}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-stone-800"
+                className="inline-flex items-center gap-1.5 hover:text-foreground"
               >
                 Upwork
               </a>
@@ -154,7 +154,7 @@ export default function ResumePage() {
             <a
               href={siteConfig.resumeFile}
               download="Osama-Tahir-Resume.pdf"
-              className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
             >
               <Download size={16} />
               Download resume
@@ -162,7 +162,7 @@ export default function ResumePage() {
             <a
               href={siteConfig.resumeDocxFile}
               download="Osama-Tahir-Resume.docx"
-              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400 hover:bg-stone-50"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/20 hover:bg-muted"
             >
               <Download size={16} />
               DOCX
@@ -171,11 +171,11 @@ export default function ResumePage() {
         </div>
       </PageShell>
 
-      <PageShell className="border-b border-stone-200 py-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-indigo-700">
+      <PageShell tone="alt" className="border-b border-border py-12">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-primary">
           Professional Summary
         </h2>
-        <p className="mt-4 leading-relaxed text-stone-600">
+        <p className="mt-4 leading-relaxed text-muted-foreground">
           Senior mobile and full-stack developer with 6 years of production experience across
           the UAE and GCC. I have contributed to 20+ mobile and web products, including
           contract work on PAK ID, Pakistan&apos;s official national identity app (the product
@@ -187,95 +187,95 @@ export default function ResumePage() {
         </p>
       </PageShell>
 
-      <PageShell className="border-b border-stone-200 py-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-indigo-700">
+      <PageShell className="border-b border-border py-12">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-primary">
           Core Skills
         </h2>
         <dl className="mt-6 space-y-4">
           {coreSkills.map((skill) => (
             <div key={skill.label} className="grid gap-1 sm:grid-cols-[200px_1fr] sm:gap-6">
-              <dt className="text-sm font-semibold text-stone-800">{skill.label}</dt>
-              <dd className="text-sm leading-relaxed text-stone-500">{skill.value}</dd>
+              <dt className="text-sm font-semibold text-foreground">{skill.label}</dt>
+              <dd className="text-sm leading-relaxed text-muted-foreground">{skill.value}</dd>
             </div>
           ))}
         </dl>
       </PageShell>
 
-      <PageShell className="border-b border-stone-200 py-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-indigo-700">
+      <PageShell tone="alt" className="border-b border-border py-12">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-primary">
           Professional Experience
         </h2>
         <div className="mt-8 space-y-10">
           {experience.map((job) => (
             <article key={`${job.company}-${job.period}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-semibold text-stone-800">{job.role}</h3>
-                <p className="font-mono text-xs text-indigo-700">{job.period}</p>
+                <h3 className="font-semibold text-foreground">{job.role}</h3>
+                <p className="font-mono text-xs text-primary">{job.period}</p>
               </div>
-              <p className="mt-1 text-sm text-stone-500">
+              <p className="mt-1 text-sm text-muted-foreground">
                 {job.company} · {job.location}
               </p>
               <ul className="mt-4 space-y-2">
                 {job.points.map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm leading-relaxed text-stone-600">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-600" />
+                  <li key={point} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
                     {point}
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 font-mono text-xs text-stone-500">Tech: {job.tech}</p>
+              <p className="mt-3 font-mono text-xs text-muted-foreground">Tech: {job.tech}</p>
             </article>
           ))}
         </div>
       </PageShell>
 
-      <PageShell className="border-b border-stone-200 py-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-indigo-700">
+      <PageShell className="border-b border-border py-12">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-primary">
           Key Achievements
         </h2>
         <ul className="mt-6 space-y-3">
           {achievements.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-stone-600">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-600" />
+            <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
               {item}
             </li>
           ))}
         </ul>
       </PageShell>
 
-      <PageShell className="py-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-indigo-700">
+      <PageShell tone="alt" className="py-12">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-primary">
           Education & Certifications
         </h2>
         <div className="mt-6 space-y-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
-              <h3 className="font-semibold text-stone-800">B.E. Computer Software Engineering</h3>
-              <p className="mt-1 text-sm text-stone-500">Foundation University Islamabad (FUI)</p>
+              <h3 className="font-semibold text-foreground">B.E. Computer Software Engineering</h3>
+              <p className="mt-1 text-sm text-muted-foreground">Foundation University Islamabad (FUI)</p>
             </div>
-            <p className="font-mono text-xs text-indigo-700">2018 – 2022</p>
+            <p className="font-mono text-xs text-primary">2018 – 2022</p>
           </div>
-          <ul className="space-y-2 text-sm text-stone-600">
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-600" />
+              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
               Scrum Master Certified (SMC)
             </li>
             <li className="flex items-start gap-3">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-600" />
+              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
               Introduction to Android Mobile App Development
             </li>
             <li className="flex items-start gap-3">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-600" />
+              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
               Introduction to Containers
             </li>
           </ul>
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-3 border-t border-stone-200 pt-10">
+        <div className="mt-12 flex flex-wrap gap-3 border-t border-border pt-10">
           <a
             href={siteConfig.resumeFile}
             download="Osama-Tahir-Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
           >
             <Download size={16} />
             Download resume
@@ -283,14 +283,14 @@ export default function ResumePage() {
           <a
             href={siteConfig.resumeDocxFile}
             download="Osama-Tahir-Resume.docx"
-            className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400 hover:bg-stone-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/20 hover:bg-muted"
           >
             <Download size={16} />
             DOCX
           </a>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400 hover:bg-stone-50"
+            className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/20 hover:bg-muted"
           >
             Get in touch
           </Link>

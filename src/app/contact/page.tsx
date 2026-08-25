@@ -20,29 +20,29 @@ export default function ContactPage() {
       <JsonLd data={getGraphSchema([getContactPageSchema()])} />
 
       <PageShell>
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-indigo-700">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
           Contact
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-800 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Have a Product to Build or Improve?
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           Tell me what you&apos;re working on, where the product is today, and what you need
           help delivering.
         </p>
       </PageShell>
 
-      <PageShell wide className="grid gap-12 py-12 lg:grid-cols-2 lg:gap-16">
+      <PageShell wide tone="alt" className="grid gap-12 py-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h2 className="text-lg font-semibold text-stone-800">Start a project</h2>
-          <p className="mt-2 text-sm text-stone-500">I typically respond within 24 hours.</p>
+          <h2 className="text-lg font-semibold text-foreground">Start a project</h2>
+          <p className="mt-2 text-sm text-muted-foreground">I typically respond within 24 hours.</p>
           <div className="mt-6">
             <ContactForm />
           </div>
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-stone-800">Schedule a call, WhatsApp or email</h2>
+          <h2 className="text-lg font-semibold text-foreground">Schedule a call, WhatsApp or email</h2>
           {[
             {
               href: siteConfig.calendly,
@@ -73,44 +73,44 @@ export default function ContactPage() {
               eventParams={{ location: "contact_page" }}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex min-h-16 items-center gap-4 rounded-xl border border-stone-200 bg-white p-4 transition-shadow hover:shadow-sm"
+              className="flex min-h-16 items-center gap-4 rounded-xl border border-border bg-card p-4 transition-shadow hover:shadow-sm"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-stone-50">
-                <item.icon className="size-5 text-indigo-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted">
+                <item.icon className="size-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-medium text-stone-800">{item.label}</p>
-                <p className="text-xs text-stone-500">{item.desc}</p>
+                <p className="text-sm font-medium text-foreground">{item.label}</p>
+                <p className="text-xs text-muted-foreground">{item.desc}</p>
               </div>
             </TrackedAnchor>
           ))}
-          <div className="flex items-center gap-4 rounded-xl border border-stone-200 bg-white p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-stone-50">
-              <MapPin className="size-5 text-indigo-600" />
+          <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted">
+              <MapPin className="size-5 text-primary" />
             </div>
             <div>
-              <p className="text-sm font-medium text-stone-800">Location</p>
-              <p className="text-xs text-stone-500">{siteConfig.locationFull}</p>
+              <p className="text-sm font-medium text-foreground">Location</p>
+              <p className="text-xs text-muted-foreground">{siteConfig.locationFull}</p>
             </div>
           </div>
         </div>
       </PageShell>
 
       <PageShell className="pt-0">
-        <h2 className="text-lg font-semibold text-stone-800">Questions before you write</h2>
+        <h2 className="text-lg font-semibold text-foreground">Questions before you write</h2>
         <Accordion className="mt-6">
           {faqData.map((item) => (
-            <AccordionItem key={item.question} value={item.question} className="border-stone-200">
-              <AccordionTrigger className="text-left text-stone-800 hover:text-indigo-700">
+            <AccordionItem key={item.question} value={item.question} className="border-border">
+              <AccordionTrigger className="text-left text-foreground hover:text-primary">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-stone-600">{item.answer}</AccordionContent>
+              <AccordionContent className="text-muted-foreground">{item.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        <p className="mt-10 text-sm text-stone-500">
+        <p className="mt-10 text-sm text-muted-foreground">
           Recruiting for a full-time role?{" "}
-          <Link href="/resume" className="text-indigo-700 hover:text-indigo-800">
+          <Link href="/resume" className="text-primary hover:text-primary">
             View my resume
           </Link>{" "}
           or{" "}
@@ -118,7 +118,7 @@ export default function ContactPage() {
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-700 hover:text-indigo-800"
+            className="text-primary hover:text-primary"
           >
             LinkedIn profile
           </a>

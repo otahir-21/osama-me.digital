@@ -29,7 +29,7 @@ const benefits = [
 
 export function WhyChooseMe() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-surface-alt py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Highlights"
@@ -45,13 +45,13 @@ export function WhyChooseMe() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-border bg-card p-6 shadow-sm"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
                 <item.icon size={24} />
               </div>
-              <h3 className="mt-4 font-semibold text-stone-800">{item.title}</h3>
-              <p className="mt-2 text-sm text-stone-600">{item.desc}</p>
+              <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
             </motion.div>
           ))}
         </div>

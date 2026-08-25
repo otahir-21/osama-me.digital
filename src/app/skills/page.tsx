@@ -51,16 +51,16 @@ export default function SkillsPage() {
         />
       </PageShell>
 
-      <PageShell wide className="py-12">
+      <PageShell wide tone="alt" className="py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category) => (
-            <div key={category.title} className="rounded-xl border border-stone-200 bg-white p-5">
-              <h2 className="text-sm font-semibold text-stone-800">{category.title}</h2>
+            <div key={category.title} className="rounded-xl border border-border bg-card p-5">
+              <h2 className="text-sm font-semibold text-foreground">{category.title}</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-md bg-stone-100 px-2.5 py-1 text-xs text-stone-600"
+                    className="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground"
                   >
                     {skill}
                   </li>
@@ -72,7 +72,7 @@ export default function SkillsPage() {
 
         <Link
           href="/portfolio"
-          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-800"
+          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary"
         >
           See selected work
           <ArrowUpRight size={16} />

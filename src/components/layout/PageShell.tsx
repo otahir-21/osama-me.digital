@@ -4,10 +4,12 @@ interface PageShellProps {
   children: React.ReactNode;
   className?: string;
   wide?: boolean;
+  /** Full-bleed alternate section surface for page rhythm */
+  tone?: "default" | "alt";
 }
 
-export function PageShell({ children, className, wide }: PageShellProps) {
-  return (
+export function PageShell({ children, className, wide, tone = "default" }: PageShellProps) {
+  const inner = (
     <div
       className={cn(
         "mx-auto px-5 py-16 sm:px-6 lg:px-8 lg:py-24",
@@ -18,4 +20,10 @@ export function PageShell({ children, className, wide }: PageShellProps) {
       {children}
     </div>
   );
+
+  if (tone === "alt") {
+    return <div className="bg-surface-alt">{inner}</div>;
+  }
+
+  return inner;
 }

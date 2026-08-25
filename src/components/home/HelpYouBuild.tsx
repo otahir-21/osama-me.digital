@@ -33,7 +33,7 @@ const offers = [
 
 export function HelpYouBuild() {
   return (
-    <section>
+    <section className="bg-background">
       <PageShell wide className="py-20 lg:py-28">
         <SectionHeading
           eyebrow="Services"
@@ -45,18 +45,18 @@ export function HelpYouBuild() {
           {offers.map((offer) => (
             <article
               key={offer.title}
-              className="flex flex-col rounded-2xl border border-stone-200 bg-white p-8"
+              className="flex flex-col rounded-2xl border border-border bg-card p-8"
             >
-              <p className="text-xs font-medium tracking-[0.18em] text-indigo-700">
+              <p className="text-xs font-medium tracking-[0.18em] text-primary">
                 {offer.number}
               </p>
-              <h3 className="mt-5 text-xl font-semibold text-stone-800">{offer.title}</h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-stone-600">{offer.body}</p>
+              <h3 className="mt-5 text-xl font-semibold text-foreground">{offer.title}</h3>
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{offer.body}</p>
               <TrackedLink
                 href={offer.href}
                 event="service_cta"
                 eventParams={{ location: offer.eventLocation }}
-                className="mt-8 inline-flex items-center text-sm font-medium text-indigo-700 hover:text-indigo-800"
+                className="mt-8 inline-flex items-center text-sm font-medium text-primary hover:text-primary"
               >
                 {offer.cta}
                 <ArrowRight className="ml-1.5 size-4" />

@@ -26,7 +26,7 @@ export function FeaturedPortfolio() {
   }).filter((item): item is NonNullable<typeof item> => item !== null);
 
   return (
-    <section>
+    <section className="bg-surface-alt">
       <PageShell wide className="py-20 lg:py-28">
         <SectionHeading
           eyebrow="Selected work"
@@ -38,30 +38,30 @@ export function FeaturedPortfolio() {
           {cases.map(({ project, copy }) => (
             <article
               key={project.id}
-              className="grid overflow-hidden rounded-2xl border border-stone-200 bg-white lg:grid-cols-[0.9fr_1.1fr]"
+              className="grid overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-[0.9fr_1.1fr]"
             >
-              <div className="relative min-h-64 order-first border-b border-stone-200 lg:min-h-[22rem] lg:order-last lg:border-b-0 lg:border-l">
+              <div className="relative min-h-64 order-first border-b border-border lg:min-h-[22rem] lg:order-last lg:border-b-0 lg:border-l">
                 <ProjectCover title={project.title} size="lg" />
               </div>
               <div className="flex flex-col p-8 sm:p-10">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-indigo-700">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-primary">
                   {copy.buyerCategory}
                 </p>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-800">
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-stone-500">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {project.role} · {companyName(project.company)}
                 </p>
-                <p className="mt-5 text-base leading-relaxed text-stone-600">{copy.overview}</p>
-                <p className="mt-4 text-sm leading-relaxed text-stone-500">
+                <p className="mt-5 text-base leading-relaxed text-muted-foreground">{copy.overview}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {project.results[0]}
                 </p>
                 <TrackedLink
                   href={`/portfolio/${project.id}`}
                   event="case_study_cta"
                   eventParams={{ location: `home_${project.id}` }}
-                  className="mt-8 inline-flex items-center text-sm font-medium text-indigo-700 hover:text-indigo-800"
+                  className="mt-8 inline-flex items-center text-sm font-medium text-primary hover:text-primary"
                 >
                   View {project.title.split("–")[0].trim()} case study
                   <ArrowRight className="ml-1.5 size-4" />
@@ -74,7 +74,7 @@ export function FeaturedPortfolio() {
         <div className="mt-12">
           <Link
             href="/portfolio"
-            className="inline-flex items-center text-sm font-medium text-stone-700 hover:text-stone-900"
+            className="inline-flex items-center text-sm font-medium text-foreground hover:text-foreground"
           >
             View all work
             <ArrowRight className="ml-1.5 size-4" />

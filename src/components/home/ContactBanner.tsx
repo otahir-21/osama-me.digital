@@ -3,7 +3,7 @@ import { ProjectCTA } from "@/components/cta/ProjectCTA";
 
 export function ContactBanner() {
   return (
-    <section className="bg-stone-900">
+    <section className="bg-ink">
       <PageShell className="py-20 lg:py-28">
         <ProjectCTA
           variant="flush"

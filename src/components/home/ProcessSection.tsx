@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/site-config";
 
 export function ProcessSection() {
   return (
-    <section className="bg-stone-50 py-24">
+    <section className="bg-surface-alt py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Process"
@@ -22,13 +22,13 @@ export function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="relative rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
+              className="relative rounded-2xl border border-border bg-card p-6 shadow-sm"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-indigo-600 bg-indigo-50 text-sm font-bold text-indigo-700">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-primary/8 text-sm font-bold text-primary">
                 {step.step}
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-stone-800">{step.title}</h3>
-              <p className="mt-2 text-sm text-stone-600">{step.desc}</p>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">{step.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{step.desc}</p>
             </motion.div>
           ))}
         </div>

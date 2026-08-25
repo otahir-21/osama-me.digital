@@ -30,7 +30,7 @@ const items = [
 
 export function SkillsOverview() {
   return (
-    <section className="py-16 lg:py-20">
+    <section className="bg-surface-alt py-16 lg:py-20">
       <PageShell>
         <SectionHeading
           eyebrow="Skills"
@@ -42,17 +42,17 @@ export function SkillsOverview() {
           {items.map((item) => (
             <div
               key={item.id}
-              className="rounded-xl border border-stone-200 bg-white px-5 py-4"
+              className="rounded-xl border border-border bg-card px-5 py-4"
             >
-              <h3 className="text-sm font-semibold text-stone-800">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-stone-500">{item.shortDesc}</p>
+              <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.shortDesc}</p>
             </div>
           ))}
         </div>
 
         <Link
           href="/skills"
-          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-800"
+          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary"
         >
           Full skills breakdown
           <ArrowUpRight size={16} />

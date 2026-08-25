@@ -44,10 +44,10 @@ export function TypedTerminal() {
   }, [length, deleting, lineIndex]);
 
   return (
-    <p className="mt-6 font-mono text-sm text-stone-500">
-      <span className="text-indigo-700">$</span> I ship{" "}
-      <span className="text-stone-700">{lines[lineIndex].slice(0, length)}</span>
-      <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-indigo-600" />
+    <p className="mt-6 font-mono text-sm text-muted-foreground">
+      <span className="text-primary">$</span> I ship{" "}
+      <span className="text-foreground">{lines[lineIndex].slice(0, length)}</span>
+      <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-primary" />
     </p>
   );
 }

@@ -5,8 +5,8 @@
   "start_url": "https://www.osama-me.digital/",
   "scope": "https://www.osama-me.digital/",
   "display": "standalone",
-  "background_color": "#F7F5F1",
-  "theme_color": "#F7F5F1",
+  "background_color": "#FCFCFD",
+  "theme_color": "#FCFCFD",
   "lang": "en-AE",
   "icons": [
     {
