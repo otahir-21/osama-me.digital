@@ -2,20 +2,35 @@
 
 > Dubai-based Senior Mobile & Full-Stack Developer building mobile apps, backend systems, business platforms and payment integrations for UAE and GCC businesses.
 
+Osama Tahir is a senior mobile and full-stack developer based in Dubai, United Arab Emirates. He builds Flutter and React Native iOS/Android apps, Laravel and Node.js APIs, payment integrations (Stripe, Apple Pay, Network International, RevenueCat), CRMs and operational platforms. Typical engagements cover architecture, implementation, App Store / Google Play launch, and production support — including takeover of unfinished apps and white-label delivery for agencies.
+
 ## Key Pages
 
 - [Home](https://www.osama-me.digital/): Client-acquisition homepage
-- [Services](https://www.osama-me.digital/services): Mobile, app rescue, custom software, agency partnership
+- [Services](https://www.osama-me.digital/services): Mobile, Flutter, React Native, app rescue, custom software, agency partnership
 - [Work](https://www.osama-me.digital/portfolio): Selected mobile app and software case studies
+- [Insights](https://www.osama-me.digital/insights): Hiring, stack choice, cost and app-rescue writing
+- [Industries](https://www.osama-me.digital/industries): E-commerce, payments, healthcare and wellness
 - [About](https://www.osama-me.digital/about): Background, approach and experience
+- [Process](https://www.osama-me.digital/process): How delivery is sequenced
+- [FAQ](https://www.osama-me.digital/faq): Common questions before a project
 - [Contact](https://www.osama-me.digital/contact): Start a software project
 
 ## Services
 
 - [Mobile App Development in Dubai](https://www.osama-me.digital/services/mobile-app-development-dubai)
+- [Flutter App Development in Dubai](https://www.osama-me.digital/services/flutter-app-development-dubai)
+- [React Native App Development in Dubai](https://www.osama-me.digital/services/react-native-app-development-dubai)
 - [App Rescue & Maintenance](https://www.osama-me.digital/services/app-rescue-maintenance)
 - [Custom Software & CRM Development](https://www.osama-me.digital/services/custom-software-development-dubai)
 - [Technical Development Partner](https://www.osama-me.digital/services/technical-development-partner)
+
+## Insights
+
+- [How to hire a Flutter developer in Dubai](https://www.osama-me.digital/insights/hire-flutter-developer-dubai)
+- [Flutter vs React Native for UAE startups](https://www.osama-me.digital/insights/flutter-vs-react-native-uae)
+- [Mobile app cost in Dubai](https://www.osama-me.digital/insights/mobile-app-cost-dubai)
+- [How to take over an unfinished mobile app](https://www.osama-me.digital/insights/take-over-unfinished-mobile-app)
 
 ## Selected Case Studies
 

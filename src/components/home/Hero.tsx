@@ -14,11 +14,13 @@ export function Hero() {
             </p>
 
             <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl lg:text-[3.15rem]">
-              {siteConfig.headline}
+              Mobile App & Full-Stack Developer in Dubai
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:text-[1.125rem]">
-              {siteConfig.tagline}
+              I build and improve Flutter and React Native apps, backend APIs, payments and
+              digital platforms for UAE and GCC businesses — from architecture through store
+              launch.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

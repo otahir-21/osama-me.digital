@@ -41,7 +41,7 @@ export function Header() {
           Osama<span className="text-primary">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:gap-9 md:flex" aria-label="Primary">
           {siteConfig.navLinks.map((link) => {
             const active =
               pathname === link.href || pathname.startsWith(`${link.href}/`);

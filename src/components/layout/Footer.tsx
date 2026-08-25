@@ -40,6 +40,16 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href={SERVICE_PATHS.flutter} className="text-white/65 hover:text-white">
+                Flutter development
+              </Link>
+            </li>
+            <li>
+              <Link href={SERVICE_PATHS.reactNative} className="text-white/65 hover:text-white">
+                React Native development
+              </Link>
+            </li>
+            <li>
               <Link href={SERVICE_PATHS.rescue} className="text-white/65 hover:text-white">
                 App rescue & maintenance
               </Link>

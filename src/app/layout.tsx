@@ -8,7 +8,12 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/data/site-config";
 import { buildMetadata } from "@/lib/seo";
-import { getGraphSchema, getPersonSchema, getWebSiteSchema } from "@/lib/schema";
+import {
+  getGraphSchema,
+  getPersonSchema,
+  getProfessionalServiceSchema,
+  getWebSiteSchema,
+} from "@/lib/schema";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -25,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const homeMeta = buildMetadata({
-  title: "Osama Tahir | Mobile App & Full-Stack Developer in Dubai",
+  title: "Osama Tahir | Mobile App Developer in Dubai",
   description: siteConfig.description,
   path: "/",
 });
@@ -33,7 +38,7 @@ const homeMeta = buildMetadata({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Osama Tahir | Mobile App & Full-Stack Developer in Dubai",
+    default: "Osama Tahir | Mobile App Developer in Dubai",
     template: "%s | Osama Tahir",
   },
   description: siteConfig.description,
@@ -72,7 +77,6 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
-  alternates: { canonical: siteConfig.url },
 };
 
 export const viewport: Viewport = {
@@ -84,7 +88,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const graph = getGraphSchema([getPersonSchema(), getWebSiteSchema()]);
+  const graph = getGraphSchema([
+    getPersonSchema(),
+    getProfessionalServiceSchema(),
+    getWebSiteSchema(),
+  ]);
 
   return (
     <html lang="en-AE" className="scroll-smooth">

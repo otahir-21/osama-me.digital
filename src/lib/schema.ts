@@ -1,7 +1,9 @@
 import { siteConfig } from "@/data/site-config";
+import { servicesDetail } from "@/data/services-detail";
 import { absoluteUrl, personId, SITE_URL } from "@/lib/seo";
 
 const profileImage = absoluteUrl(siteConfig.profileImage);
+const businessId = () => `${SITE_URL}/#business`;
 
 export function getPersonSchema() {
   const sameAs = [
@@ -43,6 +45,27 @@ export function getPersonSchema() {
       "AWS",
       "Custom software development",
     ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Mobile Application Developer",
+      occupationLocation: { "@type": "City", name: "Dubai" },
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Foundation University Islamabad",
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Bachelor of Engineering in Software Engineering",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Scrum Master Certified (SMC)",
+      },
+    ],
+    worksFor: { "@id": businessId() },
   };
 }
 
@@ -56,6 +79,54 @@ export function getWebSiteSchema() {
     inLanguage: "en-AE",
     publisher: { "@id": personId() },
     creator: { "@id": personId() },
+  };
+}
+
+export function getProfessionalServiceSchema() {
+  return {
+    "@type": "ProfessionalService",
+    "@id": businessId(),
+    name: `${siteConfig.name} — Mobile App & Software Development`,
+    alternateName: siteConfig.name,
+    url: SITE_URL,
+    image: profileImage,
+    logo: profileImage,
+    email: siteConfig.email,
+    telephone: siteConfig.telephone,
+    description: siteConfig.description,
+    founder: { "@id": personId() },
+    employee: { "@id": personId() },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Dubai",
+      addressRegion: "Dubai",
+      addressCountry: "AE",
+    },
+    areaServed: [
+      { "@type": "City", name: "Dubai" },
+      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "AdministrativeArea", name: "Gulf Cooperation Council" },
+    ],
+    knowsLanguage: ["en", "en-AE"],
+    sameAs: [
+      siteConfig.social.linkedin,
+      siteConfig.social.github,
+      siteConfig.social.twitter,
+      siteConfig.social.upwork,
+    ].filter(Boolean),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Software development services",
+      itemListElement: servicesDetail.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": `${absoluteUrl(`/services/${service.slug}`)}#service`,
+          name: service.title,
+          url: absoluteUrl(`/services/${service.slug}`),
+        },
+      })),
+    },
   };
 }
 
@@ -150,6 +221,7 @@ export function getWebPageSchema(input: {
   name: string;
   description: string;
   url: string;
+  dateModified?: string;
 }) {
   return {
     "@type": "WebPage",
@@ -159,5 +231,35 @@ export function getWebPageSchema(input: {
     description: input.description,
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": personId() },
+    inLanguage: "en-AE",
+    ...(input.dateModified
+      ? { dateModified: input.dateModified, datePublished: input.dateModified }
+      : {}),
+  };
+}
+
+export function getArticleSchema(input: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  keywords?: string[];
+}) {
+  return {
+    "@type": "BlogPosting",
+    "@id": `${input.url}#article`,
+    headline: input.headline,
+    description: input.description,
+    url: input.url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${input.url}#webpage` },
+    datePublished: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
+    inLanguage: "en-AE",
+    author: { "@id": personId() },
+    creator: { "@id": personId() },
+    publisher: { "@id": personId() },
+    image: absoluteUrl(siteConfig.ogImage),
+    ...(input.keywords?.length ? { keywords: input.keywords.join(", ") } : {}),
   };
 }

@@ -27,6 +27,8 @@ interface PageMetaInput {
   ogType?: "website" | "article" | "profile";
   image?: { url: string; width?: number; height?: number; alt?: string };
   noIndex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 export function buildMetadata({
@@ -36,6 +38,8 @@ export function buildMetadata({
   ogType = "website",
   image,
   noIndex = false,
+  publishedTime,
+  modifiedTime,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
   const ogImage = image
@@ -61,6 +65,10 @@ export function buildMetadata({
       title,
       description,
       images: ogImage,
+      ...(publishedTime ? { publishedTime } : {}),
+      ...(modifiedTime || publishedTime
+        ? { modifiedTime: modifiedTime ?? publishedTime }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",

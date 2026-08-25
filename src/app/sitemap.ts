@@ -3,6 +3,8 @@ import { siteConfig } from "@/data/site-config";
 import { portfolioData } from "@/data/portfolio";
 import { caseStudyCopy } from "@/data/case-studies";
 import { servicesDetail } from "@/data/services-detail";
+import { insights } from "@/data/insights";
+import { industries } from "@/data/industries";
 
 function entry(
   path: string,
@@ -25,6 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/contact", siteUpdated, "monthly", 0.8),
     entry("/skills", siteUpdated, "monthly", 0.5),
     entry("/resume", siteUpdated, "monthly", 0.5),
+    entry("/insights", siteUpdated, "weekly", 0.8),
+    entry("/industries", siteUpdated, "monthly", 0.7),
+    entry("/process", siteUpdated, "monthly", 0.6),
+    entry("/faq", siteUpdated, "monthly", 0.6),
   ];
 
   const servicePages: MetadataRoute.Sitemap = servicesDetail.map((service) =>
@@ -40,5 +46,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )
   );
 
-  return [...staticPages, ...servicePages, ...portfolioPages];
+  const insightPages: MetadataRoute.Sitemap = insights.map((post) =>
+    entry(`/insights/${post.slug}`, post.updatedAt, "monthly", 0.75)
+  );
+
+  const industryPages: MetadataRoute.Sitemap = industries.map((industry) =>
+    entry(`/industries/${industry.slug}`, industry.updatedAt, "monthly", 0.7)
+  );
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...portfolioPages,
+    ...insightPages,
+    ...industryPages,
+  ];
 }

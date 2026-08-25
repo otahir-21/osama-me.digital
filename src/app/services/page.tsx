@@ -10,7 +10,7 @@ import { getGraphSchema, getWebPageSchema } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mobile App & Software Development Services Dubai | Osama Tahir",
+  title: "Software Services in Dubai | Osama Tahir",
   description:
     "Mobile app development, app rescue, custom CRMs and technical partnership for UAE and GCC businesses — delivered by Osama Tahir in Dubai.",
   path: "/services",

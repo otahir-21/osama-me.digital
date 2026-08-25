@@ -29,4 +29,29 @@ export const faqData = [
     answer:
       "Selected full-time and contract roles are a secondary path. If you are recruiting, view the resume or LinkedIn. Project work is the primary focus of this site.",
   },
+  {
+    question: "Do you build Flutter apps, React Native, or both?",
+    answer:
+      "Both. Flutter is the deepest shipped catalog (including VyooO, Royal Spirit and 24Digi). React Native is the right tool when the organisation already lives in JavaScript or the app to save is already RN. I will recommend the stack the next engineer can maintain.",
+  },
+  {
+    question: "How much does a mobile app cost in Dubai?",
+    answer:
+      "There is no honest single number. Orientation bands for production iOS and Android work start around AED 40,000 for a narrow MVP and climb past AED 180,000 for realtime, subscriptions or multi-role products. Rescue starts with a paid audit. See the mobile app cost insight for what those bands include and omit.",
+  },
+  {
+    question: "Can you take over an unfinished app?",
+    answer:
+      "Yes. Most rescue work is stabilize-and-extend, not a default rewrite. I need repo and store access, then a written triage. Features wait until the product installs from a clean path.",
+  },
+  {
+    question: "Do you work white-label with agencies?",
+    answer:
+      "Yes. NDAs and client-confidential delivery are normal. You keep the account relationship; I take technical ownership of the agreed scope.",
+  },
+  {
+    question: "Where are you based?",
+    answer:
+      "Dubai, United Arab Emirates. I work with UAE and GCC teams in this timezone, and with international teams that can collaborate here.",
+  },
 ];

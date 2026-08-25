@@ -10,6 +10,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCTA } from "@/components/cta/ProjectCTA";
 import { PageShell } from "@/components/layout/PageShell";
 import { TrackedLink } from "@/components/seo/TrackedLink";
+import { insights } from "@/data/insights";
+import { serviceToInsights } from "@/data/internal-links";
 import { servicesDetail, type ServiceDetailItem } from "@/data/services-detail";
 import { portfolioData } from "@/data/portfolio";
 import {
@@ -28,6 +30,9 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
   );
   const relatedProjects = portfolioData.filter((project) =>
     service.relatedProjectIds.includes(project.id)
+  );
+  const relatedInsights = insights.filter((post) =>
+    (serviceToInsights[service.slug] ?? []).includes(post.slug)
   );
 
   const schema = getGraphSchema([
@@ -183,6 +188,22 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
               </Link>
             ))}
           </div>
+        </PageShell>
+      )}
+
+      {relatedInsights.length > 0 && (
+        <PageShell className="pt-0">
+          <h2 className="text-2xl font-semibold text-foreground">Related insights</h2>
+          <ul className="mt-6 space-y-4">
+            {relatedInsights.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/insights/${post.slug}`} className="group block">
+                  <h3 className="font-semibold text-foreground group-hover:text-primary">{post.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{post.excerpt}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </PageShell>
       )}
 

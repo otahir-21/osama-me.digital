@@ -68,8 +68,8 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       { source: "/testimonials", destination: "/", permanent: true },
-      { source: "/blog", destination: "/", permanent: true },
-      { source: "/blog/:path*", destination: "/", permanent: true },
+      { source: "/blog", destination: "/insights", permanent: true },
+      { source: "/blog/:path*", destination: "/insights", permanent: true },
     ];
   },
   async headers() {
@@ -83,6 +83,10 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains",
           },
         ],
       },

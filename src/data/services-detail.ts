@@ -40,7 +40,7 @@ export const servicesDetail: ServiceDetailItem[] = [
       "Production-ready iOS and Android products from architecture through store launch.",
     description:
       "I design and build cross-platform mobile apps for UAE and GCC businesses — including Flutter and React Native clients, backend APIs, authentication, payments, notifications, analytics, and App Store / Google Play release.",
-    seoTitle: "Mobile App Development Dubai | Flutter & React Native | Osama Tahir",
+    seoTitle: "Mobile App Development Dubai | Osama Tahir",
     metaDescription:
       "Mobile app development in Dubai by Osama Tahir. Flutter and React Native apps with backend APIs, payments, notifications and store launch for UAE & GCC businesses.",
     h1: "Mobile App Development in Dubai",
@@ -114,9 +114,9 @@ export const servicesDetail: ServiceDetailItem[] = [
       },
     ],
     relatedSlugs: [
+      "flutter-app-development-dubai",
+      "react-native-app-development-dubai",
       "app-rescue-maintenance",
-      "custom-software-development-dubai",
-      "technical-development-partner",
     ],
     relatedProjectIds: [
       "vyooo-creator-platform",
@@ -136,7 +136,7 @@ export const servicesDetail: ServiceDetailItem[] = [
       "Take over, stabilize and improve an existing Flutter, React Native or backend product.",
     description:
       "I help companies with unfinished, unstable or inherited mobile and backend products: audits, crash and performance work, outdated dependencies, API and payment issues, store problems, feature development and production support.",
-    seoTitle: "App Rescue & Maintenance Dubai | Flutter & React Native | Osama Tahir",
+    seoTitle: "App Rescue & Maintenance Dubai | Osama Tahir",
     metaDescription:
       "Rescue, maintain and scale existing Flutter and React Native apps in Dubai. Technical audits, performance, payments, store issues and production support by Osama Tahir.",
     h1: "Rescue, Maintain & Scale an Existing Mobile App",
@@ -201,8 +201,8 @@ export const servicesDetail: ServiceDetailItem[] = [
     ],
     relatedSlugs: [
       "mobile-app-development-dubai",
-      "custom-software-development-dubai",
-      "technical-development-partner",
+      "flutter-app-development-dubai",
+      "react-native-app-development-dubai",
     ],
     relatedProjectIds: ["pak-id-nadra", "dvago-medical-directory", "vyooo-creator-platform"],
     ctaHeading: "Have an app that needs to be taken over?",
@@ -218,7 +218,7 @@ export const servicesDetail: ServiceDetailItem[] = [
       "CRMs, dashboards and operational platforms that replace spreadsheets and scattered tools.",
     description:
       "I build business software for Dubai and GCC companies: CRMs, analytics dashboards, admin platforms, workflow automation, Laravel/Node.js APIs, payments and integrations — so operations are not stuck in Excel, WhatsApp and manual reporting.",
-    seoTitle: "Custom Software & CRM Development Dubai | Osama Tahir",
+    seoTitle: "Custom Software Development Dubai | Osama Tahir",
     metaDescription:
       "Custom software and CRM development in Dubai by Osama Tahir. Dashboards, operational platforms, Laravel and Node.js APIs, payments and integrations for UAE businesses.",
     h1: "Custom Software & Business Platforms for Dubai Companies",
@@ -300,7 +300,7 @@ export const servicesDetail: ServiceDetailItem[] = [
       "White-label mobile and software delivery for agencies and product teams that do not want to hire a full engineering bench.",
     description:
       "I work with digital, branding and marketing agencies — and with product teams — as a senior technical partner: Flutter/React Native, backend APIs, Figma handoff, QA, deployment and ongoing support, including confidential and white-label delivery.",
-    seoTitle: "Technical Development Partner for UAE Agencies | Osama Tahir",
+    seoTitle: "Technical Partner for UAE Agencies | Osama Tahir",
     metaDescription:
       "White-label app and software development partner in the UAE. Osama Tahir delivers Flutter, React Native and backend work for agencies and product teams across Dubai and the GCC.",
     h1: "A Technical Development Partner for Agencies & Product Teams",
@@ -379,6 +379,182 @@ export const servicesDetail: ServiceDetailItem[] = [
       "Tell me how you work with clients today and what you need built, rescued, or maintained.",
     updatedAt: "2026-08-25",
   },
+  {
+    slug: "flutter-app-development-dubai",
+    title: "Flutter App Development Dubai",
+    hubTitle: "Flutter Development",
+    tagline:
+      "One Flutter codebase for iOS, Android and, when it earns its keep, web — through store launch.",
+    description:
+      "Flutter app development in Dubai by Osama Tahir: iOS and Android products with Dart, BLoC or GetX, Laravel or Node.js APIs, payments, notifications and App Store / Google Play release for UAE and GCC businesses.",
+    seoTitle: "Flutter Developer Dubai | Osama Tahir",
+    metaDescription:
+      "Hire a Flutter developer in Dubai. Osama Tahir builds iOS and Android apps with Flutter, APIs, payments and store launch for UAE and GCC companies.",
+    h1: "Flutter App Development in Dubai",
+    serviceType: "Flutter application development",
+    intro:
+      "Osama Tahir is a Dubai-based Flutter developer who ships production iOS and Android apps from a single Dart codebase. The work is not a UI kit demo: authentication, APIs, payments, push, analytics and store submission are part of the same engagement. Recent Flutter products include VyooO (live, 360°/VR, subscriptions), Royal Spirit commerce, and 24Digi on the App Store.",
+    forWho: [
+      "Startups that want one team for iOS and Android instead of two native benches",
+      "UAE and GCC operators who already decided on Flutter and need a senior engineer, not a tutorial-level contractor",
+      "Product teams that also need a Flutter Web dashboard without standing up a separate frontend silo",
+      "Agencies that need Flutter delivery from approved Figma, including white-label work",
+    ],
+    sections: [
+      {
+        heading: "What Flutter is for — and what it is not",
+        body: "Flutter is a Dart UI toolkit that compiles to native ARM on iOS and Android and can also target web. It is a strong default when you want one visual system, one release cadence, and one engineer who can own both stores. It is the wrong default when the organisation already has a large React Native app, or when a platform-only SDK is the product (Watch, CarPlay, a Play Station client). I will say that in discovery rather than force Flutter onto a bad fit.",
+      },
+      {
+        heading: "How I actually build Flutter products",
+        body: "Most of my Flutter work uses a clear state layer (BLoC or GetX depending on the existing repo and the team that will maintain it), REST APIs in Laravel or Node.js, and production services for the jobs the app has to complete. VyooO is the heavy end of that spectrum: Agora live, CallKit, gyro-based 360° playback, Cloudflare Stream, RevenueCat, and store review. Royal Spirit and 24Digi sit closer to commerce and health workflows — catalogues, orders, payments, and operational screens that have to survive real devices, not just a simulator.",
+        bullets: [
+          "Email, phone OTP, Google and Apple sign-in",
+          "BLoC or GetX, chosen from the codebase and the handover plan",
+          "Stripe, Apple Pay, Network International and RevenueCat when the product charges money",
+          "FCM / APNs, crash reporting and store-ready privacy disclosures",
+          "Flutter Web when the same team also needs a desktop-class admin surface",
+        ],
+      },
+      {
+        heading: "Flutter in the UAE and GCC",
+        body: "Regional products usually fail on payments, store policy, and Arabic-capable UI — not on whether the button is animated. I build for Apple Pay and local processors, keep developer accounts in the client’s name, and treat RTL and bilingual copy as a layout problem, not a last-week overlay. If you are comparing Flutter with React Native for a UAE startup, the decision should be about the team that will own the repo in year two, not about Twitter threads.",
+      },
+      {
+        heading: "Takeover of an existing Flutter app",
+        body: "A large share of Flutter work in Dubai is not greenfield. The original developer left, the upgrade path from an old Flutter SDK is blocked, or payments fail in production. I start with a repo and store audit, then stabilize. A rewrite is a last resort. See app rescue if that is the actual job.",
+      },
+    ],
+    process: [
+      { title: "Fit check", desc: "Confirm Flutter is the right toolkit, or name the reason it is not." },
+      { title: "Architecture", desc: "Client, API, auth, payments, and the first store-ready slice." },
+      { title: "Build", desc: "iOS and Android builds you can install, not slide decks." },
+      { title: "Harden", desc: "Crashes, store questionnaires, RTL, and payment edge cases." },
+      { title: "Launch", desc: "TestFlight / internal testing, submission, and the first production week." },
+    ],
+    faqs: [
+      {
+        question: "Are you a Flutter-only developer?",
+        answer:
+          "Flutter is the deepest production catalog on this site, but I also work in React Native and in Laravel/Node.js APIs. Stack choice follows the product and the team that will maintain it.",
+      },
+      {
+        question: "Can one Flutter app cover iOS, Android and web?",
+        answer:
+          "iOS and Android from one codebase is the usual shape. Flutter Web is useful for admin/CRM surfaces when the same team owns mobile. A marketing website is usually a separate React or WordPress property, as with VyooO.",
+      },
+      {
+        question: "Do you upgrade old Flutter versions?",
+        answer:
+          "Yes. Version jumps, plugin breakage, and null-safety-era codebases are a normal part of rescue work. I estimate the upgrade separately from new features so you can see the real cost.",
+      },
+      {
+        question: "Will you quote a Flutter app from a one-line WhatsApp brief?",
+        answer:
+          "No. I need the platforms, whether an API exists, payment requirements, and whether this is new or inherited. That is how you avoid a number that is fiction.",
+      },
+    ],
+    relatedSlugs: [
+      "mobile-app-development-dubai",
+      "react-native-app-development-dubai",
+      "app-rescue-maintenance",
+    ],
+    relatedProjectIds: [
+      "vyooo-creator-platform",
+      "royal-spirit-ecommerce",
+      "24digi-health-super-app",
+    ],
+    ctaHeading: "Need a Flutter app built or taken over?",
+    ctaBody:
+      "Tell me whether this is a new product or an existing repo, and what iOS and Android have to do in production.",
+    updatedAt: "2026-08-25",
+  },
+  {
+    slug: "react-native-app-development-dubai",
+    title: "React Native App Development Dubai",
+    hubTitle: "React Native Development",
+    tagline:
+      "React Native when the organisation already lives in JavaScript — or when the app you need to save is already RN.",
+    description:
+      "React Native app development and takeover in Dubai by Osama Tahir: iOS and Android clients, JavaScript/TypeScript, APIs, payments and store launch — including inherited RN codebases for UAE and GCC teams.",
+    seoTitle: "React Native Developer Dubai | Osama Tahir",
+    metaDescription:
+      "React Native developer in Dubai. Osama Tahir builds and takes over RN iOS and Android apps, including APIs, payments and store release for UAE teams.",
+    h1: "React Native App Development in Dubai",
+    serviceType: "React Native application development",
+    intro:
+      "Osama Tahir takes on React Native work in Dubai when it is the honest stack: the company already ships JavaScript, there is an existing RN app to extend, or the hiring plan is a JS team rather than a Dart team. Greenfield products where Flutter is a better fit get that recommendation instead. The job is still a production iOS and Android app — auth, API, payments, notifications, and stores — not a Create React Native App demo.",
+    forWho: [
+      "Product teams whose web and API work is already JavaScript or TypeScript",
+      "Companies sitting on an inherited React Native app that needs features, upgrades, or a store fix",
+      "Agencies that specified RN in the client statement of work",
+      "Founders comparing RN and Flutter who want a recommendation tied to maintenance, not branding",
+    ],
+    sections: [
+      {
+        heading: "When React Native is the right call",
+        body: "React Native is a strong option when you want one language across web, API and mobile, or when the expensive asset is already an RN repository. It is a weak option when you are starting from zero, you also want a desktop-class Flutter Web dashboard from the same engineers, or the team that will maintain the app in 18 months is a Dart team. I treat that as an architecture decision. See the Flutter vs React Native insight if you are still choosing.",
+      },
+      {
+        heading: "What I actually deliver",
+        body: "The RN engagement looks like other mobile work I do: a store-ready client, a Laravel or Node.js API when that is in scope, and the unglamorous production path. I do not staff anonymous juniors behind a senior title. If the repo uses an old React Native version, undocumented native modules, or a broken Fastlane lane, that shows up in the first audit instead of week six.",
+        bullets: [
+          "iOS and Android from one React Native codebase",
+          "TypeScript preferred on new work; JS accepted on inherited repos until it is safe to migrate",
+          "Native modules only when a JS library cannot do the job",
+          "The same payment and store discipline as Flutter work: Apple Pay, Stripe, Network International, review notes",
+          "Handover documentation so your next engineer is not reverse-engineering my weekend",
+        ],
+      },
+      {
+        heading: "Takeover and rescue",
+        body: "A lot of React Native demand in the UAE is rescue: the freelancer disappeared, autolinking is broken, or Android builds only on one laptop. I start with repo access, store access, and a written triage. Features wait until the app installs from a clean CI path. If a rewrite to Flutter would cost less than two years of RN archaeology, I will say so — with reasons, not a sales script.",
+      },
+      {
+        heading: "How this sits next to Flutter work",
+        body: "The public case studies on this site are mostly Flutter because that is where the deepest shipped catalog is (VyooO, Royal Spirit, 24Digi, Dvago, PAK ID). React Native is a first-class delivery option, not a keyword bolted on. If you need proof in a specific RN repo, the honest path is a short paid audit of that repo, not a fake case study.",
+      },
+    ],
+    process: [
+      { title: "Stack honesty", desc: "Keep RN, move to Flutter, or fix the current RN app — named up front." },
+      { title: "Audit", desc: "Dependencies, native modules, CI, stores, and the API contract." },
+      { title: "Stabilize", desc: "Clean builds, crashers, and the payments path if it is broken." },
+      { title: "Build", desc: "Features against a repo that actually compiles on a second machine." },
+      { title: "Release", desc: "Store submission and a handover the next JS engineer can use." },
+    ],
+    faqs: [
+      {
+        question: "Should I choose React Native or Flutter?",
+        answer:
+          "Choose React Native if the organisation is already JavaScript-native or the app already exists in RN. Choose Flutter if you want one Dart codebase for iOS, Android and possibly Flutter Web, and you are starting fresh. I will not pick the stack that merely matches a blog title.",
+      },
+      {
+        question: "Can you take over our existing React Native app?",
+        answer:
+          "Yes. That is a common RN engagement. I need the repo, the store accounts, and whatever API docs exist. Incomplete handover slows the audit; it does not make the job impossible.",
+      },
+      {
+        question: "Do you use Expo or bare React Native?",
+        answer:
+          "Whichever the product already uses, unless the audit shows Expo (or bare) is blocking a required native capability. Switching build systems is a project, not a checkbox.",
+      },
+      {
+        question: "Will you rewrite our RN app in Flutter by default?",
+        answer:
+          "No. Rewrites are expensive and usually political. I recommend them when the current architecture cannot be maintained at a reasonable cost — not because I prefer Dart.",
+      },
+    ],
+    relatedSlugs: [
+      "mobile-app-development-dubai",
+      "flutter-app-development-dubai",
+      "app-rescue-maintenance",
+    ],
+    relatedProjectIds: [],
+    ctaHeading: "Have a React Native product to build or save?",
+    ctaBody:
+      "Send the repo situation (new vs inherited) and what iOS and Android must do after launch.",
+    updatedAt: "2026-08-25",
+  },
 ];
 
 export function getServiceBySlug(slug: string) {
@@ -387,6 +563,8 @@ export function getServiceBySlug(slug: string) {
 
 export const SERVICE_PATHS = {
   mobile: "/services/mobile-app-development-dubai",
+  flutter: "/services/flutter-app-development-dubai",
+  reactNative: "/services/react-native-app-development-dubai",
   rescue: "/services/app-rescue-maintenance",
   custom: "/services/custom-software-development-dubai",
   partner: "/services/technical-development-partner",
