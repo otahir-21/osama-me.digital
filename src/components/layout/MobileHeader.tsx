@@ -12,23 +12,23 @@ export function MobileHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md lg:hidden">
+    <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#F7F5F1]/90 backdrop-blur-md lg:hidden">
       <div className="flex items-center justify-between px-5 py-4">
-        <Link href="/" className="font-bold text-zinc-100">
+        <Link href="/" className="font-bold text-stone-800">
           {siteConfig.name.split(" ")[0]}
         </Link>
         <button
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen(!open)}
-          className="rounded-lg p-2 text-zinc-400 hover:bg-zinc-900 hover:text-zinc-100"
+          className="rounded-lg p-2 text-stone-500 hover:bg-stone-100 hover:text-stone-800"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-zinc-800/80 px-3 py-3">
+        <nav className="border-t border-stone-200 px-3 py-3">
           {siteConfig.navLinks.map((link) => (
             <Link
               key={link.href}
@@ -37,8 +37,8 @@ export function MobileHeader() {
               className={cn(
                 "block rounded-lg px-3 py-3 text-sm font-medium",
                 pathname === link.href
-                  ? "bg-zinc-900 text-emerald-400"
-                  : "text-zinc-400 hover:text-zinc-100"
+                  ? "bg-stone-100 text-indigo-700"
+                  : "text-stone-500 hover:text-stone-800"
               )}
             >
               {link.label}

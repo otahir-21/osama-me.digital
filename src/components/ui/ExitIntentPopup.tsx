@@ -77,24 +77,24 @@ export function ExitIntentPopup() {
             aria-modal="true"
             aria-labelledby="exit-popup-title"
           >
-            <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl sm:p-8">
+            <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
               <button
                 onClick={close}
-                className="absolute right-4 top-4 rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+                className="absolute right-4 top-4 rounded-lg p-1.5 text-stone-400 transition-colors hover:bg-stone-100 hover:text-stone-800"
                 aria-label="Close"
               >
                 <X size={20} />
               </button>
 
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-500/10">
-                <Calendar className="size-7 text-amber-400" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-50">
+                <Calendar className="size-7 text-indigo-600" />
               </div>
-              <h2 id="exit-popup-title" className="mt-4 text-2xl font-bold text-zinc-900">
+              <h2 id="exit-popup-title" className="mt-4 text-2xl font-bold text-stone-800">
                 Wait! Before you go...
               </h2>
-              <p className="mt-2 text-zinc-600">
-                Let&apos;s talk about a <strong className="text-amber-500">full-time role</strong> or{" "}
-                <strong className="text-amber-500">contract project</strong>. No obligation — just a
+              <p className="mt-2 text-stone-600">
+                Let&apos;s talk about a <strong className="text-indigo-700">full-time role</strong> or{" "}
+                <strong className="text-indigo-700">contract project</strong>. No obligation — just a
                 clear conversation about what you&apos;re building.
               </p>
               <div className="mt-6 flex flex-col gap-3">
@@ -107,7 +107,7 @@ export function ExitIntentPopup() {
                       window.gtag("event", "calendly_click", { event_category: "contact" });
                     }
                   }}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-amber-500 py-3 font-semibold text-zinc-950 transition-colors hover:bg-amber-400"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-indigo-600 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
                 >
                   <Calendar size={18} />
                   Book Free Call Now
@@ -115,7 +115,7 @@ export function ExitIntentPopup() {
                 <Link
                   href="/contact"
                   onClick={close}
-                  className="text-center text-sm text-zinc-400 underline-offset-2 hover:underline"
+                  className="text-center text-sm text-stone-500 underline-offset-2 hover:underline"
                 >
                   Or send a message instead
                 </Link>

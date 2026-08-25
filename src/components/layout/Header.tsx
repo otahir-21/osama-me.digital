@@ -26,19 +26,19 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-stone-200 bg-[#F7F5F1]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-emerald-500 focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-zinc-950"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-indigo-600 focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
       >
         Skip to content
       </a>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-zinc-50 sm:text-xl"
+          className="text-lg font-semibold tracking-tight text-stone-800 sm:text-xl"
         >
-          Osama<span className="text-emerald-400">.</span>
+          Osama<span className="text-indigo-600">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -51,7 +51,7 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors",
-                  active ? "text-zinc-50" : "text-zinc-400 hover:text-zinc-100"
+                  active ? "text-stone-800" : "text-stone-500 hover:text-stone-800"
                 )}
               >
                 {link.label}
@@ -62,7 +62,7 @@ export function Header() {
             href="/contact"
             event="start_a_project_click"
             eventParams={{ location: "header" }}
-            className="inline-flex min-h-11 items-center rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
+            className="inline-flex min-h-11 items-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
           >
             Start a Project →
           </TrackedLink>
@@ -70,7 +70,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-zinc-300 hover:bg-zinc-900 hover:text-zinc-50 md:hidden"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-stone-600 hover:bg-stone-100 hover:text-stone-800 md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -84,7 +84,7 @@ export function Header() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="border-t border-zinc-800/80 px-5 py-4 md:hidden"
+          className="border-t border-stone-200 px-5 py-4 md:hidden"
         >
           <div className="flex flex-col gap-1">
             {siteConfig.navLinks.map((link) => (
@@ -94,8 +94,8 @@ export function Header() {
                 className={cn(
                   "rounded-lg px-3 py-3 text-base font-medium",
                   pathname === link.href || pathname.startsWith(`${link.href}/`)
-                    ? "bg-zinc-900 text-zinc-50"
-                    : "text-zinc-300 hover:bg-zinc-900 hover:text-zinc-50"
+                    ? "bg-stone-100 text-stone-800"
+                    : "text-stone-600 hover:bg-stone-100 hover:text-stone-800"
                 )}
               >
                 {link.label}
@@ -105,7 +105,7 @@ export function Header() {
               href="/contact"
               event="start_a_project_click"
               eventParams={{ location: "mobile_header" }}
-              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-lg bg-emerald-500 px-4 py-3 text-sm font-semibold text-zinc-950"
+              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white"
             >
               Start a Project →
             </TrackedLink>

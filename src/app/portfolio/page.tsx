@@ -40,26 +40,26 @@ export default function PortfolioPage() {
 
   return (
     <div>
-      <PageShell className="border-b border-zinc-800/80">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-400/90">
+      <PageShell>
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-indigo-700">
           Work
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-800 sm:text-5xl">
           Selected Mobile App & Software Projects
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-400">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
           A selection of mobile apps, business platforms, commerce products and backend
           systems I&apos;ve helped build across the UAE and international markets.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+        <div className="mt-10 flex flex-wrap gap-2" role="group" aria-label="Filter by category">
           <button
             type="button"
             onClick={() => setCategory("all")}
             className={`min-h-11 rounded-lg px-4 py-2 text-sm font-medium ${
               category === "all"
-                ? "bg-emerald-500/10 text-emerald-400"
-                : "text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300"
+                ? "bg-indigo-50 text-indigo-700"
+                : "text-stone-500 hover:bg-stone-100 hover:text-stone-700"
             }`}
           >
             All
@@ -71,8 +71,8 @@ export default function PortfolioPage() {
               onClick={() => setCategory(item)}
               className={`min-h-11 rounded-lg px-4 py-2 text-sm font-medium ${
                 category === item
-                  ? "bg-emerald-500/10 text-emerald-400"
-                  : "text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300"
+                  ? "bg-indigo-50 text-indigo-700"
+                  : "text-stone-500 hover:bg-stone-100 hover:text-stone-700"
               }`}
             >
               {item}
@@ -81,18 +81,18 @@ export default function PortfolioPage() {
         </div>
       </PageShell>
 
-      <PageShell wide className="space-y-16 py-12">
+      <PageShell wide className="space-y-16 pt-0">
         {grouped.length === 0 ? (
-          <p className="text-sm text-zinc-500">No projects in this category yet.</p>
+          <p className="text-sm text-stone-500">No projects in this category yet.</p>
         ) : (
           grouped.map(({ cat, items }) => (
             <section key={cat}>
-              <h2 className="text-xl font-semibold text-zinc-100">{cat}</h2>
-              <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              <h2 className="text-xl font-semibold text-stone-800">{cat}</h2>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {items.map(({ project, copy }) => (
                   <article
                     key={project.id}
-                    className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition-colors hover:border-zinc-700"
+                    className="group overflow-hidden rounded-2xl border border-stone-200 bg-white transition-shadow hover:shadow-sm"
                   >
                     <Link href={`/portfolio/${project.id}`} className="flex h-full flex-col">
                       <div className="relative aspect-[16/9]">
@@ -100,25 +100,25 @@ export default function PortfolioPage() {
                       </div>
                       <div className="flex flex-1 flex-col p-6">
                         <div className="flex items-start justify-between gap-3">
-                          <p className="text-xs uppercase tracking-wide text-zinc-500">
+                          <p className="text-xs uppercase tracking-wide text-stone-500">
                             {copy?.buyerCategory ?? project.category}
                           </p>
-                          <ArrowUpRight className="size-4 shrink-0 text-zinc-600 group-hover:text-emerald-400" />
+                          <ArrowUpRight className="size-4 shrink-0 text-stone-400 group-hover:text-indigo-600" />
                         </div>
-                        <h3 className="mt-2 text-lg font-semibold text-zinc-50 group-hover:text-emerald-400">
+                        <h3 className="mt-2 text-lg font-semibold text-stone-800 group-hover:text-indigo-700">
                           {project.title}
                         </h3>
-                        <p className="mt-1 text-xs text-zinc-600">
+                        <p className="mt-1 text-xs text-stone-500">
                           {companyName(project.company)} · {project.role}
                         </p>
-                        <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-zinc-400">
+                        <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-stone-600">
                           {copy?.overview ?? project.challenge}
                         </p>
                         <div className="mt-4 flex flex-wrap gap-1.5">
                           {project.techStack.slice(0, 4).map((tech) => (
                             <span
                               key={tech}
-                              className="rounded bg-zinc-800 px-2 py-0.5 text-[11px] text-zinc-500"
+                              className="rounded bg-stone-100 px-2 py-0.5 text-[11px] text-stone-600"
                             >
                               {tech}
                             </span>

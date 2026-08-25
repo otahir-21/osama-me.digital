@@ -42,7 +42,7 @@ const skillCategories = [
 export default function SkillsPage() {
   return (
     <div>
-      <PageShell className="border-b border-zinc-800/80">
+      <PageShell>
         <SectionHeading
           as="h1"
           eyebrow="Skills"
@@ -54,13 +54,13 @@ export default function SkillsPage() {
       <PageShell wide className="py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category) => (
-            <div key={category.title} className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5">
-              <h2 className="text-sm font-semibold text-zinc-200">{category.title}</h2>
+            <div key={category.title} className="rounded-xl border border-stone-200 bg-white p-5">
+              <h2 className="text-sm font-semibold text-stone-800">{category.title}</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-md bg-zinc-800/80 px-2.5 py-1 text-xs text-zinc-400"
+                    className="rounded-md bg-stone-100 px-2.5 py-1 text-xs text-stone-600"
                   >
                     {skill}
                   </li>
@@ -72,7 +72,7 @@ export default function SkillsPage() {
 
         <Link
           href="/portfolio"
-          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300"
+          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-800"
         >
           See selected work
           <ArrowUpRight size={16} />

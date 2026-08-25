@@ -26,14 +26,14 @@ export function Navbar() {
       className={cn(
         "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-zinc-200"
+          ? "border-b border-stone-200 bg-[#F7F5F1]/95 shadow-sm backdrop-blur-sm"
           : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-zinc-900 transition-colors hover:text-amber-600"
+          className="text-xl font-bold tracking-tight text-stone-800 transition-colors hover:text-indigo-700"
         >
           {siteConfig.name.split(" ")[0]}
         </Link>
@@ -43,14 +43,14 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+              className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-800"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className={buttonVariants({ size: "sm", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+            className={buttonVariants({ size: "sm", className: "bg-indigo-600 text-white hover:bg-indigo-700" })}
           >
             Get in Touch
           </Link>
@@ -59,7 +59,7 @@ export function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="md:hidden rounded-lg p-2 text-zinc-900 hover:bg-zinc-100"
+          className="rounded-lg p-2 text-stone-800 hover:bg-stone-100 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,14 +73,14 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-zinc-200 bg-white md:hidden"
+            className="overflow-hidden border-t border-stone-200 bg-white md:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-4">
               {siteConfig.navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-4 py-3 text-zinc-900 hover:bg-zinc-100"
+                  className="rounded-lg px-4 py-3 text-stone-800 hover:bg-stone-100"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -89,7 +89,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className={buttonVariants({ className: "mt-2 bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+                className={buttonVariants({ className: "mt-2 bg-indigo-600 text-white hover:bg-indigo-700" })}
               >
                 Get in Touch
               </Link>

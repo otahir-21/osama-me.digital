@@ -45,13 +45,13 @@ export function WhyChooseMe() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
                 <item.icon size={24} />
               </div>
-              <h3 className="mt-4 font-semibold text-zinc-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-zinc-600">{item.desc}</p>
+              <h3 className="mt-4 font-semibold text-stone-800">{item.title}</h3>
+              <p className="mt-2 text-sm text-stone-600">{item.desc}</p>
             </motion.div>
           ))}
         </div>

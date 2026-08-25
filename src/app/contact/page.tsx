@@ -19,14 +19,14 @@ export default function ContactPage() {
     <div>
       <JsonLd data={getGraphSchema([getContactPageSchema()])} />
 
-      <PageShell className="border-b border-zinc-800/80">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-400/90">
+      <PageShell>
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-indigo-700">
           Contact
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-800 sm:text-5xl">
           Have a Product to Build or Improve?
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-400">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
           Tell me what you&apos;re working on, where the product is today, and what you need
           help delivering.
         </p>
@@ -34,15 +34,15 @@ export default function ContactPage() {
 
       <PageShell wide className="grid gap-12 py-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h2 className="text-lg font-semibold text-zinc-200">Start a project</h2>
-          <p className="mt-2 text-sm text-zinc-500">I typically respond within 24 hours.</p>
+          <h2 className="text-lg font-semibold text-stone-800">Start a project</h2>
+          <p className="mt-2 text-sm text-stone-500">I typically respond within 24 hours.</p>
           <div className="mt-6">
             <ContactForm />
           </div>
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-zinc-200">Schedule a call, WhatsApp or email</h2>
+          <h2 className="text-lg font-semibold text-stone-800">Schedule a call, WhatsApp or email</h2>
           {[
             {
               href: siteConfig.calendly,
@@ -73,44 +73,44 @@ export default function ContactPage() {
               eventParams={{ location: "contact_page" }}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex min-h-16 items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900/30 p-4 transition-colors hover:border-zinc-700"
+              className="flex min-h-16 items-center gap-4 rounded-xl border border-stone-200 bg-white p-4 transition-shadow hover:shadow-sm"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
-                <item.icon className="size-5 text-emerald-400" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-stone-50">
+                <item.icon className="size-5 text-indigo-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-zinc-200">{item.label}</p>
-                <p className="text-xs text-zinc-500">{item.desc}</p>
+                <p className="text-sm font-medium text-stone-800">{item.label}</p>
+                <p className="text-xs text-stone-500">{item.desc}</p>
               </div>
             </TrackedAnchor>
           ))}
-          <div className="flex items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900/30 p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
-              <MapPin className="size-5 text-emerald-400" />
+          <div className="flex items-center gap-4 rounded-xl border border-stone-200 bg-white p-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-stone-50">
+              <MapPin className="size-5 text-indigo-600" />
             </div>
             <div>
-              <p className="text-sm font-medium text-zinc-200">Location</p>
-              <p className="text-xs text-zinc-500">{siteConfig.locationFull}</p>
+              <p className="text-sm font-medium text-stone-800">Location</p>
+              <p className="text-xs text-stone-500">{siteConfig.locationFull}</p>
             </div>
           </div>
         </div>
       </PageShell>
 
-      <PageShell className="border-t border-zinc-800/80 py-12">
-        <h2 className="text-lg font-semibold text-zinc-200">Questions before you write</h2>
+      <PageShell className="pt-0">
+        <h2 className="text-lg font-semibold text-stone-800">Questions before you write</h2>
         <Accordion className="mt-6">
           {faqData.map((item) => (
-            <AccordionItem key={item.question} value={item.question} className="border-zinc-800">
-              <AccordionTrigger className="text-left text-zinc-300 hover:text-emerald-400">
+            <AccordionItem key={item.question} value={item.question} className="border-stone-200">
+              <AccordionTrigger className="text-left text-stone-800 hover:text-indigo-700">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-zinc-500">{item.answer}</AccordionContent>
+              <AccordionContent className="text-stone-600">{item.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        <p className="mt-10 text-sm text-zinc-600">
+        <p className="mt-10 text-sm text-stone-500">
           Recruiting for a full-time role?{" "}
-          <Link href="/resume" className="text-zinc-400 hover:text-zinc-200">
+          <Link href="/resume" className="text-indigo-700 hover:text-indigo-800">
             View my resume
           </Link>{" "}
           or{" "}
@@ -118,7 +118,7 @@ export default function ContactPage() {
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-400 hover:text-zinc-200"
+            className="text-indigo-700 hover:text-indigo-800"
           >
             LinkedIn profile
           </a>

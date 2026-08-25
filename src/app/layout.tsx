@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#09090b",
+  themeColor: "#F7F5F1",
 };
 
 export default function RootLayout({
@@ -89,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en-AE" className="scroll-smooth">
       <body
-        className={`${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-zinc-950 font-sans text-zinc-100 antialiased`}
+        className={`${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-N9M49GTXJW"

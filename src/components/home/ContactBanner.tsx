@@ -3,9 +3,10 @@ import { ProjectCTA } from "@/components/cta/ProjectCTA";
 
 export function ContactBanner() {
   return (
-    <section>
-      <PageShell className="py-16 lg:py-24">
+    <section className="bg-stone-900">
+      <PageShell className="py-20 lg:py-28">
         <ProjectCTA
+          variant="flush"
           heading="Let's discuss what you're building."
           body="I typically reply within 24 hours. Send the product, the current state, and what you need delivered."
         />

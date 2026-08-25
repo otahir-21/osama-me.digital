@@ -33,30 +33,30 @@ const offers = [
 
 export function HelpYouBuild() {
   return (
-    <section className="border-b border-zinc-800/80">
-      <PageShell wide className="py-16 lg:py-24">
+    <section>
+      <PageShell wide className="py-20 lg:py-28">
         <SectionHeading
           eyebrow="Services"
           title="What I can help you with"
           subtitle="A senior technical partner for new products, inherited codebases, and the operational software around them."
         />
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {offers.map((offer) => (
             <article
               key={offer.title}
-              className="flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-7"
+              className="flex flex-col rounded-2xl border border-stone-200 bg-white p-8"
             >
-              <p className="text-xs font-medium tracking-[0.18em] text-emerald-400/80">
+              <p className="text-xs font-medium tracking-[0.18em] text-indigo-700">
                 {offer.number}
               </p>
-              <h3 className="mt-4 text-xl font-semibold text-zinc-50">{offer.title}</h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-400">{offer.body}</p>
+              <h3 className="mt-5 text-xl font-semibold text-stone-800">{offer.title}</h3>
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-stone-600">{offer.body}</p>
               <TrackedLink
                 href={offer.href}
                 event="service_cta"
                 eventParams={{ location: offer.eventLocation }}
-                className="mt-8 inline-flex items-center text-sm font-medium text-emerald-400 hover:text-emerald-300"
+                className="mt-8 inline-flex items-center text-sm font-medium text-indigo-700 hover:text-indigo-800"
               >
                 {offer.cta}
                 <ArrowRight className="ml-1.5 size-4" />

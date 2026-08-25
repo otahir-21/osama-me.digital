@@ -30,31 +30,31 @@ export default function ServicesIndexPage() {
           }),
         ])}
       />
-      <PageShell className="border-b border-zinc-800/80">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-400/90">
+      <PageShell>
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-indigo-700">
           Services
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-800 sm:text-5xl">
           Software development services in Dubai
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-400">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
           Osama Tahir helps UAE and GCC companies build, rescue and scale mobile apps and
           digital platforms. The work spans Flutter, React Native, Laravel, Node.js, payments
           and production launch — as a senior engineer, not a ticket shop.
         </p>
       </PageShell>
 
-      <PageShell className="grid gap-5 py-14 sm:grid-cols-2">
+      <PageShell className="grid gap-6 py-8 sm:grid-cols-2 lg:py-12">
         {servicesDetail.map((service) => (
           <article
             key={service.slug}
-            className="flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-7"
+            className="flex flex-col rounded-2xl border border-stone-200 bg-white p-8"
           >
-            <h2 className="text-xl font-semibold text-zinc-50">{service.hubTitle}</h2>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">{service.tagline}</p>
+            <h2 className="text-xl font-semibold text-stone-800">{service.hubTitle}</h2>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-stone-600">{service.tagline}</p>
             <Link
               href={`/services/${service.slug}`}
-              className="mt-6 inline-flex items-center text-sm font-medium text-emerald-400 hover:text-emerald-300"
+              className="mt-6 inline-flex items-center text-sm font-medium text-indigo-700 hover:text-indigo-800"
             >
               {service.hubTitle} details
               <ArrowRight className="ml-1.5 size-4" />

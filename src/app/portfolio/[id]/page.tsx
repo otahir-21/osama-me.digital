@@ -97,13 +97,13 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           ]}
         />
 
-        <p className="mt-8 text-xs font-medium uppercase tracking-[0.16em] text-emerald-400/85">
+        <p className="mt-8 text-xs font-medium uppercase tracking-[0.16em] text-indigo-700">
           {copy?.buyerCategory ?? project.category}
         </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-stone-800 sm:text-5xl">
           {project.title}
         </h1>
-        <p className="mt-3 text-zinc-500">
+        <p className="mt-3 text-stone-500">
           {project.client} · {project.role} · {companyName}
         </p>
 
@@ -114,7 +114,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
                 href={project.appStore}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-emerald-400"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
               >
                 <AppleIcon />
                 View on the App Store
@@ -126,7 +126,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
                 href={project.playStore}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 hover:border-zinc-600"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 hover:border-stone-400"
               >
                 <PlayIcon />
                 View on Google Play
@@ -138,7 +138,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 hover:border-zinc-600"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 hover:border-stone-400"
               >
                 Visit live website
                 <ExternalLink size={14} />
@@ -147,7 +147,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           </div>
         )}
 
-        <figure className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-zinc-800">
+        <figure className="relative mt-12 aspect-video overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
           <ProjectCover title={project.title} size="lg" />
           <figcaption className="sr-only">
             Visual cover for the {project.title} case study
@@ -156,47 +156,47 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
         <div className="mt-14 max-w-3xl space-y-12">
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">Overview</h2>
-            <p className="mt-4 leading-relaxed text-zinc-400">
+            <h2 className="text-2xl font-semibold text-stone-800">Overview</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
               {copy?.overview ?? project.challenge}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">The Problem</h2>
-            <p className="mt-4 leading-relaxed text-zinc-400">
+            <h2 className="text-2xl font-semibold text-stone-800">The Problem</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
               {copy?.problem ?? project.challenge}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">My Role</h2>
-            <p className="mt-4 leading-relaxed text-zinc-400">
+            <h2 className="text-2xl font-semibold text-stone-800">My Role</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
               {copy?.roleDetail ?? `${project.role} at ${companyName}.`}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">Technical Challenge</h2>
-            <p className="mt-4 leading-relaxed text-zinc-400">
+            <h2 className="text-2xl font-semibold text-stone-800">Technical Challenge</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
               {copy?.technicalChallenge ?? project.solution}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">Solution</h2>
-            <p className="mt-4 leading-relaxed text-zinc-400">
+            <h2 className="text-2xl font-semibold text-stone-800">Solution</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
               {copy?.solution ?? project.solution}
             </p>
           </section>
 
           {copy?.keyFeatures?.length ? (
             <section>
-              <h2 className="text-2xl font-semibold text-zinc-50">Key Features</h2>
+              <h2 className="text-2xl font-semibold text-stone-800">Key Features</h2>
               <ul className="mt-4 space-y-2">
                 {copy.keyFeatures.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-zinc-400">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                  <li key={feature} className="flex gap-3 text-stone-600">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600" />
                     {feature}
                   </li>
                 ))}
@@ -205,11 +205,11 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           ) : null}
 
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">Results / Outcome</h2>
+            <h2 className="text-2xl font-semibold text-stone-800">Results / Outcome</h2>
             <ul className="mt-4 space-y-2">
               {project.results.map((result) => (
-                <li key={result} className="flex gap-3 text-zinc-400">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                <li key={result} className="flex gap-3 text-stone-600">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600" />
                   {result}
                 </li>
               ))}
@@ -217,12 +217,12 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-zinc-50">Technology</h2>
+            <h2 className="text-2xl font-semibold text-stone-800">Technology</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-md border border-zinc-800 bg-zinc-900 px-3 py-1 text-sm text-zinc-400"
+                  className="rounded-md border border-stone-200 bg-white px-3 py-1 text-sm text-stone-600"
                 >
                   {tech}
                 </span>
@@ -232,13 +232,13 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
           {copy?.relatedServiceHrefs?.length ? (
             <section>
-              <h2 className="text-2xl font-semibold text-zinc-50">Related Services</h2>
+              <h2 className="text-2xl font-semibold text-stone-800">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {copy.relatedServiceHrefs.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-emerald-400 hover:text-emerald-300"
+                      className="text-indigo-700 hover:text-indigo-800"
                     >
                       {item.label}
                     </Link>
@@ -258,7 +258,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
         <Link
           href="/portfolio"
-          className="mt-10 inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-300"
+          className="mt-10 inline-flex items-center gap-2 text-sm text-stone-500 hover:text-stone-700"
         >
           <ArrowLeft size={16} />
           Back to selected work

@@ -8,14 +8,13 @@ import { siteConfig } from "@/data/site-config";
 
 export function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-zinc-50 py-24">
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-amber-600/10" />
+    <section className="bg-stone-900 py-24">
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-stone-50 sm:text-4xl"
         >
           Let&apos;s Build Something Great
         </motion.h2>
@@ -24,7 +23,7 @@ export function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-4 text-lg text-zinc-600"
+          className="mt-4 text-lg text-stone-400"
         >
           {siteConfig.availability}. Whether it&apos;s a full-time role or a contract project,
           I&apos;d love to hear from you.
@@ -39,7 +38,7 @@ export function FinalCTA() {
         >
           <Link
             href="/contact"
-            className={buttonVariants({ size: "lg", className: "bg-amber-500 text-zinc-950 hover:bg-amber-400" })}
+            className={buttonVariants({ size: "lg", className: "bg-white text-stone-900 hover:bg-stone-100" })}
           >
             Get in Touch
           </Link>
@@ -50,7 +49,7 @@ export function FinalCTA() {
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "flex items-center gap-2 border-emerald-500/50 bg-white text-emerald-600 hover:bg-emerald-500/10",
+              className: "flex items-center gap-2 border-stone-600 bg-transparent text-stone-100 hover:bg-stone-800",
             })}
           >
             <MessageCircle size={20} />
@@ -63,11 +62,11 @@ export function FinalCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35 }}
-          className="mt-6 flex flex-wrap justify-center gap-8 text-sm text-zinc-500"
+          className="mt-6 flex flex-wrap justify-center gap-8 text-sm text-stone-400"
         >
           <a
             href={`mailto:${siteConfig.email}`}
-            className="flex items-center gap-2 hover:text-zinc-900"
+            className="flex items-center gap-2 hover:text-stone-50"
           >
             <Mail size={16} />
             {siteConfig.email}

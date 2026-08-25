@@ -22,10 +22,10 @@ export function FAQSection() {
         <Accordion className="mt-12">
           {faqData.map((item) => (
             <AccordionItem key={item.question} value={item.question}>
-              <AccordionTrigger className="text-left text-zinc-900 hover:text-amber-500">
+              <AccordionTrigger className="text-left text-stone-800 hover:text-indigo-700">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-zinc-600">
+              <AccordionContent className="text-stone-600">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

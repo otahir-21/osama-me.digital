@@ -56,16 +56,16 @@ export default function AboutPage() {
     <div>
       <JsonLd data={getGraphSchema([getProfilePageSchema()])} />
 
-      <PageShell className="border-b border-zinc-800/80">
+      <PageShell>
         <div className="grid gap-12 lg:grid-cols-[1fr_200px]">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-400/90">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-indigo-700">
               About
             </p>
-            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-800 sm:text-5xl">
               About Osama Tahir
             </h1>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-zinc-400">
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-stone-600">
               <p>
                 I&apos;m a Dubai-based senior mobile and full-stack developer focused on taking
                 ownership of products rather than isolated development tickets.
@@ -83,7 +83,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex items-start justify-center lg:justify-end">
-            <div className="relative h-52 w-52 overflow-hidden rounded-3xl bg-zinc-900 ring-1 ring-zinc-800">
+            <div className="relative h-52 w-52 overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-stone-200">
               <Image
                 src={siteConfig.profileImage}
                 alt={`${siteConfig.name}, ${siteConfig.role} in ${siteConfig.location}`}
@@ -97,19 +97,19 @@ export default function AboutPage() {
         </div>
       </PageShell>
 
-      <PageShell className="border-b border-zinc-800/80 py-14">
+      <PageShell className="pt-0">
         <SectionHeading eyebrow="Approach" title="How I work" />
         <div className="mt-10 space-y-8">
           {approach.map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-zinc-100">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-500">{item.body}</p>
+              <h3 className="font-semibold text-stone-800">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone-500">{item.body}</p>
             </div>
           ))}
         </div>
       </PageShell>
 
-      <PageShell className="border-b border-zinc-800/80 py-14">
+      <PageShell className="pt-0">
         <SectionHeading
           eyebrow="Selected work"
           title="Products I have helped ship"
@@ -124,13 +124,13 @@ export default function AboutPage() {
               return (
                 <li key={id}>
                   <Link href={`/portfolio/${id}`} className="group block">
-                    <p className="text-xs uppercase tracking-[0.16em] text-emerald-400/80">
+                    <p className="text-xs uppercase tracking-[0.16em] text-indigo-700">
                       {copy.buyerCategory}
                     </p>
-                    <h3 className="mt-2 font-semibold text-zinc-100 group-hover:text-emerald-300">
+                    <h3 className="mt-2 font-semibold text-stone-800 group-hover:text-indigo-700">
                       {project.title}
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-zinc-500">{copy.overview}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-stone-500">{copy.overview}</p>
                   </Link>
                 </li>
               );
@@ -139,30 +139,30 @@ export default function AboutPage() {
         </ul>
         <Link
           href="/portfolio"
-          className="mt-8 inline-block text-sm text-emerald-400 hover:text-emerald-300"
+          className="mt-8 inline-block text-sm text-indigo-700 hover:text-indigo-800"
         >
           View all work →
         </Link>
       </PageShell>
 
-      <PageShell className="border-b border-zinc-800/80 py-14">
+      <PageShell className="pt-0">
         <SectionHeading eyebrow="Experience" title="Where I've worked" />
         <div className="mt-10 space-y-8">
           {timeline.map((item) => (
             <div key={item.year} className="grid gap-2 sm:grid-cols-[140px_1fr] sm:gap-8">
-              <p className="text-sm text-emerald-400/80">{item.year}</p>
+              <p className="text-sm text-indigo-700">{item.year}</p>
               <div>
-                <h3 className="font-semibold text-zinc-200">{item.title}</h3>
-                <p className="mt-1 text-sm text-zinc-500">{item.desc}</p>
+                <h3 className="font-semibold text-stone-800">{item.title}</h3>
+                <p className="mt-1 text-sm text-stone-500">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </PageShell>
 
-      <PageShell className="border-b border-zinc-800/80 py-14">
+      <PageShell className="pt-0">
         <SectionHeading eyebrow="Expertise" title="Technical focus" />
-        <ul className="mt-8 space-y-3 text-sm text-zinc-400">
+        <ul className="mt-8 space-y-3 text-sm text-stone-600">
           {[
             "Flutter and React Native for iOS and Android, including Flutter Web dashboards",
             "Laravel and Node.js APIs, MySQL, Redis, authentication and payments",
@@ -170,53 +170,53 @@ export default function AboutPage() {
             "AWS, Firebase, store release and production support",
           ].map((item) => (
             <li key={item} className="flex gap-3">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
+              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-600" />
               {item}
             </li>
           ))}
         </ul>
         <Link
           href="/skills"
-          className="mt-6 inline-block text-sm text-emerald-400 hover:text-emerald-300"
+          className="mt-6 inline-block text-sm text-indigo-700 hover:text-indigo-800"
         >
           View the full skills list
         </Link>
       </PageShell>
 
-      <PageShell className="border-b border-zinc-800/80 py-14">
+      <PageShell className="pt-0">
         <SectionHeading eyebrow="Leadership" title="How I work with teams" />
-        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-zinc-400">
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-stone-600">
           Alongside delivery I mentor junior developers, take part in architecture reviews, and
           run work in a Scrum cadence (Scrum Master Certified). I am used to being the person who
           owns the technical path — not only a ticket queue.
         </p>
       </PageShell>
 
-      <PageShell className="border-b border-zinc-800/80 py-14">
+      <PageShell className="pt-0">
         <SectionHeading eyebrow="Education" title="Background" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5">
-            <GraduationCap className="size-5 text-emerald-400" />
-            <h3 className="mt-3 font-semibold text-zinc-200">B.E. Software Engineering</h3>
-            <p className="mt-1 text-sm text-zinc-500">Foundation University Islamabad · 2018–2022</p>
+          <div className="rounded-xl border border-stone-200 bg-white p-5">
+            <GraduationCap className="size-5 text-indigo-600" />
+            <h3 className="mt-3 font-semibold text-stone-800">B.E. Software Engineering</h3>
+            <p className="mt-1 text-sm text-stone-500">Foundation University Islamabad · 2018–2022</p>
           </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5">
-            <Award className="size-5 text-emerald-400" />
-            <h3 className="mt-3 font-semibold text-zinc-200">Certifications</h3>
-            <p className="mt-1 text-sm text-zinc-500">
+          <div className="rounded-xl border border-stone-200 bg-white p-5">
+            <Award className="size-5 text-indigo-600" />
+            <h3 className="mt-3 font-semibold text-stone-800">Certifications</h3>
+            <p className="mt-1 text-sm text-stone-500">
               Scrum Master Certified (SMC), Android development, containers
             </p>
           </div>
         </div>
-        <p className="mt-10 text-sm text-zinc-500">
+        <p className="mt-10 text-sm text-stone-500">
           Looking to hire me for a full-time role?{" "}
-          <Link href="/resume" className="text-emerald-400 hover:text-emerald-300">
+          <Link href="/resume" className="text-indigo-700 hover:text-indigo-800">
             View my resume →
           </Link>
         </p>
       </PageShell>
 
-      <PageShell className="py-14">
+      <PageShell className="pt-0">
         <ProjectCTA />
       </PageShell>
     </div>
