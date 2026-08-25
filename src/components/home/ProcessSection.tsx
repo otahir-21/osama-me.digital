@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site-config";
 export function ProcessSection() {
   return (
     <section className="bg-surface-alt py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Process"
           title="How I Work"

@@ -32,7 +32,7 @@ const timeline = [
   {
     year: "2025 – Present",
     title: "Senior Full-Stack Developer · Metatech",
-    desc: "VyooO creator platform (live, 360°/VR, subscriptions) and a Flutter Web CRM that reduced client reporting time by 60%, with Laravel APIs in production.",
+    desc: "VyooO creator platform (live, 360°/VR, subscriptions) and Metatech product development on Wurkspace and SociulFlow.",
   },
   {
     year: "2023 – 2025",
@@ -56,9 +56,9 @@ export default function AboutPage() {
     <div>
       <JsonLd data={getGraphSchema([getProfilePageSchema()])} />
 
-      <PageShell>
-        <div className="grid gap-12 lg:grid-cols-[1fr_200px]">
-          <div>
+      <PageShell wide>
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.4fr)_280px]">
+          <div className="max-w-2xl">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
               About
             </p>
@@ -83,13 +83,13 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex items-start justify-center lg:justify-end">
-            <div className="relative h-52 w-52 overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border">
+            <div className="relative h-64 w-52 overflow-hidden rounded-2xl bg-surface-alt shadow-sm ring-1 ring-border lg:h-80 lg:w-64">
               <Image
                 src={siteConfig.profileImage}
                 alt={`${siteConfig.name}, ${siteConfig.role} in ${siteConfig.location}`}
                 fill
-                className="object-cover object-top"
-                sizes="208px"
+                className="object-cover object-[50%_12%]"
+                sizes="256px"
                 priority
               />
             </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
           subtitle="A short sample. Employer names are metadata — the useful part is the product problem."
         />
         <ul className="mt-10 space-y-6">
-          {["vyooo-creator-platform", "metatech-flutter-web-crm", "royal-spirit-ecommerce"].map(
+          {["vyooo-creator-platform", "wurkspace-ai-business-os", "royal-spirit-ecommerce"].map(
             (id) => {
               const project = portfolioData.find((item) => item.id === id);
               const copy = caseStudyCopy[id];

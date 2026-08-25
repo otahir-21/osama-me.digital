@@ -8,7 +8,7 @@ import { siteConfig } from "@/data/site-config";
 
 export function FinalCTA() {
   return (
-    <section className="bg-ink py-24">
+    <section className="bg-ink py-14 lg:py-16">
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

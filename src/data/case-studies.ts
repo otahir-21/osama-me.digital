@@ -2,9 +2,10 @@ import { SERVICE_PATHS } from "@/data/services-detail";
 
 export const BUYER_CATEGORIES = [
   "Mobile Products",
-  "E-commerce & Payments",
+  "AI Products",
   "Business Platforms",
-  "Health & GovTech",
+  "E-commerce & Payments",
+  "Healthcare & GovTech",
   "Web Platforms",
 ] as const;
 
@@ -12,6 +13,10 @@ export type BuyerCategory = (typeof BUYER_CATEGORIES)[number];
 
 export interface CaseStudyCopy {
   buyerCategory: BuyerCategory;
+  /** Additional buyer-facing categories this project should also appear under. */
+  secondaryCategories?: BuyerCategory[];
+  /** Short card copy for homepage / portfolio listings. Falls back to overview. */
+  cardDescription?: string;
   seoTitle: string;
   seoDescription: string;
   overview: string;
@@ -22,6 +27,11 @@ export interface CaseStudyCopy {
   keyFeatures: string[];
   relatedServiceHrefs: { href: string; label: string }[];
   updatedAt: string;
+  /**
+   * Internal editorial gaps for Osama to complete.
+   * Never import this field into UI — do not render it.
+   */
+  contentTodos?: string[];
 }
 
 export const caseStudyCopy: Record<string, CaseStudyCopy> = {
@@ -55,33 +65,156 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
     ],
     updatedAt: "2026-08-25",
   },
-  "metatech-flutter-web-crm": {
+  "wurkspace-ai-business-os": {
     buyerCategory: "Business Platforms",
-    seoTitle: "Flutter Web CRM Case Study | Osama Tahir Dubai",
+    secondaryCategories: ["AI Products"],
+    cardDescription:
+      "An AI-native business platform designed to bring operations, workflows and business intelligence into a connected digital workspace.",
+    seoTitle: "Wurkspace AI Business OS Case Study | Osama Tahir",
     seoDescription:
-      "Osama Tahir architected a Flutter Web CRM with Laravel APIs and real-time analytics that reduced client reporting time by 60%.",
+      "Case study of Wurkspace, Metatech’s AI-native business operating platform. Osama Tahir worked on Wurkspace as part of Metatech product development in Dubai.",
     overview:
-      "Metatech needed a client-facing CRM and analytics platform so operations and reporting did not live in disconnected exports. Osama Tahir architected a Flutter Web CRM backed by Laravel REST APIs, MySQL and Redis, and added an in-app assistant using OpenAI and Gemini APIs.",
+      "Wurkspace is Metatech’s AI-native business operating platform, live at wurkspace.co. It is designed to bring core business workflows, operations and intelligence into one connected system.",
     problem:
-      "Clients needed faster operational reporting and a single place to manage data, analytics and support conversations. Manual reporting was slow and made it harder to see what was happening in the business in real time.",
+      "Core business work often lives across disconnected tools — operations in one place, reporting in another, and no shared system for day-to-day workflows. Teams need one operating platform rather than a stack of separate products.",
     roleDetail:
-      "I designed and implemented the Flutter Web CRM, the Laravel API layer, caching, Stripe and analytics integrations, and the in-app LLM chatbot. I also mentored junior developers and took part in architecture reviews around this platform.",
+      "Worked on Wurkspace as part of the Metatech product development work.",
     technicalChallenge:
-      "The dashboard had to stay responsive while pulling operational data over REST, with Redis caching and MySQL models that could sustain production traffic. Embedding LLM chat inside a real CRM — not a demo — meant handling auth, product context and failure states properly.",
+      "The product has to hold core business workflows, operations and intelligence in one connected system so teams are not jumping between disconnected tools.",
     solution:
-      "I architected a Flutter Web CRM with real-time analytics dashboards and an in-app assistant using OpenAI and Gemini, backed by Laravel REST APIs, MySQL and Redis, plus Stripe and analytics integrations. That stack is what cut client reporting time by 60%.",
+      "I worked on Wurkspace as part of the Metatech product development work. The live platform is an AI-native business OS at wurkspace.co, designed to bring core business workflows, operations and intelligence into one connected system.",
     keyFeatures: [
-      "Flutter Web CRM with real-time analytics dashboards",
-      "Laravel REST APIs with MySQL and Redis",
-      "Stripe and Google Analytics integrations",
-      "In-app AI chatbot using OpenAI and Gemini APIs",
-      "Client reporting workflows that replaced slower manual exports",
+      "AI-native business operating platform, live at wurkspace.co",
+      "Core business workflows and operations in one connected system",
+      "Intelligence as part of the operating platform, not a separate add-on tool",
+      "Public product covering areas such as sales, operations, finance, HR, marketing, support and client portals",
     ],
     relatedServiceHrefs: [
       { href: SERVICE_PATHS.custom, label: "Custom software and CRM development" },
-      { href: SERVICE_PATHS.mobile, label: "Mobile app development in Dubai" },
+      { href: SERVICE_PATHS.partner, label: "Technical development partnership" },
     ],
     updatedAt: "2026-08-25",
+    contentTodos: [
+      "Confirm Osama's exact role and ownership on Wurkspace",
+      "Confirm responsibilities (which surfaces / frontend / backend)",
+      "Confirm technology stack and architecture",
+      "Confirm verified outcomes (no metrics until supplied)",
+    ],
+  },
+  "sociulflow-ai-social-media": {
+    buyerCategory: "AI Products",
+    secondaryCategories: ["Business Platforms"],
+    cardDescription:
+      "An AI-powered social media platform that brings content creation, scheduling, campaigns, analytics and audience communication into one workflow.",
+    seoTitle: "SociulFlow AI Social Media Platform Case Study | Osama Tahir",
+    seoDescription:
+      "Case study of SociulFlow, Metatech’s AI social media platform. Osama Tahir worked on SociulFlow as part of Metatech product development in Dubai.",
+    overview:
+      "SociulFlow is Metatech’s AI social media platform, live at sociulflow.ai. It brings content creation, scheduling, campaigns, analytics and audience communication into one workflow.",
+    problem:
+      "Social teams typically split the job across separate tools: one for drafting, another for the calendar, another for campaigns, and yet another for comments, DMs and reporting. That makes it harder to keep a consistent brand and a single view of performance.",
+    roleDetail:
+      "Worked on SociulFlow as part of the Metatech product development work.",
+    technicalChallenge:
+      "The product has to keep creation, scheduling, campaigns, analytics and audience communication in one workflow so teams are not stitching those jobs together by hand.",
+    solution:
+      "I worked on SociulFlow as part of the Metatech product development work. The live platform is an AI social media product at sociulflow.ai, built around one workflow for content, scheduling, campaigns, analytics and audience communication.",
+    keyFeatures: [
+      "AI-assisted content creation",
+      "Scheduling across connected social channels",
+      "Campaign management",
+      "Analytics in one view",
+      "Unified inbox for comments and messages",
+      "Brand-guideline workflows so drafts start from the brand’s direction",
+    ],
+    relatedServiceHrefs: [
+      { href: SERVICE_PATHS.custom, label: "Custom software development" },
+      { href: SERVICE_PATHS.partner, label: "Technical development partnership" },
+    ],
+    updatedAt: "2026-08-25",
+    contentTodos: [
+      "Confirm Osama's exact role and ownership on SociulFlow",
+      "Confirm responsibilities (which surfaces / frontend / backend)",
+      "Confirm technology stack and architecture",
+      "Confirm verified outcomes (no metrics until supplied)",
+    ],
+  },
+  "ultra-smile-clinic-dubai": {
+    buyerCategory: "Web Platforms",
+    secondaryCategories: ["Healthcare & GovTech"],
+    cardDescription:
+      "A patient-facing digital experience for a Dubai dental clinic, built around treatment discovery, smile transformations, clinic information and appointment conversion.",
+    seoTitle: "Ultra Smile Clinic Dubai Website Case Study | Osama Tahir",
+    seoDescription:
+      "Case study of the Ultra Smile Clinic website — a patient-facing digital experience for a Dubai dental clinic — in Osama Tahir's software portfolio.",
+    overview:
+      "Ultra Smile Clinic is a Dubai dental clinic. The live site at ultrasmileclinic.com is a patient-facing website for treatment discovery, smile transformations, clinic information and booking.",
+    problem:
+      "A clinic that only exists on the phone or in person makes it harder for people to understand treatments, see previous work, find the location, and book. The public site has to carry that information and the appointment path.",
+    roleDetail:
+      "Worked on this project as part of the development/delivery team.",
+    technicalChallenge:
+      "The site has to present treatments, proof of work, clinic details and a booking path in one patient-facing experience — without turning the case study into a dental marketing page.",
+    solution:
+      "The live website at ultrasmileclinic.com is a patient-facing digital experience for Ultra Smile Clinic in Dubai: treatment discovery, a smile transformation gallery, clinic information, FAQs, location/contact, and appointment booking. I worked on this project as part of the development/delivery team.",
+    keyFeatures: [
+      "Treatment and service discovery",
+      "Appointment booking",
+      "Smile transformation gallery",
+      "Clinic information, FAQs, location and contact",
+      "Patient-facing website experience, live at ultrasmileclinic.com",
+    ],
+    relatedServiceHrefs: [
+      { href: SERVICE_PATHS.custom, label: "Custom software development" },
+      { href: SERVICE_PATHS.partner, label: "Technical development partnership" },
+    ],
+    updatedAt: "2026-08-25",
+    contentTodos: [
+      "Confirm Osama's exact role and ownership on Ultra Smile Clinic",
+      "Confirm employer/engagement (Metatech, freelance, or other)",
+      "Confirm responsibilities (which surfaces / frontend / backend)",
+      "Confirm technology stack and architecture",
+      "Confirm verified outcomes (no metrics until supplied)",
+    ],
+  },
+  "ivpatch-wellness-ecommerce": {
+    buyerCategory: "E-commerce & Payments",
+    secondaryCategories: ["Web Platforms"],
+    cardDescription:
+      "A consumer wellness commerce platform focused on product discovery, targeted wellness solutions and a streamlined online shopping experience.",
+    seoTitle: "IVPATCH E-commerce Website Case Study | Osama Tahir",
+    seoDescription:
+      "Case study of the IVPATCH wellness e-commerce website in Osama Tahir's software portfolio — product discovery and an online shopping experience.",
+    overview:
+      "IVPATCH is a consumer wellness commerce platform, live at ivpatch.com. The public site is built around product discovery, a catalogue, and an online shopping experience.",
+    problem:
+      "A wellness brand that cannot be browsed and purchased in one place leaves product discovery and checkout in disconnected channels. The storefront has to carry catalogue, shopping and customer-acquisition in one site.",
+    roleDetail:
+      "Worked on this project as part of the development/delivery team.",
+    technicalChallenge:
+      "The storefront has to hold product discovery, catalogue and checkout in one shopping path. Medical or wellness-effectiveness claims are not part of this case study.",
+    solution:
+      "The live site at ivpatch.com is a consumer wellness commerce platform: product discovery, catalogue, and a streamlined online shopping experience, with product content and a newsletter path. I worked on this project as part of the development/delivery team.",
+    keyFeatures: [
+      "Wellness product discovery and catalogue",
+      "Online shopping flows",
+      "Product-focused content on the storefront",
+      "Newsletter / customer-acquisition path",
+      "Live storefront at ivpatch.com",
+    ],
+    relatedServiceHrefs: [
+      { href: SERVICE_PATHS.custom, label: "Custom software development" },
+      { href: SERVICE_PATHS.partner, label: "Technical development partnership" },
+    ],
+    updatedAt: "2026-08-25",
+    contentTodos: [
+      "Confirm Osama's exact role and ownership on IVPATCH",
+      "Confirm employer/engagement (Metatech, freelance, or other)",
+      "Confirm responsibilities (which surfaces / frontend / backend)",
+      "Confirm technology stack and architecture",
+      "Confirm whether subscriptions, bundles and account/order flows were in scope",
+      "Confirm verified outcomes (no metrics until supplied)",
+    ],
   },
   "royal-spirit-ecommerce": {
     buyerCategory: "E-commerce & Payments",
@@ -111,7 +244,7 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
     updatedAt: "2026-08-25",
   },
   "dvago-medical-directory": {
-    buyerCategory: "Health & GovTech",
+    buyerCategory: "Healthcare & GovTech",
     seoTitle: "Dvago Medical Directory Case Study | Flutter | Osama Tahir",
     seoDescription:
       "Osama Tahir built an offline-first Flutter medical directory for Dvago, with typo-tolerant search used by healthcare professionals.",
@@ -138,7 +271,7 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
     updatedAt: "2026-08-25",
   },
   "24digi-health-super-app": {
-    buyerCategory: "Health & GovTech",
+    buyerCategory: "Healthcare & GovTech",
     seoTitle: "24Digi Health Super App Case Study | Flutter | Osama Tahir",
     seoDescription:
       "Osama Tahir built 24Digi, a UAE health super app with wearables, AI coaching, commerce, an AED wallet and a bilingual WordPress site.",
@@ -168,12 +301,12 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
     updatedAt: "2026-08-25",
   },
   "pak-id-nadra": {
-    buyerCategory: "Health & GovTech",
+    buyerCategory: "Healthcare & GovTech",
     seoTitle: "PAK ID NADRA Case Study | Flutter Contribution | Osama Tahir",
     seoDescription:
       "Osama Tahir contributed Flutter work to PAK ID, NADRA Pakistan’s official identity app — biometrics, ICAO photo capture and stability improvements.",
     overview:
-      "PAK ID is NADRA Pakistan’s official digital identity application. Osama Tahir contributed to the Flutter mobile app as an independent contractor — specifically biometric authentication flows, ICAO-compliant photo capture, and stability work for large-scale usage. He did not build the entire national product alone.",
+      "PAK ID is NADRA Pakistan’s official digital identity application. Osama Tahir contributed to the Flutter mobile app as an independent contractor. Contribution scope: biometric authentication flows, ICAO-compliant photo capture, and stability improvements for large-scale usage.",
     problem:
       "A national identity app has to verify people reliably under strict security and photo standards, on a wide range of devices, at a volume most consumer apps never see.",
     roleDetail:
@@ -251,4 +384,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
 
 export function getCaseStudy(id: string): CaseStudyCopy | undefined {
   return caseStudyCopy[id];
+}
+
+export function getProjectBuyerCategories(copy: CaseStudyCopy): BuyerCategory[] {
+  return [copy.buyerCategory, ...(copy.secondaryCategories ?? [])];
 }

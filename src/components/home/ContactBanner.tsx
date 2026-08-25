@@ -4,7 +4,7 @@ import { ProjectCTA } from "@/components/cta/ProjectCTA";
 export function ContactBanner() {
   return (
     <section className="bg-ink">
-      <PageShell className="py-20 lg:py-28">
+      <PageShell wide className="py-12 lg:py-14">
         <ProjectCTA
           variant="flush"
           heading="Let's discuss what you're building."

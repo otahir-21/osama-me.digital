@@ -38,7 +38,8 @@ interface PageProps {
 }
 
 function getCompanyName(companyId: string) {
-  return siteConfig.companies.find((c) => c.id === companyId)?.name ?? companyId;
+  if (!companyId) return "";
+  return siteConfig.companies.find((c) => c.id === companyId)?.name ?? "";
 }
 
 export async function generateStaticParams() {
@@ -104,7 +105,9 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           {project.title}
         </h1>
         <p className="mt-3 text-muted-foreground">
-          {project.client} · {project.role} · {companyName}
+          {[project.client, project.role, companyName || project.location]
+            .filter((item, index, arr) => item && arr.indexOf(item) === index)
+            .join(" · ")}
         </p>
 
         {(project.appStore || project.playStore || project.liveUrl) && (
@@ -140,52 +143,88 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-foreground/20"
               >
-                Visit live website
+                {project.liveLinkLabel ?? "Live Product"}
                 <ExternalLink size={14} />
               </a>
             )}
           </div>
         )}
 
-        <figure className="relative mt-12 aspect-video overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <ProjectCover title={project.title} size="lg" />
+        <figure className="relative mt-12 min-h-56 overflow-hidden rounded-2xl border border-border bg-card shadow-sm aspect-[16/10] lg:min-h-[28rem]">
+          <ProjectCover
+            title={project.title}
+            image={project.coverComposition ? project.image : undefined}
+            alt={project.imageAlt}
+            composition={project.coverComposition}
+            size="lg"
+            priority
+          />
           <figcaption className="sr-only">
-            Visual cover for the {project.title} case study
+            {project.imageAlt ?? `Visual cover for the ${project.title} case study`}
           </figcaption>
         </figure>
+
+        {project.gallery?.length ? (
+          <div
+            className={
+              project.gallery[0]?.composition === "phone"
+                ? "mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+                : "mt-6 grid gap-4 sm:grid-cols-2"
+            }
+          >
+            {project.gallery.map((shot) => (
+              <figure
+                key={shot.src}
+                className={
+                  shot.composition === "phone"
+                    ? "relative aspect-[3/5] overflow-hidden rounded-2xl border border-border bg-card"
+                    : "relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card"
+                }
+              >
+                <ProjectCover
+                  title={project.title}
+                  image={shot.src}
+                  alt={shot.alt}
+                  composition={shot.composition}
+                />
+                <figcaption className="sr-only">{shot.alt}</figcaption>
+              </figure>
+            ))}
+          </div>
+        ) : null}
 
         <div className="mt-14 max-w-3xl space-y-12">
           <section>
             <h2 className="text-2xl font-semibold text-foreground">Overview</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {copy?.overview ?? project.challenge}
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground">The Problem</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {copy?.problem ?? project.challenge}
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground">My Role</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {copy?.roleDetail ?? `${project.role} at ${companyName}.`}
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground">Technical Challenge</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {copy?.technicalChallenge ?? project.solution}
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground">Solution</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {copy?.solution ?? project.solution}
             </p>
           </section>
@@ -216,19 +255,21 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
             </ul>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-foreground">Technology</h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-md border border-border bg-card px-3 py-1 text-sm text-muted-foreground"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </section>
+          {project.techStack.length > 0 ? (
+            <section>
+              <h2 className="text-2xl font-semibold text-foreground">Technology</h2>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-md border border-border bg-card px-3 py-1 text-sm text-muted-foreground"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           {copy?.relatedServiceHrefs?.length ? (
             <section>

@@ -33,7 +33,7 @@ export function Header() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-content items-center justify-between gap-6 px-5 py-3.5 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="text-lg font-semibold tracking-tight text-foreground sm:text-xl"
@@ -41,7 +41,7 @@ export function Header() {
           Osama<span className="text-primary">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
           {siteConfig.navLinks.map((link) => {
             const active =
               pathname === link.href || pathname.startsWith(`${link.href}/`);

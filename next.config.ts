@@ -62,6 +62,11 @@ const nextConfig: NextConfig = {
         destination: "/services/custom-software-development-dubai",
         permanent: true,
       },
+      {
+        source: "/portfolio/metatech-flutter-web-crm",
+        destination: "/portfolio/wurkspace-ai-business-os",
+        statusCode: 301,
+      },
       { source: "/testimonials", destination: "/", permanent: true },
       { source: "/blog", destination: "/", permanent: true },
       { source: "/blog/:path*", destination: "/", permanent: true },

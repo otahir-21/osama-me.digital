@@ -13,7 +13,7 @@ export const siteConfig = {
   description:
     "Dubai-based senior mobile and full-stack developer building Flutter and React Native apps, backend APIs, payments, CRMs and custom platforms for UAE & GCC businesses.",
   availability: "Available for selected projects",
-  recruiterAvailability: "Open to selected full-time and contract roles",
+  recruiterAvailability: "Available for selected software projects and technical partnerships",
   url: SITE_URL,
   email: "info@osama-me.digital", // public inbox — never publish Gmail
   telephone: "+971507276823",

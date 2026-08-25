@@ -29,6 +29,15 @@ export interface PortfolioSkillOffer {
 /** Top-level work type — Website and API are separate from Mobile */
 export type ProjectKind = "mobile" | "website" | "api";
 
+/** How the cover screenshot is framed — CSS chrome around a real asset. */
+export type CoverComposition = "phone" | "browser" | "device";
+
+export interface PortfolioGalleryImage {
+  src: string;
+  alt: string;
+  composition?: CoverComposition;
+}
+
 /** Stack / language chips for the secondary filter row */
 export type ProjectPlatform =
   | "Flutter"
@@ -50,6 +59,9 @@ export interface PortfolioProject {
   results: string[];
   techStack: string[];
   image: string;
+  imageAlt?: string;
+  coverComposition?: CoverComposition;
+  gallery?: PortfolioGalleryImage[];
   featured: boolean;
   /**
    * Stack scoped by work type — e.g. mobile→Flutter only, website→WordPress only.
@@ -59,6 +71,10 @@ export interface PortfolioProject {
   appStore?: string;
   playStore?: string;
   liveUrl?: string;
+  /** External proof label, e.g. "Live Product" or "Visit Website" */
+  liveLinkLabel?: string;
+  /** Shown when the project is not tied to a known employer id. */
+  location?: string;
   /** Feature pillars for case-study + client present mode */
   pillars?: PortfolioPillar[];
   /** Closing slide: capability map for visitors / clients */
@@ -129,7 +145,32 @@ export const portfolioData: PortfolioProject[] = [
       "Supabase",
       "Vercel",
     ],
-    image: "/images/portfolio/vyooo.jpg",
+    image: "/images/portfolio/vyooo-feed.jpg",
+    imageAlt:
+      "VyooO mobile app For You feed showing a full-screen creator video, engagement controls, and bottom navigation",
+    coverComposition: "phone",
+    gallery: [
+      {
+        src: "/images/portfolio/vyooo-onboarding.jpg",
+        alt: "VyooO onboarding screen asking What's your vibe? with AI interest tags on a pink gradient",
+        composition: "phone",
+      },
+      {
+        src: "/images/portfolio/vyooo-live.jpg",
+        alt: "VyooO live discovery screen with Ongoing Now and Recommended creator stream cards",
+        composition: "phone",
+      },
+      {
+        src: "/images/portfolio/vyooo-profile.jpg",
+        alt: "VyooO creator profile for a verified account with posts, followers, Follow and Subscribe actions",
+        composition: "phone",
+      },
+      {
+        src: "/images/portfolio/vyooo-compose.jpg",
+        alt: "VyooO compose screen with a photo preview, caption field, and Post button above the keyboard",
+        composition: "phone",
+      },
+    ],
     featured: true,
     stackByKind: {
       mobile: ["Flutter"],
@@ -285,97 +326,101 @@ export const portfolioData: PortfolioProject[] = [
     ],
   },
   {
-    id: "metatech-flutter-web-crm",
-    title: "Flutter Web CRM & Analytics",
-    category: "Web App (Flutter Web)",
+    id: "wurkspace-ai-business-os",
+    title: "Wurkspace — AI-Native Business OS",
+    category: "Business Platforms",
     company: "metatech",
-    role: "Solo Developer",
-    client: "Metatech enterprise clients",
+    role: "Product development",
+    client: "Metatech",
     challenge:
-      "Clients needed faster operational reporting and a single place to manage data, analytics, and support conversations.",
+      "Businesses often run core workflows, operations and intelligence across disconnected tools instead of one connected system.",
     solution:
-      "Architected a Flutter Web CRM with real-time analytics dashboards and an in-app AI chatbot (OpenAI + Gemini), backed by Laravel REST APIs, MySQL, and Redis — cutting client reporting time by 60%.",
+      "Wurkspace is Metatech’s AI-native business operating platform, live at wurkspace.co. Worked on Wurkspace as part of the Metatech product development work.",
     results: [
-      "Client reporting time reduced by 60% via real-time analytics dashboards",
-      "Laravel APIs sustaining 10K+ daily requests at 99.9% uptime",
-      "In-app AI chatbot shipped with OpenAI and Gemini LLM APIs",
+      "Live product at wurkspace.co — Metatech’s AI-native business operating platform",
     ],
-    techStack: [
-      "Flutter Web",
-      "Laravel",
-      "MySQL",
-      "Redis",
-      "OpenAI",
-      "Gemini",
-      "Stripe",
-    ],
-    image: "/images/portfolio/flutter-web-crm.jpg",
+    techStack: [],
+    image: "/images/portfolio/wurkspace.jpg",
+    imageAlt:
+      "Wurkspace homepage showing the AI-Native Business OS hero, product navigation, and Start free call to action",
+    coverComposition: "browser",
     featured: true,
-    stackByKind: {
-      website: ["Flutter"],
-      api: ["Laravel"],
-    },
-    pillars: [
-      {
-        id: "crm",
-        title: "Flutter Web CRM",
-        summary:
-          "Cross-platform web CRM with live analytics for client operations.",
-        bullets: [
-          "Flutter Web dashboards for real-time reporting and operational visibility",
-          "Modular UI for client-facing workflows and data management",
-          "Reporting time cut by 60% versus previous client processes",
-        ],
-        skills: ["Flutter Web", "Dashboards", "BLoC / state", "Analytics UX"],
-        icon: "globe",
-      },
-      {
-        id: "api",
-        title: "Laravel API backbone",
-        summary:
-          "High-availability APIs powering CRM data, Stripe, and analytics.",
-        bullets: [
-          "REST APIs handling 10K+ daily requests at 99.9% uptime",
-          "MySQL + Redis caching for responsive dashboard queries",
-          "Stripe and Google Analytics integrations for billing and insight",
-        ],
-        skills: ["Laravel", "MySQL", "Redis", "Stripe"],
-        icon: "lock",
-      },
-      {
-        id: "ai",
-        title: "In-app AI chatbot",
-        summary:
-          "Conversational AI assistance embedded in the CRM.",
-        bullets: [
-          "OpenAI and Gemini LLM API integration for production chat",
-          "Client-facing conversational assistance inside the CRM",
-          "AI-assisted workflows that reduce manual support load",
-        ],
-        skills: ["OpenAI", "Gemini", "LLM APIs", "Chat UX"],
-        icon: "sparkles",
-      },
+    stackByKind: {},
+    liveUrl: "https://wurkspace.co/",
+    liveLinkLabel: "Live Product",
+  },
+  {
+    id: "sociulflow-ai-social-media",
+    title: "SociulFlow — AI Social Media Platform",
+    category: "AI Products",
+    company: "metatech",
+    role: "Product development",
+    client: "Metatech",
+    challenge:
+      "Social teams typically split content creation, scheduling, campaigns, analytics and audience communication across separate tools.",
+    solution:
+      "SociulFlow is Metatech’s AI social media platform, live at sociulflow.ai. Worked on SociulFlow as part of the Metatech product development work.",
+    results: [
+      "Live product at sociulflow.ai — Metatech’s AI social media platform",
     ],
-    skillOffers: [
-      {
-        title: "Flutter Web products",
-        description:
-          "Ship desktop-class CRMs and dashboards from a Flutter codebase.",
-        skills: ["Flutter Web", "Dashboards", "State management"],
-      },
-      {
-        title: "Laravel + Redis APIs",
-        description:
-          "High-uptime REST backends with caching and payment integrations.",
-        skills: ["Laravel", "Redis", "MySQL", "Stripe"],
-      },
-      {
-        title: "Production LLM features",
-        description:
-          "Embed OpenAI / Gemini chatbots into real client platforms.",
-        skills: ["OpenAI", "Gemini", "Chatbots", "Product AI"],
-      },
+    techStack: [],
+    image: "/images/portfolio/sociulflow.jpg",
+    imageAlt:
+      "SociulFlow homepage hero for the AI social media platform, with Start free and See what's inside calls to action",
+    coverComposition: "browser",
+    featured: false,
+    stackByKind: {},
+    liveUrl: "https://www.sociulflow.ai/",
+    liveLinkLabel: "Live Product",
+  },
+  {
+    id: "ultra-smile-clinic-dubai",
+    title: "Ultra Smile Clinic — Dubai Dental Clinic Website",
+    category: "Web Platforms",
+    company: "",
+    role: "Development / delivery",
+    client: "Ultra Smile Clinic",
+    location: "Dubai, UAE",
+    challenge:
+      "A Dubai dental clinic needed a patient-facing website for treatment discovery, clinic information and appointment conversion.",
+    solution:
+      "The live site at ultrasmileclinic.com is a patient-facing digital experience for Ultra Smile Clinic. Worked on this project as part of the development/delivery team.",
+    results: [
+      "Live website at ultrasmileclinic.com — patient-facing clinic site for Ultra Smile Clinic, Dubai",
     ],
+    techStack: [],
+    image: "/images/portfolio/ultra-smile-clinic.jpg",
+    imageAlt:
+      "Ultra Smile Clinic Dubai website homepage with treatment message, Book an Appointment, and clinic navigation",
+    coverComposition: "browser",
+    featured: false,
+    stackByKind: {},
+    liveUrl: "https://www.ultrasmileclinic.com/",
+    liveLinkLabel: "Visit Website",
+  },
+  {
+    id: "ivpatch-wellness-ecommerce",
+    title: "IVPATCH — Wellness E-commerce Platform",
+    category: "E-commerce & Payments",
+    company: "",
+    role: "Development / delivery",
+    client: "IVPATCH",
+    challenge:
+      "A wellness brand needed a storefront for product discovery and a streamlined online shopping experience.",
+    solution:
+      "The live site at ivpatch.com is a consumer wellness commerce platform. Worked on this project as part of the development/delivery team.",
+    results: [
+      "Live storefront at ivpatch.com — wellness product discovery and online shopping",
+    ],
+    techStack: [],
+    image: "/images/portfolio/ivpatch.jpg",
+    imageAlt:
+      "IVPATCH wellness e-commerce homepage with product hero, Buy Now, and store navigation",
+    coverComposition: "browser",
+    featured: false,
+    stackByKind: {},
+    liveUrl: "https://www.ivpatch.com/",
+    liveLinkLabel: "Visit Website",
   },
   {
     id: "dvago-medical-directory",
@@ -416,6 +461,9 @@ export const portfolioData: PortfolioProject[] = [
     ],
     techStack: ["Flutter", "Stripe", "Network International", "Push notifications"],
     image: "/images/portfolio/royal-spirit.jpg",
+    imageAlt:
+      "Royal Spirit e-commerce storefront on a laptop, showing the homepage hero, category navigation, and New Arrivals",
+    coverComposition: "device",
     featured: true,
     stackByKind: { mobile: ["Flutter"] },
   },

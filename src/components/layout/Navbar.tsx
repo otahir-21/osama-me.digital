@@ -30,7 +30,7 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"

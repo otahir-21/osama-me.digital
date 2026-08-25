@@ -20,8 +20,11 @@
 ## Selected Case Studies
 
 - [VyooO — Creator & Social Platform](https://www.osama-me.digital/portfolio/vyooo-creator-platform)
-- [Flutter Web CRM & Analytics Platform](https://www.osama-me.digital/portfolio/metatech-flutter-web-crm)
+- [Wurkspace — AI-Native Business OS](https://www.osama-me.digital/portfolio/wurkspace-ai-business-os)
+- [SociulFlow — AI Social Media Platform](https://www.osama-me.digital/portfolio/sociulflow-ai-social-media)
 - [Royal Spirit — Mobile Commerce](https://www.osama-me.digital/portfolio/royal-spirit-ecommerce)
+- [Ultra Smile Clinic — Dubai Dental Clinic Website](https://www.osama-me.digital/portfolio/ultra-smile-clinic-dubai)
+- [IVPATCH — Wellness E-commerce Platform](https://www.osama-me.digital/portfolio/ivpatch-wellness-ecommerce)
 
 ## Identity
 

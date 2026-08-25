@@ -54,8 +54,8 @@ export default function SkillsPage() {
       <PageShell wide tone="alt" className="py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category) => (
-            <div key={category.title} className="rounded-xl border border-border bg-card p-5">
-              <h2 className="text-sm font-semibold text-foreground">{category.title}</h2>
+            <div key={category.title} className="rounded-xl border border-border bg-card p-6">
+              <h2 className="text-base font-semibold text-foreground">{category.title}</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <li

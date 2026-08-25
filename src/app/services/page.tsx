@@ -34,7 +34,7 @@ export default function ServicesIndexPage() {
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
           Services
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <h1 className="mt-3 max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Software development services in Dubai
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -44,20 +44,20 @@ export default function ServicesIndexPage() {
         </p>
       </PageShell>
 
-      <PageShell tone="alt" className="grid gap-6 py-8 sm:grid-cols-2 lg:py-12">
+      <PageShell wide tone="alt" className="grid gap-6 py-10 sm:grid-cols-2 lg:py-12">
         {servicesDetail.map((service) => (
           <article
             key={service.slug}
-            className="flex flex-col rounded-2xl border border-border bg-card p-8"
+            className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-[0_12px_40px_rgba(17,24,39,0.06)] lg:p-9"
           >
-            <h2 className="text-xl font-semibold text-foreground">{service.hubTitle}</h2>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{service.tagline}</p>
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">{service.hubTitle}</h2>
+            <p className="mt-3 flex-1 text-base leading-relaxed text-muted-foreground">{service.tagline}</p>
             <Link
               href={`/services/${service.slug}`}
-              className="mt-6 inline-flex items-center text-sm font-medium text-primary hover:text-primary"
+              className="mt-6 inline-flex items-center text-sm font-medium text-primary transition-colors hover:text-primary-hover"
             >
               {service.hubTitle} details
-              <ArrowRight className="ml-1.5 size-4" />
+              <ArrowRight className="ml-1.5 size-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </article>
         ))}

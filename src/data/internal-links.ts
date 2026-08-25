@@ -16,8 +16,9 @@ export const serviceUrls: Record<string, string> = {
 
 export const portfolioToServices: Record<string, string[]> = {
   "Mobile Products": ["mobile-app-development-dubai", "technical-development-partner"],
+  "AI Products": ["custom-software-development-dubai", "technical-development-partner"],
   "E-commerce & Payments": ["mobile-app-development-dubai", "custom-software-development-dubai"],
   "Business Platforms": ["custom-software-development-dubai"],
-  "Health & GovTech": ["mobile-app-development-dubai", "app-rescue-maintenance"],
+  "Healthcare & GovTech": ["mobile-app-development-dubai", "app-rescue-maintenance"],
   "Web Platforms": ["custom-software-development-dubai"],
 };

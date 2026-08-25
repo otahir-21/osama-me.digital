@@ -6,12 +6,12 @@ import { TrackedAnchor } from "@/components/seo/TrackedLink";
 export function Footer() {
   return (
     <footer className="bg-ink text-white/65">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-content gap-10 px-5 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
           <p className="text-lg font-semibold text-white">
             Osama<span className="text-primary">.</span>
           </p>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65">
+          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             {siteConfig.name} is a {siteConfig.role.toLowerCase()} in {siteConfig.locationFull},
             building mobile apps and digital platforms for UAE and GCC businesses.
           </p>
@@ -59,7 +59,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-content flex-col gap-4 px-5 py-5 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>
             © {new Date().getFullYear()} {siteConfig.name} · {siteConfig.location}
           </p>

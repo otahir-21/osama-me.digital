@@ -67,7 +67,7 @@ export const servicesDetail: ServiceDetailItem[] = [
       },
       {
         heading: "Flutter vs React Native",
-        body: "I work in both Flutter and React Native and choose based on the product, the existing codebase, and the team that will maintain it. Flutter is often the right fit when we want one codebase for iOS, Android and sometimes web (as with the Flutter Web CRM). React Native is a strong option when the organisation already lives in the JavaScript ecosystem or has an existing RN app to extend. The decision is a delivery choice, not a branding choice.",
+        body: "I work in both Flutter and React Native and choose based on the product, the existing codebase, and the team that will maintain it. Flutter is often the right fit when we want one codebase for iOS, Android and sometimes web. React Native is a strong option when the organisation already lives in the JavaScript ecosystem or has an existing RN app to extend. The decision is a delivery choice, not a branding choice.",
       },
       {
         heading: "Backend, authentication and payments",
@@ -234,7 +234,7 @@ export const servicesDetail: ServiceDetailItem[] = [
     sections: [
       {
         heading: "Business problems, not generic websites",
-        body: "This service is for operational software. Examples include a Flutter Web CRM that cut client reporting time by 60% for Metatech clients, and the Anton Oilfield management platform — Laravel APIs plus a React dashboard for task tracking and scheduling across locations.",
+        body: "This service is for operational software. Examples include Wurkspace, Metatech’s AI-native business operating platform, and the Anton Oilfield management platform — Laravel APIs plus a React dashboard for task tracking and scheduling across locations.",
         bullets: [
           "CRMs and client portals",
           "Real-time analytics dashboards",
@@ -286,7 +286,7 @@ export const servicesDetail: ServiceDetailItem[] = [
       "app-rescue-maintenance",
       "technical-development-partner",
     ],
-    relatedProjectIds: ["metatech-flutter-web-crm", "anton-oilfield-management", "new-edge-realty"],
+    relatedProjectIds: ["wurkspace-ai-business-os", "anton-oilfield-management", "new-edge-realty"],
     ctaHeading: "Need a platform instead of another spreadsheet?",
     ctaBody:
       "Describe the workflow you want to replace and I will tell you whether a CRM, dashboard or API-first build is the right shape.",
@@ -371,7 +371,7 @@ export const servicesDetail: ServiceDetailItem[] = [
     ],
     relatedProjectIds: [
       "vyooo-creator-platform",
-      "metatech-flutter-web-crm",
+      "wurkspace-ai-business-os",
       "royal-spirit-ecommerce",
     ],
     ctaHeading: "Need a technical delivery partner?",

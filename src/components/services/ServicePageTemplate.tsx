@@ -60,7 +60,7 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
             { name: service.hubTitle },
           ]}
         />
-        <h1 className="mt-8 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <h1 className="mt-8 max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           {service.h1}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{service.intro}</p>
@@ -86,7 +86,7 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
         <h2 className="text-2xl font-semibold text-foreground">Who this service is for</h2>
         <ul className="mt-6 space-y-3">
           {service.forWho.map((item) => (
-            <li key={item} className="flex gap-3 text-muted-foreground">
+            <li key={item} className="flex gap-3 text-base leading-relaxed text-muted-foreground">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               {item}
             </li>
@@ -97,11 +97,11 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
       {service.sections.map((section) => (
         <PageShell key={section.heading} className="pt-0">
           <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">{section.body}</p>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{section.body}</p>
           {section.bullets && (
             <ul className="mt-6 space-y-2">
               {section.bullets.map((bullet) => (
-                <li key={bullet} className="flex gap-3 text-sm text-muted-foreground">
+                <li key={bullet} className="flex gap-3 text-base leading-relaxed text-muted-foreground">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
                   {bullet}
                 </li>
@@ -129,14 +129,14 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
       </PageShell>
 
       {relatedProjects.length > 0 && (
-        <PageShell className="pt-0">
+        <PageShell wide className="pt-0">
           <h2 className="text-2xl font-semibold text-foreground">Relevant work</h2>
           <ul className="mt-6 space-y-4">
             {relatedProjects.map((project) => (
               <li key={project.id}>
                 <Link
                   href={`/portfolio/${project.id}`}
-                  className="group block rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-sm"
+                  className="group block rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:border-foreground/15 hover:shadow-[0_12px_40px_rgba(17,24,39,0.06)]"
                 >
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">{project.category}</p>
                   <h3 className="mt-1 font-semibold text-foreground group-hover:text-primary">
@@ -144,7 +144,7 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">{project.results[0]}</p>
                   <span className="mt-3 inline-flex items-center text-sm text-primary">
-                    View {project.title.split("–")[0].trim()} case study
+                    View {project.title.split(/[–—]/)[0].trim()} case study
                     <ArrowRight className="ml-1 size-4" />
                   </span>
                 </Link>
@@ -169,14 +169,14 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
       </PageShell>
 
       {relatedServices.length > 0 && (
-        <PageShell className="pt-0">
+        <PageShell wide className="pt-0">
           <h2 className="text-2xl font-semibold text-foreground">Related services</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {relatedServices.map((related) => (
               <Link
                 key={related.slug}
                 href={`/services/${related.slug}`}
-                className="rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-sm"
+                className="rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:border-foreground/15 hover:shadow-[0_12px_40px_rgba(17,24,39,0.06)]"
               >
                 <h3 className="font-semibold text-foreground">{related.hubTitle}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{related.tagline}</p>

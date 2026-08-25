@@ -17,12 +17,12 @@ export function ProjectCTA({
       className={cn(
         variant === "flush"
           ? "py-4"
-          : "rounded-2xl border border-white/10 bg-ink px-6 py-12 sm:px-10"
+          : "rounded-2xl border border-white/10 bg-ink px-6 py-10 sm:px-10"
       )}
     >
       <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{heading}</h2>
-      <p className="mt-4 max-w-xl text-base leading-relaxed text-white/65">{body}</p>
-      <div className="mt-8 flex flex-wrap gap-3">
+      <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">{body}</p>
+      <div className="mt-7 flex flex-wrap gap-3">
         <TrackedLink
           href="/contact"
           event="start_a_project_click"
