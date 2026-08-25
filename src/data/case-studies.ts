@@ -18,6 +18,7 @@ export interface CaseStudyCopy {
   problem: string;
   roleDetail: string;
   technicalChallenge: string;
+  solution: string;
   keyFeatures: string[];
   relatedServiceHrefs: { href: string; label: string }[];
   updatedAt: string;
@@ -37,6 +38,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I led end-to-end Flutter development for VyooO as a senior full-stack developer at Metatech. I owned the mobile client across auth, feed, live, VR, chat/calls, create/upload, safety, and store release, and I implemented the React site on Vercel with Supabase. This was not a ticket-only contribution; I was the engineer taking the product through those surfaces.",
     technicalChallenge:
       "The hard parts were concurrent realtime systems in one codebase: Agora live streaming, CallKit voice/video, gyro-based 360° playback and live panorama, Cloudflare Stream uploads, RevenueCat entitlements, and feed performance on long sessions — while still passing App Store and Play review.",
+    solution:
+      "I implemented one Flutter codebase for iOS and Android covering auth, feed, live, VR, chat/calls, create/upload and store release, with Agora, CallKit, RevenueCat, Cloudflare Stream and Firebase in production. The public site at vyooo.com is a separate React app on Vercel with Supabase.",
     keyFeatures: [
       "Email, phone OTP, Google and Apple authentication with personal and organisation accounts",
       "Full-screen feed with reels, stories, VR tab and moderation flows",
@@ -65,6 +68,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I designed and implemented the Flutter Web CRM, the Laravel API layer, caching, Stripe and analytics integrations, and the in-app LLM chatbot. I also mentored junior developers and took part in architecture reviews around this platform.",
     technicalChallenge:
       "The dashboard had to stay responsive while pulling operational data over REST, with Redis caching and MySQL models that could sustain production traffic. Embedding LLM chat inside a real CRM — not a demo — meant handling auth, product context and failure states properly.",
+    solution:
+      "I architected a Flutter Web CRM with real-time analytics dashboards and an in-app assistant using OpenAI and Gemini, backed by Laravel REST APIs, MySQL and Redis, plus Stripe and analytics integrations. That stack is what cut client reporting time by 60%.",
     keyFeatures: [
       "Flutter Web CRM with real-time analytics dashboards",
       "Laravel REST APIs with MySQL and Redis",
@@ -91,6 +96,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I developed the Flutter commerce client: authentication, cart, orders, push notifications, and integrations with Stripe and Network International. I was the mobile engineer delivering that storefront, not a specialist who only wired a single SDK.",
     technicalChallenge:
       "Commerce quality lives in the unglamorous paths — failed payments, order state, authenticated sessions and notification reliability — while keeping one Flutter codebase healthy for both stores.",
+    solution:
+      "I developed the Flutter commerce client as one codebase for iOS and Android: authentication, catalogue, cart, orders, push notifications, and payment processing through Stripe and Network International.",
     keyFeatures: [
       "Cross-platform Flutter storefront for iOS and Android",
       "Authentication, cart and order history",
@@ -116,6 +123,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I implemented the Flutter client, offline-first architecture, search indexing and the monthly sync pipeline for updated pharmaceutical data while working as a senior mobile developer at Prism Digital.",
     technicalChallenge:
       "Search had to feel instant and tolerate typos on-device, while still receiving periodic data updates without corrupting the local index or bloating the install.",
+    solution:
+      "I implemented an offline-first Flutter architecture with typo-tolerant on-device search, a UI tuned for quick clinical lookups, and a monthly sync pipeline for updated pharmaceutical data.",
     keyFeatures: [
       "Offline-first Flutter architecture",
       "Typo-tolerant drug search",
@@ -141,6 +150,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "As a freelance solo developer I implemented the Flutter modules (BLE bracelet, AI coaches, challenges, dual commerce, wallet, subscriptions) and the WordPress / Elementor / WooCommerce marketing site. Store presence is live on the Apple App Store.",
     technicalChallenge:
       "The difficulty was product breadth: BLE device integration, several AI surfaces, map-based checkout, Stripe/RevenueCat entitlements and a bilingual RTL-ready UI in one codebase without collapsing into an unmaintainable monolith.",
+    solution:
+      "I built the multi-module Flutter app on Firebase, Supabase, Stripe, RevenueCat, Google Maps and AWS APIs — BLE bracelet, AI coaches, challenges, dual commerce, wallet and subscriptions — plus the bilingual WordPress / Elementor / WooCommerce site at 24digi.ae.",
     keyFeatures: [
       "Firebase phone auth and gated health onboarding",
       "BLE bracelet vitals dashboard with local cache and history",
@@ -169,6 +180,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I contributed as a lead Flutter contractor via Freelancer.com. My work focused on biometric authentication flows, ICAO-compliant photo capture, and performance/stability improvements. Other teams and stakeholders own the wider NADRA programme; this case study describes my contribution, not sole authorship of PAK ID.",
     technicalChallenge:
       "Biometric and camera pipelines have to stay correct under real-world device fragmentation, while the app remains stable for a very large user base. Changes in this kind of product are high-consequence.",
+    solution:
+      "I contributed Flutter work on biometric authentication flows, ICAO-compliant photo capture, and performance/stability improvements. The wider NADRA programme and remaining product surfaces were owned by other teams.",
     keyFeatures: [
       "Biometric authentication flows",
       "ICAO-compliant photo capture",
@@ -193,6 +206,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I designed and implemented the Laravel backend, listing and inquiry APIs, and the admin-oriented structure for content and properties as a freelance developer.",
     technicalChallenge:
       "The architecture had to be simple enough for ongoing content work and still ready for later CRM or portal integrations without a rewrite.",
+    solution:
+      "I designed a Laravel backend with secure APIs for listings and inquiries, and an admin-friendly structure so property content does not require a developer for every change.",
     keyFeatures: [
       "Laravel backend for listings and inquiries",
       "Secure APIs for property data",
@@ -218,6 +233,8 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       "I implemented the Laravel APIs, JWT authentication, MySQL models, the React + Bootstrap dashboard, and the AWS hosting setup (EC2, Route 53, S3, nginx). This is an operational platform I built, not a theme install.",
     technicalChallenge:
       "Field tools need boring reliability: auth that holds, APIs that match how supervisors actually assign work, and hosting close enough to the region to keep latency acceptable.",
+    solution:
+      "I built Laravel REST APIs with JWT auth for task tracking and job scheduling, a React + Bootstrap dashboard at aomserv.com, and hosted the stack on AWS in the UAE (EC2, Route 53, S3, nginx).",
     keyFeatures: [
       "Laravel REST APIs for tasks, jobs and coordination",
       "JWT authentication and role-aware access",

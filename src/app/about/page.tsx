@@ -2,11 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Award, GraduationCap } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
+import { portfolioData } from "@/data/portfolio";
+import { caseStudyCopy } from "@/data/case-studies";
 import { PageShell } from "@/components/layout/PageShell";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCTA } from "@/components/cta/ProjectCTA";
 import { getGraphSchema, getProfilePageSchema } from "@/lib/schema";
+
+export const dynamic = "force-static";
+export const revalidate = false;
 
 const approach = [
   {
@@ -105,6 +110,42 @@ export default function AboutPage() {
       </PageShell>
 
       <PageShell className="border-b border-zinc-800/80 py-14">
+        <SectionHeading
+          eyebrow="Selected work"
+          title="Products I have helped ship"
+          subtitle="A short sample. Employer names are metadata — the useful part is the product problem."
+        />
+        <ul className="mt-10 space-y-6">
+          {["vyooo-creator-platform", "metatech-flutter-web-crm", "royal-spirit-ecommerce"].map(
+            (id) => {
+              const project = portfolioData.find((item) => item.id === id);
+              const copy = caseStudyCopy[id];
+              if (!project || !copy) return null;
+              return (
+                <li key={id}>
+                  <Link href={`/portfolio/${id}`} className="group block">
+                    <p className="text-xs uppercase tracking-[0.16em] text-emerald-400/80">
+                      {copy.buyerCategory}
+                    </p>
+                    <h3 className="mt-2 font-semibold text-zinc-100 group-hover:text-emerald-300">
+                      {project.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-zinc-500">{copy.overview}</p>
+                  </Link>
+                </li>
+              );
+            }
+          )}
+        </ul>
+        <Link
+          href="/portfolio"
+          className="mt-8 inline-block text-sm text-emerald-400 hover:text-emerald-300"
+        >
+          View all work →
+        </Link>
+      </PageShell>
+
+      <PageShell className="border-b border-zinc-800/80 py-14">
         <SectionHeading eyebrow="Experience" title="Where I've worked" />
         <div className="mt-10 space-y-8">
           {timeline.map((item) => (
@@ -127,7 +168,6 @@ export default function AboutPage() {
             "Laravel and Node.js APIs, MySQL, Redis, authentication and payments",
             "Stripe, Apple Pay, Network International, RevenueCat",
             "AWS, Firebase, store release and production support",
-            "Technical leadership: mentoring, architecture reviews, Scrum Master Certified",
           ].map((item) => (
             <li key={item} className="flex gap-3">
               <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
@@ -141,6 +181,15 @@ export default function AboutPage() {
         >
           View the full skills list
         </Link>
+      </PageShell>
+
+      <PageShell className="border-b border-zinc-800/80 py-14">
+        <SectionHeading eyebrow="Leadership" title="How I work with teams" />
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-zinc-400">
+          Alongside delivery I mentor junior developers, take part in architecture reviews, and
+          run work in a Scrum cadence (Scrum Master Certified). I am used to being the person who
+          owns the technical path — not only a ticket queue.
+        </p>
       </PageShell>
 
       <PageShell className="border-b border-zinc-800/80 py-14">

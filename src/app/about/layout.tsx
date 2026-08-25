@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export const metadata: Metadata = buildMetadata({
   title: "About Osama Tahir | Mobile & Full-Stack Developer Dubai",
   description:

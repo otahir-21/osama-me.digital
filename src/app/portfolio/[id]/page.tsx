@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
@@ -10,7 +9,6 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCTA } from "@/components/cta/ProjectCTA";
-import { CaseStudyPresenter } from "@/components/portfolio/CaseStudyPresenter";
 import { ProjectCover } from "@/components/portfolio/ProjectCover";
 import { buildMetadata, absoluteUrl } from "@/lib/seo";
 import {
@@ -31,6 +29,9 @@ const PlayIcon = () => (
     <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z" />
   </svg>
 );
+
+export const dynamic = "force-static";
+export const revalidate = false;
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -64,7 +65,6 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
   const copy = getCaseStudy(id);
   const companyName = getCompanyName(project.company);
   const url = absoluteUrl(`/portfolio/${id}`);
-  const hasDeck = Boolean(project.pillars?.length);
 
   const schema = getGraphSchema([
     getWebPageSchema({
@@ -185,7 +185,9 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
           <section>
             <h2 className="text-2xl font-semibold text-zinc-50">Solution</h2>
-            <p className="mt-4 leading-relaxed text-zinc-400">{project.solution}</p>
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              {copy?.solution ?? project.solution}
+            </p>
           </section>
 
           {copy?.keyFeatures?.length ? (
@@ -246,12 +248,6 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
             </section>
           ) : null}
         </div>
-
-        {hasDeck && (
-          <Suspense fallback={null}>
-            <CaseStudyPresenter project={project} companyName={companyName} />
-          </Suspense>
-        )}
 
         <div className="mt-16">
           <ProjectCTA
