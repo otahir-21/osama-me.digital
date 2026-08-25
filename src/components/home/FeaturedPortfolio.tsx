@@ -1,123 +1,83 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { TiltCard } from "@/components/ui/TiltCard";
-import { portfolioData } from "@/data/portfolio";
-import { siteConfig } from "@/data/site-config";
+import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectCover } from "@/components/portfolio/ProjectCover";
+import { TrackedLink } from "@/components/seo/TrackedLink";
+import { portfolioData } from "@/data/portfolio";
+import { caseStudyCopy } from "@/data/case-studies";
+import { siteConfig } from "@/data/site-config";
 
-const featured = portfolioData.filter((p) => p.featured);
+const FEATURED = [
+  "vyooo-creator-platform",
+  "metatech-flutter-web-crm",
+  "royal-spirit-ecommerce",
+] as const;
 
-function getCompanyName(companyId: string) {
-  return siteConfig.companies.find((c) => c.id === companyId)?.name ?? companyId;
+function companyName(id: string) {
+  return siteConfig.companies.find((c) => c.id === id)?.name ?? id;
 }
 
 export function FeaturedPortfolio() {
-  const [hero, ...rest] = featured;
+  const cases = FEATURED.map((id) => {
+    const project = portfolioData.find((p) => p.id === id);
+    const copy = caseStudyCopy[id];
+    return project && copy ? { project, copy } : null;
+  }).filter((item): item is NonNullable<typeof item> => item !== null);
 
   return (
-    <section className="border-b border-zinc-800/80 py-16 lg:py-20">
-      <PageShell wide>
+    <section className="border-b border-zinc-800/80">
+      <PageShell wide className="py-16 lg:py-24">
         <SectionHeading
-          eyebrow="Work"
-          title="Selected projects"
-          subtitle="Apps and platforms I've built across fintech, healthcare, and enterprise."
+          eyebrow="Selected work"
+          title="Flagship case studies"
+          subtitle="Three products that show how I work across mobile, commerce and business platforms. The rest of the work lives on the portfolio."
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          {hero && (
-            <motion.article
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-1 sm:col-span-2 sm:row-span-2"
-            >
-              <TiltCard intensity={3} className="group relative h-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Link href={`/portfolio/${hero.id}`} className="block p-6 sm:p-8">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <p className="font-mono text-xs text-emerald-400/80">{getCompanyName(hero.company)}</p>
-                      {(hero.appStore || hero.playStore) && (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-400">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                          Live in stores
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="mt-2 text-xl font-semibold text-zinc-100 sm:text-2xl group-hover:text-emerald-400 transition-colors">
-                      {hero.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-zinc-500">{hero.category}</p>
-                    <p className="mt-4 line-clamp-2 max-w-lg text-sm leading-relaxed text-zinc-400">
-                      {hero.challenge}
-                    </p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {hero.techStack.slice(0, 4).map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-md bg-zinc-800/80 px-2.5 py-1 font-mono text-xs text-zinc-400"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <ArrowUpRight className="size-5 shrink-0 text-zinc-600 transition-colors group-hover:text-emerald-400" />
-                </div>
-                <div className="relative mt-8 aspect-[16/7] overflow-hidden rounded-xl">
-                  <ProjectCover title={hero.title} size="lg" />
-                </div>
-              </Link>
-              </TiltCard>
-            </motion.article>
-          )}
-
-          {rest.map((project, i) => (
-            <motion.article
+        <div className="mt-14 space-y-8">
+          {cases.map(({ project, copy }) => (
+            <article
               key={project.id}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+              className="grid overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 lg:grid-cols-[1.1fr_0.9fr]"
             >
-              <TiltCard className="group h-full rounded-2xl border border-zinc-800 bg-zinc-900/40 transition-colors hover:border-zinc-700">
-              <Link href={`/portfolio/${project.id}`} className="flex h-full flex-col p-6">
-                <div className="flex items-start justify-between gap-2">
-                  <p className="font-mono text-xs text-zinc-500">{getCompanyName(project.company)}</p>
-                  <ArrowUpRight className="size-4 text-zinc-600 group-hover:text-emerald-400 transition-colors" />
-                </div>
-                <h3 className="mt-3 font-semibold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+              <div className="flex flex-col p-7 sm:p-10">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-emerald-400/85">
+                  {copy.buyerCategory}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-50">
                   {project.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm text-zinc-500 line-clamp-2">{project.results[0]}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {project.techStack.slice(0, 3).map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded bg-zinc-800 px-2 py-0.5 font-mono text-[10px] text-zinc-500"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-              </TiltCard>
-            </motion.article>
+                <p className="mt-2 text-sm text-zinc-500">
+                  {project.role} · {companyName(project.company)}
+                </p>
+                <p className="mt-5 text-base leading-relaxed text-zinc-300">{copy.overview}</p>
+                <p className="mt-4 text-sm leading-relaxed text-zinc-500">
+                  {project.results[0]}
+                </p>
+                <TrackedLink
+                  href={`/portfolio/${project.id}`}
+                  event="case_study_cta"
+                  eventParams={{ location: `home_${project.id}` }}
+                  className="mt-8 inline-flex items-center text-sm font-medium text-emerald-400 hover:text-emerald-300"
+                >
+                  View {project.title.split("–")[0].trim()} case study
+                  <ArrowRight className="ml-1.5 size-4" />
+                </TrackedLink>
+              </div>
+              <div className="relative min-h-56 border-t border-zinc-800 lg:min-h-full lg:border-l lg:border-t-0">
+                <ProjectCover title={project.title} size="lg" />
+              </div>
+            </article>
           ))}
         </div>
 
         <div className="mt-10">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300"
+            className="inline-flex items-center text-sm font-medium text-zinc-200 hover:text-white"
           >
-            View all projects
-            <ArrowUpRight size={16} />
+            View all work
+            <ArrowRight className="ml-1.5 size-4" />
           </Link>
         </div>
       </PageShell>

@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Download, Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { PageShell } from "@/components/layout/PageShell";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Resume",
+export const metadata: Metadata = buildMetadata({
+  title: "Resume | Osama Tahir — Senior Mobile & Full-Stack Developer Dubai",
   description:
-    "Resume of Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years of experience in backend APIs, payment systems, and mobile development.",
-  alternates: { canonical: "https://osama-me.digital/resume" },
-};
+    "Resume of Osama Tahir, a Dubai-based senior mobile and full-stack developer. Experience across Flutter, React Native, Laravel, Node.js, payments and production delivery.",
+  path: "/resume",
+});
 
 const experience = [
   {
@@ -95,7 +96,7 @@ const coreSkills = [
 const achievements = [
   "Processed $1.2M+ in secure payments (Stripe, Apple Pay, Network International) for UAE & GCC fintech apps — zero security breaches.",
   "Engineered REST APIs handling 10K+ daily requests at 99.9% uptime; cut client reporting time by 60% with a Flutter Web CRM.",
-  "Shipped 20+ production applications with 500K+ combined downloads — including PAK ID (1M+ downloads, 4.8 rating) and Dvago (#13 Medical).",
+  "Contributed to 20+ production applications, including PAK ID (the product has 1M+ downloads and a 4.8 rating) and Dvago (#13 Medical on the App Store).",
   "Mentored engineers across Metatech and Prism Digital while leading Agile delivery end-to-end (Scrum Master Certified).",
 ];
 
@@ -175,15 +176,14 @@ export default function ResumePage() {
           Professional Summary
         </h2>
         <p className="mt-4 leading-relaxed text-zinc-400">
-          Senior Full-Stack Developer with 6 years of experience building secure,
-          high-availability backend services and cross-platform applications for fintech and
-          enterprise clients across the UAE and GCC. Delivered 20+ production applications with
-          500K+ combined downloads — including PAK ID, Pakistan&apos;s official national identity
-          app (1M+ downloads, 4.8 rating). Engineered REST APIs handling 10K+ daily requests at
-          99.9% uptime; integrated $1.2M+ in secure payments (Stripe, Apple Pay, Network
-          International) with zero security breaches. Scrum Master Certified; mentors engineers
-          and leads Agile delivery end-to-end. Actively builds with AI, integrating LLM APIs
-          (OpenAI, Gemini) into production applications.
+          Senior mobile and full-stack developer with 6 years of production experience across
+          the UAE and GCC. I have contributed to 20+ mobile and web products, including
+          contract work on PAK ID, Pakistan&apos;s official national identity app (the product
+          has 1M+ downloads and a 4.8 rating). At Metatech I implemented Laravel APIs used for
+          high-volume client reporting and a Flutter Web CRM that reduced reporting time by 60%.
+          At Prism Digital I implemented payment integrations (Stripe, Apple Pay, Network
+          International) used to process $1.2M+ in transactions. Scrum Master Certified. I also
+          integrate LLM APIs (OpenAI, Gemini) where they are a genuine product feature.
         </p>
       </PageShell>
 

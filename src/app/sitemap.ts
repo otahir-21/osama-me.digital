@@ -1,28 +1,44 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site-config";
 import { portfolioData } from "@/data/portfolio";
+import { caseStudyCopy } from "@/data/case-studies";
+import { servicesDetail } from "@/data/services-detail";
+
+function entry(
+  path: string,
+  lastModified: string,
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
+  priority: number
+): MetadataRoute.Sitemap[number] {
+  const url = path === "/" ? siteConfig.url : `${siteConfig.url}${path}`;
+  return { url, lastModified, changeFrequency, priority };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url;
-  const now = new Date();
+  const siteUpdated = siteConfig.contentUpdatedAt;
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/portfolio`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/skills`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/resume`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${baseUrl}/terms-of-service`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    entry("/", siteUpdated, "weekly", 1),
+    entry("/services", siteUpdated, "monthly", 0.9),
+    entry("/portfolio", siteUpdated, "weekly", 0.9),
+    entry("/about", siteUpdated, "monthly", 0.8),
+    entry("/contact", siteUpdated, "monthly", 0.8),
+    entry("/skills", siteUpdated, "monthly", 0.5),
+    entry("/resume", siteUpdated, "monthly", 0.5),
   ];
 
-  const portfolioPages: MetadataRoute.Sitemap = portfolioData.map((project) => ({
-    url: `${baseUrl}/portfolio/${project.id}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  const servicePages: MetadataRoute.Sitemap = servicesDetail.map((service) =>
+    entry(`/services/${service.slug}`, service.updatedAt, "monthly", 0.85)
+  );
 
-  return [...staticPages, ...portfolioPages];
+  const portfolioPages: MetadataRoute.Sitemap = portfolioData.map((project) =>
+    entry(
+      `/portfolio/${project.id}`,
+      caseStudyCopy[project.id]?.updatedAt ?? siteUpdated,
+      "monthly",
+      0.7
+    )
+  );
+
+  return [...staticPages, ...servicePages, ...portfolioPages];
 }

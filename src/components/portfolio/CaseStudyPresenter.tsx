@@ -243,7 +243,7 @@ function SlideBody({
         Building something similar?
       </h2>
       <p className="mt-4 text-base text-zinc-400">
-        I ship Flutter apps end-to-end — from auth and feeds to live video and store release.
+        I ship Flutter and React Native products end-to-end — from architecture to store release.
       </p>
       <Link
         href="/contact"
@@ -266,7 +266,8 @@ interface CaseStudyPresenterProps {
 export function CaseStudyPresenter({ project, companyName }: CaseStudyPresenterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [open, setOpen] = useState(false);
+  const present = searchParams.get("present") === "1";
+  const [open, setOpen] = useState(present);
   const [index, setIndex] = useState(0);
   const [copied, setCopied] = useState(false);
 
@@ -308,11 +309,9 @@ export function CaseStudyPresenter({ project, companyName }: CaseStudyPresenterP
     [slides.length]
   );
 
-  useEffect(() => {
-    if (searchParams.get("present") === "1") {
-      setOpen(true);
-    }
-  }, [searchParams]);
+  if (present && !open) {
+    setOpen(true);
+  }
 
   useEffect(() => {
     if (!open) return;

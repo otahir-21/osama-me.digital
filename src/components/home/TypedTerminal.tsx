@@ -20,8 +20,8 @@ export function TypedTerminal() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setLength(lines[0].length);
-      return;
+      const id = window.setTimeout(() => setLength(lines[0].length), 0);
+      return () => window.clearTimeout(id);
     }
 
     const current = lines[lineIndex];

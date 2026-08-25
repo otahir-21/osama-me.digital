@@ -395,7 +395,7 @@ export const portfolioData: PortfolioProject[] = [
     ],
     techStack: ["Flutter", "Dart", "Offline storage", "Search indexing"],
     image: "/images/portfolio/dvago.jpg",
-    featured: true,
+    featured: false,
     stackByKind: { mobile: ["Flutter"] },
   },
   {
@@ -416,7 +416,7 @@ export const portfolioData: PortfolioProject[] = [
     ],
     techStack: ["Flutter", "Stripe", "Network International", "Push notifications"],
     image: "/images/portfolio/royal-spirit.jpg",
-    featured: false,
+    featured: true,
     stackByKind: { mobile: ["Flutter"] },
   },
   {
@@ -445,7 +445,7 @@ export const portfolioData: PortfolioProject[] = [
       "WordPress",
     ],
     image: "/images/portfolio/24digi.jpg",
-    featured: true,
+    featured: false,
     stackByKind: {
       mobile: ["Flutter"],
       website: ["WordPress"],
@@ -590,20 +590,20 @@ export const portfolioData: PortfolioProject[] = [
     title: "PAK ID – NADRA Pakistan",
     category: "GovTech Mobile",
     company: "freelancer",
-    role: "Solo Developer",
+    role: "Contributing Flutter contractor",
     client: "NADRA Pakistan",
     challenge:
       "Support Pakistan’s official digital identity app used by millions, with strict security, biometric requirements, and high performance expectations.",
     solution:
       "Contributed to the mobile app with biometric authentication flows, ICAO-compliant photo capture, and performance/stability improvements for large-scale usage.",
     results: [
-      "1M+ downloads with a 4.8 Google Play rating",
-      "More reliable identity verification for citizens via mobile",
+      "Contributed to a national identity product with 1M+ downloads and a 4.8 Google Play rating",
+      "More reliable identity verification flows via mobile biometrics and photo capture",
       "Improved app stability under heavy real-world usage",
     ],
     techStack: ["Flutter", "Biometric auth", "Camera & image processing", "Secure APIs"],
     image: "/images/portfolio/pak-id.jpg",
-    featured: true,
+    featured: false,
     stackByKind: { mobile: ["Flutter"] },
   },
   {

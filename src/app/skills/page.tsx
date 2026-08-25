@@ -1,39 +1,41 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
-import { siteConfig } from "@/data/site-config";
 import { PageShell } from "@/components/layout/PageShell";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Flutter, React Native, Laravel & Node.js Skills | Osama Tahir",
+  description:
+    "Technical skills of Osama Tahir: Flutter, React Native, Laravel, Node.js, payments, AWS and Firebase — used to ship mobile apps and business platforms in Dubai.",
+  path: "/skills",
+});
 
 const skillCategories = [
   {
-    title: "Web Development",
-    skills: ["Flutter Web", "React", "Laravel web apps", "Dashboards & CRMs", "WordPress"],
+    title: "Mobile",
+    skills: ["Flutter", "React Native", "iOS", "Android", "BLoC", "GetX"],
   },
   {
-    title: "Backend Engineering",
-    skills: ["Laravel (PHP)", "Node.js", "REST & GraphQL APIs", "MySQL", "Redis", "Microservices"],
+    title: "Backend",
+    skills: ["Laravel (PHP)", "Node.js", "REST APIs", "MySQL", "Redis"],
   },
   {
-    title: "Mobile & Frontend",
-    skills: ["Flutter", "React Native", "SwiftUI", "Kotlin", "BLoC", "GetX"],
+    title: "Web platforms",
+    skills: ["Flutter Web", "React", "Dashboards & CRMs", "WordPress"],
   },
   {
-    title: "Payments & Fintech",
-    skills: ["Stripe", "Apple Pay", "Network International", "PCI-aware flows", "Secure APIs"],
+    title: "Payments",
+    skills: ["Stripe", "Apple Pay", "Network International", "RevenueCat"],
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["AWS (EC2, S3, Lambda)", "Firebase", "CI/CD", "Docker", "Performance tuning"],
-  },
-  {
-    title: "AI & Emerging Tech",
-    skills: ["OpenAI", "Gemini", "In-app chatbots", "GitHub Copilot", "Claude", "Cursor"],
+    title: "Cloud & launch",
+    skills: ["AWS", "Firebase", "CI/CD", "App Store", "Google Play"],
   },
   {
     title: "Leadership",
-    skills: ["Agile/Scrum (SMC)", "Code review", "Mentoring", "Architecture reviews"],
+    skills: ["Agile/Scrum (SMC)", "Code review", "Mentoring", "Architecture"],
   },
 ];
 
@@ -42,25 +44,23 @@ export default function SkillsPage() {
     <div>
       <PageShell className="border-b border-zinc-800/80">
         <SectionHeading
+          as="h1"
           eyebrow="Skills"
           title="Technical expertise"
-          subtitle="The tools and technologies I use to ship production software."
+          subtitle="The stack I use to ship production software — secondary to the problems I solve."
         />
       </PageShell>
 
       <PageShell wide className="py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category) => (
-            <div
-              key={category.title}
-              className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5"
-            >
+            <div key={category.title} className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-5">
               <h2 className="text-sm font-semibold text-zinc-200">{category.title}</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-md bg-zinc-800/80 px-2.5 py-1 font-mono text-xs text-zinc-400"
+                    className="rounded-md bg-zinc-800/80 px-2.5 py-1 text-xs text-zinc-400"
                   >
                     {skill}
                   </li>
@@ -70,23 +70,11 @@ export default function SkillsPage() {
           ))}
         </div>
 
-        <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-zinc-800/80 pt-10 sm:grid-cols-4">
-          {siteConfig.stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="text-2xl font-bold text-zinc-100">
-                {stat.value}
-                <span className="text-emerald-400">{stat.suffix}</span>
-              </dt>
-              <dd className="mt-1 text-xs text-zinc-500">{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
-
         <Link
           href="/portfolio"
           className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300"
         >
-          See projects
+          See selected work
           <ArrowUpRight size={16} />
         </Link>
       </PageShell>

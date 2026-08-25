@@ -11,7 +11,7 @@ export function PageShell({ children, className, wide }: PageShellProps) {
     <div
       className={cn(
         "mx-auto px-6 py-12 lg:px-12 lg:py-16",
-        wide ? "max-w-5xl" : "max-w-3xl",
+        wide ? "max-w-6xl" : "max-w-3xl",
         className
       )}
     >

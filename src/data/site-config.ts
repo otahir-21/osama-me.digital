@@ -1,97 +1,87 @@
+export const SITE_HOST = "www.osama-me.digital";
+export const SITE_URL = `https://${SITE_HOST}`;
+
 export const siteConfig = {
   name: "Osama Tahir",
-  role: "Senior Full-Stack Developer",
-  headline: "I build websites, mobile apps & backend systems that scale.",
+  role: "Senior Mobile & Full-Stack Developer",
+  headline:
+    "I build and improve mobile apps & digital platforms for UAE & GCC businesses.",
   location: "Dubai, UAE",
+  locationFull: "Dubai, United Arab Emirates",
   tagline:
-    "6 years of experience shipping web platforms, cross-platform apps, and payment systems for fintech and enterprise teams across the UAE and GCC.",
+    "Senior mobile and full-stack developer helping startups, agencies and established businesses take products from architecture to production — including mobile apps, backend APIs, payments, cloud and launch.",
   description:
-    "Senior Full-Stack Developer in Dubai with 6 years of experience shipping websites, Flutter & React Native apps, and Laravel backends. 20+ production apps, 500K+ downloads, and $1.2M+ in secure payment processing. Open to full-time and contract opportunities.",
-  availability: "Open to full-time and contract roles",
-  url: "https://osama-me.digital",
-  email: "dxbsoftwaredeveloper@gmail.com",
+    "Dubai-based senior mobile and full-stack developer building Flutter and React Native apps, backend APIs, payments, CRMs and custom platforms for UAE & GCC businesses.",
+  availability: "Available for selected projects",
+  recruiterAvailability: "Open to selected full-time and contract roles",
+  url: SITE_URL,
+  email: "info@osama-me.digital", // public inbox — never publish Gmail
   telephone: "+971507276823",
   whatsapp: "+971507276823",
   calendly: "https://calendly.com/dxbsoftwaredeveloper/30min",
   resumeFile: "/Osama-Tahir-Resume.pdf",
   resumeDocxFile: "/Osama-Tahir-Resume.docx",
+  profileImage: "/profile.png",
+  ogImage: "/og-image.png",
+  contentUpdatedAt: "2026-08-25",
   social: {
     linkedin: "https://www.linkedin.com/in/otahir21",
     github: "https://github.com/otahir-21",
     twitter: "https://x.com/otahir212",
+    twitterHandle: "@otahir212",
     upwork: "https://www.upwork.com/freelancers/osamaappdev",
   },
   navLinks: [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
     { href: "/portfolio", label: "Work" },
-    { href: "/skills", label: "Skills" },
-    { href: "/resume", label: "Resume" },
+    { href: "/services", label: "Services" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ],
-  expertise: [
-    {
-      id: "web",
-      title: "Web Development",
-      shortDesc:
-        "Full-stack web platforms with Flutter Web and Laravel — dashboards, CRMs, and business sites built for real users.",
-      icon: "Globe",
-    },
-    {
-      id: "backend",
-      title: "Backend & APIs",
-      shortDesc:
-        "Laravel and Node.js REST APIs with microservice patterns, caching, and high-availability design.",
-      icon: "Server",
-    },
-    {
-      id: "mobile",
-      title: "Mobile Development",
-      shortDesc:
-        "Cross-platform Flutter and React Native apps for iOS and Android — from architecture to App Store launch.",
-      icon: "Smartphone",
-    },
-    {
-      id: "payments",
-      title: "Payments & Fintech",
-      shortDesc:
-        "Stripe, Apple Pay, and PCI-aware payment flows built for regulated, production-grade fintech products.",
-      icon: "CreditCard",
-    },
-    {
-      id: "cloud",
-      title: "Cloud & DevOps",
-      shortDesc:
-        "AWS, Firebase, CI/CD pipelines, containers, and performance tuning for scalable deployments.",
-      icon: "Cloud",
-    },
-    {
-      id: "ai",
-      title: "AI Integration",
-      shortDesc:
-        "LLM API integration (OpenAI, Gemini), in-app chatbots, and AI-assisted development workflows.",
-      icon: "Sparkles",
-    },
-    {
-      id: "leadership",
-      title: "Technical Leadership",
-      shortDesc:
-        "Scrum Master Certified. Code reviews, mentoring, architecture decisions, and end-to-end delivery.",
-      icon: "Users",
-    },
+  footerLinks: [
+    { href: "/portfolio", label: "Work" },
+    { href: "/services", label: "Services" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+    { href: "/skills", label: "Skills" },
+    { href: "/resume", label: "Resume" },
   ],
-  stats: [
-    { value: 6, suffix: "+", label: "Years Experience" },
-    { value: 20, suffix: "+", label: "Apps Shipped" },
-    { value: 500, suffix: "K+", label: "App Downloads" },
-    { value: 1.2, suffix: "M+", label: "USD Payments Processed" },
+  techCredibility: [
+    "Flutter",
+    "React Native",
+    "Node.js",
+    "Laravel",
+    "AWS",
+    "Firebase",
+    "Payments",
+  ],
+  proofPoints: [
+    {
+      value: "6+",
+      label: "Years",
+      detail: "Production software experience",
+    },
+    {
+      value: "20+",
+      label: "Products",
+      detail: "Mobile and web products contributed to",
+    },
+    {
+      value: "UAE & GCC",
+      label: "Region",
+      detail: "Regional project experience",
+    },
+    {
+      value: "End-to-End",
+      label: "Delivery",
+      detail: "Mobile · Backend · Payments · Launch",
+    },
   ],
   processSteps: [
-    { step: 1, title: "Understand", desc: "Clarify goals, constraints, and technical requirements." },
-    { step: 2, title: "Architect", desc: "Design APIs, data models, and system boundaries that scale." },
-    { step: 3, title: "Build", desc: "Ship iteratively with clean code, tests, and clear communication." },
-    { step: 4, title: "Deploy", desc: "Release to production with CI/CD, monitoring, and documentation." },
-    { step: 5, title: "Improve", desc: "Optimize performance, reliability, and developer experience." },
+    { step: 1, title: "Understand", desc: "Clarify goals, constraints, users, and what already exists." },
+    { step: 2, title: "Architect", desc: "Design the mobile, API, data, and payment boundaries that can actually ship." },
+    { step: 3, title: "Build", desc: "Implement in focused slices with clear communication and production-minded code." },
+    { step: 4, title: "Launch", desc: "Release to stores or production with monitoring, documentation, and handover." },
+    { step: 5, title: "Support", desc: "Stabilize, improve performance, and keep the product moving after launch." },
   ],
   companies: [
     {
@@ -124,3 +114,5 @@ export const siteConfig = {
     },
   ],
 } as const;
+
+export type SiteConfig = typeof siteConfig;

@@ -1,32 +1,32 @@
 export const faqData = [
   {
-    question: "Are you open to full-time roles or contract work?",
+    question: "What kinds of projects do you take on?",
     answer:
-      "Both. I'm open to senior full-time positions and contract engagements in the UAE and remotely. Whether you need a mobile developer, backend engineer, or someone who can own delivery end-to-end, let's talk.",
+      "New mobile products (Flutter or React Native), rescue and maintenance of existing apps, custom CRMs and operational platforms, and backend/API work. I also partner with agencies that need white-label technical delivery.",
   },
   {
-    question: "What kind of projects do you specialize in?",
+    question: "Do you work with companies outside Dubai?",
     answer:
-      "Cross-platform mobile apps (Flutter, React Native), Laravel/Node.js APIs, payment integrations (Stripe, Apple Pay), and cloud-backed systems for fintech and enterprise clients. I've shipped 20+ production apps with 500K+ combined downloads.",
+      "Yes. I am based in Dubai and work with clients across the UAE and GCC, plus international teams that can collaborate in this time zone.",
   },
   {
-    question: "Can you work remotely or on-site in Dubai?",
+    question: "Can you own both the mobile app and the backend?",
     answer:
-      "Yes. I'm based in Dubai and comfortable with hybrid, on-site, or fully remote collaboration across UAE and GCC time zones.",
+      "Yes. A typical engagement includes the client app, Laravel or Node.js APIs, authentication, payments, and launch. That is often the point — one person who understands the full product, not only the UI layer.",
   },
   {
-    question: "What's your typical tech stack?",
+    question: "How do we start?",
     answer:
-      "Flutter and React Native for mobile, Laravel and Node.js for backends, MySQL and Redis for data, AWS and Firebase for cloud, plus Stripe for payments. I also integrate LLM APIs (OpenAI, Gemini) where it adds product value.",
+      "Use the project form, email info@osama-me.digital, WhatsApp, or book a 30-minute call. Send what you are building, where the product is today, and any constraints around stores, payments, or existing code.",
   },
   {
-    question: "Do you handle App Store and Play Store submissions?",
+    question: "Do you handle App Store and Google Play submission?",
     answer:
-      "Yes. I've taken multiple apps through Apple App Store and Google Play review — metadata, screenshots, privacy policies, test accounts, and release strategy included.",
+      "Yes. I have taken products through Apple and Google review, including listing details, privacy disclosures, test accounts, and release sequencing. You keep the developer accounts.",
   },
   {
-    question: "How do I get in touch?",
+    question: "Are you available for a full-time role?",
     answer:
-      "Email me at dxbsoftwaredeveloper@gmail.com, send a WhatsApp message, or use the contact form on this site. I typically respond within 24 hours.",
+      "Selected full-time and contract roles are a secondary path. If you are recruiting, view the resume or LinkedIn. Project work is the primary focus of this site.",
   },
 ];

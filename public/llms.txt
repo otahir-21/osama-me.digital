@@ -1,23 +1,34 @@
-# Osama Tahir — Senior Full-Stack Developer, Dubai UAE
+# Osama Tahir
 
-> Osama Tahir is a senior full-stack developer based in Dubai, UAE. He builds cross-platform mobile apps (Flutter, React Native), backend APIs (Laravel, Node.js), and payment systems for fintech and enterprise clients. 6+ years experience, 20+ production apps, 500K+ downloads, $1.2M+ in secure payments processed. Open to full-time and contract roles.
+> Dubai-based Senior Mobile & Full-Stack Developer building mobile apps, backend systems, business platforms and payment integrations for UAE and GCC businesses.
 
-## Pages
+## Key Pages
 
-- [Home](https://osama-me.digital): Portfolio homepage
-- [About](https://osama-me.digital/about): Background, experience, and skills
-- [Work](https://osama-me.digital/portfolio): Selected projects grouped by company
-- [Skills](https://osama-me.digital/skills): Technical expertise and stack
-- [Resume](https://osama-me.digital/resume): Full resume with PDF download
-- [Contact](https://osama-me.digital/contact): Get in touch
+- [Home](https://www.osama-me.digital/): Client-acquisition homepage
+- [Services](https://www.osama-me.digital/services): Mobile, app rescue, custom software, agency partnership
+- [Work](https://www.osama-me.digital/portfolio): Selected mobile app and software case studies
+- [About](https://www.osama-me.digital/about): Background, approach and experience
+- [Contact](https://www.osama-me.digital/contact): Start a software project
 
-## Contact
+## Services
 
-- Website: https://osama-me.digital
-- Email: dxbsoftwaredeveloper@gmail.com
-- Phone: +971 50 727 6823
-- WhatsApp: https://wa.me/971507276823
-- Calendly: https://calendly.com/dxbsoftwaredeveloper/30min
+- [Mobile App Development in Dubai](https://www.osama-me.digital/services/mobile-app-development-dubai)
+- [App Rescue & Maintenance](https://www.osama-me.digital/services/app-rescue-maintenance)
+- [Custom Software & CRM Development](https://www.osama-me.digital/services/custom-software-development-dubai)
+- [Technical Development Partner](https://www.osama-me.digital/services/technical-development-partner)
+
+## Selected Case Studies
+
+- [VyooO — Creator & Social Platform](https://www.osama-me.digital/portfolio/vyooo-creator-platform)
+- [Flutter Web CRM & Analytics Platform](https://www.osama-me.digital/portfolio/metatech-flutter-web-crm)
+- [Royal Spirit — Mobile Commerce](https://www.osama-me.digital/portfolio/royal-spirit-ecommerce)
+
+## Identity
+
+- Name: Osama Tahir
+- Role: Senior Mobile & Full-Stack Developer
+- Location: Dubai, United Arab Emirates
+- Website: https://www.osama-me.digital/
+- Email: info@osama-me.digital
 - LinkedIn: https://www.linkedin.com/in/otahir21
 - GitHub: https://github.com/otahir-21
-- Location: Dubai, UAE

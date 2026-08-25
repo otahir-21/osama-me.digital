@@ -1,26 +1,12 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Portfolio & Case Studies | Web & App Development Dubai",
+export const metadata: Metadata = buildMetadata({
+  title: "Mobile App & Software Case Studies | Osama Tahir Dubai",
   description:
-    "View case studies from Osama Tahir — mobile apps, web platforms, and backend systems for fintech and enterprise clients across the UAE and GCC.",
-  openGraph: {
-    title: "Portfolio & Case Studies | Web & App Development Dubai",
-    description:
-      "View case studies from Osama Tahir — mobile apps, web platforms, and backend systems for fintech and enterprise clients across the UAE and GCC.",
-    url: "https://osama-me.digital/portfolio",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Osama Tahir Portfolio - Web & App Development Dubai" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Portfolio & Case Studies | Web & App Development Dubai",
-    description:
-      "View case studies from Osama Tahir — mobile apps, web platforms, and backend systems for fintech and enterprise clients across the UAE and GCC.",
-  },
-  alternates: {
-    canonical: "https://osama-me.digital/portfolio",
-  },
-};
+    "A selection of mobile apps, business platforms, commerce products and backend systems Osama Tahir has helped build across the UAE and international markets.",
+  path: "/portfolio",
+});
 
 export default function PortfolioLayout({ children }: { children: React.ReactNode }) {
   return children;

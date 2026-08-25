@@ -1,44 +1,23 @@
-/**
- * Internal linking mappings for SEO.
- * Maps portfolio categories and blog posts to related service slugs.
- */
-
-export const portfolioToServices: Record<string, string[]> = {
-  "E-Commerce": ["shopify-development-dubai", "web-development-dubai"],
-  SEO: ["seo-services-dubai"],
-  "Landing Pages": ["landing-page-design-uae", "web-development-dubai"],
-  "Google Ads": ["google-ads-management-dubai", "landing-page-design-uae"],
-};
-
-export const blogToServices: Record<string, string[]> = {
-  "website-cost-dubai-2026": ["web-development-dubai", "website-maintenance-uae"],
-  "seo-pricing-dubai": ["seo-services-dubai"],
-  "google-ads-cost-dubai": ["google-ads-management-dubai", "landing-page-design-uae"],
-  "wordpress-vs-shopify-uae": ["wordpress-development-dubai", "shopify-development-dubai", "web-development-dubai"],
-  "digital-marketing-specialist-uae": [
-    "seo-services-dubai",
-    "google-ads-management-dubai",
-    "social-media-marketing-uae",
-  ],
-  "free-software-tools-for-uae-businesses": ["web-development-dubai", "seo-services-dubai"],
-  "seo-for-dubai-businesses": ["seo-services-dubai"],
-  "website-conversion-optimization": ["web-development-dubai", "landing-page-design-uae"],
-  "google-ads-vs-seo": ["google-ads-management-dubai", "seo-services-dubai"],
-};
+import { SERVICE_PATHS } from "@/data/services-detail";
 
 export const serviceNames: Record<string, string> = {
-  "web-development-dubai": "Web Development Dubai",
   "mobile-app-development-dubai": "Mobile App Development Dubai",
-  "seo-services-dubai": "SEO Services Dubai",
-  "google-ads-management-dubai": "Google Ads Management Dubai",
-  "social-media-marketing-uae": "Social Media Marketing UAE",
-  "landing-page-design-uae": "Landing Page Design UAE",
-  "shopify-development-dubai": "Shopify Development Dubai",
-  "wordpress-development-dubai": "WordPress Development Dubai",
-  "website-maintenance-uae": "Website Maintenance & Support UAE",
-  "aws-management-uae": "AWS Management & Cloud Hosting UAE",
+  "app-rescue-maintenance": "App Rescue & Maintenance",
+  "custom-software-development-dubai": "Custom Software & CRM Development",
+  "technical-development-partner": "Technical Development Partner",
 };
 
-export const serviceUrls: Record<string, string> = Object.fromEntries(
-  Object.keys(serviceNames).map((slug) => [slug, `/services/${slug}`])
-);
+export const serviceUrls: Record<string, string> = {
+  "mobile-app-development-dubai": SERVICE_PATHS.mobile,
+  "app-rescue-maintenance": SERVICE_PATHS.rescue,
+  "custom-software-development-dubai": SERVICE_PATHS.custom,
+  "technical-development-partner": SERVICE_PATHS.partner,
+};
+
+export const portfolioToServices: Record<string, string[]> = {
+  "Mobile Products": ["mobile-app-development-dubai", "technical-development-partner"],
+  "E-commerce & Payments": ["mobile-app-development-dubai", "custom-software-development-dubai"],
+  "Business Platforms": ["custom-software-development-dubai"],
+  "Health & GovTech": ["mobile-app-development-dubai", "app-rescue-maintenance"],
+  "Web Platforms": ["custom-software-development-dubai"],
+};

@@ -1,9 +1,9 @@
 {
-  "name": "Osama Tahir | Senior Full-Stack Developer",
+  "name": "Osama Tahir | Senior Mobile & Full-Stack Developer",
   "short_name": "Osama Tahir",
-  "description": "Senior Full-Stack Developer in Dubai, UAE. Websites, Flutter & React Native apps, and Laravel backends. 6 years experience, 20+ production apps.",
-  "start_url": "https://osama-me.digital/",
-  "scope": "https://osama-me.digital/",
+  "description": "Dubai-based senior mobile and full-stack developer building Flutter and React Native apps, backend APIs and custom platforms for UAE & GCC businesses.",
+  "start_url": "https://www.osama-me.digital/",
+  "scope": "https://www.osama-me.digital/",
   "display": "standalone",
   "background_color": "#09090b",
   "theme_color": "#09090b",

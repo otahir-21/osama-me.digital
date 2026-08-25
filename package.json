@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",

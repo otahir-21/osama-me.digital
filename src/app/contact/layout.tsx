@@ -1,26 +1,12 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Osama Tahir | Senior Full-Stack Developer Dubai",
+export const metadata: Metadata = buildMetadata({
+  title: "Start a Software Project | Osama Tahir, Dubai",
   description:
-    "Get in touch with Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. Open to full-time roles, contract work, and project discussions via WhatsApp, email, or call.",
-  openGraph: {
-    title: "Contact Osama Tahir | Senior Full-Stack Developer Dubai",
-    description:
-      "Get in touch with Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. Open to full-time roles, contract work, and project discussions.",
-    url: "https://osama-me.digital/contact",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact Osama Tahir - Senior Full-Stack Developer Dubai" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Osama Tahir | Senior Full-Stack Developer Dubai",
-    description:
-      "Get in touch with Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. Open to full-time roles, contract work, and project discussions.",
-  },
-  alternates: {
-    canonical: "https://osama-me.digital/contact",
-  },
-};
+    "Tell Osama Tahir what you are building, where the product is today, and what you need delivered. Email info@osama-me.digital or use the project form.",
+  path: "/contact",
+});
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return children;

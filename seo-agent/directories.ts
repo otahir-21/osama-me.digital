@@ -10,8 +10,8 @@ export const BUSINESS_PROFILE = {
     "Osama Tahir is a Dubai-based Web Developer and Digital Marketing Specialist helping UAE businesses grow online. Services include custom website development, SEO, Google Ads management, social media marketing, and AWS cloud solutions. Trusted by businesses across Dubai, Abu Dhabi, and the wider UAE.",
   shortDescription:
     "Web Developer & Digital Marketing Specialist based in Dubai, UAE. Custom websites, SEO, Google Ads, and social media marketing for UAE businesses.",
-  website: "https://osama-me.digital",
-  email: "hello@osama-me.digital",
+  website: "https://www.osama-me.digital",
+  email: "info@osama-me.digital",
   phone: "+971507276823", // UPDATE THIS with real phone number
   address: {
     street: "Dubai Development Authority (DDA) / TECOM",           // UPDATE: your Dubai street/area

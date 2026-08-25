@@ -11,7 +11,6 @@ const SESSION_KEY = "exit-intent-shown";
 
 export function ExitIntentPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isReady, setIsReady] = useState(false);
 
   const close = useCallback(() => {
     setIsOpen(false);
@@ -23,11 +22,6 @@ export function ExitIntentPopup() {
   }, []);
 
   useEffect(() => {
-    setIsReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isReady) return;
     if (typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches) return;
 
     const handleMouseLeave = (e: MouseEvent) => {
@@ -58,7 +52,7 @@ export function ExitIntentPopup() {
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isReady, close]);
+  }, [close]);
 
   return (
     <AnimatePresence>

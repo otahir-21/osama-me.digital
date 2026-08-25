@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Osama Tahir | Senior Full-Stack Developer Dubai",
+export const metadata: Metadata = buildMetadata({
+  title: "About Osama Tahir | Mobile & Full-Stack Developer Dubai",
   description:
-    "Meet Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years experience, 20+ apps shipped, 500K+ downloads, and $1.2M+ in secure payment processing.",
-  openGraph: {
-    title: "About Osama Tahir | Senior Full-Stack Developer Dubai",
-    description:
-      "Meet Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years experience, 20+ apps shipped, 500K+ downloads, and $1.2M+ in secure payment processing.",
-    url: "https://osama-me.digital/about",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Osama Tahir - Senior Full-Stack Developer Dubai" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Osama Tahir | Senior Full-Stack Developer Dubai",
-    description:
-      "Meet Osama Tahir — Senior Full-Stack Developer in Dubai, UAE. 6 years experience, 20+ apps shipped, 500K+ downloads.",
-  },
-  alternates: {
-    canonical: "https://osama-me.digital/about",
-  },
-};
+    "Osama Tahir is a Dubai-based senior mobile and full-stack developer focused on taking ownership of products rather than isolated development tickets.",
+  path: "/about",
+  ogType: "profile",
+});
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return children;

@@ -3,11 +3,22 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { portfolioData, KIND_LABELS, getProjectKinds, getAllPlatforms } from "@/data/portfolio";
+import { portfolioData } from "@/data/portfolio";
+import { getCaseStudy } from "@/data/case-studies";
 import { siteConfig } from "@/data/site-config";
 import { PageShell } from "@/components/layout/PageShell";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { ProjectCTA } from "@/components/cta/ProjectCTA";
 import { CaseStudyPresenter } from "@/components/portfolio/CaseStudyPresenter";
 import { ProjectCover } from "@/components/portfolio/ProjectCover";
+import { buildMetadata, absoluteUrl } from "@/lib/seo";
+import {
+  getBreadcrumbSchema,
+  getCaseStudySchema,
+  getGraphSchema,
+  getWebPageSchema,
+} from "@/lib/schema";
 
 const AppleIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden>
@@ -37,18 +48,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const project = portfolioData.find((p) => p.id === id);
   if (!project) return {};
-
-  return {
-    title: `${project.title} | Case Study`,
-    description: project.challenge,
-    openGraph: {
-      title: `${project.title} | Case Study`,
-      description: project.challenge,
-      url: `https://osama-me.digital/portfolio/${id}`,
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: project.title }],
-    },
-    alternates: { canonical: `https://osama-me.digital/portfolio/${id}` },
-  };
+  const copy = getCaseStudy(id);
+  return buildMetadata({
+    title: copy?.seoTitle ?? `${project.title} | Case Study | Osama Tahir`,
+    description: copy?.seoDescription ?? project.challenge,
+    path: `/portfolio/${id}`,
+  });
 }
 
 export default async function PortfolioCaseStudyPage({ params }: PageProps) {
@@ -56,131 +61,190 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
   const project = portfolioData.find((p) => p.id === id);
   if (!project) notFound();
 
+  const copy = getCaseStudy(id);
   const companyName = getCompanyName(project.company);
+  const url = absoluteUrl(`/portfolio/${id}`);
   const hasDeck = Boolean(project.pillars?.length);
+
+  const schema = getGraphSchema([
+    getWebPageSchema({
+      name: project.title,
+      description: copy?.seoDescription ?? project.challenge,
+      url,
+    }),
+    getCaseStudySchema({
+      name: project.title,
+      description: copy?.overview ?? project.challenge,
+      url,
+      keywords: project.techStack,
+    }),
+    getBreadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Work", url: "/portfolio" },
+      { name: project.title, url: `/portfolio/${id}` },
+    ]),
+  ]);
 
   return (
     <div>
+      <JsonLd data={schema} />
       <PageShell wide>
-        <Link
-          href="/portfolio"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-300"
-        >
-          <ArrowLeft size={16} />
-          Back to work
-        </Link>
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Work", href: "/portfolio" },
+            { name: project.title },
+          ]}
+        />
 
-        <div className="mt-8">
-          <p className="font-mono text-xs uppercase tracking-widest text-emerald-400/80">
-            {project.category}
-          </p>
-          <h1 className="mt-3 text-3xl font-bold text-zinc-50 sm:text-4xl">{project.title}</h1>
-          <p className="mt-2 text-zinc-500">{project.client}</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
-              {companyName}
-            </span>
-            <span className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
-              {project.role}
-            </span>
-            {getProjectKinds(project).map((kind) => (
-              <span
-                key={kind}
-                className="rounded-md bg-emerald-500/10 px-2.5 py-1 text-xs text-emerald-400"
+        <p className="mt-8 text-xs font-medium uppercase tracking-[0.16em] text-emerald-400/85">
+          {copy?.buyerCategory ?? project.category}
+        </p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+          {project.title}
+        </h1>
+        <p className="mt-3 text-zinc-500">
+          {project.client} · {project.role} · {companyName}
+        </p>
+
+        {(project.appStore || project.playStore || project.liveUrl) && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.appStore && (
+              <a
+                href={project.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-emerald-400"
               >
-                {KIND_LABELS[kind]}
-              </span>
-            ))}
-            {getAllPlatforms(project).map((platform) => (
-              <span
-                key={platform}
-                className="rounded-md bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400"
+                <AppleIcon />
+                View on the App Store
+                <ExternalLink size={14} />
+              </a>
+            )}
+            {project.playStore && (
+              <a
+                href={project.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 hover:border-zinc-600"
               >
-                {platform}
-              </span>
-            ))}
+                <PlayIcon />
+                View on Google Play
+                <ExternalLink size={14} />
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 hover:border-zinc-600"
+              >
+                Visit live website
+                <ExternalLink size={14} />
+              </a>
+            )}
           </div>
+        )}
 
-          {(project.appStore || project.playStore || project.liveUrl) && (
-            <div className="mt-6 flex flex-wrap gap-3">
-              {project.appStore && (
-                <a
-                  href={project.appStore}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
-                >
-                  <AppleIcon />
-                  App Store
-                  <ExternalLink size={14} />
-                </a>
-              )}
-              {project.playStore && (
-                <a
-                  href={project.playStore}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
-                >
-                  <PlayIcon />
-                  Google Play
-                  <ExternalLink size={14} />
-                </a>
-              )}
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
-                >
-                  Visit website
-                  <ExternalLink size={14} />
-                </a>
-              )}
-            </div>
-          )}
-        </div>
-
-        <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-zinc-800">
+        <figure className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-zinc-800">
           <ProjectCover title={project.title} size="lg" />
-        </div>
+          <figcaption className="sr-only">
+            Visual cover for the {project.title} case study
+          </figcaption>
+        </figure>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-400">Challenge</h2>
-              <p className="mt-3 leading-relaxed text-zinc-400">{project.challenge}</p>
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-400">Solution</h2>
-              <p className="mt-3 leading-relaxed text-zinc-400">{project.solution}</p>
-            </div>
-          </div>
+        <div className="mt-14 max-w-3xl space-y-12">
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">Overview</h2>
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              {copy?.overview ?? project.challenge}
+            </p>
+          </section>
 
-          <aside className="space-y-8">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <h3 className="text-sm font-semibold text-zinc-300">Results</h3>
-              <ul className="mt-3 space-y-2">
-                {project.results.map((r) => (
-                  <li key={r} className="text-sm text-zinc-500">• {r}</li>
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">The Problem</h2>
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              {copy?.problem ?? project.challenge}
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">My Role</h2>
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              {copy?.roleDetail ?? `${project.role} at ${companyName}.`}
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">Technical Challenge</h2>
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              {copy?.technicalChallenge ?? project.solution}
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">Solution</h2>
+            <p className="mt-4 leading-relaxed text-zinc-400">{project.solution}</p>
+          </section>
+
+          {copy?.keyFeatures?.length ? (
+            <section>
+              <h2 className="text-2xl font-semibold text-zinc-50">Key Features</h2>
+              <ul className="mt-4 space-y-2">
+                {copy.keyFeatures.map((feature) => (
+                  <li key={feature} className="flex gap-3 text-zinc-400">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                    {feature}
+                  </li>
                 ))}
               </ul>
+            </section>
+          ) : null}
+
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">Results / Outcome</h2>
+            <ul className="mt-4 space-y-2">
+              {project.results.map((result) => (
+                <li key={result} className="flex gap-3 text-zinc-400">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                  {result}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-zinc-50">Technology</h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-md border border-zinc-800 bg-zinc-900 px-3 py-1 text-sm text-zinc-400"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <h3 className="text-sm font-semibold text-zinc-300">Tech stack</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {project.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-md bg-zinc-800 px-2.5 py-1 font-mono text-xs text-zinc-400"
-                  >
-                    {tech}
-                  </span>
+          </section>
+
+          {copy?.relatedServiceHrefs?.length ? (
+            <section>
+              <h2 className="text-2xl font-semibold text-zinc-50">Related Services</h2>
+              <ul className="mt-4 space-y-2">
+                {copy.relatedServiceHrefs.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-emerald-400 hover:text-emerald-300"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
                 ))}
-              </div>
-            </div>
-          </aside>
+              </ul>
+            </section>
+          ) : null}
         </div>
 
         {hasDeck && (
@@ -189,11 +253,19 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           </Suspense>
         )}
 
+        <div className="mt-16">
+          <ProjectCTA
+            heading="Building something similar? Let's discuss your project."
+            body="If this problem looks like yours, send the current state of the product and I will tell you how I would approach it."
+          />
+        </div>
+
         <Link
-          href="/contact"
-          className="mt-12 inline-flex items-center rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-emerald-400"
+          href="/portfolio"
+          className="mt-10 inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-300"
         >
-          Discuss a similar project
+          <ArrowLeft size={16} />
+          Back to selected work
         </Link>
       </PageShell>
     </div>
