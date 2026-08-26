@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { siteConfig } from "@/data/site-config";
 import type { AdsAttribution } from "@/lib/attribution";
+import { notifyLeadOnWhatsApp } from "@/lib/whatsapp-notify";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -154,6 +155,20 @@ export async function POST(request: Request) {
       subject: isLandingLead ? leadTitle : `[Contact Form] ${leadTitle}`,
       text,
       html,
+    });
+
+    // Best-effort WhatsApp alert — never fails the form response.
+    await notifyLeadOnWhatsApp({
+      title: leadTitle,
+      name: nameStr,
+      email: emailStr,
+      phone: phoneStr,
+      company: companyStr,
+      projectType: projectTypeStr,
+      projectStage: projectStageStr,
+      budget: budgetStr,
+      message: messageStr,
+      landingPage: landingPageStr,
     });
 
     return NextResponse.json({ success: true });
