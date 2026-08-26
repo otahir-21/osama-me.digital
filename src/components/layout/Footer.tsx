@@ -40,6 +40,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href={SERVICE_PATHS.website} className="text-white/65 hover:text-white">
+                Website development
+              </Link>
+            </li>
+            <li>
               <Link href={SERVICE_PATHS.flutter} className="text-white/65 hover:text-white">
                 Flutter development
               </Link>

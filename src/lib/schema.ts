@@ -35,6 +35,7 @@ export function getPersonSchema() {
     sameAs,
     knowsAbout: [
       "Mobile app development",
+      "Website development",
       "Flutter",
       "React Native",
       "Laravel",

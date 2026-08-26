@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServicePageTemplate } from "@/components/services/ServicePageTemplate";
+import { WebsiteDevelopmentLanding } from "@/components/services/WebsiteDevelopmentLanding";
 import { getServiceBySlug, servicesDetail } from "@/data/services-detail";
 import { buildMetadata } from "@/lib/seo";
 
@@ -27,5 +28,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) notFound();
+  if (slug === "website-development-dubai") {
+    return <WebsiteDevelopmentLanding service={service} />;
+  }
   return <ServicePageTemplate service={service} />;
 }

@@ -1,14 +1,14 @@
 # Osama Tahir
 
-> Dubai-based Senior Mobile & Full-Stack Developer building mobile apps, backend systems, business platforms and payment integrations for UAE and GCC businesses.
+> Dubai-based Senior Mobile & Full-Stack Developer building mobile apps, websites, backend systems, business platforms and payment integrations for UAE and GCC businesses.
 
-Osama Tahir is a senior mobile and full-stack developer based in Dubai, United Arab Emirates. He builds Flutter and React Native iOS/Android apps, Laravel and Node.js APIs, payment integrations (Stripe, Apple Pay, Network International, RevenueCat), CRMs and operational platforms. Typical engagements cover architecture, implementation, App Store / Google Play launch, and production support — including takeover of unfinished apps and white-label delivery for agencies.
+Osama Tahir is a senior mobile and full-stack developer based in Dubai, United Arab Emirates. He builds Flutter and React Native iOS/Android apps, production websites and web platforms, Laravel and Node.js APIs, payment integrations (Stripe, Apple Pay, Network International, RevenueCat), CRMs and operational platforms. Typical engagements cover architecture, implementation, App Store / Google Play launch, website launch, and production support — including takeover of unfinished apps and white-label delivery for agencies.
 
 ## Key Pages
 
 - [Home](https://www.osama-me.digital/): Client-acquisition homepage
-- [Services](https://www.osama-me.digital/services): Mobile, Flutter, React Native, app rescue, custom software, agency partnership
-- [Work](https://www.osama-me.digital/portfolio): Selected mobile app and software case studies
+- [Services](https://www.osama-me.digital/services): Website development, mobile, Flutter, React Native, app rescue, custom software, agency partnership
+- [Work](https://www.osama-me.digital/portfolio): Selected website, mobile app and software case studies
 - [Insights](https://www.osama-me.digital/insights): Hiring, stack choice, cost and app-rescue writing
 - [Industries](https://www.osama-me.digital/industries): E-commerce, payments, healthcare and wellness
 - [About](https://www.osama-me.digital/about): Background, approach and experience
@@ -19,6 +19,7 @@ Osama Tahir is a senior mobile and full-stack developer based in Dubai, United A
 ## Services
 
 - [Mobile App Development in Dubai](https://www.osama-me.digital/services/mobile-app-development-dubai)
+- [Website Development in Dubai](https://www.osama-me.digital/services/website-development-dubai)
 - [Flutter App Development in Dubai](https://www.osama-me.digital/services/flutter-app-development-dubai)
 - [React Native App Development in Dubai](https://www.osama-me.digital/services/react-native-app-development-dubai)
 - [App Rescue & Maintenance](https://www.osama-me.digital/services/app-rescue-maintenance)

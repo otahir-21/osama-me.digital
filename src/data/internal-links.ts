@@ -2,6 +2,7 @@ import { SERVICE_PATHS } from "@/data/services-detail";
 
 export const serviceNames: Record<string, string> = {
   "mobile-app-development-dubai": "Mobile App Development Dubai",
+  "website-development-dubai": "Website Development Dubai",
   "flutter-app-development-dubai": "Flutter App Development Dubai",
   "react-native-app-development-dubai": "React Native App Development Dubai",
   "app-rescue-maintenance": "App Rescue & Maintenance",
@@ -11,6 +12,7 @@ export const serviceNames: Record<string, string> = {
 
 export const serviceUrls: Record<string, string> = {
   "mobile-app-development-dubai": SERVICE_PATHS.mobile,
+  "website-development-dubai": SERVICE_PATHS.website,
   "flutter-app-development-dubai": SERVICE_PATHS.flutter,
   "react-native-app-development-dubai": SERVICE_PATHS.reactNative,
   "app-rescue-maintenance": SERVICE_PATHS.rescue,
@@ -25,10 +27,18 @@ export const portfolioToServices: Record<string, string[]> = {
     "technical-development-partner",
   ],
   "AI Products": ["custom-software-development-dubai", "technical-development-partner"],
-  "E-commerce & Payments": ["mobile-app-development-dubai", "custom-software-development-dubai"],
-  "Business Platforms": ["custom-software-development-dubai"],
-  "Healthcare & GovTech": ["mobile-app-development-dubai", "app-rescue-maintenance"],
-  "Web Platforms": ["custom-software-development-dubai"],
+  "E-commerce & Payments": [
+    "website-development-dubai",
+    "mobile-app-development-dubai",
+    "custom-software-development-dubai",
+  ],
+  "Business Platforms": ["custom-software-development-dubai", "website-development-dubai"],
+  "Healthcare & GovTech": [
+    "website-development-dubai",
+    "mobile-app-development-dubai",
+    "app-rescue-maintenance",
+  ],
+  "Web Platforms": ["website-development-dubai", "custom-software-development-dubai"],
 };
 
 export const serviceToInsights: Record<string, string[]> = {

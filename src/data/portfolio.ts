@@ -440,8 +440,13 @@ export const portfolioData: PortfolioProject[] = [
     ],
     techStack: ["Flutter", "Dart", "Offline storage", "Search indexing"],
     image: "/images/portfolio/dvago.jpg",
+    imageAlt:
+      "DVAGO Pharmacy & Wellness homepage with medicine search, category navigation, and home-delivery messaging",
+    coverComposition: "browser",
     featured: false,
     stackByKind: { mobile: ["Flutter"] },
+    liveUrl: "https://www.dvago.pk/",
+    liveLinkLabel: "Visit Website",
   },
   {
     id: "royal-spirit-ecommerce",
@@ -493,6 +498,21 @@ export const portfolioData: PortfolioProject[] = [
       "WordPress",
     ],
     image: "/images/portfolio/24digi.jpg",
+    imageAlt:
+      "24Digi live health dashboard marketing screen showing steps, calories, distance and latest activity on a dark mobile UI",
+    coverComposition: "device",
+    gallery: [
+      {
+        src: "/images/portfolio/24digi-vitals.jpg",
+        alt: "24Digi SafeLife AI screen with a 61 safety score and blood-oxygen callouts",
+        composition: "device",
+      },
+      {
+        src: "/images/portfolio/24digi-coach.jpg",
+        alt: "24Digi AI health models screen for SaveLife and Recovery coaches",
+        composition: "device",
+      },
+    ],
     featured: false,
     stackByKind: {
       mobile: ["Flutter"],
@@ -651,8 +671,19 @@ export const portfolioData: PortfolioProject[] = [
     ],
     techStack: ["Flutter", "Biometric auth", "Camera & image processing", "Secure APIs"],
     image: "/images/portfolio/pak-id.jpg",
+    imageAlt:
+      "Pak ID welcome screen with NADRA services and visa login options, Register and Login actions",
+    coverComposition: "device",
+    gallery: [
+      {
+        src: "/images/portfolio/pak-id-capture.jpg",
+        alt: "Pak Identity home with Digital ID, tracking, QR scan, payment and ID document shortcuts",
+        composition: "device",
+      },
+    ],
     featured: false,
     stackByKind: { mobile: ["Flutter"] },
+    playStore: "https://play.google.com/store/apps/details?id=pk.gov.nadra.pakid",
   },
   {
     id: "new-edge-realty",
@@ -672,11 +703,16 @@ export const portfolioData: PortfolioProject[] = [
     ],
     techStack: ["Laravel", "MySQL", "REST APIs", "SEO-friendly frontend"],
     image: "/images/portfolio/new-edge-realty.jpg",
+    imageAlt:
+      "New Edge Realty homepage with a sold-home hero, welcome message, and See Properties call to action",
+    coverComposition: "browser",
     featured: false,
     stackByKind: {
       website: ["Laravel"],
       api: ["Laravel"],
     },
+    liveUrl: "https://newedgerealty.com/",
+    liveLinkLabel: "Visit Website",
   },
   {
     id: "anton-oilfield-management",
@@ -704,6 +740,9 @@ export const portfolioData: PortfolioProject[] = [
       "nginx",
     ],
     image: "/images/portfolio/anton-oilfield.jpg",
+    imageAlt:
+      "Anton Oilfield Management homepage hero with an offshore platform, A New Model Operator headline, and Learn More",
+    coverComposition: "browser",
     featured: false,
     stackByKind: {
       website: ["React"],

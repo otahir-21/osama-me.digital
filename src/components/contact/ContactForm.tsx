@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { trackEvent } from "@/lib/analytics";
 
 const projectTypes = [
+  "Website / Web Platform",
   "New Mobile App",
   "Existing App / Rescue",
   "Custom Software / CRM",
@@ -30,6 +31,13 @@ const fieldClass =
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const formStarted = useRef(false);
+
+  function handleFormStart() {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackEvent("contact_form_start", { event_category: "contact", location: "contact_form" });
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -60,7 +68,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+    <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="space-y-6" noValidate>
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground">

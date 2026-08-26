@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/data/site-config";
 import { buildMetadata } from "@/lib/seo";
@@ -94,6 +92,12 @@ export default function RootLayout({
     getWebSiteSchema(),
   ]);
 
+  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
+  const googleAdsConfig =
+    googleAdsId && /^AW-[A-Za-z0-9_-]+$/.test(googleAdsId)
+      ? `gtag('config', '${googleAdsId}');`
+      : "";
+
   return (
     <html lang="en-AE" className="scroll-smooth">
       <body
@@ -109,13 +113,11 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-N9M49GTXJW');
+            ${googleAdsConfig}
           `}
         </Script>
         <JsonLd data={graph} />
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

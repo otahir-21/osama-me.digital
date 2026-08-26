@@ -12,7 +12,7 @@ import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Software Services in Dubai | Osama Tahir",
   description:
-    "Mobile app development, app rescue, custom CRMs and technical partnership for UAE and GCC businesses — delivered by Osama Tahir in Dubai.",
+    "Website development, mobile apps, app rescue, custom CRMs and technical partnership for UAE and GCC businesses — delivered by Osama Tahir in Dubai.",
   path: "/services",
 });
 
@@ -25,7 +25,7 @@ export default function ServicesIndexPage() {
           getWebPageSchema({
             name: "Software development services in Dubai",
             description:
-              "Mobile apps, app rescue, custom business platforms and agency technical partnership.",
+              "Website development, mobile apps, app rescue, custom business platforms and agency technical partnership.",
             url,
           }),
         ])}
@@ -38,9 +38,9 @@ export default function ServicesIndexPage() {
           Software development services in Dubai
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Osama Tahir helps UAE and GCC companies build, rescue and scale mobile apps and
+          Osama Tahir helps UAE and GCC companies build, rescue and scale websites, mobile apps and
           digital platforms with senior-level ownership from architecture through production.
-          The work spans Flutter, React Native, Laravel, Node.js, payments and production launch.
+          The work spans React, WordPress, Flutter, React Native, Laravel, Node.js, payments and production launch.
         </p>
       </PageShell>
 

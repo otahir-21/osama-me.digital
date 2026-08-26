@@ -129,6 +129,130 @@ export const servicesDetail: ServiceDetailItem[] = [
     updatedAt: "2026-08-25",
   },
   {
+    slug: "website-development-dubai",
+    title: "Website Development Dubai",
+    hubTitle: "Website Development",
+    tagline:
+      "Modern websites that are fast, conversion-focused, SEO-ready and built properly for production.",
+    description:
+      "I build fast, modern and conversion-focused websites for UAE businesses — from company websites and landing pages to e-commerce and custom web platforms — with strategy, frontend, backend, integrations, performance and SEO foundations in the same delivery.",
+    seoTitle: "Website Development Dubai | Business & Web Platforms | Osama Tahir",
+    metaDescription:
+      "Dubai-based senior full-stack developer building fast, SEO-ready websites, business platforms and e-commerce experiences for UAE companies.",
+    h1: "Website Development for Dubai Businesses",
+    serviceType: "Website Development",
+    intro:
+      "I build fast, modern and conversion-focused websites for UAE businesses — from company websites and landing pages to e-commerce and custom web platforms. You work directly with a senior full-stack developer across strategy, frontend, backend, integrations, performance, SEO foundations and production launch.",
+    forWho: [
+      "Dubai SMEs and professional service businesses that need a website that generates inquiries, not only a brochure",
+      "UAE startups and clinics replacing an outdated site with a fast, mobile-ready experience",
+      "E-commerce businesses that need catalogue, checkout and payment flows built for production",
+      "Agencies that need white-label website or web-platform delivery from approved designs",
+    ],
+    sections: [
+      {
+        heading: "Your website should do more than look good",
+        body: "A polished homepage is not the same as a working acquisition channel. Many UAE businesses are stuck with outdated design, slow pages, weak SEO foundations, forms that go nowhere, and a site that cannot be updated without calling a developer. The result is a low inquiry rate and another expensive rebuild a year later.",
+        bullets: [
+          "Outdated design that no longer matches the business",
+          "Poor mobile experience on the devices most visitors use",
+          "Slow loading that costs attention before the offer is read",
+          "Weak SEO foundations that make the site hard to crawl and understand",
+          "Low inquiry and conversion rates despite traffic",
+          "Difficult content updates and disconnected forms or systems",
+          "Unreliable developers and websites that do not support business goals",
+        ],
+      },
+      {
+        heading: "What I build",
+        body: "Website work here is production software: company sites, campaign landing pages, e-commerce experiences and custom web platforms — not a theme with the logo swapped.",
+        bullets: [
+          "Business websites for consultancies, clinics, real estate, agencies and local UAE companies",
+          "Landing pages for Google Ads, launches and lead generation",
+          "E-commerce catalogues, checkout, payments and related integrations",
+          "Custom platforms: dashboards, portals, booking, admin, CRM interfaces and APIs",
+        ],
+      },
+      {
+        heading: "More than a web designer",
+        body: "Because I work across the full product stack, I can build websites that integrate properly with the systems behind your business instead of treating the website as an isolated design project. Frontend, backend, APIs, databases, payments, authentication, cloud, analytics and related mobile products sit in the same conversation.",
+      },
+    ],
+    process: [
+      {
+        title: "Discovery",
+        desc: "Understand the business, audience, current website, conversion goal and technical requirements.",
+      },
+      {
+        title: "Structure & Scope",
+        desc: "Define pages, user journeys, integrations, functionality and content requirements.",
+      },
+      {
+        title: "Development",
+        desc: "Build the responsive frontend, backend or CMS where needed, forms, integrations and analytics.",
+      },
+      {
+        title: "QA & Optimization",
+        desc: "Test mobile, desktop, performance, forms, browser compatibility and SEO basics.",
+      },
+      {
+        title: "Launch & Support",
+        desc: "Production deployment, analytics, Search Console readiness, and post-launch fixes or support.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does a website cost in Dubai?",
+        answer:
+          "There is no honest fixed price. Cost depends on page count, whether the design is custom, whether you need a CMS, e-commerce, third-party integrations, and any custom functionality such as booking or a client portal. The useful next step is to discuss the requirements so the estimate matches the actual job.",
+      },
+      {
+        question: "How long does website development take?",
+        answer:
+          "Timing depends on scope and requirements — a focused landing page is a different job from a multi-page company site, an e-commerce catalogue, or a custom web platform. Discovery is where a realistic sequence is set, including content and feedback from your side.",
+      },
+      {
+        question: "Can you redesign an existing website?",
+        answer:
+          "Yes. Some sites need a structured improvement: performance, mobile usability, forms, SEO foundations and content structure. Others need a rebuild because the current stack cannot be maintained at a reasonable cost. I start from the live site and the business goal, not from a default redesign pitch.",
+      },
+      {
+        question: "Do you provide SEO?",
+        answer:
+          "Technical and on-page SEO foundations can be included in the website build: semantic HTML, metadata, canonicals, sitemap, robots, structured data where it is appropriate, internal linking, crawlable content and image optimization. Ongoing SEO — content programmes and link-building — is a separate growth activity, not a ranking guarantee baked into development.",
+      },
+      {
+        question: "Can you build e-commerce websites?",
+        answer:
+          "Yes, where the product needs a catalogue, checkout, payments, analytics and third-party integrations. Platform choice follows the catalogue, payment requirements and who will maintain the store — I do not default to a single theme or marketplace.",
+      },
+      {
+        question: "Can you maintain the website after launch?",
+        answer:
+          "Yes. Ongoing maintenance, dependency updates, content help and new features can be arranged after launch. I will say when a change is a small fix versus when it is a new project.",
+      },
+      {
+        question: "Can you work with our existing designer or agency?",
+        answer:
+          "Yes. I implement from approved Figma or design-system files, work white-label when needed, and can stay behind the agency or join client calls. You keep the client relationship; I take technical ownership of the agreed website or platform scope.",
+      },
+    ],
+    relatedSlugs: [
+      "mobile-app-development-dubai",
+      "custom-software-development-dubai",
+      "technical-development-partner",
+    ],
+    relatedProjectIds: [
+      "ultra-smile-clinic-dubai",
+      "ivpatch-wellness-ecommerce",
+      "wurkspace-ai-business-os",
+    ],
+    ctaHeading: "Planning a new website or replacing an outdated one?",
+    ctaBody:
+      "Tell me what your business needs and I’ll help you determine the right approach — from a focused company website to a custom web platform.",
+    updatedAt: "2026-08-26",
+  },
+  {
     slug: "app-rescue-maintenance",
     title: "App Rescue & Maintenance",
     hubTitle: "App Rescue & Maintenance",
@@ -563,6 +687,7 @@ export function getServiceBySlug(slug: string) {
 
 export const SERVICE_PATHS = {
   mobile: "/services/mobile-app-development-dubai",
+  website: "/services/website-development-dubai",
   flutter: "/services/flutter-app-development-dubai",
   reactNative: "/services/react-native-app-development-dubai",
   rescue: "/services/app-rescue-maintenance",
