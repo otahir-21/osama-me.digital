@@ -3,6 +3,8 @@ export type AnalyticsEvent =
   | "contact_form_start"
   | "contact_form_submit"
   | "generate_lead"
+  | "lead_form_step_1_completed"
+  | "lead_form_step_2_viewed"
   | "calendly_click"
   | "whatsapp_click"
   | "email_click"
@@ -44,6 +46,7 @@ export function trackGoogleAdsLeadConversion(
 export function trackLeadConversion(params: {
   service: string;
   landing_page: string;
+  project_type: string;
   project_stage: string;
   budget_range: string;
 }) {

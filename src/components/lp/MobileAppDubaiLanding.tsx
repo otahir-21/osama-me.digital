@@ -4,12 +4,13 @@ import { LpFaq } from "@/components/lp/LpFaq";
 import { LpFinalCta } from "@/components/lp/LpFinalCta";
 import { LpFooter } from "@/components/lp/LpFooter";
 import { LpHeader } from "@/components/lp/LpHeader";
-import { LpInquiryForm } from "@/components/lp/LpInquiryForm";
+import {
+  LpInquiryForm,
+  MOBILE_PROJECT_TYPES,
+} from "@/components/lp/LpInquiryForm";
 import { LpProjectProof } from "@/components/lp/LpProjectProof";
 import { LpProofStrip } from "@/components/lp/LpProofStrip";
 import { LpStickyCta } from "@/components/lp/LpStickyCta";
-import { TrackedAnchor, TrackedLink } from "@/components/seo/TrackedLink";
-import { siteConfig } from "@/data/site-config";
 
 const LANDING_PATH = "/lp/mobile-app-development-dubai";
 
@@ -145,47 +146,53 @@ const LIFECYCLE = [
 ] as const;
 
 export function MobileAppDubaiLanding() {
-  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`;
-
   return (
     <div className="pb-20 md:pb-0">
       <AttributionCapture />
       <LpHeader eventLocation="lp_mobile_header" />
 
-      <PageShell>
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
-          Mobile App Development · Dubai, UAE
-        </p>
-        <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Build Your Mobile App With a Senior Dubai-Based Developer
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          From idea and architecture to iOS, Android, backend APIs, payments and app-store launch —
-          work directly with a senior developer who can take ownership of the complete product.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <TrackedLink
-            href="#estimate"
-            event="start_a_project_click"
-            eventParams={{ location: "lp_mobile_hero" }}
-            className="inline-flex min-h-11 items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-hover"
-          >
-            Request a Project Estimate
-          </TrackedLink>
-          <TrackedAnchor
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            event="whatsapp_click"
-            eventParams={{ location: "lp_mobile_hero" }}
-            className="inline-flex min-h-11 items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:border-foreground/20"
-          >
-            WhatsApp Osama
-          </TrackedAnchor>
+      <PageShell wide className="py-10 lg:py-14">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)]">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
+              Mobile App Development · Dubai, UAE
+            </p>
+            <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+              Build Your Mobile App With a Senior Dubai-Based Developer
+            </h1>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              From idea and architecture to iOS, Android, backend APIs, payments and app-store
+              launch — work directly with a senior developer who can take ownership of the complete
+              product.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                6+ years production experience
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                Dubai-based
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                Mobile + backend + payments + launch
+              </li>
+            </ul>
+            <p className="mt-5 text-sm text-muted-foreground">
+              Flutter · React Native · Backend · Payments · App Store & Google Play
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">VyooO · Royal Spirit · 24Digi</p>
+          </div>
+
+          <LpInquiryForm
+            service="mobile_app_development"
+            landingPagePath={LANDING_PATH}
+            projectTypes={MOBILE_PROJECT_TYPES}
+            step1ButtonLabel="Get a Project Estimate →"
+            leadLabel="Mobile App"
+          />
         </div>
-        <p className="mt-8 text-sm text-muted-foreground">
-          Flutter · React Native · Backend · Payments · App Store & Google Play
-        </p>
       </PageShell>
 
       <LpProofStrip />
@@ -273,25 +280,6 @@ export function MobileAppDubaiLanding() {
         </ol>
       </PageShell>
 
-      <PageShell wide className="pt-0">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-start">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Ready to discuss your app?
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Use the form for a structured brief. If you prefer a quick message, WhatsApp works
-              too.
-            </p>
-          </div>
-          <LpInquiryForm
-            service="mobile_app_development"
-            landingPagePath={LANDING_PATH}
-            projectType="Mobile App Development"
-          />
-        </div>
-      </PageShell>
-
       <PageShell tone="alt" className="pt-0">
         <LpFaq items={FAQS} />
       </PageShell>
@@ -300,13 +288,13 @@ export function MobileAppDubaiLanding() {
         <LpFinalCta
           heading="Have an app you want to build?"
           body="Share your requirements and I'll help you determine the right technical approach."
-          primaryLabel="Request a Project Estimate"
+          primaryLabel="Get a Project Estimate →"
           eventLocation="lp_mobile_final"
         />
       </PageShell>
 
       <LpFooter />
-      <LpStickyCta label="Request App Estimate" eventLocation="lp_mobile_sticky" />
+      <LpStickyCta label="Get App Estimate" eventLocation="lp_mobile_sticky" />
     </div>
   );
 }

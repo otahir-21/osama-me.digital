@@ -4,12 +4,13 @@ import { LpFaq } from "@/components/lp/LpFaq";
 import { LpFinalCta } from "@/components/lp/LpFinalCta";
 import { LpFooter } from "@/components/lp/LpFooter";
 import { LpHeader } from "@/components/lp/LpHeader";
-import { LpInquiryForm } from "@/components/lp/LpInquiryForm";
+import {
+  LpInquiryForm,
+  WEBSITE_PROJECT_TYPES,
+} from "@/components/lp/LpInquiryForm";
 import { LpProjectProof } from "@/components/lp/LpProjectProof";
 import { LpProofStrip } from "@/components/lp/LpProofStrip";
 import { LpStickyCta } from "@/components/lp/LpStickyCta";
-import { TrackedAnchor, TrackedLink } from "@/components/seo/TrackedLink";
-import { siteConfig } from "@/data/site-config";
 
 const LANDING_PATH = "/lp/website-design-development-dubai";
 
@@ -158,51 +159,56 @@ const PROOF_PROJECTS = [
 ] as const;
 
 export function WebsiteDesignDubaiLanding() {
-  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`;
-
   return (
     <div className="pb-20 md:pb-0">
       <AttributionCapture />
       <LpHeader eventLocation="lp_website_header" />
 
-      <PageShell>
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
-          Website Design & Development · Dubai, UAE
-        </p>
-        <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Build a Website That Looks Professional and Generates Business
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          I design and develop fast, modern websites for Dubai businesses — from company websites
-          and landing pages to e-commerce and custom web platforms.
-        </p>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Work directly with a senior full-stack developer across design implementation, frontend,
-          backend, integrations, performance and launch.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <TrackedLink
-            href="#estimate"
-            event="start_a_project_click"
-            eventParams={{ location: "lp_website_hero" }}
-            className="inline-flex min-h-11 items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-hover"
-          >
-            Request a Website Estimate
-          </TrackedLink>
-          <TrackedAnchor
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            event="whatsapp_click"
-            eventParams={{ location: "lp_website_hero" }}
-            className="inline-flex min-h-11 items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:border-foreground/20"
-          >
-            WhatsApp Osama
-          </TrackedAnchor>
+      <PageShell wide className="py-10 lg:py-14">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)]">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
+              Website Design & Development · Dubai, UAE
+            </p>
+            <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+              Build a Website That Looks Professional and Generates Business
+            </h1>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I design and develop fast, modern websites for Dubai businesses — from company
+              websites and landing pages to e-commerce and custom web platforms.
+            </p>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Work directly with a senior full-stack developer across design implementation,
+              frontend, backend, integrations, performance and launch.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                6+ years production experience
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                Dubai-based
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                Design + engineering + integrations + launch
+              </li>
+            </ul>
+            <p className="mt-5 text-sm text-muted-foreground">
+              Business Websites · Landing Pages · E-commerce · Web Platforms · SEO Foundations
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">Ultra Smile · IVPATCH · Wurkspace</p>
+          </div>
+
+          <LpInquiryForm
+            service="website_design_development"
+            landingPagePath={LANDING_PATH}
+            projectTypes={WEBSITE_PROJECT_TYPES}
+            step1ButtonLabel="Get a Website Estimate →"
+            leadLabel="Website"
+          />
         </div>
-        <p className="mt-8 text-sm text-muted-foreground">
-          Business Websites · Landing Pages · E-commerce · Web Platforms · SEO Foundations
-        </p>
       </PageShell>
 
       <LpProofStrip />
@@ -297,25 +303,6 @@ export function WebsiteDesignDubaiLanding() {
         </ol>
       </PageShell>
 
-      <PageShell wide className="pt-0">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-start">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Ready to discuss your website?
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Share requirements through the form for a structured reply, or message on WhatsApp if
-              that is faster for you.
-            </p>
-          </div>
-          <LpInquiryForm
-            service="website_design_development"
-            landingPagePath={LANDING_PATH}
-            projectType="Website Design & Development"
-          />
-        </div>
-      </PageShell>
-
       <PageShell tone="alt" className="pt-0">
         <LpFaq items={FAQS} />
       </PageShell>
@@ -324,13 +311,13 @@ export function WebsiteDesignDubaiLanding() {
         <LpFinalCta
           heading="Planning a new website or replacing an outdated one?"
           body="Share your requirements and I'll help you determine the right approach for your business."
-          primaryLabel="Request a Website Estimate"
+          primaryLabel="Get a Website Estimate →"
           eventLocation="lp_website_final"
         />
       </PageShell>
 
       <LpFooter />
-      <LpStickyCta label="Request Website Estimate" eventLocation="lp_website_sticky" />
+      <LpStickyCta label="Get Website Estimate" eventLocation="lp_website_sticky" />
     </div>
   );
 }

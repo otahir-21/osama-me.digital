@@ -3,62 +3,55 @@ import nodemailer from "nodemailer";
 import { siteConfig } from "@/data/site-config";
 import type { AdsAttribution } from "@/lib/attribution";
 
-function formatAttribution(attribution: AdsAttribution | undefined) {
-  if (!attribution || typeof attribution !== "object") return [];
-  const lines: string[] = [];
-  const entries: [keyof AdsAttribution, string | undefined][] = [
-    ["gclid", attribution.gclid],
-    ["gbraid", attribution.gbraid],
-    ["wbraid", attribution.wbraid],
-    ["utm_source", attribution.utm_source],
-    ["utm_medium", attribution.utm_medium],
-    ["utm_campaign", attribution.utm_campaign],
-    ["utm_term", attribution.utm_term],
-    ["utm_content", attribution.utm_content],
-    ["landing_page_url", attribution.landing_page_url],
-    ["referrer", attribution.referrer],
-    ["timestamp", attribution.timestamp],
-  ];
-  for (const [key, value] of entries) {
-    if (value) lines.push(`${key}: ${value}`);
-  }
-  return lines;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function asOptionalString(value: unknown) {
+  return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function asString(value: unknown) {
+  return typeof value === "string" ? value.trim() : "";
 }
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const {
-      name,
-      email,
-      company,
-      projectType,
-      projectStage,
-      budget,
-      message,
-      subject,
-      source,
-      landingPage,
-      attribution,
-    } = body as Record<string, unknown>;
-
-    const nameStr = typeof name === "string" ? name : "";
-    const emailStr = typeof email === "string" ? email : "";
-    const messageStr = typeof message === "string" ? message : "";
-    const companyStr = typeof company === "string" ? company : undefined;
-    const projectTypeStr = typeof projectType === "string" ? projectType : undefined;
-    const projectStageStr = typeof projectStage === "string" ? projectStage : undefined;
-    const budgetStr = typeof budget === "string" ? budget : undefined;
-    const subjectStr = typeof subject === "string" ? subject : undefined;
-    const sourceStr = typeof source === "string" ? source : undefined;
-    const landingPageStr = typeof landingPage === "string" ? landingPage : undefined;
+    const nameStr = asString(body.name);
+    const emailStr = asString(body.email);
+    const messageStr = asString(body.message);
+    const phoneStr = asOptionalString(body.phone);
+    const companyStr = asOptionalString(body.company);
+    const projectTypeStr = asOptionalString(body.projectType);
+    const projectStageStr = asOptionalString(body.projectStage);
+    const budgetStr = asOptionalString(body.budget);
+    const subjectStr = asOptionalString(body.subject);
+    const serviceStr = asOptionalString(body.service);
+    const sourceStr = asOptionalString(body.source);
+    const landingPageStr = asOptionalString(body.landingPage);
     const attributionObj =
-      attribution && typeof attribution === "object"
-        ? (attribution as AdsAttribution)
+      body.attribution && typeof body.attribution === "object"
+        ? (body.attribution as AdsAttribution)
         : undefined;
 
     if (!nameStr || !emailStr || !messageStr) {
-      return NextResponse.json({ error: "Name, work email and project details are required." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Name, work email and project details are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!EMAIL_RE.test(emailStr)) {
+      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    const isLandingLead = sourceStr === "landing_page";
+    if (isLandingLead) {
+      if (!projectTypeStr || !projectStageStr || !budgetStr) {
+        return NextResponse.json(
+          { error: "Project type, stage and budget are required." },
+          { status: 400 }
+        );
+      }
     }
 
     const smtpHost = process.env.SMTP_HOST ?? "smtp.hostinger.com";
@@ -84,46 +77,71 @@ export async function POST(request: Request) {
       auth: { user: smtpUser, pass: smtpPass },
     });
 
-    const derivedSubject =
-      subjectStr || (projectTypeStr ? `Project inquiry — ${projectTypeStr}` : "Project inquiry");
+    const leadTitle = isLandingLead
+      ? subjectStr ||
+        (serviceStr?.includes("website")
+          ? "New Website Lead"
+          : serviceStr?.includes("mobile")
+            ? "New Mobile App Lead"
+            : "New Project Lead")
+      : subjectStr ||
+        (projectTypeStr ? `Project inquiry — ${projectTypeStr}` : "Project inquiry");
 
-    const attributionLines = formatAttribution(attributionObj);
+    const acquisition = [
+      sourceStr ? `Source: ${sourceStr}` : null,
+      attributionObj?.utm_campaign ? `Campaign: ${attributionObj.utm_campaign}` : null,
+      attributionObj?.utm_term ? `Keyword / UTM term: ${attributionObj.utm_term}` : null,
+      attributionObj?.utm_source ? `UTM source: ${attributionObj.utm_source}` : null,
+      attributionObj?.utm_medium ? `UTM medium: ${attributionObj.utm_medium}` : null,
+      attributionObj?.utm_content ? `UTM content: ${attributionObj.utm_content}` : null,
+      attributionObj?.gclid ? `GCLID: ${attributionObj.gclid}` : null,
+      attributionObj?.gbraid ? `GBRAID: ${attributionObj.gbraid}` : null,
+      attributionObj?.wbraid ? `WBRAID: ${attributionObj.wbraid}` : null,
+      landingPageStr
+        ? `Landing Page: ${landingPageStr}`
+        : attributionObj?.landing_page_url
+          ? `Landing Page: ${attributionObj.landing_page_url}`
+          : null,
+      attributionObj?.referrer ? `Referrer: ${attributionObj.referrer}` : null,
+      attributionObj?.timestamp ? `Timestamp: ${attributionObj.timestamp}` : null,
+    ].filter((line): line is string => Boolean(line));
 
     const text = [
+      leadTitle,
+      "",
       `Name: ${nameStr}`,
       `Email: ${emailStr}`,
+      phoneStr ? `WhatsApp/Phone: ${phoneStr}` : null,
       companyStr ? `Company: ${companyStr}` : null,
-      projectTypeStr ? `Project type: ${projectTypeStr}` : null,
-      projectStageStr ? `Project stage: ${projectStageStr}` : null,
+      projectTypeStr ? `Project Type: ${projectTypeStr}` : null,
+      projectStageStr ? `Project Stage: ${projectStageStr}` : null,
       budgetStr ? `Budget: ${budgetStr}` : null,
-      sourceStr ? `Source: ${sourceStr}` : null,
-      landingPageStr ? `Landing page: ${landingPageStr}` : null,
       "",
-      "Details:",
+      "Project Details:",
       messageStr,
-      attributionLines.length > 0 ? "" : null,
-      attributionLines.length > 0 ? "Attribution:" : null,
-      ...attributionLines,
+      acquisition.length > 0 ? "" : null,
+      acquisition.length > 0 ? "Acquisition:" : null,
+      ...acquisition,
     ]
       .filter((line) => line !== null)
       .join("\n");
 
     const html = `
-      <h2>New project inquiry</h2>
+      <h2>${escapeHtml(leadTitle)}</h2>
       <p><strong>Name:</strong> ${escapeHtml(nameStr)}</p>
       <p><strong>Email:</strong> <a href="mailto:${escapeHtml(emailStr)}">${escapeHtml(emailStr)}</a></p>
+      ${phoneStr ? `<p><strong>WhatsApp/Phone:</strong> ${escapeHtml(phoneStr)}</p>` : ""}
       ${companyStr ? `<p><strong>Company:</strong> ${escapeHtml(companyStr)}</p>` : ""}
-      ${projectTypeStr ? `<p><strong>Project type:</strong> ${escapeHtml(projectTypeStr)}</p>` : ""}
-      ${projectStageStr ? `<p><strong>Project stage:</strong> ${escapeHtml(projectStageStr)}</p>` : ""}
+      ${projectTypeStr ? `<p><strong>Project Type:</strong> ${escapeHtml(projectTypeStr)}</p>` : ""}
+      ${projectStageStr ? `<p><strong>Project Stage:</strong> ${escapeHtml(projectStageStr)}</p>` : ""}
       ${budgetStr ? `<p><strong>Budget:</strong> ${escapeHtml(budgetStr)}</p>` : ""}
-      ${sourceStr ? `<p><strong>Source:</strong> ${escapeHtml(sourceStr)}</p>` : ""}
-      ${landingPageStr ? `<p><strong>Landing page:</strong> ${escapeHtml(landingPageStr)}</p>` : ""}
       <hr />
+      <p><strong>Project Details:</strong></p>
       <p>${escapeHtml(messageStr).replace(/\n/g, "<br>")}</p>
       ${
-        attributionLines.length > 0
-          ? `<hr /><h3>Attribution</h3><pre style="white-space:pre-wrap;font-size:12px">${escapeHtml(
-              attributionLines.join("\n")
+        acquisition.length > 0
+          ? `<hr /><h3>Acquisition</h3><pre style="white-space:pre-wrap;font-size:12px">${escapeHtml(
+              acquisition.join("\n")
             )}</pre>`
           : ""
       }
@@ -133,7 +151,7 @@ export async function POST(request: Request) {
       from: `"${siteConfig.name} Website" <${smtpUser}>`,
       to: notificationInbox,
       replyTo: emailStr,
-      subject: `[Contact Form] ${derivedSubject}`,
+      subject: isLandingLead ? leadTitle : `[Contact Form] ${leadTitle}`,
       text,
       html,
     });
