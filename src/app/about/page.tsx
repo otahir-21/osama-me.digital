@@ -8,6 +8,8 @@ import { PageShell } from "@/components/layout/PageShell";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCTA } from "@/components/cta/ProjectCTA";
+import { ReviewCard } from "@/components/reviews/ReviewCard";
+import { testimonialsData } from "@/data/testimonials";
 import { getGraphSchema, getProfilePageSchema } from "@/lib/schema";
 
 export const dynamic = "force-static";
@@ -144,6 +146,20 @@ export default function AboutPage() {
           View all work →
         </Link>
       </PageShell>
+
+      {testimonialsData.length > 0 ? (
+        <PageShell className="pt-0">
+          <SectionHeading
+            eyebrow="Client review"
+            title="What it's like to work together"
+          />
+          <div className="mt-10 space-y-6">
+            {testimonialsData.map((review) => (
+              <ReviewCard key={review.id} review={review} density="compact" />
+            ))}
+          </div>
+        </PageShell>
+      ) : null}
 
       <PageShell tone="alt" className="pt-0">
         <SectionHeading eyebrow="Experience" title="Where I've worked" />

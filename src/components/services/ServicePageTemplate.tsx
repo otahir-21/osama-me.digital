@@ -14,6 +14,8 @@ import { insights } from "@/data/insights";
 import { serviceToInsights } from "@/data/internal-links";
 import { servicesDetail, type ServiceDetailItem } from "@/data/services-detail";
 import { portfolioData } from "@/data/portfolio";
+import { testimonialsForService } from "@/data/testimonials";
+import { ReviewCard } from "@/components/reviews/ReviewCard";
 import {
   getBreadcrumbSchema,
   getGraphSchema,
@@ -34,6 +36,7 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
   const relatedInsights = insights.filter((post) =>
     (serviceToInsights[service.slug] ?? []).includes(post.slug)
   );
+  const relatedReviews = testimonialsForService(service.slug);
 
   const schema = getGraphSchema([
     getWebPageSchema({
@@ -156,6 +159,17 @@ export function ServicePageTemplate({ service }: { service: ServiceDetailItem })
               </li>
             ))}
           </ul>
+        </PageShell>
+      )}
+
+      {relatedReviews.length > 0 && (
+        <PageShell wide className="pt-0">
+          <h2 className="text-2xl font-semibold text-foreground">Client review</h2>
+          <div className="mt-6 space-y-6">
+            {relatedReviews.map((review) => (
+              <ReviewCard key={review.id} review={review} density="compact" />
+            ))}
+          </div>
         </PageShell>
       )}
 

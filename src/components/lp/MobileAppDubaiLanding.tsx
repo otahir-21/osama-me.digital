@@ -11,8 +11,11 @@ import {
 import { LpProjectProof } from "@/components/lp/LpProjectProof";
 import { LpProofStrip } from "@/components/lp/LpProofStrip";
 import { LpStickyCta } from "@/components/lp/LpStickyCta";
+import { ReviewCard } from "@/components/reviews/ReviewCard";
+import { testimonialsForService } from "@/data/testimonials";
 
 const LANDING_PATH = "/lp/mobile-app-development-dubai";
+const MOBILE_REVIEWS = testimonialsForService("mobile-app-development-dubai");
 
 const CAPABILITIES = [
   {
@@ -248,6 +251,22 @@ export function MobileAppDubaiLanding() {
           eventPrefix="lp_mobile"
         />
       </PageShell>
+
+      {MOBILE_REVIEWS.length > 0 ? (
+        <PageShell wide className="pt-0">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            Client review
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            A LinkedIn Services review for mobile application development.
+          </p>
+          <div className="mt-8 space-y-6">
+            {MOBILE_REVIEWS.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+        </PageShell>
+      ) : null}
 
       <PageShell className="pt-0">
         <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">

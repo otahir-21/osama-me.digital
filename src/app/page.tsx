@@ -5,6 +5,7 @@ import { GeoAnswer } from "@/components/home/GeoAnswer";
 import { HelpYouBuild } from "@/components/home/HelpYouBuild";
 import { AgencyPartner } from "@/components/home/AgencyPartner";
 import { FeaturedPortfolio } from "@/components/home/FeaturedPortfolio";
+import { Testimonials } from "@/components/home/Testimonials";
 import { HomeInsights } from "@/components/home/HomeInsights";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { ContactBanner } from "@/components/home/ContactBanner";
@@ -26,6 +27,7 @@ export default function HomePage() {
       <HelpYouBuild />
       <AgencyPartner />
       <FeaturedPortfolio />
+      <Testimonials />
       <HomeInsights />
       <HomeFaq />
       <ContactBanner />
