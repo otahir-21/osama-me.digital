@@ -2,15 +2,16 @@ import Link from "next/link";
 import { siteConfig } from "@/data/site-config";
 import { SERVICE_PATHS } from "@/data/services-detail";
 import { TrackedAnchor } from "@/components/seo/TrackedLink";
+import { Logo } from "@/components/brand/Logo";
 
 export function Footer() {
   return (
     <footer className="bg-ink text-white/65">
       <div className="mx-auto grid max-w-content gap-10 px-5 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
-          <p className="text-lg font-semibold text-white">
-            Osama<span className="text-primary">.</span>
-          </p>
+          <Link href="/" aria-label="Osama Tahir home" className="inline-flex text-white">
+            <Logo />
+          </Link>
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             {siteConfig.name} is a {siteConfig.role.toLowerCase()} in {siteConfig.locationFull},
             building mobile apps and digital platforms for UAE and GCC businesses.

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TrackedLink } from "@/components/seo/TrackedLink";
+import { Logo } from "@/components/brand/Logo";
 
 export function LpHeader({
   ctaHref = "#estimate",
@@ -20,11 +21,8 @@ export function LpHeader({
       </a>
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-3.5 sm:px-6 lg:px-8">
         <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-          <Link
-            href="/"
-            className="text-lg font-semibold tracking-tight text-foreground sm:text-xl"
-          >
-            Osama<span className="text-primary">.</span>
+          <Link href="/" aria-label="Osama Tahir home" className="inline-flex shrink-0 items-center text-foreground">
+            <Logo />
           </Link>
           <span className="hidden text-sm text-muted-foreground sm:inline" aria-hidden>
             ·
