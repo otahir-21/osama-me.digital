@@ -7,6 +7,7 @@ export const BUYER_CATEGORIES = [
   "E-commerce & Payments",
   "Healthcare & GovTech",
   "Web Platforms",
+  "Performance Marketing",
 ] as const;
 
 export type BuyerCategory = (typeof BUYER_CATEGORIES)[number];
@@ -23,8 +24,12 @@ export interface CaseStudyCopy {
   problem: string;
   roleDetail: string;
   technicalChallenge: string;
+  /** Defaults to “Technical Challenge” on the case-study page. */
+  challengeHeading?: string;
   solution: string;
   keyFeatures: string[];
+  /** Defaults to “Key Features” on the case-study page. */
+  featuresHeading?: string;
   relatedServiceHrefs: { href: string; label: string }[];
   updatedAt: string;
   /**
@@ -379,6 +384,42 @@ export const caseStudyCopy: Record<string, CaseStudyCopy> = {
       { href: SERVICE_PATHS.partner, label: "Technical development partnership" },
     ],
     updatedAt: "2026-08-25",
+  },
+  "uk-insolvency-meta-ads": {
+    buyerCategory: "Performance Marketing",
+    cardDescription:
+      "An early Meta Ads test for UK insolvency enquiries: video into an Instant Form, with the next optimisation locked to the opening seconds of the creative.",
+    seoTitle: "UK Insolvency Meta Ads Case Study | Osama Tahir",
+    seoDescription:
+      "Early Meta Ads lead-generation test for a UK insolvency advisory: 6 Instant Form leads from AED 407, with the next test focused on the video hook — by Osama Tahir.",
+    overview:
+      "This is an early Meta Ads test for a UK insolvency advisory, aimed at company directors and business owners who may be dealing with liquidation, HMRC debt or wider financial difficulty. The funnel was a 31-second video ad into a Meta Instant Form with qualification questions, then lead capture for the sales team. In this reporting window the campaign produced 6 Instant Form leads from AED 407 (AED 67.83 / about £14 per lead). That is a useful signal, not a finished result.",
+    problem:
+      "The client needed inbound enquiries from UK directors, not generic social traffic. The job was to put a serious offer in front of people already under financial pressure, qualify them in the form, and pass usable leads to sales — without spending into a creative that nobody watches.",
+    roleDetail:
+      "I planned and ran the Meta campaign: offer positioning, video-led creative, Instant Form qualification, placement and the first reporting pass. At this stage the useful work is reading creative, audience and funnel together, then choosing the next test — not treating six form fills as proof the campaign is done.",
+    challengeHeading: "What the data showed",
+    technicalChallenge:
+      "The campaign is generating Instant Form leads at AED 67.83 each. Almost nobody is watching the video. Average play time is two seconds on a 31-second asset; hook rate is 11% and hold rate is 7.49%. Delivery and results concentrated on Facebook (5 leads) over Instagram (1). Age and gender split is 5 men and 1 woman, all 45–64 — a real pattern in this sample, not yet a targeting conclusion. Form volume is also not the same as sales-accepted lead quality.",
+    solution:
+      "Keep the funnel (video → Instant Form → qualification → sales). The next optimisation is the opening two to three seconds of the video, because that is where retention collapses. After the hook test, the campaign should be judged on sales-accepted enquiries, not on Instant Form volume alone.",
+    featuresHeading: "The funnel",
+    keyFeatures: [
+      "Video ad aimed at UK directors facing insolvency, HMRC debt or financial difficulty",
+      "Meta Instant Form with qualification questions before lead capture",
+      "Facebook and Instagram delivery, with Facebook producing most of the results",
+      "Reporting across creative, audience, placement and cost per lead",
+      "Next test locked to the opening 2–3 seconds, not a full rebuild of the funnel",
+    ],
+    relatedServiceHrefs: [
+      { href: SERVICE_PATHS.website, label: "Website and landing-page development in Dubai" },
+    ],
+    updatedAt: "2026-09-03",
+    contentTodos: [
+      "Confirm whether the client can be named publicly (Directors Support Line vs generic advisory)",
+      "Replace Instant Form counts with sales-accepted lead quality when sales has reviewed the 6 enquiries",
+      "Update after the hook-rate creative test with new watch time, CPL and accepted-lead numbers",
+    ],
   },
 };
 

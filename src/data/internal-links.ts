@@ -39,6 +39,7 @@ export const portfolioToServices: Record<string, string[]> = {
     "app-rescue-maintenance",
   ],
   "Web Platforms": ["website-development-dubai", "custom-software-development-dubai"],
+  "Performance Marketing": ["website-development-dubai"],
 };
 
 export const serviceToInsights: Record<string, string[]> = {

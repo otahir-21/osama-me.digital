@@ -142,6 +142,32 @@ function DeviceFrame({
   );
 }
 
+/** Dashboard / report captures — no product chrome, no beige letterbox. */
+function ScreenshotFrame({
+  image,
+  alt,
+  sizes,
+  priority,
+}: {
+  image: string;
+  alt: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <div className="relative h-full w-full bg-card">
+      <Image
+        src={image}
+        alt={alt}
+        fill
+        priority={priority}
+        className="object-contain object-center"
+        sizes={sizes}
+      />
+    </div>
+  );
+}
+
 /** Product-studio cover until real portfolio screenshots are added. */
 export function ProjectCover({
   title,
@@ -162,6 +188,8 @@ export function ProjectCover({
           <PhoneFrame image={image} alt={label} sizes={sizes} priority={priority} size={size} />
         ) : composition === "browser" ? (
           <BrowserFrame image={image} alt={label} sizes={sizes} priority={priority} size={size} />
+        ) : composition === "screenshot" ? (
+          <ScreenshotFrame image={image} alt={label} sizes={sizes} priority={priority} />
         ) : (
           <DeviceFrame image={image} alt={label} sizes={sizes} priority={priority} />
         )}

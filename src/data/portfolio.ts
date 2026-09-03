@@ -30,12 +30,17 @@ export interface PortfolioSkillOffer {
 export type ProjectKind = "mobile" | "website" | "api";
 
 /** How the cover screenshot is framed — CSS chrome around a real asset. */
-export type CoverComposition = "phone" | "browser" | "device";
+export type CoverComposition = "phone" | "browser" | "device" | "screenshot";
 
 export interface PortfolioGalleryImage {
   src: string;
   alt: string;
   composition?: CoverComposition;
+}
+
+export interface PortfolioMetric {
+  label: string;
+  value: string;
 }
 
 /** Stack / language chips for the secondary filter row */
@@ -57,6 +62,8 @@ export interface PortfolioProject {
   challenge: string;
   solution: string;
   results: string[];
+  /** Optional stat strip on the case-study page (spend, CPL, leads). */
+  metrics?: PortfolioMetric[];
   techStack: string[];
   image: string;
   imageAlt?: string;
@@ -842,5 +849,55 @@ export const portfolioData: PortfolioProject[] = [
         skills: ["Scheduling", "Workflows", "Integrations"],
       },
     ],
+  },
+  {
+    id: "uk-insolvency-meta-ads",
+    title: "UK Insolvency — Meta Ads Lead Generation",
+    category: "Performance Marketing",
+    company: "",
+    role: "Campaign lead",
+    client: "UK insolvency advisory",
+    location: "United Kingdom",
+    challenge:
+      "Reach UK company directors and business owners who may be dealing with liquidation, HMRC debt or wider financial difficulty, then capture enquiries through a Meta Instant Form before handing them to sales.",
+    solution:
+      "Ran a video-led Meta Ads funnel: 31-second creative → Instant Form with qualification questions → lead capture. Early reporting is used to choose the next creative test, not to treat six form fills as a finished result.",
+    results: [
+      "6 Instant Form leads from AED 407 spend (AED 67.83 cost per lead)",
+      "5 leads from Facebook, 1 from Instagram, from 3,036 video plays",
+      "Early audience signal: 5 of 6 leads were men, all aged 45–64 — too small a sample to treat as targeting truth",
+      "Creative finding: 2-second average watch time, 11% hook rate and 7.49% hold rate on a 31-second video — next test is the opening 2–3 seconds",
+      "Form fills are not yet sales-qualified; lead quality is the next gate after creative",
+    ],
+    metrics: [
+      { label: "Form leads", value: "6" },
+      { label: "Spend", value: "AED 407" },
+      { label: "Cost per lead", value: "AED 67.83" },
+      { label: "Video plays", value: "3,036" },
+    ],
+    techStack: ["Meta Ads", "Instant Forms", "Facebook", "Instagram", "Video ads"],
+    image: "/images/portfolio/uk-insolvency-performance.jpg",
+    imageAlt:
+      "Meta Ads performance overview showing 6 Instant Form leads, AED 67.83 cost per lead and AED 407 spent",
+    coverComposition: "screenshot",
+    gallery: [
+      {
+        src: "/images/portfolio/uk-insolvency-video.jpg",
+        alt: "Video retention graph for the 31-second insolvency ad, with 2-second average play time and a sharp drop in the first seconds",
+        composition: "screenshot",
+      },
+      {
+        src: "/images/portfolio/uk-insolvency-demographics.jpg",
+        alt: "Age and gender distribution showing five male leads and one female lead, all in the 45–64 age range",
+        composition: "screenshot",
+      },
+      {
+        src: "/images/portfolio/uk-insolvency-platforms.jpg",
+        alt: "Placement report showing five Instant Form leads from Facebook and one from Instagram",
+        composition: "screenshot",
+      },
+    ],
+    featured: false,
+    stackByKind: {},
   },
 ];

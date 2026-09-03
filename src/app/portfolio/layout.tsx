@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mobile App & Software Case Studies | Osama Tahir Dubai",
+  title: "Case Studies | Osama Tahir Dubai",
   description:
-    "A selection of mobile apps, business platforms, commerce products and backend systems Osama Tahir has helped build across the UAE and international markets.",
+    "A selection of mobile apps, business platforms, commerce products, backend systems and paid-social campaigns Osama Tahir has helped ship across the UAE and international markets.",
   path: "/portfolio",
 });
 

@@ -59,11 +59,12 @@ export default function PortfolioPage() {
           Work
         </p>
         <h1 className="mt-3 max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Selected Mobile App & Software Projects
+          Selected work
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          A selection of mobile apps, business platforms, commerce products and backend
-          systems I&apos;ve helped build across the UAE and international markets.
+          Mobile apps, business platforms, commerce products, backend systems and
+          paid-social campaigns I&apos;ve helped ship across the UAE and international
+          markets.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-2" role="group" aria-label="Filter by category">

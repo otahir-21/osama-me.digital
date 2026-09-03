@@ -110,6 +110,21 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
             .join(" · ")}
         </p>
 
+        {project.metrics?.length ? (
+          <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+            {project.metrics.map((metric) => (
+              <div key={metric.label} className="bg-card px-4 py-4 sm:px-5 sm:py-5">
+                <dt className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                  {metric.label}
+                </dt>
+                <dd className="mt-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+                  {metric.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
+
         {(project.appStore || project.playStore || project.liveUrl) && (
           <div className="mt-6 flex flex-wrap gap-3">
             {project.appStore && (
@@ -150,7 +165,13 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           </div>
         )}
 
-        <figure className="relative mt-12 min-h-56 overflow-hidden rounded-2xl border border-border bg-card shadow-sm aspect-[16/10] lg:min-h-[28rem]">
+        <figure
+          className={
+            project.coverComposition === "screenshot"
+              ? "relative mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-sm aspect-[2/1]"
+              : "relative mt-12 min-h-56 overflow-hidden rounded-2xl border border-border bg-card shadow-sm aspect-[16/10] lg:min-h-[28rem]"
+          }
+        >
           <ProjectCover
             title={project.title}
             image={project.coverComposition ? project.image : undefined}
@@ -178,7 +199,9 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
                 className={
                   shot.composition === "phone"
                     ? "relative aspect-[3/5] overflow-hidden rounded-2xl border border-border bg-card"
-                    : "relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card"
+                    : shot.composition === "screenshot"
+                      ? "relative aspect-[2/1] overflow-hidden rounded-2xl border border-border bg-card"
+                      : "relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card"
                 }
               >
                 <ProjectCover
@@ -216,7 +239,9 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground">Technical Challenge</h2>
+            <h2 className="text-2xl font-semibold text-foreground">
+              {copy?.challengeHeading ?? "Technical Challenge"}
+            </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {copy?.technicalChallenge ?? project.solution}
             </p>
@@ -231,7 +256,9 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
           {copy?.keyFeatures?.length ? (
             <section>
-              <h2 className="text-2xl font-semibold text-foreground">Key Features</h2>
+              <h2 className="text-2xl font-semibold text-foreground">
+                {copy.featuresHeading ?? "Key Features"}
+              </h2>
               <ul className="mt-4 space-y-2">
                 {copy.keyFeatures.map((feature) => (
                   <li key={feature} className="flex gap-3 text-muted-foreground">
@@ -292,8 +319,16 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
 
         <div className="mt-16">
           <ProjectCTA
-            heading="Building something similar? Let's discuss your project."
-            body="If this problem looks like yours, send the current state of the product and I will tell you how I would approach it."
+            heading={
+              copy?.buyerCategory === "Performance Marketing"
+                ? "Need paid social that you can actually read?"
+                : "Building something similar? Let's discuss your project."
+            }
+            body={
+              copy?.buyerCategory === "Performance Marketing"
+                ? "If you have a lead-gen offer and messy Meta reporting, send the current creative, funnel and spend. I will tell you what I would test next."
+                : "If this problem looks like yours, send the current state of the product and I will tell you how I would approach it."
+            }
           />
         </div>
 
